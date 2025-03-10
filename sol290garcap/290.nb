@@ -1,0 +1,250 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4733,        167]*)
+(*NotebookOutlinePosition[      5396,        190]*)
+(*  CellTagsIndexPosition[      5352,        186]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(<< Baricentricas`;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptA1 = SimetriaAxial[ptA, ptB, ptC]\)], "Input"],
+
+Cell[BoxData[
+    \({\(-a\^2\), a\^2 + b\^2 - c\^2, a\^2 - b\^2 + c\^2}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptGA = 
+      Punto[\[IndentingNewLine]Mediana[ptB, ptC, 
+          ptA1], \[IndentingNewLine]Mediana[ptC, ptB, ptA1]]\)], "Input"],
+
+Cell[BoxData[
+    \({a\^2, \(-2\)\ a\^2 - b\^2 + c\^2, \(-2\)\ a\^2 + b\^2 - 
+        c\^2}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptHA = 
+      Punto[\[IndentingNewLine]Altura[ptB, ptC, 
+          ptA1], \[IndentingNewLine]Altura[ptC, ptB, ptA1]]\)], "Input"],
+
+Cell[BoxData[
+    \({a\^2\ \((\(-a\^4\) + \((b\^2 - c\^2)\)\^2)\), 
+      2\ a\^2\ c\^2\ \((b\^2 - c\^2)\) - \((b\^2 - c\^2)\)\^3 + 
+        a\^4\ \((b\^2 + c\^2)\), \((b\^2 - c\^2)\)\^3 + 
+        a\^4\ \((b\^2 + c\^2)\) - 
+        2\ a\^2\ \((b\^4 - b\^2\ c\^2)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(eA = Recta[ptGA, ptHA]\)], "Input"],
+
+Cell[BoxData[
+    \({\(-\((b\^2 - c\^2)\)\^3\) + a\^2\ \((b\^4 - c\^4)\), 
+      a\^2\ \((a\^2 - c\^2)\)\ \((a\^2 - b\^2 + c\^2)\), \(-a\^2\)\ \((a\^2 - 
+            b\^2)\)\ \((a\^2 + b\^2 - c\^2)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(eB = PermutarTerna[eA]\), "\[IndentingNewLine]", 
+    \(eC = PermutarTerna[eB]\)}], "Input"],
+
+Cell[BoxData[
+    \({\(-b\^2\)\ \((b\^2 - c\^2)\)\ \((\(-a\^2\) + b\^2 + 
+            c\^2)\), \(-\((\(-a\^2\) + c\^2)\)\^3\) + 
+        b\^2\ \((\(-a\^4\) + c\^4)\), 
+      b\^2\ \((\(-a\^2\) + b\^2)\)\ \((a\^2 + b\^2 - c\^2)\)}\)], "Output"],
+
+Cell[BoxData[
+    \({c\^2\ \((\(-b\^2\) + c\^2)\)\ \((\(-a\^2\) + b\^2 + 
+            c\^2)\), \(-c\^2\)\ \((\(-a\^2\) + c\^2)\)\ \((a\^2 - b\^2 + 
+            c\^2)\), \(-\((a\^2 - b\^2)\)\^3\) + \((a\^4 - 
+              b\^4)\)\ c\^2}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Det[{eA, eB, eC}]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptP = Punto[eA, eB]\)], "Input"],
+
+Cell[BoxData[
+    \({\(-a\^2\)\ \((a\^2 - b\^2)\)\ \((a\^2 - c\^2)\), 
+      b\^2\ \((a\^2 - b\^2)\)\ \((b\^2 - c\^2)\), \(-c\^2\)\ \((\(-a\^2\) + 
+            c\^2)\)\ \((\(-b\^2\) + c\^2)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(circunscrita\  := \ 
+        a\^2\ v\ w\  + \ b\^2\ w\ u\  + \ 
+          c\^2\ u\ v;\)\), "\[IndentingNewLine]", 
+    \(Simplify[Sustituir[circunscrita, ptP]]\), "\[IndentingNewLine]", 
+    \(Simplify[Sustituir[circunscrita, ptHA]]\)}], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Kimberling[ptP]\)], "Input"],
+
+Cell[BoxData[
+    \(0.9075629741016906804534046052`11.12548222658566\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 800}, {0, 527}},
+WindowSize->{792, 500},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 55, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[1834, 56, 68, 1, 30, "Input"],
+Cell[1905, 59, 85, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2027, 65, 151, 3, 70, "Input"],
+Cell[2181, 70, 105, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2323, 77, 149, 3, 70, "Input"],
+Cell[2475, 82, 280, 5, 32, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2792, 92, 55, 1, 30, "Input"],
+Cell[2850, 95, 214, 3, 32, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3101, 103, 113, 2, 50, "Input"],
+Cell[3217, 107, 243, 4, 32, "Output"],
+Cell[3463, 113, 250, 4, 32, "Output"]
+}, Open  ]],
+Cell[3728, 120, 26, 0, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[3779, 124, 50, 1, 30, "Input"],
+Cell[3832, 127, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3904, 133, 52, 1, 30, "Input"],
+Cell[3959, 136, 206, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4202, 144, 269, 5, 70, "Input"],
+Cell[4474, 151, 35, 1, 29, "Output"],
+Cell[4512, 154, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4584, 160, 48, 1, 30, "Input"],
+Cell[4635, 163, 82, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

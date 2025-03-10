@@ -1,0 +1,108 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri295</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema 295 de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=38 bgcolor="#FFFF99"> 
+      <p align=justify>Se toma al azar un punto <i>M</i> en el interior de un 
+        triángulo arbitrario <i>ABC</i>.<br>
+        <i>a</i>) ¿Cuál es la probabilidad para que, si desde el punto <i>M</i> 
+        se bajan las perpendiculares <i>MA</i><sub>1</sub>, <i>MB</i><sub>1</sub>, 
+        <i>MC</i><sub>1</sub>, sobre los tres lados se pueda construir un triángulo 
+        con <i>MA</i><sub>1</sub><i>MB</i><sub>1</sub><i>MC</i><sub>1</sub>?<br>
+        <i>b</i>)&nbsp;¿Y para que se pueda formar un triángulo que tenga todos 
+        sus ángulos agudos? </p>
+      </TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=2> 
+      <DIV align=right> <FONT size=-1>Lemoine E. (1883) : Quelques questions de 
+        probabilities résolues géometricament. <br>
+        Bulletin de la S.M.F (Societé Mathématique de France, Tomo 11, p 13-25 
+        . Propuesto por Juan Bosco Romero M&aacute;rquez.</FONT> </DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><font face="Arial, Helvetica, sans-serif">Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a></font></P>
+<P><i>a</i>) Llamamos <i>x</i>, <i>y</i>, <i>z</i> a las distancias <i>MA</i><sub>1</sub>, 
+  <i>MB</i><sub>1</sub>, <i>MC</i><sub>1</sub>. Deber&aacute; ser <i>x</i> &lt; 
+  <i>y</i> + <i>z</i>, <i>y</i> &lt; <i>z</i> + <i>x</i>, <i>z</i> &lt; <i>x</i> 
+  + <i>y</i>. </P>
+<P><img src="295a.jpg" width="390" height="234" align="right">Determinemos entonces 
+  los puntos <i>M</i> para los que se cumplen las igualdades <i>x</i> = <i>y</i> 
+  + <i>z</i>, <i>y</i> = <i>z</i> + <i>x</i>, <i> z</i> =<i>x</i> + <i>y</i>. 
+</P>
+<P>Sean <i>u</i> : <i>v </i>: <i>w</i> son las coordenadas baric&eacute;ntricas 
+  de <i>M</i>, proporcionales a las &aacute;reas de los tri&aacute;ngulos <i>MBC</i>, 
+  <i>MCA</i>, <i>CAB</i>, que a su vez son iguales a (1/2)<i>ax</i>, (1/2)<i>by</i>, 
+  (1/2)<i>cz. </i>Entonces la igualdad <i>x</i> = <i>y</i> + <i>z</i> equivale 
+  a la igualdad <i>u</i>/<i>a</i> = <i>v</i>/<i>b</i> + <i>w</i>/<i>c</i>, que 
+  es una recta en ecuaciones baric&eacute;ntricas. Esta recta pasa por los puntos 
+  <i>Y</i>=(<i>a</i>,0,<i>c</i>) y <i>Z</i>=(<i>a</i>,<i>b</i>,0), pies de las 
+  bisectrices interiores de los &aacute;ngulos <i>B</i> y <i>C</i>. </P>
+<P>De forma parecida, las igualdades <i>y</i> = <i>z</i> + <i>x</i>, <i> z</i> 
+  =<i>x</i> + <i>y</i> se cumplir&aacute;n cuando el punto <i>M</i> est&eacute; 
+  en otra de las rectas que unen los pies de las bisectrices, en la figura las 
+  rectas <i>ZX</i> y <i>XY</i>.</P>
+<P>La condici&oacute;n del apartado <i>a</i>) se cumplir&aacute; cuando <i>M</i> 
+  sea un punto interior al tri&aacute;ngulo <i>XYZ</i>. </P>
+<P>Teniendo entonces que <i>X</i>=(0:<i>b</i>:<i>c</i>), <i>Y</i>=(<i>a</i>:0:<i>c</i>), 
+  <i>Z=</i>(<i>a</i>:<i>b</i>:0) probabilidad <i>p</i> pedida en el apartado <i>a</i>) 
+  se obtendr&aacute; como el cociente de las &aacute;reas (<i>XYZ</i>)/(<i>ABC</i>):</P>
+<P align="center"><img src="ecuacion1.gif" width="425" height="74"> </P>
+<P align="left"><i>b</i>) Usando el teorema del coseno, para que todos los &aacute;ngulos 
+  sean agudos debe ser </P>
+<blockquote> 
+  <p><i>x</i><sup>2</sup> &lt; <i>y</i><sup>2</sup> + <i>z</i><sup>2</sup>, <i>&nbsp;y</i><sup>2</sup> &lt; <i>z</i><sup>2</sup> 
+    + <i>x</i><sup>2</sup>, <i>&nbsp;z</i><sup>2</sup> &lt; <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup>. </p>
+</blockquote>
+<p>Razonando como antes, estas condiciones equivalen a </p>
+<p><i>u</i><sup>2</sup> /<i>a</i><sup>2</sup> &lt; <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup> 
+  + <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup>, <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup> 
+  &lt; <i>u</i><sup>2</sup>/<i>a</i><sup>2</sup> + <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup>, 
+  <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup> &lt; <i>u</i><sup>2</sup> /<i>a</i><sup>2</sup> 
+  + <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup>. </p>
+<p>Las ecuaciones <i>u</i><sup>2</sup> /<i>a</i><sup>2</sup> = <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup> 
+  + <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup>, <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup> 
+  = <i>u</i><sup>2</sup>/<i>a</i><sup>2</sup> + <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup>, 
+  <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup> = <i>u</i><sup>2</sup> /<i>a</i><sup>2</sup> 
+  + <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup> representan c&oacute;nicas. </p>
+<p>Para representar con Cabri la c&oacute;nica <i>u</i><sup>2</sup> /<i>a</i><sup>2</sup> 
+  = <i>v</i><sup>2</sup>/<i>b</i><sup>2</sup> + <i>w</i><sup>2</sup>/<i>c</i><sup>2</sup><i> 
+  </i>necesitamos cinco puntos. Es f&aacute;cil darse cuenta que los puntos <img src="295b.jpg" width="575" height="327" align="right"><i>Y</i>=(<i>a</i>:0:<i>c</i>), 
+  <i>Z</i> = (<i>a</i>:<i>b</i>:0) y sus correspondientes conjugados <i>Y'</i> 
+  =(<i>-a</i>:0:<i>c</i>), <i>Z'</i> = (<i>-a</i>:<i>b</i>:0) pertenecen a la 
+  c&oacute;nica. Necesitamos un quinto punto, por ejemplo <i>W</i>=(sqrt(2)<i>a</i>:<i>b</i>:<i>c</i>). 
+  Para representarlo tenemos en cuenta que la recta <i>AW</i> cortar&aacute; a 
+  <i>BC</i> en el punto (0:<i>b</i>:<i>c</i>), por lo que ser&aacute; la bisectriz 
+  interior del &aacute;ngulo <i>A</i>. Adem&aacute;s, la recta <i>CW</i> cortar&aacute; 
+  a la recta <i>AB</i> en el punto (sqrt(2)<i>a</i>:<i>b</i>:0), punto que dividir&aacute; 
+  al lado <i>CA</i> en la proporci&oacute;n b:sqrt(2)a, hecho que aprovechamos 
+  para realizar la construcci&oacute;n.</p>
+<p>En efecto, construimos un cuadrado sobre el lado <i>BC</i> y prolongamos el 
+  segmento <i>AC</i> hasta un punto <i>T</i> con la longitud de la diagonal de 
+  este cuadrado. Ahora unimos el extremo <i>T</i> obtenido con <i>B</i> y trazamos 
+  una paralela por <i>C</i>, que corta a <i>AB</i> en el punto buscado. De hecho 
+  no nos tenemos que preocupar de ese punto, pues el punto <i>W</i> que necesitamos 
+  se obtiene como intersecci&oacute;n de la paralela trazada por <i>B</i> con 
+  la bisectriz interior del &aacute;ngulo <i>A</i>. </p>
+<p>Repitiendo la construcci&oacute;n para los otros v&eacute;rtices obtenemos 
+  tres c&oacute;nicas que determinan un tri&aacute;ngulo curvilineo interior al 
+  tri&aacute;ngulo <i>XYZ</i>. Habr&aacute; que determinar el &aacute;rea de ese 
+  tri&aacute;ngulo curvil&iacute;neo.</p>
+<p align="center"><applet codebase="../" archive="CabriJava.jar" 
+code="CabriJava.class"
+width=600 height=480 align="middle">
+    <param name=file value="295iic.fig">
+    <param name=lang value="es">
+    <param name=border value=0>
+    <param name=bgcolor value=#FFFFCC>
+    <param name=controller value=true>
+  </applet></p>
+</BODY></HTML>

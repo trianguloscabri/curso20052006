@@ -1,0 +1,78 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri292</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema 292 de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=16><img src="pro292.gif" width="774" height="121"></TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=16> 
+      <DIV align=right> 
+        <P><FONT size=-1>Propuesto por Juan Bosco Romero M&aacute;rquez</FONT></P>
+      </DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><FONT face="Verdana, Arial, Helvetica, sans-serif"><I>Solución de <A 
+href="http://garciacapitan.auna.com/">Francisco Javier García Capitán</A></I> 
+<BR></FONT></P>
+<P>Usaremos el <a href="http://garciacapitan.auna.com/bella/htm/ceva.htm">teorema 
+  de Ceva</a>, que precisamente da una condici&oacute;n necesaria y suficiente 
+  para que tres cevianas de un tri&aacute;ngulo sean concurrentes. </P>
+<P>Necesitamos una expresi&oacute;n de cada uno de los cocientes <img src="ecuacion2.gif" width="64" height="18" align="absmiddle">, 
+  <img src="ecuacion3.gif" width="61" height="18" align="absmiddle"> y <img src="ecuacion4.gif" width="66" height="18" align="absmiddle"></P>
+<P>Para la altura tenemos, por definici&oacute;n de coseno, <i><img src="ecuacion1.gif" width="178" height="18" align="absmiddle"></i></P>
+<P>Para la mediana tenemos, por ser <i>B'</i> el punto medio, <img src="ecuacion5.gif" width="185" height="21" align="absmiddle"></P>
+<P>Para las bisectrices tenemos, por el teorema de la bisectriz, <img src="ecuacion6.gif" width="129" height="21" align="absmiddle"></P>
+<P>Entonces, seg&uacute;n el teorema de Ceva, tendremos que la condici&oacute;n 
+  del problema es equivalente a </P>
+<P align="center"><img src="ecuacion7.gif" width="330" height="41"></P>
+<P>Usando el teorema de los senos y la relaci&oacute;n anterior, podemos obtener 
+  finalmente que </P>
+<P align="center"><img src="ecuacion8.gif" width="321" height="61"></P>
+<P align="left">Todos los pasos dados en el proceso son reversibles, por lo que 
+  la cuesti&oacute;n planteada por el problema queda resuelta. </P>
+<P align="left">Podemos plantearnos, &iquest;como son los tri&aacute;ngulos que 
+  cumplen esta condici&oacute;n? Escrib&aacute;mosla en la forma</P>
+<P align="center"><img src="ecuacion9.gif" width="273" height="44"></P>
+<P>Sustituyamos la en cada caso usando el teorema del coseno y preguntemos a <i>Mathematica</i> 
+  como queda la cosa:</P>
+<P><img src="math1.jpg" width="660" height="100"></P>
+<P><img src="287i.jpg" width="339" height="224" align="right">Como era de esperar, 
+  las f&oacute;rmula no tiene sentido cuando el tri&aacute;ngulo es rect&aacute;ngulo 
+  en <i>B</i> o <i>C</i>: el denominador se anula. Veamos para que tri&aacute;ngulos 
+  se cumple el enunciado. Para ello, como ya hemos hecho en otras ocasiones, fijamos 
+  el lado <i>BC</i> del tri&aacute;ngulo y dejamos variable el v&eacute;rtice 
+  <i>A</i>. Hallemos los v&eacute;rtices <i>A </i>correspondientes a los tri&aacute;ngulos 
+  que anulan el primero de los dos par&eacute;ntesis del numerador. El lector 
+  podr&aacute; comprobar que procediendo de forma parecida con los del segundo 
+  par&eacute;ntesis no se obtienen soluciones. </P>
+<P><img src="math2.jpg" width="392" height="144"></P>
+<P>No resulta complicado obtener una expresi&oacute;n expl&iacute;cita de <i>y</i> 
+  en funci&oacute;n de <i>x</i>:</P>
+<P><img src="math3.jpg" width="350" height="67"></P>
+<P>Ahora representamos <i>y </i>como funci&oacute;n de <i>x</i>:</P>
+<P><img src="math5.jpg" width="428" height="42"></P>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="math4.jpg" width="288" height="659"></td>
+    <td><img src="anim.gif" width="400" height="533"></td>
+  </tr>
+</table>
+<p>El siguiente applet muestra los tri&aacute;ngulos cumpliendo la propiedad:</p>
+<P align="center"><applet codebase="../" archive="CabriJava.jar" 
+code="CabriJava.class"
+width=600 height=480 align="middle">
+    <param name=file value="292ii.fig">
+    <param name=lang value="es">
+    <param name=border value=0>
+    <param name=bgcolor value=#FFFFCC>
+    <param name=controller value=true>
+  </applet></P>
+<P align="center"><a href="292ii.fig">Figura 292ii.fig</a></P>
+</BODY></HTML>

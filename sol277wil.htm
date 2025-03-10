@@ -1,0 +1,210 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="sol277wil_archivos/filelist.xml">
+<link rel=Edit-Time-Data href="sol277wil_archivos/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>[1] Sea A* un punto interior de BC en el triángulo ABC</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>william rodriguez chamache</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Javi</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>20</o:TotalTime>
+  <o:Created>2005-10-22T16:44:00Z</o:Created>
+  <o:LastSaved>2005-10-22T16:44:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>128</o:Words>
+  <o:Characters>704</o:Characters>
+  <o:Company>nucleo</o:Company>
+  <o:Lines>5</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>831</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:windowtext;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	color:black;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ES style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p>Problema 277[1] Sea A* un punto interior de BC en el triángulo ABC. </p>
+
+<p>Las bisectrices interiores de loa ángulos BA*A y CA*A intersecan a AB y a AC
+en D y E respectivamente.</p>
+
+<p>Demostrar que AA*, BE y CD son concurrentes.</p>
+
+<p>Hasta aquí lo publicado en <span class=SpellE>Crux</span> y en <span
+class=SpellE>Yiu</span>.</p>
+
+<p>Solución de William Rodríguez <span class=SpellE>Chamache</span>, Proyecto
+geometría interactiva (Perú)</p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p>De acuerdo a nuestra gráfica para que los segmentos AA*, BE y CD sean
+concurrentes se debe<span style='mso-spacerun:yes'>  </span>de cumplir que el
+producto de los segmentos <span class=SpellE>AD.BA</span>*.CE=<span
+class=SpellE>BD<span class=GramE>:CA</span></span>*AE</p>
+
+<p><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:258pt;
+ height:230.25pt'>
+ <v:imagedata src="sol277wil_archivos/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=344 height=307
+src="sol277wil_archivos/image002.jpg" v:shapes="_x0000_i1025"><![endif]></p>
+
+<p>Como A*E es bisectriz del ángulo AA*E se cumple que:</p>
+
+<p>AE=<span class=GramE>a ,</span> EC=b entonces AA*=<span class=SpellE>ak</span>
+y A*C=<span class=SpellE>bk</span></p>
+
+<p>Además como A*D es bisectriz de BA*A en el triángulo BA*A se cumple.</p>
+
+<p><span style='mso-spacerun:yes'> </span>Si<span class=GramE>:<span
+style='mso-spacerun:yes'>  </span>BA</span>*=c y AA*=<span class=SpellE>ak</span>
+entonces BD=<span class=SpellE>cm</span> y AD=<span class=SpellE>akm</span></p>
+
+<p>Finalmente observamos que la relación <span class=SpellE>AD.BA</span>*.CE=<span
+class=SpellE>BD<span class=GramE>:CA</span></span>*AE si cumple por lo tanto los
+segmentos AA*, BE y CD son concurrentes </p>
+
+<p><!--[if gte vml 1]><v:shape id="_x0000_i1026" type="#_x0000_t75" style='width:239.25pt;
+ height:198pt'>
+ <v:imagedata src="sol277wil_archivos/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=319 height=264
+src="sol277wil_archivos/image004.jpg" v:shapes="_x0000_i1026"><![endif]></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

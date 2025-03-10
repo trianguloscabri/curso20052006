@@ -1,0 +1,153 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      3259,        102]*)
+(*NotebookOutlinePosition[      3949,        126]*)
+(*  CellTagsIndexPosition[      3905,        122]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\(<< Baricentricas`;\)\)], "Input"],
+
+Cell["\<\
+Si un tri\[AAcute]ngulo equil\[AAcute]tero est\[AAcute] inscrito en una \
+circunferencia,la suma de los cuadrados de los segementos que unen cualquier \
+punto de la circunferencia a los tres v\[EAcute]rtices del tri\[AAcute]ngulo \
+es constante.\
+\>", "Text"],
+
+Cell[TextData[StyleBox["Brockway, G.E.(1895): American Mathematical \
+Monthly,(Volumen II,May) p.158",
+  FontSize->12]], "Text",
+  TextAlignment->Right],
+
+Cell[BoxData[
+    \(\(Punto[\[Alpha]_]\  := \ {R\ Cos[\[Alpha]], 
+          R\ Sin[\[Alpha]]};\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(CuadradoDistancia[{x1_, y1_}, {x2_, 
+            y2_}] := \((x1 - x2)\)\^2 + \((y1 - y2)\)\^2;\)\)], "Input"],
+
+Cell[BoxData[{
+    \(ptA = Punto[0]; ptB = Punto[\(2  \[Pi]\)\/3]; 
+    ptC = Punto[\(4  \[Pi]\)\/3];\), "\[IndentingNewLine]", 
+    \(\(ptP = Punto[\[Theta]];\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(suma = 
+      CuadradoDistancia[ptP, ptA] + \[IndentingNewLine]CuadradoDistancia[ptP, 
+          ptB] + \[IndentingNewLine]CuadradoDistancia[ptP, ptC]\)], "Input"],
+
+Cell[BoxData[
+    \(\((\(-R\) + R\ Cos[\[Theta]])\)\^2 + 
+      2\ \((R\/2 + R\ Cos[\[Theta]])\)\^2 + 
+      R\^2\ Sin[\[Theta]]\^2 + \((\(-\(\(\@3\ R\)\/2\)\) + R\ \
+Sin[\[Theta]])\)\^2 + \((\(\@3\ R\)\/2 + R\ Sin[\[Theta]])\)\^2\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[suma]\)], "Input"],
+
+Cell[BoxData[
+    \(6\ R\^2\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 800}, {0, 527}},
+WindowSize->{792, 500},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+CellLabelAutoDelete->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 55, 1, 30, "Input"],
+Cell[1812, 54, 269, 5, 52, "Text"],
+Cell[2084, 61, 152, 3, 33, "Text"],
+Cell[2239, 66, 109, 2, 30, "Input"],
+Cell[2351, 70, 131, 2, 30, "Input"],
+Cell[2485, 74, 175, 3, 63, "Input"],
+
+Cell[CellGroupData[{
+Cell[2685, 81, 183, 3, 70, "Input"],
+Cell[2871, 86, 244, 4, 53, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3152, 95, 47, 1, 30, "Input"],
+Cell[3202, 98, 41, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

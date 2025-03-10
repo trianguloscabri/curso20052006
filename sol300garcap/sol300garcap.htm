@@ -1,0 +1,139 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri300</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema <font color="#FF0000">300</font> de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=168 bgcolor="#FFFF99"> 
+      <p align=justify>Consideremos el triángulo <i>ABC</i> y las cevianas arbitrarias 
+        <i>AA'</i>, <i>BB'</i> y <i>CC'</i>, desde los vértices <i>A</i>, <i>B</i> 
+        y <i>C</i>,&nbsp; a los lados <i>BC</i>, <i>AC</i> y <i>AB</i>, respectivamente. 
+        Sobre la ceviana <i>AA'</i> (lo mismo para las demás), hacemos la siguiente 
+        construcción: <br>
+        1) Desde <i>A'</i>,&nbsp; llevamos a su derecha e izquierda, la misma 
+        cantidad fija <font face="Symbol">-</font>pueden ser distintas, para <i>B'</i> 
+        y <i>C'</i><font face="Symbol">-</font> para obtener <br>
+        sobre el lado <i>BC</i>, los puntos <i>A'</i>(<i>B</i>) y <i>A'</i>(<i>C</i>). 
+        <br>
+        2) Por <i>A</i> trazamos la paralela a <i>BC</i>, y por <i>A'</i>(<i>B</i>) 
+        y <i>A'</i>(<i>C</i>) las paralelas a <i>AA'</i>. De esta forma obtenemos 
+        el paralelogramo <i>A'</i>(<i>C</i>)<i>A'</i>(<i>B</i>)<i>A*</i>(<i>B</i>)<i>A*</i>(<i>C</i>), 
+        y los similares, para <i>BB'</i> y <i>CC'</i>, respectivamente.<br>
+        3) Definimos los puntos <i>X</i>(<i>A</i>) =<i>BA*</i>(<i>C</i>) <font face="Symbol">&Ccedil;</font> 
+        <i>AC</i>, <i>Y</i>(<i>A</i>)=&nbsp;<i>CA*</i>(<i>B</i>) <font face="Symbol">&Ccedil;</font> 
+        <i>AB</i>, y, lo mismo <i>X</i>(<i>B</i>), <i>Y</i>(<i>B</i>), <i>X</i>(<i>C</i>), 
+        <i>Y</i>(<i>C</i>), para los otros dos vértices. <br>
+        4) Construimos los puntos <i>P</i> = <i>BA*</i>(<i>C</i>) <font face="Symbol">&Ccedil;</font> 
+        <i>CA*</i>(<i>B</i>),&nbsp; <i>Q</i>=<i>CB*</i>(<i>A</i>) <font face="Symbol">&Ccedil;</font><i>AB*</i>(<i>C</i>) 
+        y <i>R</i>=<i>AC*</i>(<i>B</i>) <font face="Symbol">&Ccedil;</font><i>BC*</i>(<i>A</i>).<br>
+        5) Construimos los puntos <i>U</i> = <i>X</i>(<i>B</i>)<i>Y</i>(<i>B</i>) 
+        <font face="Symbol">&Ccedil;</font> <i>X</i>(<i>C</i>)<i>Y</i>(<i>C</i>), 
+        <i>V</i> = <i>X</i>(<i>C</i>)<i>Y</i>(<i>C</i>) <font face="Symbol">&Ccedil;</font> 
+        <i>X</i>(<i>A</i>)<i>Y</i>(<i>A</i>), W = <i>X</i>(<i>A</i>)<i>Y</i>(<i>A</i>) 
+        <font face="Symbol">&Ccedil;</font> <i>X</i>(<i>B</i>)<i>Y</i>(<i>B</i>).</p>
+      <p>Se pide: <br>
+        <br>
+        a) Demostrar que los puntos <i>P</i>, <i>Q</i>, <i>R</i> están en las 
+        medianas correspondientes a los vértices, <i>A</i>, <i>B</i> y <i>C</i>. 
+        <br>
+        b) Hallar los lugares geométricos de los puntos <i>P</i>, <i>Q</i>, <i>R</i> 
+        cuando <i>A'</i> , <i>B'</i>, y <i>C'</i> recorren los lados <i>BC</i>, 
+        <i>AC</i> y <i>AB</i>.<br>
+        c) Demostrar que el triángulo <i>UVW</i> es homotético al triángulo <i>ABC</i>. 
+        Calcular el centro y la razón de la homotecia. </p>
+    </TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=9> 
+      <DIV align=right> <font size="-1">Propuesto por Juan Bosco Romero M&aacute;rquez.</font></DIV>
+    </TD>
+  </TR>
+  <TR> 
+    <TD height=9><font size="-1">Nota: Por conveniencia, he reordenado la definici&oacute;n 
+      de los puntos <i>P</i>, <i>Q</i>, <i>R</i> y tambi&eacute;n la de los puntos 
+      <i>U</i>, <i>V</i>, <i>W</i>.</font></TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><font face="Arial, Helvetica, sans-serif">Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a></font></P>
+<table width="35%" border="0" align="right">
+  <tr> 
+    <td width="43%"><img src="imgs/300.jpg" width="380" height="225"></td>
+  </tr>
+</table>
+<div align="left">
+  <p>En la figura vemos la construcci&oacute;n correspondiente a la ceviana <i>AA'</i>. 
+    Como es habitual, el color azul representa los puntos que se consideran libres, 
+    en negro los que se obtienen a partir de ellos, destac&aacute;ndose en rojo 
+    los puntos finales de la construcci&oacute;n.</p>
+  <p>A la hora de traducir el enunciado a coordenadas baric&eacute;ntricas el 
+    punto m&aacute;s complicado parece ser el de introducir o calcular los puntos 
+    <i>A'</i>(<i>B</i>) y <i>A'</i>(<i>C</i>), donde quiz&aacute;s haya que usar 
+    la complicada f&oacute;rmula de la distancia entre dos puntos en coordenadas 
+    baric&eacute;ntricas. </p>
+  <p align="left">Sin embargo bastar&aacute; considerar que uno de ellos es un 
+    punto cualquiera de la recta <i>BC</i> y hallar el otro como su sim&eacute;trico 
+    respecto del punto <i>A'</i>, que har&aacute; los c&aacute;lculos m&aacute;s 
+    sencillos. Para este punto recordemos que, en general, si <i>S'</i> es el 
+    sim&eacute;trico de <i>S</i> respecto de un punto <i>H</i>, entonces <i>S'</i> 
+    divide al segmento <i>HS</i> en la raz&oacute;n 2:<font face="Symbol">-</font>1.</p>
+  <p align="center">&nbsp;</p>
+  <div align="center">
+    <table width="90%" border="0" bgcolor="#CCFFCC">
+      <tr> 
+        <td height="840"> 
+          <p>Vamos a usar coordenadas baric&eacute;ntricas, as&iacute; que usamos 
+            el cuaderno Baricentricas.nb.</p>
+          <p><img src="imgs/img01.jpg" alt="&lt;&lt;Baricentricas` ;"  width="128" height="18"  style="vertical-align:middle" /></p>
+          <p>Introduciomos los puntos <i>A'</i>, <i>B'</i>, <i>C'</i> como puntos 
+            arbitrarios de la rectas <i>BC</i>, <i>CA</i>, <i>AB</i>:</p>
+          <p><img src="imgs/img02.jpg" width="145" height="58"> </p>
+          <p>Hacemos lo mismo con los puntos <i>A'</i>(<i>C</i>), <i>B'</i>(<i>A</i>), 
+            <i>C'</i>(<i>B</i>)</p>
+          <p><img src="imgs/img03.jpg" width="155" height="58"></p>
+          <p>Calculamos los puntos <i>A'</i>(<i>B</i>), <i>B'</i>(<i>C</i>), <i>C'</i>(<i>A</i>) 
+            como los sim&eacute;tricos de <i>A'</i>(<i>C</i>), <i>B'</i>(<i>A</i>), 
+            <i>C'</i>(<i>B</i>) respecto de <i>A'</i>, <i>B'</i>, <i>C'</i>.</p>
+          <p><img src="imgs/img04.jpg" width="284" height="58"></p>
+          <p>Hamos los <i>puntos estrella</i>, v&eacute;rtices de los paralelogramos.</p>
+          <p><img src="imgs/img05.jpg" width="459" height="118"></p>
+          <p>Seguimos hallando puntos ...</p>
+          <p><img src="imgs/img06.jpg" width="262" height="118"></p>
+          <p>y m&aacute;s puntos ...</p>
+          <p><img src="imgs/img07.jpg" width="346" height="58"></p>
+          <p>y finalmente otros tres m&aacute;s:</p>
+          <p><img src="imgs/img08.jpg" width="347" height="58"></p>
+          <p><i>a</i>) Ahora comprobamos que <i>P</i>, <i>Q</i>, <i>R</i> están 
+            en las medianas correspondientes a los vértices, <i>A</i>, <i>B</i> 
+            y <i>C</i>. Para ello, hallamos en cada caso el determinante formado 
+            por uno de los puntos <i>P</i>, <i>Q</i>, <i>R</i> y los extremos 
+            de la mediana correspondiente. Al anularse el determinante, los puntos 
+            est&aacute;n alineados.</p>
+          <p><img src="imgs/img09.jpg" width="301" height="85"></p>
+          <p><i>b</i>) Entonces los lugares geom&eacute;tricos de los puntos <i>P</i>, 
+            <i>Q</i> y <i>R</i> ser&aacute;n las medianas del tri&aacute;ngulo 
+            <i>ABC</i>. </p>
+          <p>c) Demostrar que el triángulo <i>UVW</i> es homotético al triángulo 
+            <i>ABC</i>. Calcular el centro y la razón de la homotecia. </p>
+          <p>Podemos comprobar la homotecia teniendo en cuenta que los lados hom&oacute;logos 
+            <i>BC</i>, <i>CA</i>, <i>AB</i> y <i>VW</i>, <i>WU</i> y <i>UV</i> 
+            son paralelos. </p>
+          <p><img src="imgs/img10.jpg" width="294" height="85"></p>
+          <p>Vemos en efecto que las tres rectas se cortan en puntos del infinito 
+            (sus coordenadas suman 0), as&iacute; que son paralelas. El centro 
+            de homotecia es</p>
+          <p><img src="imgs/img12.jpg" width="541" height="45"></p>
+          <p>y lo podemos expresar as&iacute;:</p>
+          <p><img src="imgs/img13.jpg" width="243" height="32"></p>
+          <p>El cuadrado de la raz&oacute;n de homotecia es </p>
+          <p><img src="imgs/img11.jpg" width="568" height="65"></p>
+          </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</BODY></HTML>

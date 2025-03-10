@@ -1,0 +1,56 @@
+FIGURE CabriII vers. MS-Windows 1.0
+
+Window center x: 0 y: 0 Window size x: 16.271875 y: 9.49854166666667
+
+1: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Val: 0 0
+
+2: Axes, 1, CN:1, VN:3
+Gr, W, t, DS:1 1, GT:0, I, nSt
+Const: 1, Val: 1 0, 0 1
+
+"O", NP: -87, 33, NS: 12, 18
+3: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Val: -2.40770833333333 -0.899583333333333
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"X", NP: 68, -67, NS: 11, 18
+4: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Val: 1.85208333333333 1.74625
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"Y", NP: 116, 94, NS: 12, 18
+5: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Val: 3.14854166666667 -2.54
+p: 0, System, S: 0 C: 3 Fa: 0
+
+6: Tr, 0, CN:3, VN:0
+V, W, t, DS:1 1, GT:0, V, nSt
+Const: 3 4 5
+
+"Z", NP: 96, 15, NS: 11, 18
+7: Mid, 1, CN:1, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 6
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"T", NP: 14, 67, NS: 10, 18
+8: Mid, 2, CN:1, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 6
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"W", NP: -7, -14, NS: 16, 18
+9: Mid, 0, CN:1, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 6
+p: 0, System, S: 0 C: 3 Fa: 0
+
+10: Pol, 0, CN:4, VN:0
+V, W, tT, DS:1 1, GT:0, V, nSt
+Const: 3 9 7 8
+

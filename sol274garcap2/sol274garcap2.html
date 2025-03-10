@@ -1,0 +1,72 @@
+
+<body bgcolor="#FFFFFF">
+<h1>Problema 274 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0">
+  <tr> 
+    <td bgcolor="#FFFF99">Sea <i>X</i> un punto arbitrario del tri&aacute;ngulo 
+      <i>ABC</i>. Construimos los puntos <i>C'</i>, <i>B'</i>, <i>A'</i> como 
+      los centros de gravedad de los tri&aacute;ngulos <i>ABX</i>,&nbsp;&nbsp;<i>AXC</i> 
+      y <i>BXC</i>. Sea <i>X*</i> el punto de intersecci&oacute;n de las rectas 
+      <i>AA'</i>, <i>BB'</i>, y <i>CC'</i>.<br />
+      Se pide :<br />
+      a) El tri&aacute;ngulo <i>A'B'C'</i> es homot&eacute;tico al tri&aacute;ngulo 
+      <i>ABC</i>, Calcular el centro y la raz&oacute;n de la homotecia.<br />
+      b) Si <i>G</i> y <i>G' </i>son los centros de gravedad de los tri&aacute;ngulos 
+      <i>ABC</i>, y <i>A'B'C'</i>, respectivamente, probar que los puntos <i>G</i>, 
+      <i>G'</i>, <i>X</i> y <i>X*</i> son colineales y calcular su raz&oacute;n 
+      doble. </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="right"><font size="-1">Romero, J.B.(2005): Comunicaci&oacute;n 
+        personal </font></div>
+    </td>
+  </tr>
+</table>
+<p>(Segunda) soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a>. </p>
+<p><font size="-1"><img src="274.jpg" width="433" height="329" align="right">Esta 
+  soluci&oacute;n usa el concepto de <i>centro de gravedad</i> o <i>centro de 
+  masas</i> de un sistema de puntos. Para una excelente introducci&oacute;n a 
+  este tema ver el trabajo de Thomas Rike: <a href="http://mathcircle.berkeley.edu/mpgeo.pdf">Mass 
+  Point Geometry</a>. Este tema est&aacute; &iacute;ntimamente con las coordenadas 
+  baric&eacute;ntricas, fundamento de mi <a href="sol/sol274garcap/sol274garcap.html">otra 
+  soluci&oacute;n</a> a este problema, aunque usando este concepto la soluci&oacute;n 
+  es m&aacute;s simple.</font></p>
+<p>Sea <i>X</i> un punto cualquiera. Asignando peso 1 a cada uno de los puntos 
+  <i>A</i>, <i>B</i>, <i>C</i>, <i>X</i> y consider&aacute;ndolos por ternas tenemos 
+  las relaciones <i>A</i> + <i>B</i> + <i>C</i> = 3<i>G</i>, <i>A</i> + <i>B</i> 
+  + <i>X</i> = 3<i>C'</i>, <i>C</i> + <i>A</i> + <i>X</i> = 3<i>B'</i>, <i>B</i> 
+  + <i>C</i> + <i>X</i> = 3<i>A'</i>. Tambi&eacute;n, asignando peso 1 a <i>A'</i>, 
+  <i>B'</i>, <i>C'</i>, tenemos <i>A'</i> + <i>B'</i> + <i>C'</i> = 3<i>G'</i>.</p>
+<p>Entonces <i>A</i> + 3<i>A'</i> = <i>A</i> + (<i>B</i> + <i>C</i> + <i>X</i>) 
+  = (<i>A</i> + <i>B</i> + <i>C</i>) + <i>X</i> = 3<i>G</i> + <i>X</i>. De forma 
+  an&aacute;loga, tambi&eacute;n <i>B</i> + 3<i>B'</i> = <i>C</i> + 3<i>C'</i> 
+  = 3<i>G</i> + <i>X</i>. Olvid&eacute;monos de de la definici&oacute;n de <i>X*</i> 
+  en el enunciado y consideramos que <i>X*</i> es el punto del segmento <i>GX</i> 
+  tal que <i>GX*</i> : <i>X*X</i> = 1:3. Es decir, 4<i>X*</i> = 3<i>G</i> + <i>X</i>. 
+  Entonces, el punto <i>X*</i> pertenecer&aacute; efectivamente, tal como afirma 
+  el enunciado, a las rectas <i>AA'</i>, <i>BB'</i> y <i>CC'</i> siendo adem&aacute;s 
+  <i>A</i> + 3<i>A'</i> = <i>B</i> + 3<i>B'</i> = <i>C</i> + 3<i>C'</i> = 4<i>X*</i>. 
+  Expresado de otra forma, tendremos <i>AX*</i> : <i>X*A'</i> = <i>BX*</i> : <i>X*B'</i> 
+  = <i>CX*</i> : <i>X*C'</i> = 3:1, y cambiando el orden de los puntos,</p>
+<p align="center"><i>X*A'</i> : <i>X*A</i> = <i>X*B'</i> : <i>X*B</i> = <i>X*C'</i> 
+  : <i>X*C</i> = -1/3.</p>
+<p></p>
+<p align="center"><img src="274-2.jpg" width="228" height="67"></p>
+<p>Deducimos que <b><font color="#0000FF">el tri&aacute;ngulo <i>A'B'C'</i> es 
+  homot&eacute;tico al tri&aacute;ngulo <i>ABC</i> con centro X* y raz&oacute;n 
+  de homotecia -1/3</font></b>. </p>
+<p>Ahora, considerando que 4<i>X*</i> = 3G + X y que </p>
+<p align="center"><img src="ecuacion3.gif" width="310" height="93"></p>
+<p>deducimos no s&oacute;lo que <i><font color="#0000FF"><b>G</b></font></i><b><font color="#0000FF">, 
+  <i>G'</i>, <i>X</i> y <i>X*</i> est&aacute;n alineados</font></b>, sino tambi&eacute;n 
+  cu&aacute;l es la ubicaci&oacute;n exacta de unos respecto de otros. </p>
+<p>En efecto, tenemos <i>GG'</i> : <i>G'X</i> = 3:6 = 1:2 y <i>GX*</i> : <i>X*X</i> 
+  =1:3. Por tanto, los puntos quedar&iacute;an as&iacute; a lo largo de la recta:</p>
+<p align="center"><img src="274-3.jpg" width="366" height="78"></p>
+<p align="left">Entonces <b><font color="#0000FF">la raz&oacute;n doble</font></b> 
+  pedida es <img src="ecuacion4.gif" width="257" height="44" align="absmiddle"></p>
+</body>
+</html>
+

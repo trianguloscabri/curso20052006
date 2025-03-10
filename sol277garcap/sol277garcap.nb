@@ -1,0 +1,1738 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     61275,       1585]*)
+(*NotebookOutlinePosition[     62085,       1613]*)
+(*  CellTagsIndexPosition[     62041,       1609]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[TextData[{
+  "Problema 277 de ",
+  StyleBox["trianguloscabri",
+    FontSlant->"Italic"]
+}], "Title"],
+
+Cell["\<\
+[1] (Juan Bosco Romero) Sea A* un punto interior de BC en el \
+tri\[AAcute]ngulo ABC. Las bisectrices interiores de loa \[AAcute]ngulos BA*A \
+y CA*A intersecan a AB y a AC en D y E respectivamente. Demostrar que AA*, BE \
+y CD son concurrentes.
+[2] (Loeffer) Lugar geom\[EAcute]trico del punto de concurrencia si ABC es \
+equil\[AAcute]tero. 
+[3] (J.B. Romero) Lugar geom\[EAcute]trico de los baricentros, circuncentros, \
+ortocentros e incentros de los tri\[AAcute]ngulos A*ED, rect\[AAcute]ngulos \
+en A*, cuando A* varia sobre BC. \
+\>", "Subsubtitle",
+  Background->RGBColor[1, 1, 0.501961]],
+
+Cell["Propuesto por Juan Bosco Romero M\[AAcute]rquez.", "Text",
+  TextAlignment->Right],
+
+Cell["\<\
+Este documento contiene soluciones para los apartados [2] y [3]\
+\>", "MathCaption"],
+
+Cell["Preliminares", "Subsection",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell["Usaremos coordenadas baric\[EAcute]ntricas:", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[
+    \(\(<< Baricentricas`;\)\)], "Input",
+  CellLabel->"In[2]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Tambi\[EAcute]n representaremos gr\[AAcute]ficas de curvas con ecuaciones \
+impl\[IAcute]citas:\
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[
+    \(\(<< Graphics`ImplicitPlot`;\)\)], "Input",
+  CellLabel->"In[3]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Adem\[AAcute]s definimos una nueva funci\[OAcute]n para calcular las \
+bisectrices del \[AAcute]ngulo formado por dos rectas. \
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[
+    \(BisectrizRectas[{a1_, b1_, c1_}, {a2_, b2_, 
+          c2_}]\  := \((a1\ x + b1\ y + c1\ z)\)\^2/\((SA \((b1 - c1)\)\^2 + 
+              SB \((c1 - a1)\)\^2 + 
+              SC \((a1 - b1)\)\^2)\) - \n\((a2\ x + b2\ y + c2\ z)\)\^2/\((SA \
+\((b2 - c2)\)\^2 + SB \((c2 - a2)\)\^2 + SC \((a2 - b2)\)\^2)\)\)], "Input",
+  CellLabel->"In[4]:="]
+}, Open  ]],
+
+Cell["\<\
+El problema de esta funci\[OAcute]n es que devuelve el producto de las dos \
+ecuaciones correspondientes a las bisectrices interiores y exteriores, y \
+pocas veces es f\[AAcute]cil separarlas. Afortunadamente, en el caso que nos \
+ocupa, no necesitamos expl\[IAcute]citamente las  ecuaciones, s\[OAcute]lo el \
+lugar en que cortan las bisectrices a los lados del tri\[AAcute]ngulo, por lo \
+que los c\[AAcute]lculos se simplificar\[AAcute]n.\
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell["\<\
+[1] (Juan Bosco Romero) Sea A*un punto interior de BC en el tri\[AAcute]ngulo \
+ABC.Las bisectrices interiores de loa \[AAcute]ngulos BA*A y CA*A intersecan \
+a AB y a AC en D y E respectivamente.Demostrar que AA*,BE y CD son \
+concurrentes.\
+\>", "Subsection",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell["Comenzamos introduciendo las coordenadas del punto A*", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[
+    \(\(ptA1 = {0, v, w};\)\)], "Input",
+  CellLabel->"In[5]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ahora hallamos los puntos de intersecci\[OAcute]n D y E.", \
+"Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Solve[{BisectrizRectas[Recta[ptA1, ptA], Recta[ptA1, ptB]] \[Equal] 0, 
+        z \[Equal] 0}, x]\), "\[IndentingNewLine]", 
+    \(Solve[{BisectrizRectas[Recta[ptA1, ptA], Recta[ptA1, ptC]] \[Equal] 0, 
+        y \[Equal] 0}, x]\)}], "Input",
+  CellLabel->"In[6]:="],
+
+Cell[BoxData[
+    \({{x \[Rule] \(-\(\(a\ w\ y\)\/\@\(c\^2\ v\^2 - a\^2\ v\ w + b\^2\ v\ w \
++ c\^2\ v\ w + b\^2\ w\^2\)\)\)}, {x \[Rule] \(a\ w\ y\)\/\@\(c\^2\ v\^2 - \
+a\^2\ v\ w + b\^2\ v\ w + c\^2\ v\ w + b\^2\ w\^2\)}}\)], "Output",
+  CellLabel->"Out[6]="],
+
+Cell[BoxData[
+    \({{x \[Rule] \(-\(\(a\ v\ z\)\/\@\(c\^2\ v\^2 - a\^2\ v\ w + b\^2\ v\ w \
++ c\^2\ v\ w + b\^2\ w\^2\)\)\)}, {x \[Rule] \(a\ v\ z\)\/\@\(c\^2\ v\^2 - \
+a\^2\ v\ w + b\^2\ v\ w + c\^2\ v\ w + b\^2\ w\^2\)}}\)], "Output",
+  CellLabel->"Out[7]="]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Entonces, podemos definir", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[{
+    \(\(ptD = {a\ w, \@\(c\^2\ v\^2 - a\^2\ v\ w + b\^2\ v\ w + c\^2\ v\ w + \
+b\^2\ w\^2\), 0}\ ;\)\ \), "\[IndentingNewLine]", 
+    \(\(ptE = {a\ v, 
+          0, \@\(c\^2\ v\^2 - a\^2\ v\ w + b\^2\ v\ w + c\^2\ v\ w + b\^2\ \
+w\^2\)};\)\)}], "Input",
+  CellLabel->"In[8]:="]
+}, Open  ]],
+
+Cell["Comprobamos que AA*,  BE y CD  est\[AAcute]n alineados.", \
+"Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Det[{Recta[ptA, ptA1], Recta[ptB, ptE], \ Recta[ptC, ptD]}]\)], "Input",\
+
+  CellLabel->"In[10]:="],
+
+Cell[BoxData[
+    \(0\)], "Output",
+  CellLabel->"Out[10]="]
+}, Open  ]],
+
+Cell["\<\
+[2] (Loeffer) Lugar geom\[EAcute]trico del punto de concurrencia si ABC es \
+equil\[AAcute]tero.\
+\>", "Subsection",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell["\<\
+Esta es la soluci\[OAcute]n para el caso general de cualquier \
+tri\[AAcute]ngulo ABC.\
+\>", "MathCaption"],
+
+Cell[CellGroupData[{
+
+Cell["Hallemos el punto de concurrencia P de AA*, BE y CD.", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptP = Punto[Recta[ptA, ptA1], Recta[ptB, ptE]]\)], "Input",
+  CellLabel->"In[11]:="],
+
+Cell[BoxData[
+    \({a\ v\ w, 
+      v\ \@\(c\^2\ v\ \((v + w)\) + w\ \((\(-a\^2\)\ v + b\^2\ \((v + w)\))\)\
+\), w\ \@\(c\^2\ v\ \((v + w)\) + w\ \((\(-a\^2\)\ v + b\^2\ \((v + \
+w)\))\)\)}\)], "Output",
+  CellLabel->"Out[11]="]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Para hallar el lugar geom\[EAcute]trico de P,  despejamos  v, w de las dos \
+\[UAcute]ltimas coordenadas y sustiuimos en la primera:\
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[{y == %[\([2]\)], z == %[\([3]\)]}, {v, w}]\)], "Input",
+  CellLabel->"In[12]:="],
+
+Cell[BoxData[
+    \({{v \[Rule] \(-\(y\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + c\^2\ y\ \
+z + b\^2\ z\^2)\)\^\(1/4\)\)\), 
+        w \[Rule] \(-\(z\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + c\^2\ y\ \
+z + b\^2\ z\^2)\)\^\(1/4\)\)\)}, {v \[Rule] \(-\(\(\[ImaginaryI]\ \
+y\)\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + c\^2\ y\ z + b\^2\ \
+z\^2)\)\^\(1/4\)\)\), 
+        w \[Rule] \(-\(\(\[ImaginaryI]\ z\)\/\((c\^2\ y\^2 - a\^2\ y\ z + \
+b\^2\ y\ z + c\^2\ y\ z + b\^2\ z\^2)\)\^\(1/4\)\)\)}, {v \[Rule] \(\
+\[ImaginaryI]\ y\)\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + c\^2\ y\ z + \
+b\^2\ z\^2)\)\^\(1/4\), 
+        w \[Rule] \(\[ImaginaryI]\ z\)\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ \
+z + c\^2\ y\ z + b\^2\ z\^2)\)\^\(1/4\)}, {v \[Rule] 
+          y\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + c\^2\ y\ z + b\^2\ \
+z\^2)\)\^\(1/4\), 
+        w \[Rule] 
+          z\/\((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + c\^2\ y\ z + b\^2\ \
+z\^2)\)\^\(1/4\)}}\)], "Output",
+  CellLabel->"Out[12]="]
+}, Open  ]],
+
+Cell[GraphicsData["PostScript", "\<\
+%!PS-Adobe-2.0 EPSF-1.2
+%%BoundingBox: 56 9 367 43
+%%HiResBoundingBox: 56 9 366.813 42.1875
+%%Creator: (Mathematica 5.1 for Microsoft Windows)
+%%CreationDate: (Sunday, October 16, 2005) (11:15:15)
+%%Title: Clipboard
+%%DocumentNeededResources: (atend)
+%%DocumentFonts: (atend)
+%%DocumentNeededFonts: (atend)
+%%EndComments
+0 51.1875 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+/WindowsANSIEncoding [
+\t/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+\t/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+\t/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+\t/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+\t/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quotesingle
+\t/parenleft/parenright/asterisk/plus/comma/hyphen/period/slash
+\t/zero/one/two/three/four/five/six/seven
+\t/eight/nine/colon/semicolon/less/equal/greater/question
+\t/at/A/B/C/D/E/F/G
+\t/H/I/J/K/L/M/N/O
+\t/P/Q/R/S/T/U/V/W
+\t/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore
+\t/grave/a/b/c/d/e/f/g
+\t/h/i/j/k/l/m/n/o
+\t/p/q/r/s/t/u/v/w
+\t/x/y/z/braceleft/bar/braceright/asciitilde/.notdef
+\t/.notdef/.notdef/quotesinglbase/florin/quotedblbase/ellipsis/dagger/\
+daggerdbl
+\t/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef/Zcaron/.notdef
+\t/.notdef/quoteleft/quoteright/quotedblleft/quotedblright/bullet/endash/\
+emdash
+\t/tilde/trademark/scaron/guilsinglright/oe/.notdef/zcaron/Ydieresis
+\t/.notdef/exclamdown/cent/sterling/currency/yen/brokenbar/section
+\t/dieresis/copyright/ordfeminine/guillemotleft/logicalnot/hyphen/registered/\
+macron
+\t/degree/plusminus/twosuperior/threesuperior/acute/mu/paragraph/dotaccent
+\t/ogonek/onesuperior/ring/guillemotright/onequarter/onehalf/threequarters/\
+questiondown
+\t/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+\t/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+\t/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/multiply
+\t/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/germandbls
+\t/agrave/aacute/acircumflex/atilde/adieresis/aring/ae/ccedilla
+\t/egrave/eacute/ecircumflex/edieresis/igrave/iacute/icircumflex/idieresis
+\t/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis/divide
+\t/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis
+] def
+/MISOfy
+{
+    /newfontname exch def
+    /oldfontname exch def
+
+    oldfontname findfont
+    dup length dict begin
+        {1 index /FID ne {def} {pop pop} ifelse} forall
+        /Encoding WindowsANSIEncoding def
+        currentdict
+    end
+
+    newfontname exch definefont pop
+} def
+
+
+%%MathematicaCell
+%Cell[BoxData[
+%    RowBox[{
+%      SuperscriptBox[\"x\", \"2\"], \"=\", 
+%      RowBox[{
+%        RowBox[{
+%          SuperscriptBox[\"a\", \"2\"], 
+%          SuperscriptBox[\"v\", \"2\"], 
+%          SuperscriptBox[\"w\", \"2\"]}], \"=\", 
+%        FractionBox[
+%          RowBox[{
+%            SuperscriptBox[\"a\", \"2\"], 
+%            SuperscriptBox[\"y\", \"2\"], 
+%            SuperscriptBox[\"z\", \"2\"]}], 
+%          RowBox[{
+%            RowBox[{
+%              SuperscriptBox[\"c\", \"2\"], \" \", 
+%              SuperscriptBox[\"y\", \"2\"]}], \"-\", 
+%            RowBox[{
+%              SuperscriptBox[\"a\", \"2\"], \" \", \"y\", \" \", \"z\"}], \
+\"+\", 
+%            RowBox[{
+%              SuperscriptBox[\"b\", \"2\"], \" \", \"y\", \" \", \"z\"}], \
+\"+\", 
+%            RowBox[{
+%              SuperscriptBox[\"c\", \"2\"], \" \", \"y\", \" \", \"z\"}], \
+\"+\", 
+%            RowBox[{
+%              SuperscriptBox[\"b\", \"2\"], \" \", 
+%              SuperscriptBox[\"z\", \"2\"]}]}]]}]}]], \"Input\",
+%  ImageSize->{304, 35},
+%  ImageMargins->{{0, 0}, {0, 0}},
+%  ImageRegion->{{0, 1}, {0, 1}}]
+%%EndMathematicaCell
+58.000 28.875 moveto
+/Courier-Bold /Courier-Bold-MISO MISOfy
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(x) show
+65.188 24.313 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+74.688 28.875 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(=) show
+85.500 28.875 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(a) show
+92.688 24.313 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+98.563 28.875 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+( ) show
+101.688 28.875 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(v) show
+108.875 24.313 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+114.750 28.875 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+( ) show
+117.875 28.875 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(w) show
+125.063 24.313 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+134.563 28.875 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(=) show
+232.313 19.688 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(a) show
+239.500 15.625 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+245.375 19.688 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+( ) show
+248.563 19.688 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(y) show
+255.750 15.625 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+261.625 19.688 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+( ) show
+264.750 19.688 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(z) show
+271.938 15.625 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+147.500 28.875 moveto
+(\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\\
+200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\\
+200\\200) show
+231.500 28.875 moveto
+(\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\\
+200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\200\\\
+200\\200) show
+315.500 28.875 moveto
+(\\200\\200\\200\\200\\200\\200\\200\\200) show
+336.500 28.875 moveto
+(\\200\\200\\200\\200\\200\\200\\200\\200) show
+357.500 28.875 moveto
+(\\200) show
+359.813 28.875 moveto
+(\\200) show
+149.125 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(c) show
+156.313 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+165.375 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(y) show
+172.563 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+181.313 38.938 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(-) show
+191.375 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(a) show
+198.563 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+207.625 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(y) show
+217.938 38.938 moveto
+(z) show
+228.000 38.938 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(+) show
+238.250 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(b) show
+245.438 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+254.500 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(y) show
+264.813 38.938 moveto
+(z) show
+274.875 38.938 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(+) show
+284.938 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(c) show
+292.125 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+301.188 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(y) show
+311.500 38.938 moveto
+(z) show
+321.563 38.938 moveto
+/Mathematica1Mono-Bold findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(+) show
+331.813 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(b) show
+339.000 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+348.000 38.938 moveto
+/Courier-Bold-MISO findfont 12.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(z) show
+355.188 35.875 moveto
+/Courier-Bold-MISO findfont 9.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(2) show
+1.000 setlinewidth
+%%Trailer
+%%EOF
+\
+\>"], "Input",
+  Evaluatable->False,
+  ImageSize->{311, 34},
+  ImageMargins->{{0, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004g00008R000`400?l00000o`00003oo`3ooolh
+0?ooo`00o`3ooolh0?ooo`00K@3oool5000002D0oooo1@00000Z0?ooo`D00000:P3oool5000003d0
+oooo001_0?ooo`800000:03oool2000002d0oooo0P00000]0?ooo`800000?P3oool005h0oooo1000
+000=0?ooo`8000005`3oool6000000/0oooo0P0000070?ooo`D00000203oool00`000000oooo0?oo
+o`030?ooo`<0000000<0oooo0000000000003@3oool2000000L0oooo1@0000070?ooo`030000003o
+ool0oooo00D0oooo1000000>0?ooo`8000001`3oool5000000L0oooo00<000000?ooo`3oool00`3o
+ool3000000030?ooo`000000000000d0oooo1@00000=0?ooo`00G@3oool2000000<0oooo00<00000
+0?ooo`3oool02P3oool3000001D0oooo0P0000020?ooo`800000303oool3000000H0oooo0P000002
+0?ooo`030000003oool0oooo00H0oooo00<000000?ooo`3oool0103oool3000000030?ooo`000000
+000000`0oooo0`0000060?ooo`8000000P3oool00`000000oooo0?ooo`050?ooo`030000003oool0
+oooo00@0oooo0P0000030?ooo`030000003oool0oooo00/0oooo0`0000060?ooo`8000000P3oool0
+0`000000oooo0?ooo`050?ooo`030000003oool0oooo00@0oooo0`0000000`3oool000000000000<
+0?ooo`8000000P3oool00`000000oooo0?ooo`0;0?ooo`00G@3oool200000100oooo0`00000<0?oo
+o`D00000103oool200000080oooo0P00000<0?ooo`<000001`3oool2000000P0oooo1@0000040?oo
+o`8000000P3oool2000000`0oooo0`0000070?ooo`8000001`3oool5000000@0oooo0P00000A0?oo
+o`<000001`3oool2000000L0oooo1@0000040?ooo`8000000P3oool2000000d0oooo0P00000?0?oo
+o`00G@3oool2000000D0oooo100000060?ooo`80000000@0oooo000000000000oooo1000000@0?oo
+o`D0000000<0oooo0000000000000P0000060?ooo`80000000<0oooo0000000000001`3oool20000
+00T0oooo00<000000?ooo`3oool0103oool200000080oooo0P0000000`3oool00000000000020000
+00H0oooo0P0000000`3oool00000000000070?ooo`800000203oool00`000000oooo0?ooo`040?oo
+o`8000001P3oool4000000H0oooo0P0000000`3oool00000000000070?ooo`800000203oool00`00
+0000oooo0?ooo`040?ooo`8000000P3oool200000080oooo100000080?ooo`8000000P3oool40000
+00P0oooo001M0?ooo`8000000`3oool010000000oooo0?ooo`0000080?ooo`80000000<0oooo0000
+000000000P3oool00`000000oooo0?ooo`0C0?ooo`8000000P3oool00`000000oooo0?ooo`060?oo
+o`80000000<0oooo0000000000001@3oool00`000000oooo0?ooo`02000000P0oooo00<000000?oo
+o`3oool0103oool3000000030?ooo`00000000000080oooo00<000000?ooo`3oool01P3oool20000
+00030?ooo`000000000000D0oooo00<000000?ooo`3oool00P0000070?ooo`030000003oool0oooo
+00@0oooo0P0000030?ooo`050000003oool0oooo0?ooo`000000203oool2000000030?ooo`000000
+000000D0oooo00<000000?ooo`3oool00P0000070?ooo`030000003oool0oooo00@0oooo0`000000
+0`3oool00000000000030?ooo`030000003oool0oooo00H0oooo00<000000?ooo`3oool00P000002
+0?ooo`030000003oool0oooo00P0oooo001N0?ooo`D000000`3oool00`000000oooo0?ooo`040?oo
+o`<0000000@0oooo00000000000000000P3oool00`000000oooo0?ooo`0?0?ooo`@00000103oool0
+0`000000oooo0?ooo`040?ooo`<0000000@0oooo0000000000000000103oool5000000l0oooo0P00
+00000`3oool00000000000040?ooo`030000003oool0oooo00@0oooo0`000000103oool000000000
+000000040?ooo`D000003`3oool5000000@0oooo00<000000?ooo`3oool0103oool3000000040?oo
+o`0000000000000000@0oooo1@00000>0?ooo`80000000<0oooo0000000000001@3oool00`000000
+oooo0?ooo`050?ooo`D000000`3oool00`000000oooo0?ooo`070?ooo`00I`3oool00`000000oooo
+0?ooo`0=0?ooo`030000003oool0oooo01L0oooo00<000000?ooo`3oool08P3oool2000000P0oooo
+00<000000?ooo`3oool0;03oool00`000000oooo0?ooo`0Q0?ooo`8000002@3oool00`000000oooo
+0?ooo`0=0?ooo`030000003oool0oooo00H0oooo001T0?ooo`040000003oool0oooo000000`0oooo
+00@000000?ooo`3oool000005P3oool010000000oooo0?ooo`00000S0?ooo`<000001@3oool01000
+0000oooo0?ooo`00000[0?ooo`040000003oool0oooo00000280oooo0`0000060?ooo`040000003o
+ool0oooo000000`0oooo00@000000?ooo`3oool00000203oool006D0oooo0P00000>0?ooo`800000
+603oool2000002d0oooo0P00000]0?ooo`800000;@3oool2000000h0oooo0P0000090?ooo`00o`3o
+oolh0?ooo`000P3oool3000000040?ooo`0000000000000001D0oooo1P00000;0?ooo`<00000303o
+ool2000000030?ooo`00000000000?@0oooo00030?ooo`80000000<0oooo0000000000002`3oool5
+000000D0oooo0P0000020?ooo`800000303oool3000000`0oooo0P0000000`3oool000000000000<
+0?ooo`D00000h`3oool000@0oooo0`00000F0?ooo`8000000P3oool2000000`0oooo00<000000?oo
+o`000000303oool2000000030?ooo`000000000001P0ooooe`0000050?ooo`00103oool3000000`0
+oooo1@0000060?ooo`D000002`3oool2000000030?ooo`000000000000X0oooo0P0000000`3oool0
+00000?ooo`02000000/0oooo1@00003S0?ooo`000`3oool2000000040?ooo`00000000000?ooo`@0
+0000503oool2000000030?ooo`0000000000008000001P3oool2000000040?ooo`00000000000?oo
+o`@000001@3oool2000000030?ooo`000000oooo0080000000<0oooo0000000000000P00003^0?oo
+o`000P3oool3000000060?ooo`00000000000000003oool000004`3oool4000000<0oooo00<00000
+0?ooo`3oool01@3oool3000000060?ooo`00000000000000003oool000001P3oool4000000030?oo
+o`00000000000080000000<0oooo0000003oool0k`3oool000/0oooo00<000000?ooo`3oool0603o
+ool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool0k@3o
+ool000`0oooo00<000000?ooo`3oool0603oool00`000000oooo0?ooo`0=0?ooo`030000003oool0
+oooo00h0oooo00<000000?ooo`3oool0M@3oool500000780oooo00090?ooo`040000003oool0oooo
+000001L0oooo00@000000?ooo`3oool00000303oool010000000oooo0?ooo`00000=0?ooo`040000
+003oool0oooo000007T0oooo0P00001c0?ooo`002P3oool2000001T0oooo0P00000>0?ooo`800000
+3`3oool2000006T0oooo1P00000;0?ooo`8000003@3oool500000640oooo002`0?ooo`8000000P3o
+ool2000000`0oooo0`00000<0?ooo`8000000P3oool00`000000oooo0?ooo`1O0?ooo`00/03oool2
+00000080oooo0P00000<0?ooo`<000003@3oool2000006<0oooo002a0?ooo`D000002`3oool20000
+00030?ooo`000000000000d0oooo0P00001R0?ooo`00]03oool2000000030?ooo`00000000000080
+00001P3oool2000000040?ooo`00000000000?ooo`@000001P3oool00`000000oooo0?ooo`020000
+00030?ooo`000000000000800000G03oool00;40oooo100000030?ooo`030000003oool0oooo00D0
+oooo0`0000001P3oool00000000000000000oooo000000P0oooo1@0000020?ooo`030000003oool0
+oooo05`0oooo002i0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool03@3oool00`00
+0000oooo0?ooo`1K0?ooo`00^P3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00d0
+oooo00<000000?ooo`3oool0FP3oool00;L0oooo00@000000?ooo`3oool00000303oool010000000
+oooo0?ooo`00000<0?ooo`040000003oool0oooo000005`0oooo002h0?ooo`8000003P3oool20000
+00h0oooo0P00001M0?ooo`00o`3ooolh0?ooo`00\
+\>"]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Entonces la ecuaci\[OAcute]n del lugar del punto P es ", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[
+    \(\(lugarP = \(x\^2\) \((c\^2\ y\^2 - a\^2\ y\ z + b\^2\ y\ z + 
+                c\^2\ y\ z + b\^2\ z\^2)\) - \(a\^2\) \(y\^2\) 
+            z\^2;\)\)], "Input",
+  CellLabel->"In[13]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Para obtener una figura simple de esta curva consideramos un \
+tri\[AAcute]ngulo concreto y definimos una ventana para la figura:\
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[BoxData[{
+    \(\(cA = {0, 3};\)\), "\[IndentingNewLine]", 
+    \(\(cB = {\(-4\), \(-1\)};\)\), "\[IndentingNewLine]", 
+    \(\(cC = {2, \(-1\)};\)\), "\[IndentingNewLine]", 
+    \(\(ampl = 5;\)\), "\[IndentingNewLine]", 
+    \(vax = {x, \(-ampl\), ampl}; vay = {y, \(-ampl\), ampl};\)}], "Input",
+  CellLabel->"In[14]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ahora dibujamos el tri\[AAcute]ngulo y la curva:", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(triangulo = 
+        Graphics[{RGBColor[0, 0, 1], 
+            Line[{cA, cB, cC, cA}]}];\)\), "\[IndentingNewLine]", 
+    \(\(curvalugarP = 
+        ImplicitPlot[BarCar[lugarP \[Equal] 0, cA, cB, cC], vax, vay, 
+          DisplayFunction \[Rule] Identity, PlotPoints \[Rule] 100, 
+          PlotStyle \[Rule] {AbsoluteThickness[1.7], 
+              RGBColor[1, 0, 0]}];\)\), "\[IndentingNewLine]", 
+    \(\(Show[{triangulo, curvalugarP}, Axes \[Rule] False, 
+        AspectRatio \[Rule] Automatic, ImageSize \[Rule] 400];\)\)}], "Input",\
+
+  CellLabel->"In[19]:="],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .631 
+%%ImageSize: 400 252.4 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.5 0.0952381 0.330263 0.0952381 [
+[ 0 0 0 0 ]
+[ 1 .631 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .631 L
+0 .631 L
+closepath
+clip
+newpath
+0 0 1 r
+.5 Mabswid
+[ ] 0 setdash
+.5 .61598 m
+.11905 .23502 L
+.69048 .23502 L
+.5 .61598 L
+s
+1 0 0 r
+1.7 Mabswid
+.35089 .0171 m
+.36051 .01599 L
+.37013 .0153 L
+.37975 .01502 L
+.38937 .01514 L
+.39899 .01566 L
+.40861 .01657 L
+.41657 .01761 L
+.41823 .01787 L
+.42785 .01955 L
+.43747 .02162 L
+.44709 .02408 L
+.45671 .02693 L
+.45767 .02723 L
+.46633 .03015 L
+.47595 .03377 L
+.48342 .03685 L
+.48557 .03778 L
+.49519 .04219 L
+.50379 .04647 L
+.50481 .047 L
+.51443 .05222 L
+.52111 .05609 L
+.52405 .05785 L
+.53367 .06391 L
+.5364 .06571 L
+.54329 .0704 L
+.55019 .07533 L
+.55291 .07733 L
+.56253 .08473 L
+.56281 .08495 L
+.57215 .09258 L
+.57449 .09457 L
+.58177 .10092 L
+.58538 .10419 L
+.59139 .10977 L
+.5956 .11381 L
+.60101 .11913 L
+.60524 .12343 L
+.61063 .12903 L
+.61437 .13305 L
+.62025 .13949 L
+.62305 .14267 L
+.62987 .15055 L
+.63133 .15229 L
+.63924 .16191 L
+.63949 .16221 L
+.64683 .17153 L
+.64911 .17442 L
+.65411 .18115 L
+Mistroke
+.65873 .18733 L
+.66111 .19077 L
+.66788 .20039 L
+.66835 .20083 L
+.67434 .21001 L
+.67797 .21537 L
+.67973 .21963 L
+.68688 .22925 L
+.68423 .23887 L
+.67797 .244 L
+.6685 .24849 L
+.66835 .24859 L
+.65873 .25445 L
+.65238 .25811 L
+.64911 .26016 L
+.63949 .26584 L
+.63623 .26773 L
+.62987 .27145 L
+.62025 .27695 L
+.61955 .27735 L
+.61063 .28236 L
+.60225 .28697 L
+.60101 .28765 L
+.59139 .29279 L
+.5841 .29659 L
+.58177 .29778 L
+.57215 .30259 L
+.56463 .30621 L
+.56253 .3072 L
+.55291 .31158 L
+.54329 .31569 L
+.54296 .31583 L
+.53367 .31952 L
+.52405 .32304 L
+.51684 .32545 L
+.51443 .32621 L
+.50481 .32901 L
+.49519 .33141 L
+.48557 .3334 L
+.47595 .33497 L
+.47527 .33507 L
+.46633 .33611 L
+.45671 .33681 L
+.44709 .3371 L
+.43747 .33699 L
+.42785 .33649 L
+.41823 .33563 L
+.41324 .33507 L
+.40861 .33445 L
+.39899 .33295 L
+Mistroke
+.38937 .33118 L
+.37975 .32916 L
+.37013 .32692 L
+.36426 .32545 L
+.36051 .32447 L
+.35089 .32185 L
+.34127 .31907 L
+.33165 .31615 L
+.33063 .31583 L
+.32203 .3131 L
+.31241 .30995 L
+.30279 .30669 L
+.30139 .30621 L
+.29317 .30335 L
+.28355 .29993 L
+.27434 .29659 L
+.27393 .29644 L
+.26431 .29289 L
+.25469 .28929 L
+.24857 .28697 L
+.24507 .28564 L
+.23545 .28194 L
+.22583 .27821 L
+.22365 .27735 L
+.21621 .27444 L
+.20659 .27063 L
+.19931 .26773 L
+.19697 .2668 L
+.18735 .26295 L
+.17773 .25907 L
+.17542 .25811 L
+.16811 .25518 L
+.15849 .25126 L
+.15199 .24849 L
+.14887 .24734 L
+.13925 .24349 L
+.12963 .23949 L
+.12835 .23887 L
+.12147 .22925 L
+.12595 .21963 L
+.12963 .21082 L
+.13001 .21001 L
+.13458 .20039 L
+.13925 .19093 L
+.13936 .19077 L
+.14439 .18115 L
+.14887 .17292 L
+.14969 .17153 L
+.15529 .16191 L
+.15849 .15658 L
+Mistroke
+.1612 .15229 L
+.16748 .14267 L
+.16811 .14173 L
+.17415 .13305 L
+.17773 .12811 L
+.18126 .12343 L
+.18735 .11568 L
+.18888 .11381 L
+.19697 .1043 L
+.19707 .10419 L
+.20592 .09457 L
+.20659 .09387 L
+.21555 .08495 L
+.21621 .08432 L
+.22583 .07558 L
+.22612 .07533 L
+.23545 .06759 L
+.23785 .06571 L
+.24507 .0603 L
+.25107 .05609 L
+.25469 .05367 L
+.26431 .04765 L
+.26633 .04647 L
+.27393 .04222 L
+.28355 .03736 L
+.28462 .03685 L
+.29317 .03302 L
+.30279 .02919 L
+.30827 .02723 L
+.31241 .02585 L
+.32203 .02299 L
+.33165 .02058 L
+.34127 .01862 L
+.34728 .01761 L
+.35089 .0171 L
+Mfstroke
+.02381 .49157 m
+.02519 .48899 L
+.03015 .47937 L
+.03343 .47268 L
+.03483 .46975 L
+.03926 .46013 L
+.04305 .45151 L
+.04347 .45051 L
+.04747 .44089 L
+.05129 .43127 L
+.05267 .4277 L
+.05495 .42165 L
+.05846 .41203 L
+.06185 .40241 L
+.06229 .40114 L
+.06513 .39279 L
+.06834 .38317 L
+.07148 .37355 L
+.07191 .37222 L
+.07456 .36393 L
+.07762 .35431 L
+.08067 .34469 L
+.08153 .342 L
+.08372 .33507 L
+.08678 .32545 L
+.08989 .31583 L
+.09115 .31198 L
+.09303 .30621 L
+.09622 .29659 L
+.09951 .28697 L
+.10077 .28347 L
+.10285 .27735 L
+.10629 .26773 L
+.1099 .25811 L
+.11039 .25687 L
+.11257 .24849 L
+.11747 .23887 L
+.11039 .23143 L
+.10514 .22925 L
+.10077 .22735 L
+.09115 .22336 L
+.08181 .21963 L
+.08153 .2194 L
+.07191 .21537 L
+.06229 .21134 L
+.05903 .21001 L
+.05267 .2073 L
+.04305 .20325 L
+.0362 .20039 L
+.03343 .1992 L
+Mistroke
+.02381 .19515 L
+Mfstroke
+.97619 .56565 m
+.96657 .56014 L
+.96004 .55633 L
+.95695 .55451 L
+.94733 .54876 L
+.94396 .54671 L
+.93771 .54287 L
+.92853 .53709 L
+.92809 .53681 L
+.91847 .53057 L
+.91381 .52747 L
+.90885 .52412 L
+.89981 .51785 L
+.89923 .51744 L
+.88961 .51049 L
+.88658 .50823 L
+.87999 .50323 L
+.87411 .49861 L
+.87037 .4956 L
+.86242 .48899 L
+.86075 .48757 L
+.85148 .47937 L
+.85113 .47906 L
+.84151 .46999 L
+.84127 .46975 L
+.83189 .46028 L
+.83175 .46013 L
+.82287 .45051 L
+.82227 .44984 L
+.81459 .44089 L
+.81265 .43855 L
+.80684 .43127 L
+.80303 .42632 L
+.79956 .42165 L
+.79341 .41307 L
+.79269 .41203 L
+.78619 .40241 L
+.78379 .39874 L
+.78 .39279 L
+.77417 .38336 L
+.77406 .38317 L
+.76834 .37355 L
+.76455 .36703 L
+.76278 .36393 L
+.75737 .35431 L
+.75493 .34994 L
+.75205 .34469 L
+.74679 .33507 L
+.74531 .33235 L
+.74159 .32545 L
+Mistroke
+.73639 .31583 L
+.73569 .31455 L
+.7312 .30621 L
+.72607 .29682 L
+.72595 .29659 L
+.72069 .28697 L
+.71645 .27943 L
+.71534 .27735 L
+.70994 .26773 L
+.70683 .26285 L
+.70465 .25811 L
+.699 .24849 L
+.69721 .24609 L
+.69284 .23887 L
+.69721 .23085 L
+.69979 .22925 L
+.70683 .22409 L
+.7152 .21963 L
+.71645 .21882 L
+.72607 .21272 L
+.73071 .21001 L
+.73569 .2067 L
+.74531 .20065 L
+.74573 .20039 L
+.75493 .19453 L
+.76091 .19077 L
+.76455 .18842 L
+.77417 .18229 L
+.77597 .18115 L
+.78379 .17615 L
+.79103 .17153 L
+.79341 .17 L
+.80303 .16384 L
+.80605 .16191 L
+.81265 .15767 L
+.82104 .15229 L
+.82227 .1515 L
+.83189 .14531 L
+.83601 .14267 L
+.84151 .13913 L
+.85097 .13305 L
+.85113 .13295 L
+.86075 .12675 L
+.86592 .12343 L
+.87037 .12056 L
+.87999 .11437 L
+.88086 .11381 L
+.88961 .10817 L
+.89579 .10419 L
+.89923 .10197 L
+Mistroke
+.90885 .09578 L
+.91072 .09457 L
+.91847 .08958 L
+.92565 .08495 L
+.92809 .08338 L
+.93771 .07718 L
+.94058 .07533 L
+.94733 .07098 L
+.95551 .06571 L
+.95695 .06478 L
+.96657 .05859 L
+.97044 .05609 L
+.97619 .05239 L
+Mfstroke
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  CellLabel->"From In[19]:=",
+  ImageSize->{400, 252.375},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40006@0000o2000`400?l00000o`00003oo`3ooonA
+0?ooo`00o`3ooonA0?ooo`00o`3ooonA0?ooo`00o`3ooonA0?ooo`00o`3ooonA0?ooo`00o`3ooonA
+0?ooo`00SP3ooolC0?l00>l0oooo002:0?ooo`@0o`004`3oool70?l00>P0oooo00230?ooo`L0o`00
+7P3oool40?l00>@0oooo001o0?ooo`@0o`00:@3oool40?l00>00oooo001l0?ooo`<0o`00<@3oool4
+0?l00=`0oooo001j0?ooo`80o`00>03oool40?l00=P0oooo001g0?ooo`<0o`00?P3oool30?l00=D0
+oooo001e0?ooo`80o`00A03oool20?l00=<0oooo001c0?ooo`80o`00B03oool20?l00=40oooo001a
+0?ooo`80o`00C03oool30?l00<h0oooo001_0?ooo`80o`00D@3oool20?l00<`0oooo001]0?ooo`80
+o`00E@3oool20?l00<X0oooo001[0?ooo`80o`00F@3oool20?l00<P0oooo001Y0?ooo`80o`00G@3o
+ool20?l00<H0oooo001X0?ooo`030?l0003oool0oooo05l0oooo0P3o00340?ooo`00IP3oool20?l0
+06@0oooo0P3o002f0?ooo`80o`002P3oool006@0oooo0P3o001X0?ooo`80o`00/P3oool20?l000`0
+oooo001R0?ooo`80o`00K03oool20?l00:l0oooo00<0o`000?ooo`3oool0303oool00640oooo00<0
+o`000?ooo`3oool0KP3oool00`3o0000oooo0?ooo`2[0?ooo`030?l0003oool0oooo00d0oooo001P
+0?ooo`030?l0003oool0oooo0700oooo00<0o`000?ooo`3oool0Z03oool20?l00100oooo001O0?oo
+o`030?l0003oool0oooo0780oooo0`3o002U0?ooo`80o`004P3oool005h0oooo00<0o`000?ooo`3o
+ool0MP3oool00`3o0000oooo0?ooo`2P0?ooo`80o`00503oool005d0oooo00<0o`000?ooo`3oool0
+N03oool00`3o0000oooo0?ooo`2N0?ooo`030?l0003oool0oooo01@0oooo001K0?ooo`80o`00O03o
+ool20?l009d0oooo00<0o`000?ooo`3oool05@3oool005X0oooo00<0o`000?ooo`3oool0OP3oool0
+0`3o0000oooo0?ooo`2I0?ooo`030?l0003oool0oooo01H0oooo001I0?ooo`030?l0003oool0oooo
+0800oooo00<0o`000?ooo`3oool0UP3oool20?l001T0oooo001H0?ooo`030?l0003oool0oooo0880
+oooo00<0o`000?ooo`3oool0T`3oool20?l001/0oooo001G0?ooo`030?l0003oool0oooo08@0oooo
+0P3o002B0?ooo`030?l0003oool0oooo01/0oooo001F0?ooo`030?l0003oool0oooo08L0oooo00<0
+o`000?ooo`3oool0SP3oool00`3o0000oooo0?ooo`0L0?ooo`00E@3oool00`3o0000oooo0?ooo`29
+0?ooo`030?l0003oool0oooo08/0oooo0P3o000O0?ooo`00E03oool00`3o0000oooo0?ooo`2;0?oo
+o`80o`00RP3oool00`3o0000oooo0?ooo`0O0?ooo`00D`3oool00`3o0000oooo0?ooo`2>0?ooo`03
+0?l0003oool0oooo08D0oooo0P3o000R0?ooo`00DP3oool00`3o0000oooo0?ooo`2@0?ooo`030?l0
+003oool0oooo0880oooo0P3o000T0?ooo`00D@3oool00`3o0000oooo0?ooo`2B0?ooo`80o`00P@3o
+ool00`3o0000oooo0?ooo`0T0?ooo`00D03oool00`3o0000oooo0?ooo`2E0?ooo`030?l0003oool0
+oooo07`0oooo0P3o000W0?ooo`00C`3oool00`3o0000oooo0?ooo`2G0?ooo`030?l0003oool0oooo
+07X0oooo00<0o`000?ooo`3oool09`3oool004h0oooo00<0o`000?ooo`3oool0V03oool00`3o0000
+oooo0?ooo`1h0?ooo`80o`00:P3oool004d0oooo00<0o`000?ooo`3oool0VP3oool00`3o0000oooo
+0?ooo`1e0?ooo`80o`00;03oool004`0oooo00<0o`000?ooo`3oool0W03oool00`3o0000oooo0?oo
+o`1b0?ooo`80o`00;P3oool004/0oooo00<0o`000?ooo`3oool0WP3oool20?l00740oooo00<0o`00
+0?ooo`3oool0;P3oool004X0oooo00<0o`000?ooo`3oool0X@3oool00`3o0000oooo0?ooo`1]0?oo
+o`030?l0003oool0oooo02l0oooo00190?ooo`030?l0003oool0oooo0:80oooo00<0o`000?ooo`3o
+ool0J`3oool20?l00380oooo00190?ooo`030?l0003oool0oooo0:<0oooo00<0o`000?ooo`3oool0
+J@3oool00`3o0000oooo0?ooo`0b0?ooo`00B03oool00`3o0000oooo0?ooo`2U0?ooo`80o`00I`3o
+ool20?l003D0oooo00170?ooo`030?l0003oool0oooo0:P0oooo00<0o`000?ooo`3oool0H`3oool0
+0`3o0000oooo0?ooo`0e0?ooo`00A`3oool00`3o0000oooo0?ooo`2X0?ooo`030?l0003oool0oooo
+0680oooo00<0o`000?ooo`3oool0=P3oool004H0oooo00<0o`000?ooo`3oool0ZP3oool00`3o0000
+oooo0?ooo`1O0?ooo`80o`00>@3oool004D0oooo00<0o`000?ooo`3oool0[03oool20?l005d0oooo
+0P3o000k0?ooo`00A03oool00`3o0000oooo0?ooo`2_0?ooo`030?l0003oool0oooo05T0oooo00<0
+o`000?ooo`3oool0>`3oool004@0oooo00<0o`000?ooo`3oool0[`3oool00`3o0000oooo0?ooo`1G
+0?ooo`80o`00?P3oool004<0oooo00<0o`000?ooo`3oool0/@3oool00`3o0000oooo0?ooo`1E0?oo
+o`030?l0003oool0oooo03h0oooo00130?ooo`030?l0003oool0oooo0;80oooo00<0o`000?ooo`3o
+ool0DP3oool20?l00440oooo00120?ooo`030?l0003oool0oooo0;@0oooo00<0o`000?ooo`3oool0
+C`3oool20?l004<0oooo00110?ooo`030?l0003oool0oooo0;H0oooo00<0o`000?ooo`3oool0C03o
+ool20?l004D0oooo00110?ooo`030?l0003oool0oooo0;L0oooo00<0o`000?ooo`3oool0B@3oool2
+0?l004L0oooo00100?ooo`030?l0003oool0oooo0;P0oooo00<0o`000?ooo`3oool0B@3oool00`3o
+0000oooo0?ooo`160?ooo`00?`3oool00`3o0000oooo0?ooo`2j0?ooo`030?l0003oool0oooo04H0
+oooo0P3o00190?ooo`00?`3oool00`3o0000oooo0?ooo`2k0?ooo`030?l0003oool0oooo04@0oooo
+00<0o`000?ooo`3oool0B@3oool003h0oooo00<0o`000?ooo`3oool0_03oool00`3o0000oooo0?oo
+o`120?ooo`80o`00C03oool003h0oooo00<0o`000?ooo`3oool0_@3oool20?l00400oooo0P3o001>
+0?ooo`00?@3oool00`3o0000oooo0?ooo`300?ooo`030?l0003oool0oooo03`0oooo00<0o`000?oo
+o`3oool0CP3oool003`0oooo00<0o`000?ooo`3oool0`@3oool00`3o0000oooo0?ooo`0j0?ooo`80
+o`00D@3oool003/0oooo00<0o`000?ooo`3oool0``3oool00`3o0000oooo0?ooo`0g0?ooo`80o`00
+D`3oool003/0oooo00<0o`000?ooo`3oool0a03oool00`3o0000oooo0?ooo`0d0?ooo`80o`00E@3o
+ool003X0oooo00<0o`000?ooo`3oool0a@3oool00`3o0000oooo0?ooo`0c0?ooo`030?l0003oool0
+oooo05D0oooo000j0?ooo`030?l0003oool0oooo0<H0oooo00<0o`000?ooo`3oool0<03oool20?l0
+05P0oooo000i0?ooo`030?l0003oool0oooo0<P0oooo00<0o`000?ooo`3oool0;P3oool00`3o0000
+oooo0?ooo`1H0?ooo`00>03oool00`3o0000oooo0?ooo`3:0?ooo`030?l0003oool0oooo02`0oooo
+00<0o`000?ooo`3oool0F@3oool003P0oooo00<0o`000?ooo`3oool0bP3oool00`3o0000oooo0?oo
+o`0Z0?ooo`80o`00G03oool003L0oooo00<0o`000?ooo`3oool0c03oool00`3o0000oooo0?ooo`0W
+0?ooo`80o`00GP3oool003L0oooo00<0o`000?ooo`3oool0c@3oool00`3o0000oooo0?ooo`0U0?oo
+o`030?l0003oool0oooo05h0oooo000f0?ooo`030?l0003oool0oooo0<l0oooo00<0o`000?ooo`3o
+ool08`3oool00`3o0000oooo0?ooo`1O0?ooo`002@3oool20?l002/0oooo00<0o`000?ooo`3oool0
+d03oool00`3o0000oooo0?ooo`0Q0?ooo`030?l0003oool0oooo0600oooo000;0?ooo`<0o`009`3o
+ool00`3o0000oooo0?ooo`3A0?ooo`030?l0003oool0oooo01l0oooo0P3o001S0?ooo`003P3oool2
+0?l002D0oooo00<0o`000?ooo`3oool0dP3oool00`3o0000oooo0?ooo`0L0?ooo`80o`00I@3oool0
+0100oooo0P3o000S0?ooo`030?l0003oool0oooo0=<0oooo00<0o`000?ooo`3oool06@3oool20?l0
+06L0oooo000B0?ooo`80o`00803oool00`3o0000oooo0?ooo`3D0?ooo`030?l0003oool0oooo01L0
+oooo0P3o001Y0?ooo`00503oool20?l001h0oooo00<0o`000?ooo`3oool0e@3oool00`3o0000oooo
+0?ooo`0E0?ooo`030?l0003oool0oooo06T0oooo000F0?ooo`@0o`006@3oool20?l00=L0oooo00<0
+o`000?ooo`3oool0503oool00`3o0000oooo0?ooo`1Z0?ooo`006P3oool20?l001L0oooo00<0o`00
+0?ooo`3oool0e`3oool00`3o0000oooo0?ooo`0A0?ooo`80o`00K@3oool001`0oooo00<0o`000?oo
+o`3oool04`3oool00`3o0000oooo0?ooo`3I0?ooo`030?l0003oool0oooo00h0oooo0P3o001_0?oo
+o`007@3oool20?l001<0oooo00<0o`000?ooo`3oool0fP3oool00`3o0000oooo0?ooo`0;0?ooo`80
+o`00L@3oool001l0oooo0`3o000@0?ooo`030?l0003oool0oooo0=X0oooo00<0o`000?ooo`3oool0
+2P3oool20?l00780oooo000R0?ooo`<0o`00303oool00`3o0000oooo0?ooo`3L0?ooo`030?l0003o
+ool0oooo00H0oooo0`3o001d0?ooo`009@3oool20?l000X0oooo00<0o`000?ooo`3oool0g03oool0
+0`3o0000oooo0?ooo`050?ooo`030?l0003oool0oooo07D0oooo000W0?ooo`@0o`001@3oool00`3o
+0000oooo0?ooo`3N0?ooo`030?l0003oool0oooo00<0oooo00<0o`000?ooo`3oool0MP3oool002/0
+oooo0P3o00040?ooo`030?l0003oool0oooo0=d0oooo00<0o`000?ooo`3oool00P3oool00`3o0000
+oooo0?ooo`1g0?ooo`00;@3oool00`3o0000oooo0?ooo`020?ooo`030?l0003oool0oooo0=/0oooo
+00<0o`000?ooo`3oool00P3oool00`3o0000oooo0?ooo`1h0?ooo`00;P3oool01@3o0000003o0000
+o`000?l0o`000=d0003o00H0o`000000o`000?l0003o0?ooo`3o001j0?ooo`00;`3oool01@3o0000
+003o0?ooo`3oool0o`000=`0oooo00D0o`000?ooo`000?l0oooo0?l0001k0?ooo`00;P3oool01@3o
+0000oooo0?ooo`000?l0oooo0080o`00fP3oool0103o0000oooo0?ooo`000?l20?ooo`030?l0003o
+ool0oooo07P0oooo000^0?ooo`050?l0003oool0oooo0?ooo`000?l00P3oool30?l00=H0oooo00@0
+o`000?ooo`3oool0003o0`3oool00`3o0000oooo0?ooo`1h0?ooo`00;@3oool00`3o0000oooo0?oo
+o`030?ooo`030000o`3oool0oooo0080oooo0P3o003B0?ooo`80o`000`3oool00`000?l0oooo0?oo
+o`020?ooo`030?l0003oool0oooo07L0oooo000]0?ooo`030?l0003oool0oooo00@0oooo00<0003o
+0?ooo`3oool00`3oool40?l00<`0oooo0P3o00040?ooo`030000o`3oool0oooo00<0oooo00<0o`00
+0?ooo`3oool0M`3oool002d0oooo00<0o`000?ooo`3oool01@3oool00`000?l0oooo0?ooo`060?oo
+o`80o`00b03oool20?l000H0oooo00<0003o0?ooo`3oool0103oool00`3o0000oooo0?ooo`1f0?oo
+o`00;03oool00`3o0000oooo0?ooo`070?ooo`030000o`3oool0oooo00L0oooo0P3o00340?ooo`80
+o`001`3oool00`000?l0oooo0?ooo`060?ooo`030?l0003oool0oooo07D0oooo000/0?ooo`030?l0
+003oool0oooo00P0oooo00<0003o0?ooo`3oool0203oool30?l00<00oooo00<0o`000?ooo`3oool0
+1`3oool00`000?l0oooo0?ooo`060?ooo`030?l0003oool0oooo07D0oooo000/0?ooo`030?l0003o
+ool0oooo00T0oooo00<0003o0?ooo`3oool02P3oool30?l00;`0oooo00<0o`000?ooo`3oool01`3o
+ool00`000?l0oooo0?ooo`080?ooo`030?l0003oool0oooo07@0oooo000[0?ooo`030?l0003oool0
+oooo00/0oooo00<0003o0?ooo`3oool0303oool20?l00;P0oooo0P3o000:0?ooo`030000o`3oool0
+oooo00P0oooo00<0o`000?ooo`3oool0M03oool002/0oooo00<0o`000?ooo`3oool0303oool00`00
+0?l0oooo0?ooo`0=0?ooo`80o`00]03oool20?l000/0oooo00<0003o0?ooo`3oool02@3oool00`3o
+0000oooo0?ooo`1d0?ooo`00:P3oool00`3o0000oooo0?ooo`0>0?ooo`030000o`3oool0oooo00h0
+oooo0`3o002`0?ooo`030?l0003oool0oooo00/0oooo00<0003o0?ooo`3oool02P3oool00`3o0000
+oooo0?ooo`1c0?ooo`00:P3oool00`3o0000oooo0?ooo`0?0?ooo`030000o`3oool0oooo0100oooo
+0P3o002/0?ooo`80o`003@3oool00`000?l0oooo0?ooo`0<0?ooo`030?l0003oool0oooo0780oooo
+000Z0?ooo`030?l0003oool0oooo0100oooo00<0003o0?ooo`3oool04@3oool30?l00:L0oooo0P3o
+000?0?ooo`030000o`3oool0oooo00d0oooo00<0o`000?ooo`3oool0L@3oool002T0oooo00<0o`00
+0?ooo`3oool04P3oool00`000?l0oooo0?ooo`0C0?ooo`<0o`00XP3oool20?l00100oooo00<0003o
+0?ooo`3oool03P3oool00`3o0000oooo0?ooo`1a0?ooo`00:@3oool00`3o0000oooo0?ooo`0C0?oo
+o`030000o`3oool0oooo01D0oooo0P3o002N0?ooo`80o`004P3oool00`000?l0oooo0?ooo`0?0?oo
+o`030?l0003oool0oooo0700oooo000Y0?ooo`030?l0003oool0oooo01@0oooo00<0003o0?ooo`3o
+ool05P3oool30?l009/0oooo00<0o`000?ooo`3oool0403oool00`000?l0oooo0?ooo`0@0?ooo`03
+0?l0003oool0oooo0700oooo000X0?ooo`030?l0003oool0oooo01H0oooo00<0003o0?ooo`3oool0
+603oool30?l009H0oooo0P3o000C0?ooo`030000o`3oool0oooo0140oooo00<0o`000?ooo`3oool0
+K`3oool002P0oooo00<0o`000?ooo`3oool05`3oool00`000?l0oooo0?ooo`0J0?ooo`80o`00T@3o
+ool30?l001@0oooo00<0003o0?ooo`3oool04P3oool00`3o0000oooo0?ooo`1_0?ooo`009`3oool0
+0`3o0000oooo0?ooo`0I0?ooo`030000o`3oool0oooo01/0oooo0`3o002<0?ooo`80o`005`3oool0
+0`000?l0oooo0?ooo`0C0?ooo`030?l0003oool0oooo06h0oooo000W0?ooo`030?l0003oool0oooo
+01X0oooo00<0003o0?ooo`3oool07@3oool20?l008T0oooo00<0o`000?ooo`3oool05P3oool00`00
+0?l0oooo0?ooo`0E0?ooo`030?l0003oool0oooo06d0oooo000V0?ooo`030?l0003oool0oooo01`0
+oooo00<0003o0?ooo`3oool07P3oool20?l008D0oooo0P3o000I0?ooo`030000o`3oool0oooo01D0
+oooo00<0o`000?ooo`3oool0K@3oool002H0oooo00<0o`000?ooo`3oool07@3oool00`000?l0oooo
+0?ooo`0O0?ooo`<0o`00P03oool20?l001X0oooo00<0003o0?ooo`3oool05`3oool00`3o0000oooo
+0?ooo`1/0?ooo`009P3oool00`3o0000oooo0?ooo`0N0?ooo`030000o`3oool0oooo0240oooo0`3o
+001k0?ooo`80o`00703oool00`000?l0oooo0?ooo`0G0?ooo`030?l0003oool0oooo06`0oooo000V
+0?ooo`030?l0003oool0oooo01l0oooo00<0003o0?ooo`3oool08`3oool20?l007P0oooo00<0o`00
+0?ooo`3oool06`3oool00`000?l0oooo0?ooo`0I0?ooo`030?l0003oool0oooo06/0oooo000U0?oo
+o`030?l0003oool0oooo0240oooo00<0003o0?ooo`3oool0903oool30?l007<0oooo0P3o000N0?oo
+o`030000o`3oool0oooo01T0oooo00<0o`000?ooo`3oool0J`3oool002D0oooo00<0o`000?ooo`3o
+ool08P3oool00`000?l0oooo0?ooo`0V0?ooo`@0o`00K03oool30?l001l0oooo00<0003o0?ooo`3o
+ool06`3oool00`3o0000oooo0?ooo`1Z0?ooo`009@3oool00`3o0000oooo0?ooo`0S0?ooo`030000
+o`3oool0oooo02T0oooo0P3o001X0?ooo`80o`008P3oool00`000?l0oooo0?ooo`0K0?ooo`030?l0
+003oool0oooo06X0oooo000T0?ooo`030?l0003oool0oooo02D0oooo00<0003o0?ooo`3oool0:P3o
+ool20?l006@0oooo0P3o000S0?ooo`030000o`3oool0oooo01d0oooo00<0o`000?ooo`3oool0J@3o
+ool002@0oooo00<0o`000?ooo`3oool09P3oool00`000?l0oooo0?ooo`0[0?ooo`<0o`00GP3oool3
+0?l002D0oooo00<0003o0?ooo`3oool07@3oool00`3o0000oooo0?ooo`1Y0?ooo`00903oool00`3o
+0000oooo0?ooo`0W0?ooo`030000o`3oool0oooo02d0oooo103o001H0?ooo`80o`009`3oool00`00
+0?l0oooo0?ooo`0O0?ooo`030?l0003oool0oooo06P0oooo000T0?ooo`030?l0003oool0oooo02P0
+oooo00<0003o0?ooo`3oool0<03oool40?l00540oooo0`3o000Y0?ooo`030000o`3oool0oooo01l0
+oooo00<0o`000?ooo`3oool0J03oool002<0oooo00<0o`000?ooo`3oool0:P3oool00`000?l0oooo
+0?ooo`0c0?ooo`@0o`00BP3oool30?l002/0oooo00<0003o0?ooo`3oool08@3oool00`3o0000oooo
+0?ooo`1W0?ooo`008`3oool00`3o0000oooo0?ooo`0[0?ooo`030000o`3oool0oooo03H0oooo103o
+00140?ooo`80o`00;P3oool00`000?l0oooo0?ooo`0Q0?ooo`030?l0003oool0oooo06L0oooo000R
+0?ooo`030?l0003oool0oooo02d0oooo00<0003o0?ooo`3oool0>@3oool20?l00400oooo0P3o000_
+0?ooo`030000o`3oool0oooo02<0oooo00<0o`000?ooo`3oool0IP3oool00280oooo00<0o`000?oo
+o`3oool0;P3oool00`000?l0oooo0?ooo`0j0?ooo`D0o`00=`3oool40?l00340oooo00<0003o0?oo
+o`3oool08`3oool00`3o0000oooo0?ooo`1V0?ooo`008P3oool00`3o0000oooo0?ooo`0_0?ooo`03
+0000o`3oool0oooo03h0oooo103o000_0?ooo`@0o`00=03oool00`000?l0oooo0?ooo`0U0?ooo`03
+0?l0003oool0oooo06D0oooo000Q0?ooo`030?l0003oool0oooo0340oooo00<0003o0?ooo`3oool0
+@@3oool40?l002L0oooo103o000h0?ooo`030000o`3oool0oooo02D0oooo00<0o`000?ooo`3oool0
+I@3oool00240oooo00<0o`000?ooo`3oool0<P3oool00`000?l0oooo0?ooo`140?ooo`L0o`00703o
+ool40?l003/0oooo00<0003o0?ooo`3oool09`3oool00`3o0000oooo0?ooo`1T0?ooo`008@3oool0
+0`3o0000oooo0?ooo`0c0?ooo`030000o`3oool0oooo04X0oooo703o000o0?ooo`030000o`3oool0
+oooo02L0oooo00<0o`000?ooo`3oool0I03oool00200oooo00<0o`000?ooo`3oool0=@3oool00`00
+0?l0oooo0?ooo`2S0?ooo`030000o`3oool0oooo02T0oooo00<0o`000?ooo`3oool0H`3oool00200
+oooo00<0o`000?ooo`3oool0=P3oool00`000?l0oooo0?ooo`2R0?ooo`030000o`3oool0oooo02T0
+oooo00<0o`000?ooo`3oool0H`3oool00200oooo00<0o`000?ooo`3oool0=`3oool00`000?l0oooo
+0?ooo`2P0?ooo`030000o`3oool0oooo02/0oooo00<0o`000?ooo`3oool0HP3oool00200oooo00<0
+o`000?ooo`3oool0>03oool00`000?l0oooo0?ooo`2O0?ooo`030000o`3oool0oooo02`0oooo00<0
+o`000?ooo`3oool0H@3oool001l0oooo00<0o`000?ooo`3oool0>P3oool00`000?l0oooo0?ooo`2M
+0?ooo`030000o`3oool0oooo02d0oooo00<0o`000?ooo`3oool0H@3oool001l0oooo00<0o`000?oo
+o`3oool0>`3oool00`000?l0oooo0?ooo`2L0?ooo`030000o`3oool0oooo02h0oooo00<0o`000?oo
+o`3oool0H03oool001l0oooo00<0o`000?ooo`3oool0?03oool00`000?l0oooo0?ooo`2J0?ooo`03
+0000o`3oool0oooo0300oooo00<0o`000?ooo`3oool0G`3oool001l0oooo00<0o`000?ooo`3oool0
+?@3oool00`000?l0oooo0?ooo`2I0?ooo`030000o`3oool0oooo0340oooo00<0o`000?ooo`3oool0
+GP3oool001h0oooo00<0o`000?ooo`3oool0?`3oool00`000?l0oooo0?ooo`2G0?ooo`030000o`3o
+ool0oooo0380oooo00<0o`000?ooo`3oool0GP3oool001h0oooo00<0o`000?ooo`3oool0@03oool0
+0`000?l0oooo0?ooo`2F0?ooo`030000o`3oool0oooo03<0oooo00<0o`000?ooo`3oool0G@3oool0
+01h0oooo00<0o`000?ooo`3oool0@@3oool00`000?l0oooo0?ooo`2D0?ooo`030000o`3oool0oooo
+03@0oooo00<0o`000?ooo`3oool0G@3oool001d0oooo00<0o`000?ooo`3oool0@`3oool00`000?l0
+oooo0?ooo`2C0?ooo`030000o`3oool0oooo03@0oooo00<0o`000?ooo`3oool0G@3oool001d0oooo
+00<0o`000?ooo`3oool0A03oool00`000?l0oooo0?ooo`2A0?ooo`030000o`3oool0oooo03H0oooo
+00<0o`000?ooo`3oool0G03oool001`0oooo00<0o`000?ooo`3oool0AP3oool00`000?l0oooo0?oo
+o`2@0?ooo`030000o`3oool0oooo03H0oooo00<0o`000?ooo`3oool0G03oool001`0oooo00<0o`00
+0?ooo`3oool0A`3oool00`000?l0oooo0?ooo`2>0?ooo`030000o`3oool0oooo03P0oooo00<0o`00
+0?ooo`3oool0F`3oool001`0oooo00<0o`000?ooo`3oool0B03oool00`000?l0oooo0?ooo`2=0?oo
+o`030000o`3oool0oooo03T0oooo00<0o`000?ooo`3oool0FP3oool001/0oooo00<0o`000?ooo`3o
+ool0BP3oool00`000?l0oooo0?ooo`2;0?ooo`030000o`3oool0oooo03X0oooo00<0o`000?ooo`3o
+ool0FP3oool001/0oooo00<0o`000?ooo`3oool0B`3oool00`000?l0oooo0?ooo`2:0?ooo`030000
+o`3oool0oooo03/0oooo00<0o`000?ooo`3oool0F@3oool001/0oooo00<0o`000?ooo`3oool0C03o
+ool00`000?l0oooo0?ooo`280?ooo`030000o`3oool0oooo03`0oooo00<0o`000?ooo`3oool0F@3o
+ool001/0oooo00<0o`000?ooo`3oool0C@3oool00`000?l0oooo0?ooo`270?ooo`030000o`3oool0
+oooo03d0oooo00<0o`000?ooo`3oool0F03oool001X0oooo00<0o`000?ooo`3oool0C`3oool00`00
+0?l0oooo0?ooo`250?ooo`030000o`3oool0oooo03l0oooo00<0o`000?ooo`3oool0E`3oool001X0
+oooo00<0o`000?ooo`3oool0D03oool00`000?l0oooo0?ooo`240?ooo`030000o`3oool0oooo03l0
+oooo00<0o`000?ooo`3oool0E`3oool001X0oooo00<0o`000?ooo`3oool0D@3oool00`000?l0oooo
+0?ooo`220?ooo`030000o`3oool0oooo0440oooo00<0o`000?ooo`3oool0EP3oool001X0oooo00<0
+o`000?ooo`3oool0DP3oool00`000?l0oooo0?ooo`210?ooo`030000o`3oool0oooo0480oooo00<0
+o`000?ooo`3oool0E@3oool001T0oooo00<0o`000?ooo`3oool0E03oool00`000?l0oooo0?ooo`1o
+0?ooo`030000o`3oool0oooo04<0oooo00<0o`000?ooo`3oool0E@3oool001P0oooo0P3o001G0?oo
+o`030000o`3oool0oooo07h0oooo00<0003o0?ooo`3oool0A03oool00`3o0000oooo0?ooo`1D0?oo
+o`00603oool00`3o0000oooo0?ooo`1G0?ooo`030000o`3oool0oooo07`0oooo00<0003o0?ooo`3o
+ool0AP3oool00`3o0000oooo0?ooo`1C0?ooo`005`3oool00`3o0000oooo0?ooo`1I0?ooo`030000
+o`3oool0oooo07/0oooo00<0003o0?ooo`3oool0A`3oool00`3o0000oooo0?ooo`1B0?ooo`005`3o
+ool00`3o0000oooo0?ooo`1J0?ooo`030000o`3oool0oooo07T0oooo00<0003o0?ooo`3oool0B03o
+ool00`3o0000oooo0?ooo`1B0?ooo`005`3oool00`3o0000oooo0?ooo`1K0?ooo`030000o`3oool0
+oooo07P0oooo00<0003o0?ooo`3oool0B@3oool00`3o0000oooo0?ooo`1A0?ooo`005`3oool00`3o
+0000oooo0?ooo`1L0?ooo`030000o`3oool0oooo07H0oooo00<0003o0?ooo`3oool0BP3oool00`3o
+0000oooo0?ooo`1A0?ooo`005P3oool00`3o0000oooo0?ooo`1N0?ooo`030000o`3oool0oooo07D0
+oooo00<0003o0?ooo`3oool0B`3oool00`3o0000oooo0?ooo`1@0?ooo`005P3oool00`3o0000oooo
+0?ooo`1O0?ooo`030000o`3oool0oooo07<0oooo00<0003o0?ooo`3oool0C03oool00`3o0000oooo
+0?ooo`1@0?ooo`005P3oool00`3o0000oooo0?ooo`1P0?ooo`030000o`3oool0oooo0780oooo00<0
+003o0?ooo`3oool0C@3oool00`3o0000oooo0?ooo`1?0?ooo`005P3oool00`3o0000oooo0?ooo`1Q
+0?ooo`030000o`3oool0oooo0700oooo00<0003o0?ooo`3oool0C`3oool00`3o0000oooo0?ooo`1>
+0?ooo`005@3oool00`3o0000oooo0?ooo`1S0?ooo`030000o`3oool0oooo06l0oooo00<0003o0?oo
+o`3oool0D03oool00`3o0000oooo0?ooo`1=0?ooo`005@3oool00`3o0000oooo0?ooo`1T0?ooo`03
+0000o`3oool0oooo06d0oooo00<0003o0?ooo`3oool0DP3oool00`3o0000oooo0?ooo`1<0?ooo`00
+503oool00`3o0000oooo0?ooo`1V0?ooo`030000o`3oool0oooo06`0oooo00<0003o0?ooo`3oool0
+DP3oool00`3o0000oooo0?ooo`1<0?ooo`00503oool00`3o0000oooo0?ooo`1W0?ooo`030000o`3o
+ool0oooo06X0oooo00<0003o0?ooo`3oool0E03oool00`3o0000oooo0?ooo`1;0?ooo`004`3oool0
+0`3o0000oooo0?ooo`1Y0?ooo`030000o`3oool0oooo06T0oooo00<0003o0?ooo`3oool0E@3oool0
+0`3o0000oooo0?ooo`1:0?ooo`004`3oool00`3o0000oooo0?ooo`1Z0?ooo`030000o`3oool0oooo
+06L0oooo00<0003o0?ooo`3oool0E`3oool00`3o0000oooo0?ooo`190?ooo`004`3oool00`3o0000
+oooo0?ooo`1[0?ooo`030000o`3oool0oooo06H0oooo00<0003o0?ooo`3oool0E`3oool00`3o0000
+oooo0?ooo`190?ooo`004P3oool00`3o0000oooo0?ooo`1]0?ooo`030000o`3oool0oooo06@0oooo
+00<0003o0?ooo`3oool0F@3oool00`3o0000oooo0?ooo`180?ooo`004P3oool00`3o0000oooo0?oo
+o`1^0?ooo`030000o`3oool0oooo06<0oooo00<0003o0?ooo`3oool0FP3oool00`3o0000oooo0?oo
+o`170?ooo`004@3oool00`3o0000oooo0?ooo`1`0?ooo`030000o`3oool0oooo0640oooo00<0003o
+0?ooo`3oool0G03oool00`3o0000oooo0?ooo`160?ooo`004@3oool00`3o0000oooo0?ooo`1a0?oo
+o`030000o`3oool0oooo0600oooo00<0003o0?ooo`3oool0G@3oool00`3o0000oooo0?ooo`150?oo
+o`00403oool00`3o0000oooo0?ooo`1c0?ooo`030000o`3oool0oooo05h0oooo00<0003o0?ooo`3o
+ool0G`3oool00`3o0000oooo0?ooo`140?ooo`00403oool00`3o0000oooo0?ooo`1d0?ooo`030000
+o`3oool0oooo05d0oooo00<0003o0?ooo`3oool0H03oool00`3o0000oooo0?ooo`130?ooo`003`3o
+ool00`3o0000oooo0?ooo`1f0?ooo`030000o`3oool0oooo05/0oooo00<0003o0?ooo`3oool0HP3o
+ool00`3o0000oooo0?ooo`120?ooo`003`3oool00`3o0000oooo0?ooo`1g0?ooo`030000o`3oool0
+oooo05X0oooo00<0003o0?ooo`3oool0H`3oool00`3o0000oooo0?ooo`110?ooo`003P3oool00`3o
+0000oooo0?ooo`1i0?ooo`030000o`3oool0oooo05P0oooo00<0003o0?ooo`3oool0I@3oool00`3o
+0000oooo0?ooo`100?ooo`003P3oool00`3o0000oooo0?ooo`1j0?ooo`030000o`3oool0oooo05L0
+oooo00<0003o0?ooo`3oool0IP3oool00`3o0000oooo0?ooo`0o0?ooo`003P3oool00`3o0000oooo
+0?ooo`1k0?ooo`030000o`3oool0oooo05D0oooo00<0003o0?ooo`3oool0J03oool00`3o0000oooo
+0?ooo`0n0?ooo`003@3oool00`3o0000oooo0?ooo`1m0?ooo`030000o`3oool0oooo05@0oooo00<0
+003o0?ooo`3oool0J@3oool00`3o0000oooo0?ooo`0m0?ooo`003@3oool00`3o0000oooo0?ooo`1n
+0?ooo`030000o`3oool0oooo0580oooo00<0003o0?ooo`3oool0J`3oool00`3o0000oooo0?ooo`0l
+0?ooo`00303oool00`3o0000oooo0?ooo`200?ooo`030000o`3oool0oooo0540oooo00<0003o0?oo
+o`3oool0K03oool00`3o0000oooo0?ooo`0k0?ooo`00303oool00`3o0000oooo0?ooo`210?ooo`03
+0000o`3oool0oooo04l0oooo00<0003o0?ooo`3oool0KP3oool00`3o0000oooo0?ooo`0j0?ooo`00
+2`3oool00`3o0000oooo0?ooo`230?ooo`030000o`3oool0oooo04h0oooo00<0003o0?ooo`3oool0
+K`3oool00`3o0000oooo0?ooo`0i0?ooo`002`3oool00`3o0000oooo0?ooo`240?ooo`030000o`3o
+ool0oooo04`0oooo00<0003o0?ooo`3oool0L@3oool20?l003T0oooo000:0?ooo`030?l0003oool0
+oooo08H0oooo00<0003o0?ooo`3oool0B`3oool00`000?l0oooo0?ooo`1c0?ooo`030?l0003oool0
+oooo03H0oooo000:0?ooo`030?l0003oool0oooo08L0oooo00<0003o0?ooo`3oool0B@3oool00`00
+0?l0oooo0?ooo`1d0?ooo`030?l0003oool0oooo03H0oooo00090?ooo`030?l0003oool0oooo08T0
+oooo00<0003o0?ooo`3oool0B03oool00`000?l0oooo0?ooo`1e0?ooo`030?l0003oool0oooo03D0
+oooo002F0?ooo`030000o`3oool0oooo04H0oooo00<0003o0?ooo`3oool0M`3oool20?l003D0oooo
+002G0?ooo`030000o`3oool0oooo04D0oooo00<0003o0?ooo`3oool0N@3oool00`3o0000oooo0?oo
+o`0b0?ooo`00V03oool00`000?l0oooo0?ooo`130?ooo`030000o`3oool0oooo07/0oooo00<0o`00
+0?ooo`3oool0<@3oool009T0oooo00<0003o0?ooo`3oool0@P3oool00`000?l0oooo0?ooo`1l0?oo
+o`030?l0003oool0oooo0300oooo002J0?ooo`030000o`3oool0oooo0400oooo00<0003o0?ooo`3o
+ool0OP3oool00`3o0000oooo0?ooo`0_0?ooo`00V`3oool00`000?l0oooo0?ooo`0o0?ooo`030000
+o`3oool0oooo07l0oooo0P3o000_0?ooo`00W03oool00`000?l0oooo0?ooo`0m0?ooo`030000o`3o
+ool0oooo0880oooo0P3o000]0?ooo`00W@3oool00`000?l0oooo0?ooo`0l0?ooo`030000o`3oool0
+oooo08@0oooo00<0o`000?ooo`3oool0:P3oool009h0oooo00<0003o0?ooo`3oool0>P3oool00`00
+0?l0oooo0?ooo`260?ooo`80o`00:P3oool009l0oooo00<0003o0?ooo`3oool0>@3oool00`000?l0
+oooo0?ooo`280?ooo`030?l0003oool0oooo02L0oooo002P0?ooo`030000o`3oool0oooo03L0oooo
+00<0003o0?ooo`3oool0RP3oool00`3o0000oooo0?ooo`0V0?ooo`00X@3oool00`000?l0oooo0?oo
+o`0f0?ooo`030000o`3oool0oooo08/0oooo0P3o000V0?ooo`00XP3oool00`000?l0oooo0?ooo`0d
+0?ooo`030000o`3oool0oooo08h0oooo00<0o`000?ooo`3oool08`3oool00:<0oooo00<0003o0?oo
+o`3oool0<`3oool00`000?l0oooo0?ooo`2?0?ooo`80o`008`3oool00:@0oooo00<0003o0?ooo`3o
+ool0<@3oool00`000?l0oooo0?ooo`2B0?ooo`80o`008@3oool00:D0oooo00<0003o0?ooo`3oool0
+<03oool00`000?l0oooo0?ooo`2D0?ooo`030?l0003oool0oooo01h0oooo002V0?ooo`030000o`3o
+ool0oooo02h0oooo00<0003o0?ooo`3oool0UP3oool20?l001h0oooo002W0?ooo`030000o`3oool0
+oooo02d0oooo00<0003o0?ooo`3oool0V03oool00`3o0000oooo0?ooo`0K0?ooo`00Z03oool00`00
+0?l0oooo0?ooo`0[0?ooo`030000o`3oool0oooo09X0oooo0P3o000K0?ooo`00Z@3oool00`000?l0
+oooo0?ooo`0Z0?ooo`030000o`3oool0oooo09`0oooo00<0o`000?ooo`3oool0603oool00:X0oooo
+00<0003o0?ooo`3oool0:03oool00`000?l0oooo0?ooo`2N0?ooo`80o`00603oool00:/0oooo00<0
+003o0?ooo`3oool09`3oool00`000?l0oooo0?ooo`2P0?ooo`030?l0003oool0oooo01D0oooo002/
+0?ooo`030000o`3oool0oooo02D0oooo00<0003o0?ooo`3oool0XP3oool00`3o0000oooo0?ooo`0D
+0?ooo`00[@3oool00`000?l0oooo0?ooo`0T0?ooo`030000o`3oool0oooo0:<0oooo0P3o000D0?oo
+o`00[P3oool00`000?l0oooo0?ooo`0R0?ooo`030000o`3oool0oooo0:H0oooo0P3o000B0?ooo`00
+[`3oool00`000?l0oooo0?ooo`0Q0?ooo`030000o`3oool0oooo0:P0oooo0P3o000@0?ooo`00/03o
+ool00`000?l0oooo0?ooo`0O0?ooo`030000o`3oool0oooo0:/0oooo0P3o000>0?ooo`00/@3oool0
+0`000?l0oooo0?ooo`0N0?ooo`030000o`3oool0oooo0:d0oooo0P3o000<0?ooo`00/P3oool00`00
+0?l0oooo0?ooo`0L0?ooo`030000o`3oool0oooo0;00oooo0P3o000:0?ooo`00/`3oool00`000?l0
+oooo0?ooo`0K0?ooo`030000o`3oool0oooo0;`0oooo002d0?ooo`030000o`3oool0oooo01T0oooo
+00<0003o0?ooo`3oool0_@3oool00;D0oooo00<0003o0?ooo`3oool0603oool00`000?l0oooo0?oo
+o`2m0?ooo`00]P3oool00`000?l0oooo0?ooo`0F0?ooo`030000o`3oool0oooo0;h0oooo002g0?oo
+o`030000o`3oool0oooo01D0oooo00<0003o0?ooo`3oool0_P3oool00;P0oooo00<0003o0?ooo`3o
+ool04`3oool00`000?l0oooo0?ooo`2o0?ooo`00^@3oool00`000?l0oooo0?ooo`0B0?ooo`030000
+o`3oool0oooo0;l0oooo002j0?ooo`030000o`3oool0oooo0100oooo00<0003o0?ooo`3oool0`03o
+ool00;/0oooo00<0003o0?ooo`3oool03`3oool00`000?l0oooo0?ooo`300?ooo`00_03oool00`00
+0?l0oooo0?ooo`0=0?ooo`030000o`3oool0oooo0<40oooo002m0?ooo`030000o`3oool0oooo00`0
+oooo00<0003o0?ooo`3oool0`@3oool00;h0oooo00<0003o0?ooo`3oool02P3oool00`000?l0oooo
+0?ooo`320?ooo`00_`3oool00`000?l0oooo0?ooo`090?ooo`030000o`3oool0oooo0<80oooo0030
+0?ooo`030000o`3oool0oooo00L0oooo00<0003o0?ooo`3oool0``3oool00<40oooo00<0003o0?oo
+o`3oool01P3oool00`000?l0oooo0?ooo`330?ooo`00`P3oool00`000?l0oooo0?ooo`040?ooo`03
+0000o`3oool0oooo0<@0oooo00330?ooo`030000o`3oool0oooo00<0oooo00<0003o0?ooo`3oool0
+a03oool00<@0oooo00D0003o0?ooo`3oool0oooo0000o`370?ooo`00a@3oool010000?l0oooo0?oo
+o`000?o70?ooo`00aP3oool20000olP0oooo00370?ooo`030000o`3oool0oooo0<H0oooo003o0?oo
+oi40oooo003o0?oooi40oooo003o0?oooi40oooo003o0?oooi40oooo003o0?oooi40oooo0000\
+\>"],
+  ImageRangeCache->{{{0, 399}, {251.375, 0}} -> {-5.25828, -3.46779, \
+0.0263573, 0.0263573}}]
+}, Open  ]],
+
+Cell["\<\
+Para conseguir una descripci\[OAcute]n de esta curva, calculamos su conjugada \
+isogonal, en busca de una f\[OAcute]rmula m\[AAcute]s sencilla: \
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factor[
+      lugarP\  /. {x \[Rule] a\^2\/x, y \[Rule] b\^2\/y, 
+          z \[Rule] \ c\^2\/z}]\)], "Input",
+  CellLabel->"In[22]:="],
+
+Cell[BoxData[
+    \(\(-\(\(a\^2\ b\^2\ c\^2\ \((b\^2\ c\^2\ x\^2 - a\^2\ c\^2\ y\^2 + 
+                a\^4\ y\ z - a\^2\ b\^2\ y\ z - a\^2\ c\^2\ y\ z - 
+                a\^2\ b\^2\ z\^2)\)\)\/\(x\^2\ y\^2\ z\^2\)\)\)\)], "Output",
+  CellLabel->"Out[22]="]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Obtenemos que la conjugada isogonal del lugar de P es una c\[OAcute]nica. Si \
+localizamos CINCO puntos que pertenezcan a la c\[OAcute]nica, \[EAcute]sta \
+quedar\[AAcute] determinada. Hallemos los puntos de corte con los lados (o \
+sus prolongaciones del tri\[AAcute]ngulo ABC):\
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(isogonallugarP = 
+        b\^2\ c\^2\ x\^2 - a\^2\ c\^2\ y\^2 + a\^4\ y\ z - a\^2\ b\^2\ y\ z - 
+          a\^2\ c\^2\ y\ z - a\^2\ b\^2\ z\^2;\)\), "\[IndentingNewLine]", 
+    \(Solve[{isogonallugarP == 0, z == 0}, x]\), "\[IndentingNewLine]", 
+    \(Solve[{isogonallugarP == 0, y == 0}, x]\)}], "Input",
+  CellLabel->"In[23]:="],
+
+Cell[BoxData[
+    \({{x \[Rule] \(-\(\(a\ y\)\/b\)\)}, {x \[Rule] \(a\ y\)\/b}}\)], "Output",\
+
+  CellLabel->"Out[24]="],
+
+Cell[BoxData[
+    \({{x \[Rule] \(-\(\(a\ z\)\/c\)\)}, {x \[Rule] \(a\ z\)\/c}}\)], "Output",\
+
+  CellLabel->"Out[25]="]
+}, Open  ]],
+
+Cell[TextData[{
+  "Resulta entonces que la c\[OAcute]nica corta a la recta AB en los puntos \
+",
+  Cell[BoxData[
+      \(C\_1\)]],
+  "(a,b,0)  y  ",
+  Cell[BoxData[
+      \(C\_2\)]],
+  "(-a,b,0), que son los mismos puntos en los que las bisectrices del \
+\[AAcute]ngulo C cortan a la recta AB (recordemos que (a,b,c) son las \
+coordenadas del incentro). De forma parecida, la c\[OAcute]nica corta a AC en \
+los puntos  ",
+  Cell[BoxData[
+      \(B\_1\)]],
+  "(a,0, c) y  ",
+  Cell[BoxData[
+      \(B\_2\)]],
+  "(-a,0,c). Con esto tenemos CUATRO puntos de la c\[OAcute]nica. "
+}], "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell["\<\
+Necesitamos otro punto m\[AAcute]s de la c\[OAcute]nica. En esta parte \
+agradezco la ayuda de Bernard Gibert, miembro del grupo Hyacinthos, por \
+comunicarme que  los v\[EAcute]rtices  Y, Z, correspondientes a B y C del tri\
+\[AAcute]ngulo tangencial XYZ de ABC tambi\[EAcute]n est\[AAcute]n en la c\
+\[OAcute]nica. Su razonamiento es que como los puntos 1:1:-1 y 1:-1:1 \
+pertenecen claramente a la curva del lugar geom\[EAcute]trico de P, sus \
+puntos isogonales, es decir, los v\[EAcute]rtices del tri\[AAcute]ngulo \
+tangencial, estar\[AAcute]n en la conjugada de la curva, la c\[OAcute]nica.\
+\>", "MathCaption",
+  TextJustification->1,
+  FontWeight->"Plain"],
+
+Cell["\<\
+Comprobemos directamente que los v\[EAcute]rtices Y, Z est\[AAcute]n en la c\
+\[OAcute]nica:\
+\>", "Subsubsection",
+  FontWeight->"Plain"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Factor[
+      isogonallugarP\  /. \ {x \[Rule] a\^2, y \[Rule] b\^2, 
+          z \[Rule] \(-c\^2\)}]\), "\[IndentingNewLine]", 
+    \(Factor[
+      isogonallugarP\  /. \ {x \[Rule] a\^2, y \[Rule] \(-b\^2\), 
+          z \[Rule] c\^2}]\)}], "Input",
+  CellLabel->"In[35]:="],
+
+Cell[BoxData[
+    \(0\)], "Output",
+  CellLabel->"Out[35]="],
+
+Cell[BoxData[
+    \(0\)], "Output",
+  CellLabel->"Out[36]="]
+}, Open  ]],
+
+Cell[TextData[{
+  "Con esto no tenemos CINCO, sino ",
+  StyleBox["SEIS",
+    FontWeight->"Bold"],
+  " puntos de la c\[OAcute]nica, por lo que dicha c\[OAcute]nica queda \
+determinada. "
+}], "Subsubsection",
+  FontWeight->"Plain"]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 800}, {0, 527}},
+CellGrouping->Manual,
+WindowSize->{791, 500},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+ShowSelection->True,
+CellLabelAutoDelete->False,
+StyleDefinitions -> "Textbook.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 105, 4, 69, "Title"],
+Cell[1862, 57, 606, 11, 138, "Subsubtitle"],
+Cell[2471, 70, 88, 1, 25, "Text"],
+Cell[2562, 73, 94, 2, 31, "MathCaption"],
+Cell[2659, 77, 66, 1, 44, "Subsection"],
+
+Cell[CellGroupData[{
+Cell[2750, 82, 91, 1, 37, "Subsubsection"],
+Cell[2844, 85, 79, 2, 30, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2960, 92, 151, 4, 37, "Subsubsection"],
+Cell[3114, 98, 87, 2, 30, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3238, 105, 182, 4, 37, "Subsubsection"],
+Cell[3423, 111, 360, 6, 72, "Input"]
+}, Open  ]],
+Cell[3798, 120, 497, 8, 71, "Subsubsection"],
+Cell[4298, 130, 303, 6, 92, "Subsection"],
+
+Cell[CellGroupData[{
+Cell[4626, 140, 101, 1, 37, "Subsubsection"],
+Cell[4730, 143, 78, 2, 30, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4845, 150, 106, 2, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[4976, 156, 287, 5, 50, "Input"],
+Cell[5266, 163, 261, 4, 39, "Output"],
+Cell[5530, 169, 261, 4, 39, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5840, 179, 73, 1, 37, "Subsubsection"],
+Cell[5916, 182, 292, 6, 58, "Input"]
+}, Open  ]],
+Cell[6223, 191, 105, 2, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[6353, 197, 119, 3, 30, "Input"],
+Cell[6475, 202, 60, 2, 24, "Output"]
+}, Open  ]],
+Cell[6550, 207, 158, 4, 44, "Subsection"],
+Cell[6711, 213, 117, 3, 31, "MathCaption"],
+
+Cell[CellGroupData[{
+Cell[6853, 220, 100, 1, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[6978, 225, 104, 2, 30, "Input"],
+Cell[7085, 229, 229, 5, 33, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7363, 240, 188, 4, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[7576, 248, 107, 2, 30, "Input"],
+Cell[7686, 252, 993, 18, 148, "Output"]
+}, Open  ]],
+Cell[8694, 273, 17022, 434, 46, 10987, 355, "GraphicsData", "PostScript", \
+"Input",
+  Evaluatable->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[25753, 712, 102, 1, 37, "Subsubsection"],
+Cell[25858, 715, 204, 4, 31, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[26099, 724, 185, 4, 37, "Subsubsection"],
+Cell[26287, 730, 327, 6, 130, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[26651, 741, 96, 1, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[26772, 746, 587, 12, 90, "Input"],
+Cell[27362, 760, 30114, 702, 261, 6344, 405, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Open  ]],
+Cell[57491, 1465, 200, 4, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[57716, 1473, 155, 4, 47, "Input"],
+Cell[57874, 1479, 257, 4, 42, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[58158, 1487, 335, 6, 54, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[58518, 1497, 353, 6, 70, "Input"],
+Cell[58874, 1505, 120, 3, 35, "Output"],
+Cell[58997, 1510, 120, 3, 35, "Output"]
+}, Open  ]],
+Cell[59132, 1516, 619, 19, 71, "Subsubsection"],
+Cell[59754, 1537, 675, 11, 82, "MathCaption"],
+Cell[60432, 1550, 148, 4, 37, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[60605, 1558, 296, 7, 52, "Input"],
+Cell[60904, 1567, 60, 2, 24, "Output"],
+Cell[60967, 1571, 60, 2, 24, "Output"]
+}, Open  ]],
+Cell[61042, 1576, 229, 7, 37, "Subsubsection"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

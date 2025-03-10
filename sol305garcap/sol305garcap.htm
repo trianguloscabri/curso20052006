@@ -1,0 +1,84 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri305</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema 305 de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=124 bgcolor="#FFFF99"> 
+      <p>Sea el triángulo <i>ABC</i> y dada la ceviana arbitraria <i>AA'</i> donde 
+        <i>A'</i> var&iacute;a sobre el lado <i>BC</i>. Construimos los tri&aacute;ngulos 
+        rectángulos en el vértice <i>A</i>, que denotamos por <i>ACB*</i> y <i>ABC*</i> 
+        donde <i>B*</i> y <i>C*</i> son los puntos más próximos a <i>B</i> y <i>C</i>, 
+        y situados tal vez en la prolongación del lado <i>BC</i>. Por <i>A'</i>&nbsp; 
+        trazamos la recta perpendicular a <i>AA'</i>, y los puntos de corte de 
+        ésta, con <i>AC</i>, <i>AC*</i>, <i>AB</i>, <i>AB*</i> los designamos 
+        por <i>B</i>(<i>A</i>), <i>N</i>(<i>A</i>), <i>C</i>(<i>A</i>), <i>M</i>(<i>A</i>), 
+        respectivamente. Y, con ellos, construimos los cuadriláteros <i>P</i>(<i>A</i>) 
+        =<i>C</i>(<i>A</i>)<i>BB*M</i>(<i>A</i>) y&nbsp; <i>Q</i>(<i>A</i>) =<i>CB</i>(<i>A</i>)<i>N</i>(<i>A</i>)<i>C*</i>.<br>
+        <i>a</i>) &nbsp;Si&nbsp; <i>X</i>(<i>A</i>) e <i>Y</i>(<i>A</i>) son los 
+        puntos que se obtienen como intersección de las diagonales de los cuadriláteros 
+        <i>P</i>(<i>A</i>) y <i>Q</i>(<i>A</i>), <br>
+        respectivamente, entonces <i>X</i>(<i>A</i>), <i>A'</i>, <i>Y</i>(<i>A</i>) 
+        están alineados. <br>
+        <i>b</i>) Lugares geométricos descritos&nbsp; por los puntos <i>X</i>(<i>A</i>), 
+        e <i>Y</i>(<i>A</i>), cuando <i>A'</i>&nbsp; varía sobre la recta que 
+        contiene al lado <i>BC</i>.</p>
+      </TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=9> 
+      <DIV align=right> <font size="-1">Propuesto por Juan Bosco Romero M&aacute;rquez</font></DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><font face="Arial, Helvetica, sans-serif">Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a></font></P>
+<p align="center"><img src="305.jpg" width="350" height="275"></p>
+<p>Vamos a usar <i>Mathematica</i> y coordenadas baric&eacute;ntricas. Tambi&eacute;n 
+  trazaremos gr&aacute;ficas de curvas en forma impl&iacute;cita, por lo que escribimos:</p>
+<p><b><font face="Courier New, Courier, mono" size="-1">&lt;&lt;Baricentricas`;</font></b></p>
+<p>Pasamos ya a introducir las coordenadas de los puntos que intervienen en el 
+  problema. El punto A' del enunciado lo introducios como <b>ptAp</b> y los pntos 
+  <i>B*</i> y <i>C*</i> como <b>ptBe</b> y <b>ptCe</b> respectivamente. </p>
+<blockquote>
+  <p><img src="Image3.jpg" width="434" height="178"></p>
+</blockquote>
+<p>Una vez hallados todos los puntos, comprobar el apartado <i>a</i>) consiste 
+  en comprobar que es nulo un determinante:</p>
+<blockquote>
+  <p><img src="Image4.jpg" width="164" height="45"></p>
+</blockquote>
+<p>Para responder al apartado <i>b</i>) preparamos una funci&oacute;n que calcula 
+  el lugar geom&eacute;trico de un punto. Aparte de hallar la ecuaci&oacute;n, 
+  la funci&oacute;n <b>eclugar</b> presenta el resultado en la forma <i>f</i>(<i>x</i>, 
+  <i>y</i>, <i>z</i>), en vez de en la forma <i>p</i>(<i>x</i>, <i>y</i>, <i>z</i>)==<i>q</i>(<i>x</i>, 
+  <i>y</i>, <i>z</i>) que es como la devuelve <b>Eliminate</b>.</p>
+<blockquote>
+  <p><img src="Image5.jpg" width="280" height="78"></p>
+</blockquote>
+<p>Usamos la funci&oacute;n eclugar para hallar el lugar de <i>X</i>(<i>A</i>):</p>
+<blockquote> 
+  <p><img src="Image7.jpg" width="612" height="140"></p>
+</blockquote>
+<p>Ahora para hallar el lugar de <i>Y</i>(<i>A</i>).</p>
+<blockquote>
+  <p><img src="Image8.jpg" width="622" height="140"></p>
+</blockquote>
+<p>Vemos que se trata de dos c&uacute;bicas. Representando las gr&aacute;ficas 
+  de estas curvas podemos comprobar que, por ejemplo, la primera, mostrada en 
+  verde, pasa por <i>B</i> y <i>B*</i>, y la segunda, mostrada en rojo, pasa por 
+  <i>C</i> y <i>C*</i>. Cada una de las curvas parece tener una as&iacute;ntota, 
+  que tambi&eacute;n hemos dibujado.</p>
+<blockquote> 
+  <p><img src="grafica1.jpg" width="600" height="300"></p>
+</blockquote>
+<p>Aqu&iacute; tenemos la misma figura a otra escala:</p>
+<blockquote>
+  <p><img src="grafica2.jpg" width="600" height="250"></p>
+  <p>&nbsp;</p>
+</blockquote>
+</BODY></HTML>

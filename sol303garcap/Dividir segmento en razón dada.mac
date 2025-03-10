@@ -1,0 +1,42 @@
+MACRO CabriII vers. MS-Windows 1.0
+Dividir segmento en razón dada, Este punto
+Icon:
+0000000000000000
+0000000000000000
+00FF00000000FF00
+00FFF000000FFF00
+00FFFF0000FFFF00
+00FF0FF00FF0FF00
+00FF00FFFF00FF00
+00FF000FF000FF00
+00FF00000000FF00
+00FF00000000FF00
+00FF00000000FF00
+00FF00000000FF00
+00FF00000000FF00
+0000000000000000
+0000000000000000
+0000000000000000
+Mth: 0
+CN:6, ON:13, FN:1, PO:12
+CT:
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+Const:
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 1 2
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 3 1
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 5 1
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 4 9
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 1 10
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 6 1
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 4 12
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 1 13
+Int, Mth:1, 0, 256, CN:2, VN:1, Const: 8 11
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 15 2
+Int, Mth:1, 0, 256, CN:2, VN:1, Const: 8 14
+Par, Mth:0, 0, 0, CN:2, VN:2, Const: 17 16
+Int, Mth:0, 1, 0, CN:2, VN:1, Const: 18 7, B, W, t, DS:1 1, GT:1, V, nSt

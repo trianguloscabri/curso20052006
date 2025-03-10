@@ -1,0 +1,34 @@
+Figure Cabri II Plus vers. MS-Windows 1.2.5
+
+Window center x: -0.05cm y: 2.55cm Window size x: 26.53cm y: 16.74cm
+Resolution: 38 ppc
+
+1: Pt, Val: 0 0
+invisible, 
+
+2: Axes, Const: 1, cart, Val: 1 0 0 1
+color:Gr, invisible, 
+
+3: Pt, Val: -11.5789473684211 10.9210526315789
+
+4: Pt, Val: -5.47368421052632 8.3421052631579
+color:B, 
+"A=(x,y)"
+TP:  -6.05263157894737,  9, TS:  2.63157894736842,  0.473684210526316
+p: 0, Arial, S: 12 C: 40 Fa: 0
+
+5: Pt, Val: -7.02631578947368 4.07894736842105
+color:B, 
+"B=(-1,0)"
+TP:  -7.76315789473684,  4, TS:  1.52631578947368,  0.473684210526316
+p: 0, Arial, S: 12 C: 40 Fa: 0
+
+6: Pt, Val: -0.368421052631579 4.07894736842105
+color:B, 
+"C=(1,0)"
+TP:  -0.868421052631579,  4.05263157894737, TS:  1.97368421052632,  0.473684210526316
+p: 0, Arial, S: 12 C: 40 Fa: 0
+
+7: Tr, Const: 4,  5,  6, 
+color:B, fill color:kki, 
+

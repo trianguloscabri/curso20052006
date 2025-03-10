@@ -1,0 +1,320 @@
+<html>
+<head>
+<title>trianguloscabri300</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="estilos.css" type="text/css">
+<style type="text/css">
+<!--
+.Estilo2 {	color: #3366CC;
+	font-size: 14pt;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0">
+  <tr> 
+    <td>
+      <h3><i>trianguloscabri<font color="#FF0000">300</font></i></h3>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <h1 align="center"><i></i> Redescubrir en Geometr&iacute;a</h1>
+    </td>
+  </tr>
+  <tr> 
+    <td>
+      <div align="right">por <i><a href="http://garciacapitan.auna.com">Francisco 
+        Javier Garc&iacute;a Capit&aacute;n</a></i></div>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr>
+    <td width="92%" valign="top"> 
+      <h2>Introducci&oacute;n</h2>
+      <p>El t&iacute;tulo de este art&iacute;culo est&aacute; basado en el de 
+        un buen libro de Miguel de Guzm&aacute;n, cuya portada se muestra en la 
+        imagen: <b>La Experiencia de Descubrir en Geometr&iacute;a</b>. </p>
+      <p>En dicho libro vemos ejemplos de que es posible hallar resultados nuevos 
+        en Geometr&iacute;a, ejemplos donde Miguel de Guzm&aacute;n une su gran 
+        val&iacute;a como investigador y la ayuda que las nuevas tecnolog&iacute;as 
+        ponen a nuestro alcance.</p>
+      <p>El prop&oacute;sito de este art&iacute;culo no es tan ambicioso, pues 
+        apenas mostraremos alg&uacute;n resultado que la mayor&iacute;a no conozca, 
+        pero s&iacute; queremos indicar la manera de seguir los pasos que otros 
+        hayan dado, sin olvidar que en estas lides el camino es tan apasionante 
+        como el destino de nuestro viaje. </p>
+      <p><span class="Estilo2">(reproducido con permiso de Editorial Nivola a quien el director agradece la atenci&oacute;n)</span></p>
+      <p>Comencemos...</p>
+</td>
+    <td width="8%"><a href="http://www.nivola.com/framelibro.asp?ref=44"><img src="guzman2.png" width="200" height="280" border="0"></a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="0">
+  <tr valign="top"> 
+    <td width="92%" height="241"> 
+      <h2><a href="http://www.xtec.es/%7Eqcastell/ttw/"><img src="ttw.jpg" width="308" height="198" border="0" align="right"></a>Punto 
+        de partida y herramientas</h2>
+      <p>Un buen punto de partida puede ser la p&aacute;gina TTW de <a href="http://www.xtec.es/%7Eqcastell/ttw/">Quim 
+        Castellsaguer</a> en la que podemos encontrar pr&aacute;cticamente todos 
+        los conceptos y resultados relacionados con la geometr&iacute;a del tri&aacute;ngulo. 
+      </p>
+      <p>Se tratar&iacute;a de una obra tit&aacute;nica si cada resultado tuviera 
+        en dichas p&aacute;ginas tambi&eacute;n su demostraci&oacute;n, pero tambi&eacute;n 
+        es verdad que la ausencia de la misma puede motivarnos a investigar por 
+        nuestra cuenta y qui&eacute;n sabe si ello pueda llevarnos por nuevos 
+        derroteros. </p>
+      <p>Para nuestro prop&oacute;sito nos equiparemos con tres herramientas:</p>
+      <ul>
+        <li>El programa de geometr&iacute;a din&aacute;mica Cabri-G&eacute;om&egrave;tre, 
+          en cualquiera de sus versiones. </li>
+        <li>El programa de c&aacute;lculo simb&oacute;lico <i>Mathematica</i>, 
+          tambi&eacute;n en cualquiera de sus versiones. </li>
+        <li><a href="http://garciacapitan.auna.com/baricentricas">Las coordenadas 
+          baric&eacute;ntricas</a>. Usaremos la obra de referencia de <a href="http://www.math.fau.edu/yiu/Geometry.html">Paul 
+          Yiu</a> y el cuaderno <a href="http://garciacapitan.auna.com/baricentricas/baricentricas.nb">Baricentricas.nb</a> 
+          que ya hemos utilizado en varias ocasiones al resolver problemas aparecidos 
+          en la p&aacute;gina de Ricardo Barroso Campos. Para esta ocasi&oacute;n 
+          hemos a&ntilde;adido al cuaderno algunas rutinas para efectuar algunos 
+          c&aacute;lculos con c&oacute;nicas.</li>
+      </ul>
+      <p>En esta ocasi&oacute;n trabajaremos con el punto de Clawson de un tri&aacute;ngulo.</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p><table width="100%" border="0">
+  <tr valign="top"> 
+    <td width="92%" height="111"> 
+      <h2>El punto de Clawson</h2>
+      <p>En TTW podemos leer sobre el punto de Clawson:</p>
+      <ul>
+        <li><b>Definici&oacute;n</b>. El punto de Clawson del tri&aacute;ngulo 
+          ABC es el centro de homotecia entre A'B'C', tri&aacute;ngulo &oacute;rtico 
+          de ABC, y A&quot;B&quot;C&quot;, tri&aacute;ngulo extangencial de ABC. 
+          Es el punto X<sub>19</sub> de ETC. </li>
+        <li><b>Teorema 1</b>. Los puntos de tangencia entre las circunferencias 
+          exinscritas y las prolongaciones de los lados del tri&aacute;ngulo est&aacute;n 
+          en una c&oacute;nica, que tiene el centro X alineado con el simediano 
+          K y con el punto de Clawson.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%" border="0">
+  <tr valign="top"> 
+    <td width="92%" height="111"> 
+      <h2>El punto de Clawson: lo que ya est&aacute; hecho</h2>
+      <p><img src="fig01.jpg" width="355" height="287" align="right">En primer 
+        lugar, elijamos una notaci&oacute;n para los puntos de contacto de las 
+        circunferencias exinscritas con los lados del tri&aacute;ngulo <i>ABC</i> 
+        o sus prolongaciones. Cada punto se nombra con la letra <i>I</i> seguida 
+        de una letra <i>a</i>, <i>b</i>, <i>c</i> que se refiere a la circunferencia 
+        y una letra <i>X</i>, <i>Y</i>, <i>Z</i> que se refiere a la recta <i>BC</i>, 
+        <i>CA</i>, o <i>AB</i> respectivamente. Esta notaci&oacute;n aunque un 
+        poco engorrosa tiene la ventaja de ser f&aacute;cil de recordar. </p>
+      <p>El tri&aacute;ngulo &oacute;rtico <i>A'B'C'</i> es f&aacute;cil de dibujar. 
+      </p>
+      <p>Para obtener el tri&aacute;ngulo extangencial <i>A&quot;B&quot;C&quot;</i> 
+        hallaremos las rectas sim&eacute;tricas de <i>BC</i>, <i>CA</i>, <i>AB</i> 
+        respecto de las rectas <i>IbIc</i>, IcIa e IaIb, respectivamente. </p>
+</td>
+  </tr>
+</table>
+<p>La figura obtenida ser&iacute;a la siguiente:</p>
+<p align="center"><img src="fig02.jpg" width="521" height="410"></p>
+<p align="left">Los v&eacute;rtices del tri&aacute;ngulo &oacute;rtico los obtenemos 
+  as&iacute;:</p>
+<blockquote>
+  <p><img src="orticojpg.jpg" width="178" height="58"> </p>
+</blockquote>
+<p>Para hacer las coordenadas de los v&eacute;rtices del tri&aacute;ngulo extangencial 
+  necesitamos necesitamos saber las coordenadas de los puntos de contacto de las 
+  circunferencias exinscritas con las prolongaciones. </p>
+<p>Para ello, recordamos que, por ejemplo, es <i>B</i>(<i>I<sub>b</sub>X</i>) 
+  = <i>s</i> y <i>C</i>(<i>I<sub>b</sub>X</i>) = <i>s</i>-<i>a</i>. Entonces <i>B</i>(<i>I<sub>b</sub>X</i>):(<i>I<sub>b</sub>X</i>)<i>C</i> 
+  = -<i>s</i>:<i>s</i>-<i>a</i> y <i>I<sub>b</sub>X</i> = (0:<i>s</i>-<i>a</i>:-<i>s</i>). 
+  De la misma forma podemos hallar todos los dem&aacute;s puntos de contacto. 
+  Entonces podemos introducir en <i>Mathematica</i> las coordenadas de todos estos 
+  puntos as&iacute;:</p>
+<blockquote> 
+  <p><img src="contacto.jpg" width="460" height="78"></p>
+</blockquote>
+<p>Ahora hallamos las rectas sim&eacute;tricas de las rectas <i>BC</i>, CA, AB 
+  respecto de I_bI_c, I_cI_a, I_aI_b, respectivamente. </p>
+<blockquote> 
+  <p><img src="simetricas.jpg" width="576" height="58"></p>
+</blockquote>
+<p>Finalmente hallamos los puntos de intersecci&oacute;n de estas rectas:</p>
+<blockquote> 
+  <p><img src="extangencial.jpg" width="360" height="143"></p>
+</blockquote>
+<p>Ahora podemos comprobar que las rectas <i>A'A&quot;</i>, <i>B'B&quot;</i> y 
+  <i>C'C&quot;</i> son concurrentes:</p>
+<blockquote> 
+  <p><img src="concurrentes.jpg" width="152" height="105"></p>
+</blockquote>
+<p>Adem&aacute;s las rectas <i>B'C'</i> y <i>B&quot;C&quot;</i> son paralelas, 
+  pues se cortan en un punto cuyas coordenadas suman 0, un punto de la recta del 
+  infinito:</p>
+<blockquote> 
+  <p><img src="paralelas.jpg" width="303" height="45"></p>
+</blockquote>
+<p>De la misma forma, los otros pares de rectas tambi&eacute;n son paralelos y 
+  los tri&aacute;ngulos <i>A'B'C'</i> y <i>A&quot;B&quot;C&quot;</i> son homot&eacute;ticos. 
+  Para hallar el centro de la homotecia, hallaremos la intersecci&oacute;n de 
+  <i>A'A&quot;</i> y <i>B'B&quot;</i>:</p>
+<blockquote> 
+  <p><img src="clawson.jpg" width="556" height="85"> </p>
+</blockquote>
+<p>Este punto puede escribirse en la forma</p>
+<blockquote>
+  <p><img src="clawson2.jpg" width="268" height="30"></p>
+</blockquote>
+<p>y teniendo en cuenta que seg&uacute;n el teorema del coseno y el teorema de 
+  los senos es</p>
+<blockquote> 
+  <p><img src="teoremas.jpg" width="361" height="35"></p>
+</blockquote>
+<p>podemos expresar</p>
+<blockquote>
+  <p><img src="tang1.jpg" width="632" height="33"></p>
+</blockquote>
+<p>y entonces</p>
+<blockquote> 
+  <p><img src="tang2.jpg" width="547" height="30"></p>
+</blockquote>
+<p>que es como aparece el punto de Clawson en la ETC de Clark Kimberling. Tambi&eacute;n 
+  podemos calcular la coordenada de b&uacute;squeda en la ETC del punto que hemos 
+  hallado:</p>
+<blockquote> 
+  <p><img src="kimberling.jpg" width="153" height="45"> </p>
+</blockquote>
+<p>Buscando esta coordenada en la p&aacute;gina de b&uacute;squeda de la ETC encontramos 
+  que, efectivamente, corresponde a X<sub>19</sub>.</p>
+<h2>El punto de Clawson: investiguemos un poco m&aacute;s</h2>
+<p>Con un poco m&aacute;s de trabajo podemos hallar la raz&oacute;n de homotecia:</p>
+<blockquote> 
+  <p><img src="razon1.jpg" width="560" height="65"></p>
+</blockquote>
+<p>La raz&oacute;n de homotecia queda calculada salvo un signo. Para determinarla 
+  completamente probamos a dividir el segmento <i>A'A&quot;</i> con una de las 
+  posibilidades, y al obtener el punto de Clawson sabemos que es la correcta:</p>
+<blockquote> 
+  <p><img src="razon2.jpg" width="650" height="62"></p>
+</blockquote>
+<p>Por tanto deducimos que la homotecia que lleva A&quot;B&quot;C&quot; en A'B'C' 
+  viene dada por <img src="razon4.jpg" width="115" height="18" align="absmiddle">siendo 
+</p>
+<blockquote> 
+  <p><img src="razon3.jpg" width="435" height="56"></p>
+</blockquote>
+<h2>&nbsp;</h2>
+<p><img src="fig03.jpg" width="489" height="433" align="right">Las f&oacute;rmulas 
+  vistas hasta aqu&iacute; nos dicen que la situaci&oacute;n ser&aacute; especial 
+  en el caso de un tri&aacute;ngulo rect&aacute;ngulo. Consideremos por ejemplo 
+  un tri&aacute;ngulo rect&aacute;ngulo en <i>B</i>, y hagamos la figura con Cabri, 
+  que se muestra a la derecha. </p>
+<p>Entonces el tri&aacute;ngulo &oacute;rtico <i>A'B'C'</i> degenera en un segmento 
+  en el que <i>B'</i> es pie de <i>B</i> sobre <i>CA</i> y <i>A'</i>= <i>B</i> 
+  = <i>C'</i>. </p>
+<p>Si <i>ABC</i> es rect&aacute;ngulo en <i>B</i>,el tri&aacute;ngulo extangencial 
+  tambi&eacute;n es extra&ntilde;o, pues las rectas <i>A&quot;B&quot;</i> y <i>B&quot;C&quot;</i> 
+  resultan paralelas y <i>B&quot;</i> es un punto del infinito. </p>
+<p>Esto lo podemos comprobar hallando la suma de las coordenadas (traza en terminolog&iacute;a 
+  de matrices) del punto B, y comprobando que se anula cuando el tri&aacute;ngulo 
+  <i>ABC</i> es rect&aacute;ngulo en <i>B</i>:</p>
+<blockquote> 
+  <p><img src="trazab.jpg" width="118" height="45"></p>
+</blockquote>
+<p>El punto de Clawson coincide con el v&eacute;rtice <i>B</i>. </p>
+<p>Observemos que en este caso de que el tri&aacute;ngulo <i>ABC</i> sea rect&aacute;ngulo 
+  en <i>B</i>, se cumplen las relaciones <img src="razon5.jpg" width="461" height="18" align="absmiddle"></p>
+<p>En efecto, en este caso tenemos <i>k</i>=0, y por un lado, </p>
+<blockquote> 
+  <p><img src="ecuacion1.gif" width="264" height="48"></p>
+</blockquote>
+<p>Por otro lado tenemos <img src="ecuacion2.gif" width="201" height="24" align="absmiddle"> 
+  resultado que es indeterminado. Casi podemos decir que se cumplen las tres relaciones. 
+</p>
+<h2>La c&oacute;nica de Yiu: lo que ya est&aacute; hecho</h2>
+<p>Vamos a comprobar que es cierto el mencionado <b><br>
+  Teorema 1</b>. Los puntos de tangencia entre las circunferencias exinscritas 
+  y las prolongaciones de los lados del tri&aacute;ngulo est&aacute;n en una c&oacute;nica, 
+  que tiene el centro X alineado con el simediano K y con el punto de Clawson.</p>
+<p>Adem&aacute;s resultar&aacute; que el punto X est&aacute; catalogado como X<sub>478</sub> 
+  en la ETC de Clark Kimberling.</p>
+<p>Hallamos ecuaci&oacute;n de la c&oacute;nica que pasa por cinco de los seis 
+  puntos de contacto. </p>
+<blockquote>
+  <p><img src="conica5.jpg" width="654" height="116"></p>
+</blockquote>
+<p>Ahora sustituimos por el sexto punto de contacto (<b>ptIcY</b>) y comprobamos 
+  que pertenece a la c&oacute;nica.</p>
+<blockquote>
+  <p><img src="sustituicion.jpg" width="322" height="45"></p>
+</blockquote>
+<p>Simplifiquemos un poco la ecuaci&oacute;n quitando los factores no nulos: </p>
+<blockquote>
+  <p><img src="conicayiu.jpg" width="518" height="83"></p>
+</blockquote>
+<p>Podemos hallar el centro de la c&oacute;nica:</p>
+<blockquote>
+  <p><img src="centroyiu.jpg" width="455" height="151"></p>
+</blockquote>
+<p>Comprobamos que dicho centro ya est&aacute; catalogado en la ETC de Clark Kimberling:</p>
+<blockquote>
+  <p><img src="kimbcentroyiu.jpg" width="152" height="45"></p>
+</blockquote>
+<p>Ahora comprobamos lo afirmado por el teorema 1, que el punto de Clawson, el 
+  punto simediano K y el centro de la c&oacute;nica est&aacute;n alineados, introducciendo 
+  directamente las coordenadas del punto simediano:</p>
+<blockquote>
+  <p><img src="x19kcentroyiu.jpg" width="279" height="46"></p>
+</blockquote>
+<h2>La c&oacute;nica de Yiu: investiguemos un poco m&aacute;s.</h2>
+<p>Puede ser interesante determinar en qu&eacute; casos la c&oacute;nica es una 
+  elipse, una par&aacute;bola o una hip&eacute;rbola. Ello se hace en coordenadas 
+  baric&eacute;ntricas resolviendo el sistema formado por la ecuaci&oacute;n de 
+  la c&oacute;nica y la recta x+y+z=0, la recta del infinito. Seg&uacute;n que 
+  haya dos soluciones, una o ninguna se tratar&aacute; de una hip&eacute;rbola, 
+  una par&aacute;bola o una elipse. </p>
+<p>La siguiente funci&oacute;n calcula el discriminante de la ecuaci&oacute;n 
+  de segundo grado resultante del sistema anterior, por lo que cuando sea positivo, 
+  nulo o negativo se tratar&aacute; de una hip&eacute;rbola, par&aacute;bola o 
+  elipse, respectivamente. </p>
+<blockquote>
+  <p><img src="discr.jpg" width="515" height="64"></p>
+</blockquote>
+<p>Una forma de hacernos una idea de a qu&eacute; tri&aacute;ngulos corresponde 
+  que esta expresi&oacute;n sea nula es fijar el segmento BC de manera que B=(-1,0) 
+  y C=(1,0) y dejar libre el v&eacute;rtice A=(x,y). Sustituyendo los valores 
+  de a, b, c para este tri&aacute;ngulo obtendremos una ecuaci&oacute;n f(x,y). 
+</p>
+<p align="center"><img src="287i.jpg" width="339" height="224"></p>
+<p>Los puntos A correspondientes a f(x,y)=0 dar&aacute;n lugar a tri&aacute;ngulos 
+  ABC donde la c&oacute;nica ser&aacute; una par&aacute;bola. Si es +f(x,y)&gt;0 
+  tendremos una hip&eacute;rbola y si f(x,y)&lt;0 una elipse. Desgraciadamente, 
+  en este caso la ecuaci&oacute;n resultante es bastante complicada:</p>
+<blockquote>
+  <p><img src="ecuxy.jpg" width="683" height="195"></p>
+</blockquote>
+<p>Sin embargo, la funci&oacute;n <b>ImplicitPlot</b> de <i>Mathematica</i> es 
+  capaz de representarla. </p>
+<blockquote>
+  <p><img src="lugar.jpg" width="595" height="398"></p>
+</blockquote>
+<p>En las zonas coloreadas en amarillo en la figura siguiente tendremos una hip&eacute;rbola, 
+  y en las coloreadas en verde tendremos una elipse, mientras que s&oacute;lo 
+  habr&aacute; una par&aacute;bola en los puntos de la curva.</p>
+<blockquote>
+  <p><img src="regiones.jpg" width="345" height="345"></p>
+  <p>&nbsp;</p>
+</blockquote>
+</body>
+</html>

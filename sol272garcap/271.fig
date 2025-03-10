@@ -1,0 +1,35 @@
+Figure Cabri II Plus vers. MS-Windows 1.2.5
+
+Window center x: 2.74cm y: -2.24cm Window size x: 20.63cm y: 12.32cm
+Resolution: 38 ppc
+
+1: Pt, Val: 0 0
+invisible, 
+
+2: Axes, Const: 1, cart, Val: 1 0 0 1
+invisible, 
+
+3: Pt, Val: -3.76315789473684 -2.97368421052632
+
+4: Pt, Val: 1.92105263157895 -2.97368421052632
+
+5: Cir, Const: 3,  4, 
+invisible, 
+
+6: Cir, Const: 4,  3, 
+invisible, 
+
+8: Int, Const: 5,  6, int ind:0x10000, 
+
+9: Tr, Const: 8,  3,  4, 
+color:Bl, fill color:kki, 
+
+10: Mid, Const: 9, side:0, 
+
+11: Mid, Const: 9, side:2, 
+
+12: Mid, Const: 9, side:1, 
+
+13: Tr, Const: 10,  11,  12, 
+color:Bl, 
+

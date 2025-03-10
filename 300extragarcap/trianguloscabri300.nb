@@ -1,0 +1,2169 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     72443,       1943]*)
+(*NotebookOutlinePosition[     73106,       1966]*)
+(*  CellTagsIndexPosition[     73062,       1962]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Definici\[OAcute]n", "Subsubtitle",
+  FontWeight->"Bold"],
+
+Cell[TextData[{
+  "El punto de Clawson del tri\[AAcute]ngulo ",
+  StyleBox["ABC",
+    FontSlant->"Italic"],
+  " es el centro de homotecia entre ",
+  StyleBox["A'B'C",
+    FontSlant->"Italic"],
+  "', tri\[AAcute]ngulo \[OAcute]rtico de ",
+  StyleBox["ABC",
+    FontSlant->"Italic"],
+  ", y ",
+  StyleBox["A\"B\"C\"",
+    FontSlant->"Italic"],
+  ", tri\[AAcute]ngulo extangencial de ",
+  StyleBox["ABC",
+    FontSlant->"Italic"],
+  ". Es el punto X(19) de ",
+  StyleBox["ETC",
+    FontSlant->"Italic"],
+  ". "
+}], "Text"],
+
+Cell[BoxData[{
+    \(\(<< Baricentricas`\ ;\)\), "\[IndentingNewLine]", 
+    \(\(<< Graphics`ImplicitPlot`;\)\)}], "Input"],
+
+Cell["\<\
+Hallamos las coordenadas de los v\[EAcute]rtices del  tri\[AAcute]ngulo \
+\[OAcute]rtico:\
+\>", "Text"],
+
+Cell[BoxData[{
+    \(\(ptA1 = Pie[ptA, ptB, ptC];\)\), "\[IndentingNewLine]", 
+    \(\(ptB1 = Pie[ptB, ptC, ptA];\)\), "\[IndentingNewLine]", 
+    \(\(ptC1 = Pie[ptC, ptA, ptB];\)\)}], "Input"],
+
+Cell["\<\
+Ahora, las coordenadas de los v\[EAcute]rtices del  tri\[AAcute]ngulo \
+extangencial. Primero hallamos las ecuaciones de las rectas que determinan a \
+estos puntos:\
+\>", "Text"],
+
+Cell[BoxData[{
+    \(\(rtB2C2\  = \ 
+        Punto[SimetriaAxial[ptIbX, ptIb, ptIc], 
+          SimetriaAxial[ptIcX, ptIb, ptIc]];\)\), "\[IndentingNewLine]", 
+    \(\(rtC2A2\  = \ 
+        Punto[SimetriaAxial[ptIcY, ptIc, ptIa], 
+          SimetriaAxial[ptIaY, ptIc, ptIa]];\)\), "\[IndentingNewLine]", 
+    \(\(rtA2B2\  = \ 
+        Punto[SimetriaAxial[ptIaZ, ptIa, ptIb], 
+          SimetriaAxial[ptIbZ, ptIa, ptIb]];\)\)}], "Input"],
+
+Cell["Ahora hallamos las coordenadas de los puntos:", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(ptA2 = \ Punto[rtC2A2, rtA2B2]\), "\[IndentingNewLine]", 
+    \(ptB2 = \ Punto[rtA2B2, rtB2C2]\), "\[IndentingNewLine]", 
+    \(ptC2 = \ Punto[rtB2C2, rtC2A2]\)}], "Input"],
+
+Cell[BoxData[
+    \({\(-a\^2\)\ \((a + b + c)\), 
+      b\ \((a + b - c)\)\ \((a + c)\), \((a + b)\)\ c\ \((a - b + 
+            c)\)}\)], "Output"],
+
+Cell[BoxData[
+    \({a\ \((a + b - c)\)\ \((b + c)\), \(-b\^2\)\ \((a + b + 
+            c)\), \(-\((a + b)\)\)\ \((a - b - c)\)\ c}\)], "Output"],
+
+Cell[BoxData[
+    \({a\ \((a - b + c)\)\ \((b + c)\), 
+      b\ \((a + c)\)\ \((\(-a\) + b + c)\), \(-c\^2\)\ \((a + b + 
+            c)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Det[{\[IndentingNewLine]Recta[ptA1, ptA2], \[IndentingNewLine]Recta[
+          ptB1, ptB2], \[IndentingNewLine]Recta[ptC1, ptC2]}]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptClawson\  = \ 
+      Factor[Punto[\[IndentingNewLine]Recta[ptA1, 
+            ptA2], \[IndentingNewLine]Recta[ptB1, ptB2]]]\)], "Input"],
+
+Cell[BoxData[
+    \({a\ \((a\^2 + b\^2 - c\^2)\)\ \((a\^2 - b\^2 + c\^2)\), 
+      b\ \((a\^2 + b\^2 - c\^2)\)\ \((\(-a\^2\) + b\^2 + c\^2)\), 
+      c\ \((a\^2 - b\^2 + c\^2)\)\ \((\(-a\^2\) + b\^2 + c\^2)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Punto[Recta[ptB1, ptC1], Recta[ptB2, ptC2]]\)], "Input"],
+
+Cell[BoxData[
+    \({b\^2 - c\^2, \(-b\^2\), c\^2}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\(ptClawson = \({\(R\ a\ Tan[A]\)\/\(a\ b\ c\), \(R\ b\ Tan[B]\)\/\(a\
+\ b\ c\), \(R\ c\ Tan[C]\)\/\(a\ b\ c\)} = {a\ Tan[A], b\ Tan[B], 
+          c\ Tan[C]}\)\)\(,\)\)\)], "Input"],
+
+Cell[BoxData[
+    \(cos[A]\  = \(b\^2 + c\^2 - a\^2\)\/\(2  b\ c\), 
+    a\/sen[A] = \(b\/sen[B] = \(c\/sen[C] = 2  R\)\), \)], "Input"],
+
+Cell[BoxData[
+    \(a\/\(\(-a\^2\) + b\^2 + c\^2\)\  = \(\(a\/\(2  
+                b\ c\)\) : \(b\^2 + c\^2 - a\^2\)\/\(2  b\ c\) = \(a\/\(2  a\ \
+b\ c\)\[CenterDot]\(a : \(b\^2 + c\^2 - a\^2\)\/\(2  b\ c\)\) = \(\(2  R\ a\)\
+\/\(2  a\ b\ c\)\[CenterDot]Sen[A] : 
+              Cos[A] = \(R\ a\ Tan[A]\)\/\(a\ b\ c\)\)\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Kimberling[ptClawson]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-1.4805123977888040146888985064`11.061911316906693\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[
+      CuadradoDistancia[ptClawson, ptA1]/
+        CuadradoDistancia[ptClawson, ptA2]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(\((a\^2 + b\^2 - c\^2)\)\^2\ \((a\^2 - b\^2 + c\^2)\)\^2\ \
+\((\(-a\^2\) + b\^2 + c\^2)\)\^2\)\/\(4\ a\^2\ b\^2\ c\^2\ \((a\^3 - a\^2\ \
+\((b + c)\) + \((b - c)\)\^2\ \((b + c)\) - a\ \((b + c)\)\^2)\)\^2\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factor[
+      DividirRazon[ptA1, 
+        ptA2, \(\((a\^2 + b\^2 - c\^2)\) \((a\^2 - b\^2 + c\^2)\)\ \((\(-a\^2\
+\) + b\^2 + c\^2)\)\)\/\(2  a\ b\ c\ \((a\^3 - a\^2\ b - a\ b\^2 + b\^3 - \
+a\^2\ c - 2\ a\ b\ c - b\^2\ c - a\ c\^2 - b\ c\^2 + c\^3)\)\), 
+        1]]\)], "Input"],
+
+Cell[BoxData[
+    \({a\ \((a\^2 + b\^2 - c\^2)\)\ \((a\^2 - b\^2 + c\^2)\), 
+      b\ \((a\^2 + b\^2 - c\^2)\)\ \((\(-a\^2\) + b\^2 + c\^2)\), 
+      c\ \((a\^2 - b\^2 + c\^2)\)\ \((\(-a\^2\) + b\^2 + c\^2)\)}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(X\_19\) A'\  = 
+      k\[CenterDot]X\_19  
+        A \*"\"\<, \!\(X\_19\)B' =k\[CenterDot]\!\(X\_19\)B\>\"", \ \(X\_19\) 
+        C'\  = k\[CenterDot]X\_19  C "\<.              \>"\)], "Input"],
+
+Cell[BoxData[
+    \(\(X\_19\) B'\  = k\[CenterDot]X\_19  B \*"\"\<\>"\)], "Input"],
+
+Cell[BoxData[
+    \(\(X\_19\) C'\  = k\[CenterDot]X\_19  C \*"\"\<\>"\)], "Input"],
+
+Cell[BoxData[
+    \(\(\(\n\)\(\ \)\(k = \(\(\(\((a\^2 + b\^2 - c\^2)\) \((a\^2 - b\^2 + 
+                  c\^2)\)\ \((\(-a\^2\) + b\^2 + c\^2)\)\)\/\(2  
+              a\ b\ c\ \((\(-a\^3\) + a\^2\ b + a\ b\^2 - b\^3 + a\^2\ c + 
+                  2\ a\ b\ c + b\^2\ c + a\ c\^2 + b\ c\^2 - 
+                  c\^3)\)\)\)\(.\)\)\)\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Factor[Tr[ptB2]]\)], "Input"],
+
+Cell[BoxData[
+    \(b\ \((a\^2 - b\^2 + c\^2)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(conica5 = 
+      ConicaCincoPuntos[ptIaY, ptIaZ, ptIbX, ptIbZ, ptIcX]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/64\ a\ \((a + b)\)\ c\ \((b + 
+          c)\)\ \((a + b + c)\)\^2\ \((a\^4\ x\^2 - 2\ a\^2\ b\^2\ x\^2 + 
+          b\^4\ x\^2 - 2\ a\^2\ c\^2\ x\^2 - 2\ b\^2\ c\^2\ x\^2 + 
+          c\^4\ x\^2 + 2\ a\^4\ x\ y - 4\ a\^2\ b\^2\ x\ y + 2\ b\^4\ x\ y - 
+          8\ a\ b\ c\^2\ x\ y - 2\ c\^4\ x\ y + a\^4\ y\^2 - 
+          2\ a\^2\ b\^2\ y\^2 + b\^4\ y\^2 - 2\ a\^2\ c\^2\ y\^2 - 
+          2\ b\^2\ c\^2\ y\^2 + c\^4\ y\^2 + 2\ a\^4\ x\ z - 2\ b\^4\ x\ z - 
+          8\ a\ b\^2\ c\ x\ z - 4\ a\^2\ c\^2\ x\ z + 2\ c\^4\ x\ z - 
+          2\ a\^4\ y\ z + 2\ b\^4\ y\ z - 8\ a\^2\ b\ c\ y\ z - 
+          4\ b\^2\ c\^2\ y\ z + 2\ c\^4\ y\ z + a\^4\ z\^2 - 
+          2\ a\^2\ b\^2\ z\^2 + b\^4\ z\^2 - 2\ a\^2\ c\^2\ z\^2 - 
+          2\ b\^2\ c\^2\ z\^2 + c\^4\ z\^2)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(conicaYiu = Collect[Last[conica5], {x, y, z}]\)], "Input"],
+
+Cell[BoxData[
+    \(\((a\^4 - 2\ a\^2\ b\^2 + b\^4 - 2\ a\^2\ c\^2 - 2\ b\^2\ c\^2 + 
+            c\^4)\)\ x\^2 + \((a\^4 - 2\ a\^2\ b\^2 + b\^4 - 2\ a\^2\ c\^2 - 
+            2\ b\^2\ c\^2 + c\^4)\)\ y\^2 + \((\(-2\)\ a\^4 + 2\ b\^4 - 
+            8\ a\^2\ b\ c - 4\ b\^2\ c\^2 + 2\ c\^4)\)\ y\ z + \((a\^4 - 
+            2\ a\^2\ b\^2 + b\^4 - 2\ a\^2\ c\^2 - 2\ b\^2\ c\^2 + 
+            c\^4)\)\ z\^2 + 
+      x\ \((\((2\ a\^4 - 4\ a\^2\ b\^2 + 2\ b\^4 - 8\ a\ b\ c\^2 - 
+                  2\ c\^4)\)\ y + \((2\ a\^4 - 2\ b\^4 - 8\ a\ b\^2\ c - 
+                  4\ a\^2\ c\^2 + 2\ c\^4)\)\ z)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Simplify[
+      conicaYiu\  /. \ {x \[Rule] \(-s\), y \[Rule] 0, 
+          z \[Rule] \ s - b}]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(centroYiu = CentroConica[conicaYiu]\)], "Input"],
+
+Cell[BoxData[
+    \({a\^2\ \((\(-a\^6\) + 2\ a\^3\ b\ c\ \((b + c)\) - 
+            2\ a\ b\ \((b - c)\)\^2\ c\ \((b + 
+                  c)\) - \((b - c)\)\^4\ \((b + c)\)\^2 + 
+            a\^4\ \((b\^2 - 4\ b\ c + c\^2)\) + 
+            a\^2\ \((b - c)\)\^2\ \((b\^2 + 4\ b\ c + c\^2)\))\), 
+      b\^2\ \((\(-a\^6\) + a\^4\ \((b - c)\)\^2 + 2\ a\^5\ c + 
+            2\ a\^3\ c\ \((b\^2 + b\ c - 
+                  2\ c\^2)\) - \((b\^2 - c\^2)\)\^2\ \((b\^2 + c\^2)\) + 
+            a\^2\ \((b - c)\)\^2\ \((b\^2 + 4\ b\ c + c\^2)\) + 
+            2\ a\ c\ \((\(-2\)\ b\^4 + b\^3\ c + b\^2\ c\^2 - b\ c\^3 + 
+                  c\^4)\))\), 
+      c\^2\ \((\(-a\^6\) + 2\ a\^5\ b + 
+            a\^4\ \((b - c)\)\^2 - \((b\^2 - c\^2)\)\^2\ \((b\^2 + c\^2)\) + 
+            2\ a\^3\ b\ \((\(-2\)\ b\^2 + b\ c + c\^2)\) + 
+            a\^2\ \((b - c)\)\^2\ \((b\^2 + 4\ b\ c + c\^2)\) + 
+            2\ a\ b\ \((b\^4 - b\^3\ c + b\^2\ c\^2 + b\ c\^3 - 
+                  2\ c\^4)\))\)}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Det[{ptClawson, {a\^2, b\^2, c\^2}, centroYiu}]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Kimberling[centroYiu]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-0.2955683141802447556505407893`10.524244748011743\)\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Es\ el\ punto\ X\_478, \ 
+    centro\ de\ la\ c\[OAcute]nica\ de\ \(\(Yiu\)\(.\)\)\)], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(disc = DiscriminanteConica[conicaYiu]\)], "Input"],
+
+Cell[BoxData[
+    \(4\ \((a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ c - 4\ a\^5\ b\^2\ c - 
+          4\ a\^2\ b\^5\ c + 4\ a\ b\^6\ c - 4\ a\^5\ b\ c\^2 + 
+          4\ a\^4\ b\^2\ c\^2 + 4\ a\^2\ b\^4\ c\^2 - 4\ a\ b\^5\ c\^2 - 
+          2\ a\^4\ c\^4 + 4\ a\^2\ b\^2\ c\^4 - 2\ b\^4\ c\^4 - 
+          4\ a\^2\ b\ c\^5 - 4\ a\ b\^2\ c\^5 + 4\ a\ b\ c\^6 + 
+          c\^8)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ecuxy = 
+      Last[disc]\  /. {a -> 2, b -> \@\(\((x - 1)\)\^2 + y\^2\), 
+          c -> \@\(\((x + 1)\)\^2 + y\^2\)}\)], "Input"],
+
+Cell[BoxData[
+    \(256 - 
+      32\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2 + \((\((\(-1\) + x)\)\^2 + \
+y\^2)\)\^4 + 
+      256\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \@\(\((1 + x)\)\^2 + y\^2\) - 
+      128\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \@\(\((1 + x)\)\^2 + y\^2\) - 
+      16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^\(5/2\)\ \@\(\((1 + x)\)\^2 + \
+y\^2\) + 8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^3\ \@\(\((1 + x)\)\^2 + y\^2\) \
+- 128\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\) + 
+      64\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\) + 
+      16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2\ \((\((1 + x)\)\^2 + y\^2)\) - 
+      8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^\(5/2\)\ \((\((1 + x)\)\^2 + 
+            y\^2)\) - 32\ \((\((1 + x)\)\^2 + y\^2)\)\^2 + 
+      16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\)\^2 - 
+      2\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2\ \((\((1 + x)\)\^2 + y\^2)\)\^2 \
+- 16\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\)\^\(5/2\) \
+- 8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\)\^\(5/2\) + 
+      8\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\)\^3 + \
+\((\((1 + x)\)\^2 + y\^2)\)\^4\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ImplicitPlot[ecuxy \[Equal] 0, {x, \(-2\), 2}, {y, \(-4\), 4}, 
+      AxesOrigin \[Rule] {0, 0}, PlotPoints \[Rule] 1000]\)], "Input"],
+
+Cell[BoxData[
+    \($Aborted\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(ecuxy = 
+        4\ \((256 - 
+              32\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2 + \((\((\(-1\) + \
+x)\)\^2 + y\^2)\)\^4 + 
+              256\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \@\(\((1 + x)\)\^2 + \
+y\^2\) - 128\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \@\(\((1 + x)\)\^2 + y\^2\) - 
+              16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^\(5/2\)\ \@\(\((1 + \
+x)\)\^2 + y\^2\) + 
+              8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^3\ \@\(\((1 + x)\)\^2 + \
+y\^2\) - 128\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\) + 
+              64\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \((\((1 + x)\)\^2 + 
+                    y\^2)\) + 
+              16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2\ \((\((1 + x)\)\^2 + 
+                    y\^2)\) - 
+              8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^\(5/2\)\ \((\((1 + x)\)\^2 \
++ y\^2)\) - 32\ \((\((1 + x)\)\^2 + y\^2)\)\^2 + 
+              16\ \((\((\(-1\) + x)\)\^2 + 
+                    y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\)\^2 - 
+              2\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2\ \((\((1 + x)\)\^2 + \
+y\^2)\)\^2 - 
+              16\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\
+\)\^\(5/2\) - 
+              8\ \((\((\(-1\) + x)\)\^2 + 
+                    y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\)\^\(5/2\) + 
+              8\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + \
+y\^2)\)\^3 + \((\((1 + x)\)\^2 + y\^2)\)\^4)\);\)\)], "Input"],
+
+Cell[BoxData[
+    \(\(ecuy = \ ecuxy\  /. x \[Rule] 0;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[Solve[ecuy \[Equal] 0, y], 10]\)], "Input"],
+
+Cell[BoxData[
+    \({{y \[Rule] \(-1.071400502008836784950607881`9.999999999999998\)}, {y \
+\[Rule] 1.071400502008836784950607881`9.999999999999998}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(\(ecuxy = 
+        256 - 32\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2 + \((\((\(-1\) + \
+x)\)\^2 + y\^2)\)\^4 + 
+          256\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \@\(\((1 + x)\)\^2 + y\^2\) \
+- 128\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \@\(\((1 + x)\)\^2 + y\^2\) - 
+          16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^\(5/2\)\ \@\(\((1 + x)\)\^2 + \
+y\^2\) + 8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^3\ \@\(\((1 + x)\)\^2 + y\^2\) \
+- 128\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\) + 
+          64\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\) + 
+          16\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2\ \((\((1 + x)\)\^2 + 
+                y\^2)\) - 
+          8\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^\(5/2\)\ \((\((1 + x)\)\^2 + 
+                y\^2)\) - 32\ \((\((1 + x)\)\^2 + y\^2)\)\^2 + 
+          16\ \((\((\(-1\) + x)\)\^2 + 
+                y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\)\^2 - 
+          2\ \((\((\(-1\) + x)\)\^2 + y\^2)\)\^2\ \((\((1 + x)\)\^2 + y\^2)\)\
+\^2 - 16\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + \
+y\^2)\)\^\(5/2\) - 
+          8\ \((\((\(-1\) + x)\)\^2 + 
+                y\^2)\)\ \((\((1 + x)\)\^2 + y\^2)\)\^\(5/2\) + 
+          8\ \@\(\((\(-1\) + x)\)\^2 + y\^2\)\ \((\((1 + x)\)\^2 + y\^2)\)\^3 \
++ \((\((1 + x)\)\^2 + y\^2)\)\^4;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(256 - 
+      32\ \((1000000 + \((\(-1\) + x)\)\^2)\)\^2 + \((1000000 + \((\(-1\) + \
+x)\)\^2)\)\^4 + 
+      256\ \@\(1000000 + \((\(-1\) + x)\)\^2\)\ \@\(1000000 + \((1 + \
+x)\)\^2\) - 
+      128\ \((1000000 + \((\(-1\) + x)\)\^2)\)\ \@\(1000000 + \((1 + \
+x)\)\^2\) - 
+      16\ \((1000000 + \((\(-1\) + x)\)\^2)\)\^\(5/2\)\ \@\(1000000 + \((1 + \
+x)\)\^2\) + 
+      8\ \((1000000 + \((\(-1\) + x)\)\^2)\)\^3\ \@\(1000000 + \((1 + x)\)\^2\
+\) - 128\ \@\(1000000 + \((\(-1\) + x)\)\^2\)\ \((1000000 + \((1 + x)\)\^2)\) \
++ 64\ \((1000000 + \((\(-1\) + x)\)\^2)\)\ \((1000000 + \((1 + x)\)\^2)\) + 
+      16\ \((1000000 + \((\(-1\) + x)\)\^2)\)\^2\ \((1000000 + \((1 + \
+x)\)\^2)\) - 
+      8\ \((1000000 + \((\(-1\) + x)\)\^2)\)\^\(5/2\)\ \((1000000 + \((1 + x)\
+\)\^2)\) - 32\ \((1000000 + \((1 + x)\)\^2)\)\^2 + 
+      16\ \((1000000 + \((\(-1\) + x)\)\^2)\)\ \((1000000 + \((1 + x)\)\^2)\)\
+\^2 - 2\ \((1000000 + \((\(-1\) + x)\)\^2)\)\^2\ \((1000000 + \((1 + x)\)\^2)\
+\)\^2 - 16\ \@\(1000000 + \((\(-1\) + x)\)\^2\)\ \((1000000 + \((1 + x)\)\^2)\
+\)\^\(5/2\) - 
+      8\ \((1000000 + \((\(-1\) + x)\)\^2)\)\ \((1000000 + \((1 + \
+x)\)\^2)\)\^\(5/2\) + 
+      8\ \@\(1000000 + \((\(-1\) + x)\)\^2\)\ \((1000000 + \((1 + \
+x)\)\^2)\)\^3 + \((1000000 + \((1 + x)\)\^2)\)\^4\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FindRoot[\((ecuxy /. {y \[Rule] 100000})\) \[Equal] 0, {x, 
+        0.5}]\)], "Input"],
+
+Cell[BoxData[
+    \({x \[Rule] 9.396926438729087`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Limit[ecuxy, \ y \[Rule] \(+Infinity\)]\)], "Input"],
+
+Cell[BoxData[
+    \(DirectedInfinity[Sign[x]\^2]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ImplicitPlot[ecuxy, {x, \(-6\), 6}, {y, \(-6\), 6}, 
+      AxesOrigin \[Rule] {0, 0}, PlotPoints \[Rule] 200]\)], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: 1 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% ContourGraphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.5 0.0801282 0.5 0.0801282 [
+[.01923 .4875 -6 -9 ]
+[.01923 .4875 6 0 ]
+[.17949 .4875 -6 -9 ]
+[.17949 .4875 6 0 ]
+[.33974 .4875 -6 -9 ]
+[.33974 .4875 6 0 ]
+[.66026 .4875 -3 -9 ]
+[.66026 .4875 3 0 ]
+[.82051 .4875 -3 -9 ]
+[.82051 .4875 3 0 ]
+[.98077 .4875 -3 -9 ]
+[.98077 .4875 3 0 ]
+[.4875 .01923 -12 -4.5 ]
+[.4875 .01923 0 4.5 ]
+[.4875 .17949 -12 -4.5 ]
+[.4875 .17949 0 4.5 ]
+[.4875 .33974 -12 -4.5 ]
+[.4875 .33974 0 4.5 ]
+[.4875 .66026 -6 -4.5 ]
+[.4875 .66026 0 4.5 ]
+[.4875 .82051 -6 -4.5 ]
+[.4875 .82051 0 4.5 ]
+[.4875 .98077 -6 -4.5 ]
+[.4875 .98077 0 4.5 ]
+[ 0 0 0 0 ]
+[ 1 1 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.01923 .5 m
+.01923 .50625 L
+s
+[(-6)] .01923 .4875 0 1 Mshowa
+.17949 .5 m
+.17949 .50625 L
+s
+[(-4)] .17949 .4875 0 1 Mshowa
+.33974 .5 m
+.33974 .50625 L
+s
+[(-2)] .33974 .4875 0 1 Mshowa
+.66026 .5 m
+.66026 .50625 L
+s
+[(2)] .66026 .4875 0 1 Mshowa
+.82051 .5 m
+.82051 .50625 L
+s
+[(4)] .82051 .4875 0 1 Mshowa
+.98077 .5 m
+.98077 .50625 L
+s
+[(6)] .98077 .4875 0 1 Mshowa
+.125 Mabswid
+.05929 .5 m
+.05929 .50375 L
+s
+.09936 .5 m
+.09936 .50375 L
+s
+.13942 .5 m
+.13942 .50375 L
+s
+.21955 .5 m
+.21955 .50375 L
+s
+.25962 .5 m
+.25962 .50375 L
+s
+.29968 .5 m
+.29968 .50375 L
+s
+.37981 .5 m
+.37981 .50375 L
+s
+.41987 .5 m
+.41987 .50375 L
+s
+.45994 .5 m
+.45994 .50375 L
+s
+.54006 .5 m
+.54006 .50375 L
+s
+.58013 .5 m
+.58013 .50375 L
+s
+.62019 .5 m
+.62019 .50375 L
+s
+.70032 .5 m
+.70032 .50375 L
+s
+.74038 .5 m
+.74038 .50375 L
+s
+.78045 .5 m
+.78045 .50375 L
+s
+.86058 .5 m
+.86058 .50375 L
+s
+.90064 .5 m
+.90064 .50375 L
+s
+.94071 .5 m
+.94071 .50375 L
+s
+.25 Mabswid
+0 .5 m
+1 .5 L
+s
+.5 .01923 m
+.50625 .01923 L
+s
+[(-6)] .4875 .01923 1 0 Mshowa
+.5 .17949 m
+.50625 .17949 L
+s
+[(-4)] .4875 .17949 1 0 Mshowa
+.5 .33974 m
+.50625 .33974 L
+s
+[(-2)] .4875 .33974 1 0 Mshowa
+.5 .66026 m
+.50625 .66026 L
+s
+[(2)] .4875 .66026 1 0 Mshowa
+.5 .82051 m
+.50625 .82051 L
+s
+[(4)] .4875 .82051 1 0 Mshowa
+.5 .98077 m
+.50625 .98077 L
+s
+[(6)] .4875 .98077 1 0 Mshowa
+.125 Mabswid
+.5 .05929 m
+.50375 .05929 L
+s
+.5 .09936 m
+.50375 .09936 L
+s
+.5 .13942 m
+.50375 .13942 L
+s
+.5 .21955 m
+.50375 .21955 L
+s
+.5 .25962 m
+.50375 .25962 L
+s
+.5 .29968 m
+.50375 .29968 L
+s
+.5 .37981 m
+.50375 .37981 L
+s
+.5 .41987 m
+.50375 .41987 L
+s
+.5 .45994 m
+.50375 .45994 L
+s
+.5 .54006 m
+.50375 .54006 L
+s
+.5 .58013 m
+.50375 .58013 L
+s
+.5 .62019 m
+.50375 .62019 L
+s
+.5 .70032 m
+.50375 .70032 L
+s
+.5 .74038 m
+.50375 .74038 L
+s
+.5 .78045 m
+.50375 .78045 L
+s
+.5 .86058 m
+.50375 .86058 L
+s
+.5 .90064 m
+.50375 .90064 L
+s
+.5 .94071 m
+.50375 .94071 L
+s
+.25 Mabswid
+.5 0 m
+.5 1 L
+s
+0 0 m
+1 0 L
+1 1 L
+0 1 L
+closepath
+clip
+newpath
+.5 Mabswid
+.57973 .5097 m
+.57987 .51208 L
+.57973 .51475 L
+.57946 .51208 L
+.57973 .5097 L
+s
+.42027 .5097 m
+.42054 .51208 L
+.42027 .51475 L
+.42013 .51208 L
+.42027 .5097 L
+s
+.57973 .48525 m
+.57987 .48792 L
+.57973 .4903 L
+.57946 .48792 L
+.57973 .48525 L
+s
+.42027 .48525 m
+.42054 .48792 L
+.42027 .4903 L
+.42013 .48792 L
+.42027 .48525 L
+s
+.55304 .98077 m
+.55321 .97594 L
+.55338 .97111 L
+.55355 .96627 L
+.55373 .96144 L
+.55391 .95661 L
+.55409 .95178 L
+.55427 .94695 L
+.55445 .94211 L
+.55464 .93728 L
+.55482 .93245 L
+.55501 .92762 L
+.5552 .92279 L
+.55539 .91796 L
+.55557 .91362 L
+.55559 .91312 L
+.55578 .90829 L
+.55598 .90346 L
+.55618 .89863 L
+.55638 .8938 L
+.55659 .88896 L
+.55679 .88413 L
+.557 .8793 L
+.55721 .87447 L
+.55742 .86964 L
+.55763 .8648 L
+.55785 .85997 L
+.55807 .85514 L
+.55829 .85031 L
+.55851 .84548 L
+.55874 .84065 L
+.55896 .83581 L
+.55919 .83098 L
+.55943 .82615 L
+.55966 .82132 L
+.5599 .81649 L
+.56014 .81165 L
+.56038 .80682 L
+.5604 .80644 L
+.56062 .80199 L
+.56087 .79716 L
+.56112 .79233 L
+.56137 .7875 L
+.56163 .78266 L
+.56189 .77783 L
+.56215 .773 L
+.56241 .76817 L
+.56268 .76334 L
+.56295 .7585 L
+.56322 .75367 L
+Mistroke
+.56349 .74884 L
+.56377 .74401 L
+.56405 .73918 L
+.56433 .73434 L
+.56462 .72951 L
+.56491 .72468 L
+.5652 .71985 L
+.56523 .71937 L
+.5655 .71502 L
+.5658 .71019 L
+.5661 .70535 L
+.5664 .70052 L
+.56671 .69569 L
+.56702 .69086 L
+.56734 .68603 L
+.56766 .68119 L
+.56798 .67636 L
+.5683 .67153 L
+.56863 .6667 L
+.56896 .66187 L
+.56929 .65704 L
+.56963 .6522 L
+.56997 .64737 L
+.57006 .64604 L
+.57031 .64254 L
+.57066 .63771 L
+.57101 .63288 L
+.57137 .62804 L
+.57172 .62321 L
+.57208 .61838 L
+.57245 .61355 L
+.57282 .60872 L
+.57319 .60388 L
+.57356 .59905 L
+.57394 .59422 L
+.57431 .58939 L
+.57468 .58456 L
+.57489 .58173 L
+.57505 .57973 L
+.57546 .57489 L
+.57589 .57006 L
+.57637 .56523 L
+.57698 .5604 L
+.57695 .55557 L
+.57733 .55073 L
+.5777 .5459 L
+.57806 .54107 L
+.57841 .53624 L
+.57489 .53237 L
+.5734 .53624 L
+Mistroke
+.57122 .54107 L
+.57006 .54336 L
+.56865 .5459 L
+.56564 .55073 L
+.56523 .55135 L
+.56142 .55557 L
+.5604 .55769 L
+.55785 .5604 L
+.55557 .56293 L
+.55309 .56523 L
+.55073 .56734 L
+.54728 .57006 L
+.5459 .57109 L
+.54107 .57429 L
+.54006 .57489 L
+.53624 .57701 L
+.53141 .57931 L
+.53044 .57973 L
+.52658 .58123 L
+.52174 .58279 L
+.51691 .58401 L
+.51426 .58456 L
+.51208 .58492 L
+.50725 .58552 L
+.50242 .58581 L
+.49758 .58581 L
+.49275 .58552 L
+.48792 .58492 L
+.48574 .58456 L
+.48309 .58401 L
+.47826 .58279 L
+.47342 .58123 L
+.46956 .57973 L
+.46859 .57931 L
+.46376 .57701 L
+.45994 .57489 L
+.45893 .57429 L
+.4541 .57109 L
+.45272 .57006 L
+.44927 .56734 L
+.44691 .56523 L
+.44443 .56293 L
+.44215 .5604 L
+.4396 .55769 L
+.43858 .55557 L
+.43477 .55135 L
+.43436 .55073 L
+.43135 .5459 L
+.42994 .54336 L
+.42878 .54107 L
+Mistroke
+.4266 .53624 L
+.42511 .53237 L
+.42159 .53624 L
+.42194 .54107 L
+.4223 .5459 L
+.42267 .55073 L
+.42305 .55557 L
+.42302 .5604 L
+.42363 .56523 L
+.42411 .57006 L
+.42454 .57489 L
+.42495 .57973 L
+.42511 .58173 L
+.42532 .58456 L
+.42569 .58939 L
+.42606 .59422 L
+.42644 .59905 L
+.42681 .60388 L
+.42718 .60872 L
+.42755 .61355 L
+.42792 .61838 L
+.42828 .62321 L
+.42863 .62804 L
+.42899 .63288 L
+.42934 .63771 L
+.42969 .64254 L
+.42994 .64604 L
+.43003 .64737 L
+.43037 .6522 L
+.43071 .65704 L
+.43104 .66187 L
+.43137 .6667 L
+.4317 .67153 L
+.43202 .67636 L
+.43234 .68119 L
+.43266 .68603 L
+.43298 .69086 L
+.43329 .69569 L
+.4336 .70052 L
+.4339 .70535 L
+.4342 .71019 L
+.4345 .71502 L
+.43477 .71937 L
+.4348 .71985 L
+.43509 .72468 L
+.43538 .72951 L
+.43567 .73434 L
+.43595 .73918 L
+.43623 .74401 L
+.43651 .74884 L
+Mistroke
+.43678 .75367 L
+.43705 .7585 L
+.43732 .76334 L
+.43759 .76817 L
+.43785 .773 L
+.43811 .77783 L
+.43837 .78266 L
+.43863 .7875 L
+.43888 .79233 L
+.43913 .79716 L
+.43938 .80199 L
+.4396 .80644 L
+.43962 .80682 L
+.43986 .81165 L
+.4401 .81649 L
+.44034 .82132 L
+.44057 .82615 L
+.44081 .83098 L
+.44104 .83581 L
+.44126 .84065 L
+.44149 .84548 L
+.44171 .85031 L
+.44193 .85514 L
+.44215 .85997 L
+.44237 .8648 L
+.44258 .86964 L
+.44279 .87447 L
+.443 .8793 L
+.44321 .88413 L
+.44341 .88896 L
+.44362 .8938 L
+.44382 .89863 L
+.44402 .90346 L
+.44422 .90829 L
+.44441 .91312 L
+.44443 .91362 L
+.44461 .91796 L
+.4448 .92279 L
+.44499 .92762 L
+.44518 .93245 L
+.44536 .93728 L
+.44555 .94211 L
+.44573 .94695 L
+.44591 .95178 L
+.44609 .95661 L
+.44627 .96144 L
+.44645 .96627 L
+.44662 .97111 L
+.44679 .97594 L
+.44696 .98077 L
+Mistroke
+Mfstroke
+.55304 .01923 m
+.55321 .02406 L
+.55338 .02889 L
+.55355 .03373 L
+.55373 .03856 L
+.55391 .04339 L
+.55409 .04822 L
+.55427 .05305 L
+.55445 .05789 L
+.55464 .06272 L
+.55482 .06755 L
+.55501 .07238 L
+.5552 .07721 L
+.55539 .08204 L
+.55557 .08638 L
+.55559 .08688 L
+.55578 .09171 L
+.55598 .09654 L
+.55618 .10137 L
+.55638 .1062 L
+.55659 .11104 L
+.55679 .11587 L
+.557 .1207 L
+.55721 .12553 L
+.55742 .13036 L
+.55763 .1352 L
+.55785 .14003 L
+.55807 .14486 L
+.55829 .14969 L
+.55851 .15452 L
+.55874 .15935 L
+.55896 .16419 L
+.55919 .16902 L
+.55943 .17385 L
+.55966 .17868 L
+.5599 .18351 L
+.56014 .18835 L
+.56038 .19318 L
+.5604 .19356 L
+.56062 .19801 L
+.56087 .20284 L
+.56112 .20767 L
+.56137 .2125 L
+.56163 .21734 L
+.56189 .22217 L
+.56215 .227 L
+.56241 .23183 L
+.56268 .23666 L
+.56295 .2415 L
+.56322 .24633 L
+Mistroke
+.56349 .25116 L
+.56377 .25599 L
+.56405 .26082 L
+.56433 .26566 L
+.56462 .27049 L
+.56491 .27532 L
+.5652 .28015 L
+.56523 .28063 L
+.5655 .28498 L
+.5658 .28981 L
+.5661 .29465 L
+.5664 .29948 L
+.56671 .30431 L
+.56702 .30914 L
+.56734 .31397 L
+.56766 .31881 L
+.56798 .32364 L
+.5683 .32847 L
+.56863 .3333 L
+.56896 .33813 L
+.56929 .34296 L
+.56963 .3478 L
+.56997 .35263 L
+.57006 .35396 L
+.57031 .35746 L
+.57066 .36229 L
+.57101 .36712 L
+.57137 .37196 L
+.57172 .37679 L
+.57208 .38162 L
+.57245 .38645 L
+.57282 .39128 L
+.57319 .39612 L
+.57356 .40095 L
+.57394 .40578 L
+.57431 .41061 L
+.57468 .41544 L
+.57489 .41827 L
+.57505 .42027 L
+.57546 .42511 L
+.57589 .42994 L
+.57637 .43477 L
+.57698 .4396 L
+.57695 .44443 L
+.57733 .44927 L
+.5777 .4541 L
+.57806 .45893 L
+.57841 .46376 L
+.57489 .46763 L
+.5734 .46376 L
+Mistroke
+.57122 .45893 L
+.57006 .45664 L
+.56865 .4541 L
+.56564 .44927 L
+.56523 .44865 L
+.56142 .44443 L
+.5604 .44231 L
+.55785 .4396 L
+.55557 .43707 L
+.55309 .43477 L
+.55073 .43266 L
+.54728 .42994 L
+.5459 .42891 L
+.54107 .42571 L
+.54006 .42511 L
+.53624 .42299 L
+.53141 .42069 L
+.53044 .42027 L
+.52658 .41877 L
+.52174 .41721 L
+.51691 .41599 L
+.51426 .41544 L
+.51208 .41508 L
+.50725 .41448 L
+.50242 .41419 L
+.49758 .41419 L
+.49275 .41448 L
+.48792 .41508 L
+.48574 .41544 L
+.48309 .41599 L
+.47826 .41721 L
+.47342 .41877 L
+.46956 .42027 L
+.46859 .42069 L
+.46376 .42299 L
+.45994 .42511 L
+.45893 .42571 L
+.4541 .42891 L
+.45272 .42994 L
+.44927 .43266 L
+.44691 .43477 L
+.44443 .43707 L
+.44215 .4396 L
+.4396 .44231 L
+.43858 .44443 L
+.43477 .44865 L
+.43436 .44927 L
+.43135 .4541 L
+.42994 .45664 L
+.42878 .45893 L
+Mistroke
+.4266 .46376 L
+.42511 .46763 L
+.42159 .46376 L
+.42194 .45893 L
+.4223 .4541 L
+.42267 .44927 L
+.42305 .44443 L
+.42302 .4396 L
+.42363 .43477 L
+.42411 .42994 L
+.42454 .42511 L
+.42495 .42027 L
+.42511 .41827 L
+.42532 .41544 L
+.42569 .41061 L
+.42606 .40578 L
+.42644 .40095 L
+.42681 .39612 L
+.42718 .39128 L
+.42755 .38645 L
+.42792 .38162 L
+.42828 .37679 L
+.42863 .37196 L
+.42899 .36712 L
+.42934 .36229 L
+.42969 .35746 L
+.42994 .35396 L
+.43003 .35263 L
+.43037 .3478 L
+.43071 .34296 L
+.43104 .33813 L
+.43137 .3333 L
+.4317 .32847 L
+.43202 .32364 L
+.43234 .31881 L
+.43266 .31397 L
+.43298 .30914 L
+.43329 .30431 L
+.4336 .29948 L
+.4339 .29465 L
+.4342 .28981 L
+.4345 .28498 L
+.43477 .28063 L
+.4348 .28015 L
+.43509 .27532 L
+.43538 .27049 L
+.43567 .26566 L
+.43595 .26082 L
+.43623 .25599 L
+.43651 .25116 L
+Mistroke
+.43678 .24633 L
+.43705 .2415 L
+.43732 .23666 L
+.43759 .23183 L
+.43785 .227 L
+.43811 .22217 L
+.43837 .21734 L
+.43863 .2125 L
+.43888 .20767 L
+.43913 .20284 L
+.43938 .19801 L
+.4396 .19356 L
+.43962 .19318 L
+.43986 .18835 L
+.4401 .18351 L
+.44034 .17868 L
+.44057 .17385 L
+.44081 .16902 L
+.44104 .16419 L
+.44126 .15935 L
+.44149 .15452 L
+.44171 .14969 L
+.44193 .14486 L
+.44215 .14003 L
+.44237 .1352 L
+.44258 .13036 L
+.44279 .12553 L
+.443 .1207 L
+.44321 .11587 L
+.44341 .11104 L
+.44362 .1062 L
+.44382 .10137 L
+.44402 .09654 L
+.44422 .09171 L
+.44441 .08688 L
+.44443 .08638 L
+.44461 .08204 L
+.4448 .07721 L
+.44499 .07238 L
+.44518 .06755 L
+.44536 .06272 L
+.44555 .05789 L
+.44573 .05305 L
+.44591 .04822 L
+.44609 .04339 L
+.44627 .03856 L
+.44645 .03373 L
+.44662 .02889 L
+.44679 .02406 L
+.44696 .01923 L
+Mistroke
+Mfstroke
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 288},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P000182000`400?l00000o`00003oo`3ooolQ
+0?ooo`00S`3oool00`000000oooo0?ooo`2>0?ooo`00S`3oool00`000000oooo0?ooo`2>0?ooo`00
+S`3oool00`000000oooo0?ooo`2>0?ooo`00Q`3oool3000000D0oooo00<000000?ooo`3oool0SP3o
+ool008L0oooo00@000000?ooo`3oool00000103oool00`000000oooo0?ooo`2>0?ooo`00P03oool0
+0`000000oooo0?ooo`040?ooo`040000003oool0oooo000000@0oooo0`00000<0?ooo`030000003o
+ool0oooo07l0oooo00200?ooo`D000000P3oool3000000D0oooo00<000000?ooo`3oool0303oool0
+0`000000oooo0?ooo`1o0?ooo`00P03oool00`000000oooo0?ooo`050?ooo`030000003oool0oooo
+00@0oooo00<000000?ooo`3oool0303oool00`000000oooo0?ooo`1o0?ooo`00P03oool00`000000
+oooo0?ooo`050?ooo`<00000103oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0
+oooo00200?ooo`030000003oool0oooo00`0oooo00<000000?ooo`3oool03@3oool00`000000oooo
+0?ooo`1n0?ooo`00P03oool00`000000oooo0?ooo`0<0?ooo`030000003oool0oooo00d0oooo00<0
+00000?ooo`3oool0OP3oool00800oooo00<000000?ooo`3oool0303oool00`000000oooo0?ooo`0=
+0?ooo`030000003oool0oooo07h0oooo00200?ooo`030000003oool0oooo00`0oooo00<000000?oo
+o`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00P03oool00`000000oooo0?ooo`0<0?ooo`03
+0000003oool0oooo00d0oooo00<000000?ooo`3oool0OP3oool00800oooo00<000000?ooo`3oool0
+303oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo00200?ooo`030000003o
+ool0oooo00`0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00P03oool0
+0`000000oooo0?ooo`0<0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool0OP3oool0
+0800oooo00<000000?ooo`3oool0303oool2000000h0oooo00<000000?ooo`3oool0OP3oool00800
+oooo00<000000?ooo`3oool0303oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0
+oooo00200?ooo`030000003oool0oooo00`0oooo00<000000?ooo`3oool03@3oool00`000000oooo
+0?ooo`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00d0oooo00<0
+00000?ooo`3oool0OP3oool007l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=
+0?ooo`030000003oool0oooo07h0oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?oo
+o`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`03
+0000003oool0oooo00d0oooo00<000000?ooo`3oool0OP3oool007l0oooo00<000000?ooo`3oool0
+3@3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo001o0?ooo`030000003o
+ool0oooo00d0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00O`3oool0
+0`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool0OP3oool0
+07l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo
+07h0oooo001o0?ooo`030000003oool0oooo00d0oooo0P00000>0?ooo`030000003oool0oooo07h0
+oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool03@3oool00`000000oooo
+0?ooo`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00d0oooo00<0
+00000?ooo`3oool0OP3oool007l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=
+0?ooo`030000003oool0oooo07h0oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?oo
+o`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`03
+0000003oool0oooo00h0oooo00<000000?ooo`3oool0O@3oool007l0oooo00<000000?ooo`3oool0
+3@3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001o0?ooo`030000003o
+ool0oooo00d0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`1m0?ooo`00O`3oool0
+0`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool0O@3oool0
+07l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo
+07d0oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool03P3oool00`000000
+oooo0?ooo`1m0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00h0oooo
+00<000000?ooo`3oool0O@3oool007l0oooo00<000000?ooo`3oool03@3oool2000000l0oooo00<0
+00000?ooo`3oool0O@3oool007l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0>
+0?ooo`030000003oool0oooo07d0oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?oo
+o`3oool03P3oool00`000000oooo0?ooo`1m0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`03
+0000003oool0oooo00h0oooo00<000000?ooo`3oool0O@3oool007h0oooo00<000000?ooo`3oool0
+3P3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n0?ooo`030000003o
+ool0oooo00h0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`1m0?ooo`00OP3oool0
+0`000000oooo0?ooo`0>0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool0O@3oool0
+07h0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo
+07d0oooo001n0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool03P3oool00`000000
+oooo0?ooo`1m0?ooo`00OP3oool00`000000oooo0?ooo`080?ooo`<000000`3oool00`000000oooo
+0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n0?ooo`030000003oool0oooo00T0oooo00<0
+00000?ooo`3oool00P3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n
+0?ooo`030000003oool0oooo00H0oooo1@0000030?ooo`<000003P3oool00`000000oooo0?ooo`1m
+0?ooo`00OP3oool00`000000oooo0?ooo`0400000080oooo00@000000?ooo`3oool00000103oool0
+0`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n0?ooo`030000003oool0oooo
+00L0oooo00<000000?ooo`000000103oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo
+07d0oooo001n0?ooo`030000003oool0oooo00P0oooo0P0000040?ooo`030000003oool0oooo00h0
+oooo00<000000?ooo`3oool0O@3oool007h0oooo00<000000?ooo`3oool03P3oool00`000000oooo
+0?ooo`0?0?ooo`030000003oool0oooo07`0oooo001n0?ooo`030000003oool0oooo00h0oooo00<0
+00000?ooo`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00OP3oool00`000000oooo0?ooo`0>
+0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0O03oool007h0oooo00<000000?oo
+o`3oool03P3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo07`0oooo001n0?ooo`03
+0000003oool0oooo00h0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00
+OP3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0
+O03oool007h0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`0?0?ooo`030000003o
+ool0oooo07`0oooo001n0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool03`3oool0
+0`000000oooo0?ooo`1l0?ooo`00OP3oool00`000000oooo0?ooo`0>0?ooo`800000403oool00`00
+0000oooo0?ooo`1l0?ooo`00O@3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo00l0
+oooo00<000000?ooo`3oool0O03oool007d0oooo00<000000?ooo`3oool03`3oool00`000000oooo
+0?ooo`0?0?ooo`030000003oool0oooo07`0oooo001m0?ooo`030000003oool0oooo00l0oooo00<0
+00000?ooo`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00O@3oool00`000000oooo0?ooo`0?
+0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0O03oool007d0oooo00<000000?oo
+o`3oool03`3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo07`0oooo001m0?ooo`03
+0000003oool0oooo00l0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00
+O@3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0
+O03oool007d0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`0?0?ooo`030000003o
+ool0oooo07`0oooo001m0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool03`3oool0
+0`000000oooo0?ooo`1l0?ooo`00O@3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo
+0100oooo00<000000?ooo`3oool0N`3oool007d0oooo00<000000?ooo`3oool03`3oool200000140
+oooo00<000000?ooo`3oool0N`3oool007d0oooo00<000000?ooo`3oool03`3oool00`000000oooo
+0?ooo`0@0?ooo`030000003oool0oooo07/0oooo001m0?ooo`030000003oool0oooo00l0oooo00<0
+00000?ooo`3oool0403oool00`000000oooo0?ooo`1k0?ooo`00O@3oool00`000000oooo0?ooo`0?
+0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0N`3oool007d0oooo00<000000?oo
+o`3oool03`3oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo07/0oooo001m0?ooo`03
+0000003oool0oooo00l0oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`1k0?ooo`00
+O@3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0
+N`3oool007`0oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`0@0?ooo`030000003o
+ool0oooo07/0oooo001l0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0403oool0
+0`000000oooo0?ooo`1k0?ooo`00O03oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo
+0100oooo00<000000?ooo`3oool0N`3oool007`0oooo00<000000?ooo`3oool0403oool00`000000
+oooo0?ooo`0@0?ooo`030000003oool0oooo07/0oooo001l0?ooo`030000003oool0oooo0100oooo
+00<000000?ooo`3oool0403oool00`000000oooo0?ooo`1k0?ooo`00O03oool00`000000oooo0?oo
+o`0@0?ooo`8000004@3oool00`000000oooo0?ooo`1k0?ooo`00O03oool00`000000oooo0?ooo`0@
+0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0N`3oool007`0oooo00<000000?oo
+o`3oool0403oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo07/0oooo001l0?ooo`03
+0000003oool0oooo0100oooo00<000000?ooo`3oool04@3oool00`000000oooo0?ooo`1j0?ooo`00
+O03oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo0140oooo00<000000?ooo`3oool0
+NP3oool007`0oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`0A0?ooo`030000003o
+ool0oooo07X0oooo001l0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool04@3oool0
+0`000000oooo0?ooo`1j0?ooo`00O03oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo
+0140oooo00<000000?ooo`3oool0NP3oool007`0oooo00<000000?ooo`3oool0403oool00`000000
+oooo0?ooo`0A0?ooo`030000003oool0oooo07X0oooo001l0?ooo`030000003oool0oooo00P0oooo
+100000040?ooo`030000003oool0oooo0140oooo00<000000?ooo`3oool0NP3oool007/0oooo00<0
+00000?ooo`3oool02@3oool00`000000oooo0?ooo`050?ooo`030000003oool0oooo0140oooo00<0
+00000?ooo`3oool0NP3oool007/0oooo00<000000?ooo`3oool02P3oool00`000000oooo0?ooo`04
+0?ooo`<000004@3oool00`000000oooo0?ooo`1j0?ooo`00N`3oool00`000000oooo0?ooo`030?oo
+o`@00000103oool00`000000oooo0?ooo`030?ooo`030000003oool0oooo0140oooo00<000000?oo
+o`3oool0NP3oool007/0oooo00<000000?ooo`3oool02@3oool010000000oooo0?ooo`0000040?oo
+o`030000003oool0oooo0140oooo00<000000?ooo`3oool0NP3oool007/0oooo00<000000?ooo`3o
+ool02P3oool2000000D0oooo00<000000?ooo`3oool04@3oool00`000000oooo0?ooo`1j0?ooo`00
+N`3oool00`000000oooo0?ooo`0A0?ooo`030000003oool0oooo0140oooo00<000000?ooo`3oool0
+NP3oool007/0oooo00<000000?ooo`3oool04@3oool00`000000oooo0?ooo`0A0?ooo`030000003o
+ool0oooo07X0oooo001k0?ooo`030000003oool0oooo0140oooo00<000000?ooo`3oool04@3oool0
+0`000000oooo0?ooo`1j0?ooo`00N`3oool00`000000oooo0?ooo`0A0?ooo`030000003oool0oooo
+0140oooo00<000000?ooo`3oool0NP3oool007/0oooo00<000000?ooo`3oool04@3oool00`000000
+oooo0?ooo`0B0?ooo`030000003oool0oooo07T0oooo001k0?ooo`030000003oool0oooo0140oooo
+00<000000?ooo`3oool04P3oool00`000000oooo0?ooo`1i0?ooo`00N`3oool00`000000oooo0?oo
+o`0A0?ooo`030000003oool0oooo0180oooo00<000000?ooo`3oool0N@3oool007/0oooo00<00000
+0?ooo`3oool04@3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo07T0oooo001k0?oo
+o`030000003oool0oooo0140oooo0P00000C0?ooo`030000003oool0oooo07T0oooo001j0?ooo`03
+0000003oool0oooo0180oooo00<000000?ooo`3oool04P3oool00`000000oooo0?ooo`1i0?ooo`00
+NP3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo0180oooo00<000000?ooo`3oool0
+N@3oool007X0oooo00<000000?ooo`3oool04P3oool00`000000oooo0?ooo`0B0?ooo`030000003o
+ool0oooo07T0oooo001j0?ooo`030000003oool0oooo0180oooo00<000000?ooo`3oool04P3oool0
+0`000000oooo0?ooo`1i0?ooo`00NP3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo
+0180oooo00<000000?ooo`3oool0N@3oool007X0oooo00<000000?ooo`3oool04P3oool00`000000
+oooo0?ooo`0B0?ooo`030000003oool0oooo07T0oooo001j0?ooo`030000003oool0oooo0180oooo
+00<000000?ooo`3oool04P3oool00`000000oooo0?ooo`1i0?ooo`00NP3oool00`000000oooo0?oo
+o`0B0?ooo`030000003oool0oooo01<0oooo00<000000?ooo`3oool0N03oool007X0oooo00<00000
+0?ooo`3oool0403oool5000001<0oooo00<000000?ooo`3oool0N03oool007X0oooo00<000000?oo
+o`3oool0303oool400000080oooo00<000000?ooo`3oool01000000?0?ooo`030000003oool0oooo
+07P0oooo001j0?ooo`030000003oool0oooo00T0oooo0`0000060?ooo`8000001@3oool3000000`0
+oooo00<000000?ooo`3oool0N03oool007X0oooo00<000000?ooo`3oool0203oool00`000000oooo
+0?ooo`070?ooo`030000003oool0oooo00L0oooo0P00000:0?ooo`030000003oool0oooo07P0oooo
+001j0?ooo`030000003oool0oooo00H0oooo0P00000:0?ooo`030000003oool0oooo00T0oooo00<0
+00000?ooo`3oool01`3oool00`000000oooo0?ooo`1h0?ooo`00NP3oool00`000000oooo0?ooo`05
+0?ooo`030000003oool0oooo00X0oooo00<000000?ooo`3oool02P3oool2000000L0oooo00<00000
+0?ooo`3oool0N03oool007T0oooo00<000000?ooo`3oool0103oool2000000d0oooo00<000000?oo
+o`3oool0303oool00`000000oooo0?ooo`040?ooo`030000003oool0oooo07P0oooo001i0?ooo`03
+0000003oool0oooo00<0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=0?ooo`03
+0000003oool0oooo00<0oooo00<000000?ooo`3oool0N03oool007T0oooo00<000000?ooo`3oool0
+0P3oool2000000l0oooo00<000000?ooo`3oool03P3oool2000000<0oooo00<000000?ooo`3oool0
+N03oool007T0oooo00<000000?ooo`3oool00P3oool00`000000oooo0?ooo`0>0?ooo`030000003o
+ool0oooo00l0oooo00D000000?ooo`3oool0oooo0000001j0?ooo`00N@3oool00`000000oooo0?oo
+o`0200000140oooo00<000000?ooo`3oool0403oool010000000oooo0?ooo`00001j0?ooo`00N@3o
+ool010000000oooo0?ooo`00000B0?ooo`030000003oool0oooo0140oooo00@000000?ooo`3oool0
+0000N@3oool007T0oooo00@000000?ooo`3oool000004P3oool00`000000oooo0?ooo`0A0?ooo`04
+0000003oool0oooo000007T0oooo00070?ooo`<00000;03oool3000002T0oooo1000000C0?ooo`03
+0000003oool0000001<0oooo00<000000?ooo`3oool04@3oool2000000030?ooo`000000oooo01<0
+oooo1000000/0?ooo`<00000:@3oool3000000H0oooo00070?ooo`040000003oool0oooo000002`0
+oooo00<000000?ooo`3oool0:03oool00`000000oooo0?ooo`0D0?ooo`800000503oool2000001<0
+oooo00<000000?ooo`000000503oool00`000000oooo0?ooo`0^0?ooo`030000003oool0oooo02P0
+oooo00@000000?ooo`3oool000001@3oool000L0oooo00@000000?ooo`3oool00000:@3oool50000
+02X0oooo00<000000?ooo`3oool04`3oool2000001@0oooo00<000000?ooo`3oool04P3oool00`00
+0000oooo0000000E0?ooo`030000003oool0oooo02X0oooo1@00000Y0?ooo`040000003oool0oooo
+000000D0oooo00000`3oool000000000000200000080oooo0`00000T0?ooo`@000000P3oool01000
+0000oooo0?ooo`00000T0?ooo`@00000103oool00`000000oooo0?ooo`0C0?ooo`030000003oool0
+oooo0180oooo00<000000?ooo`3oool04`3oool00`000000oooo0?ooo`0E0?ooo`030000003oool0
+oooo02T0oooo00@000000?ooo`3oool00000:P3oool3000000H0oooo00080?ooo`030000003oool0
+oooo02X0oooo00<000000?ooo`000000:P3oool010000000oooo0?ooo`00000Y0?ooo`030000003o
+ool0oooo02T0oooo00@000000?ooo`3oool00000:`3oool00`000000oooo0000000[0?ooo`030000
+003oool0oooo00D0oooo00080?ooo`<00000:`3oool2000002/0oooo0P00000Z0?ooo`030000003o
+ool0oooo02X0oooo0P00000]0?ooo`800000:`3oool3000000D0oooo002?0?ooo`030000003oool0
+oooo08h0oooo002?0?ooo`030000003oool0oooo08h0oooo001h0?ooo`030000003oool0oooo01@0
+oooo00<000000?ooo`3oool0503oool00`000000oooo0?ooo`1g0?ooo`00N03oool00`000000oooo
+0?ooo`0D0?ooo`030000003oool0oooo01@0oooo00<000000?ooo`3oool0M`3oool008l0oooo00<0
+00000?ooo`3oool0SP3oool008l0oooo00<000000?ooo`3oool0SP3oool00?l000008@00000000H0
+oooo00<000000?ooo`3oool0203oool00`000000oooo0?ooo`080?ooo`030000003oool0oooo00T0
+oooo00<000000?ooo`3oool0203oool00`000000oooo0?ooo`090?ooo`030000003oool0oooo00P0
+oooo00<000000?ooo`3oool02@3oool00`000000oooo0?ooo`080?ooo`030000003oool0oooo00T0
+oooo00<000000?ooo`3oool0203oool00`000000oooo0?ooo`090?ooo`030000003oool0oooo00P0
+oooo00<000000?ooo`3oool02@3oool00`000000oooo0?ooo`080?ooo`030000003oool0oooo00T0
+oooo00<000000?ooo`3oool0203oool00`000000oooo0?ooo`090?ooo`030000003oool0oooo00P0
+oooo00<000000?ooo`3oool02@3oool00`000000oooo0?ooo`080?ooo`030000003oool0oooo00T0
+oooo00<000000?ooo`3oool0203oool00`000000oooo0?ooo`090?ooo`030000003oool0oooo00P0
+oooo00<000000?ooo`3oool0103oool000H0oooo00<000000?ooo`3oool0:P3oool00`000000oooo
+0?ooo`0[0?ooo`030000003oool0oooo02/0oooo00<000000?ooo`3oool0:`3oool00`000000oooo
+0?ooo`0[0?ooo`030000003oool0oooo02/0oooo00<000000?ooo`3oool0103oool007P0oooo00<0
+00000?ooo`3oool0503oool00`000000oooo0?ooo`0D0?ooo`030000003oool0oooo07L0oooo001h
+0?ooo`030000003oool0oooo01@0oooo00<000000?ooo`3oool0503oool00`000000oooo0?ooo`1g
+0?ooo`00S`3oool00`000000oooo0?ooo`2>0?ooo`00S`3oool00`000000oooo0?ooo`2>0?ooo`00
+S`3oool00`000000oooo0?ooo`2>0?ooo`00S`3oool00`000000oooo0?ooo`2>0?ooo`00NP3oool0
+0`000000oooo0?ooo`0B0?ooo`030000003oool0oooo01<0oooo00<000000?ooo`3oool0N03oool0
+07T0oooo0P00000D0?ooo`030000003oool0oooo0180oooo00<000000?ooo`000000N@3oool007T0
+oooo00<000000?ooo`0000004`3oool2000001<0oooo00<000000?ooo`000000N@3oool007T0oooo
+00<000000?ooo`0000004`3oool00`000000oooo0?ooo`0A0?ooo`80000000<0oooo0000003oool0
+N03oool007T0oooo00@000000?ooo`3oool000004P3oool00`000000oooo0?ooo`0A0?ooo`040000
+003oool0oooo000007T0oooo001i0?ooo`040000003oool0oooo00000180oooo00<000000?ooo`3o
+ool0403oool010000000oooo0?ooo`00001j0?ooo`00N@3oool00`000000oooo0?ooo`0200000140
+oooo00<000000?ooo`3oool0403oool010000000oooo0?ooo`00001j0?ooo`00N@3oool00`000000
+oooo0?ooo`020?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool03`3oool01@000000
+oooo0?ooo`3oool0000007X0oooo001i0?ooo`030000003oool0oooo0080oooo0P00000?0?ooo`03
+0000003oool0oooo00h0oooo0P0000030?ooo`030000003oool0oooo07P0oooo001i0?ooo`030000
+003oool0oooo00<0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=0?ooo`030000
+003oool0oooo00<0oooo00<000000?ooo`3oool0N03oool007T0oooo00<000000?ooo`3oool0103o
+ool2000000d0oooo00<000000?ooo`3oool0303oool00`000000oooo0?ooo`040?ooo`030000003o
+ool0oooo07P0oooo001j0?ooo`030000003oool0oooo00D0oooo00<000000?ooo`3oool02P3oool0
+0`000000oooo0?ooo`0:0?ooo`8000001`3oool00`000000oooo0?ooo`1h0?ooo`00NP3oool00`00
+0000oooo0?ooo`060?ooo`8000002P3oool00`000000oooo0?ooo`090?ooo`030000003oool0oooo
+00L0oooo00<000000?ooo`3oool0N03oool007X0oooo00<000000?ooo`3oool0203oool00`000000
+oooo0?ooo`070?ooo`030000003oool0oooo00P0oooo00<000000?ooo`3oool0203oool00`000000
+oooo0?ooo`1h0?ooo`00NP3oool00`000000oooo0?ooo`090?ooo`<000001P3oool2000000H0oooo
+0`00000;0?ooo`030000003oool0oooo07P0oooo001j0?ooo`030000003oool0oooo00`0oooo1000
+00020?ooo`040000003oool0oooo0?ooo`@000003P3oool00`000000oooo0?ooo`1h0?ooo`00NP3o
+ool00`000000oooo0?ooo`0@0?ooo`H000004P3oool00`000000oooo0?ooo`1h0?ooo`00NP3oool0
+0`000000oooo0?ooo`0B0?ooo`030000003oool0oooo01<0oooo00<000000?ooo`3oool0N03oool0
+07X0oooo00<000000?ooo`3oool04P3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo
+07T0oooo001j0?ooo`030000003oool0oooo0180oooo00<000000?ooo`3oool04P3oool00`000000
+oooo0?ooo`1i0?ooo`00NP3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo0180oooo
+00<000000?ooo`3oool0N@3oool007X0oooo00<000000?ooo`3oool04P3oool00`000000oooo0?oo
+o`0B0?ooo`030000003oool0oooo07T0oooo001j0?ooo`030000003oool0oooo0180oooo00<00000
+0?ooo`3oool04P3oool00`000000oooo0?ooo`1i0?ooo`00NP3oool00`000000oooo0?ooo`0B0?oo
+o`030000003oool0oooo0180oooo00<000000?ooo`3oool0N@3oool007X0oooo00<000000?ooo`3o
+ool04P3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo07T0oooo001k0?ooo`030000
+003oool0oooo0140oooo0P00000C0?ooo`030000003oool0oooo07T0oooo001k0?ooo`030000003o
+ool0oooo0140oooo00<000000?ooo`3oool04P3oool00`000000oooo0?ooo`1i0?ooo`00N`3oool0
+0`000000oooo0?ooo`0A0?ooo`030000003oool0oooo0180oooo00<000000?ooo`3oool0N@3oool0
+07/0oooo00<000000?ooo`3oool04@3oool00`000000oooo0?ooo`0B0?ooo`030000003oool0oooo
+07T0oooo001k0?ooo`030000003oool0oooo0140oooo00<000000?ooo`3oool04P3oool00`000000
+oooo0?ooo`1i0?ooo`00N`3oool00`000000oooo0?ooo`0A0?ooo`030000003oool0oooo0140oooo
+00<000000?ooo`3oool0NP3oool007/0oooo00<000000?ooo`3oool04@3oool00`000000oooo0?oo
+o`0A0?ooo`030000003oool0oooo07X0oooo001k0?ooo`030000003oool0oooo0140oooo00<00000
+0?ooo`3oool04@3oool00`000000oooo0?ooo`1j0?ooo`00N`3oool00`000000oooo0?ooo`0A0?oo
+o`030000003oool0oooo0140oooo00<000000?ooo`3oool0NP3oool007/0oooo00<000000?ooo`3o
+ool04@3oool00`000000oooo0?ooo`0A0?ooo`030000003oool0oooo07X0oooo001k0?ooo`030000
+003oool0oooo00T0oooo100000040?ooo`030000003oool0oooo0140oooo00<000000?ooo`3oool0
+NP3oool007/0oooo00<000000?ooo`3oool02@3oool00`000000oooo0?ooo`050?ooo`030000003o
+ool0oooo0140oooo00<000000?ooo`3oool0NP3oool007/0oooo00<000000?ooo`3oool02P3oool0
+0`000000oooo0?ooo`040?ooo`<000004@3oool00`000000oooo0?ooo`1j0?ooo`00O03oool00`00
+0000oooo0?ooo`0:0?ooo`030000003oool0oooo00<0oooo00<000000?ooo`3oool04@3oool00`00
+0000oooo0?ooo`1j0?ooo`00O03oool00`000000oooo0?ooo`080?ooo`040000003oool0oooo0000
+00@0oooo00<000000?ooo`3oool04@3oool00`000000oooo0?ooo`1j0?ooo`00O03oool00`000000
+oooo0?ooo`090?ooo`8000001@3oool00`000000oooo0?ooo`0A0?ooo`030000003oool0oooo07X0
+oooo001l0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool04@3oool00`000000oooo
+0?ooo`1j0?ooo`00O03oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo0140oooo00<0
+00000?ooo`3oool0NP3oool007`0oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`0A
+0?ooo`030000003oool0oooo07X0oooo001l0?ooo`030000003oool0oooo0100oooo00<000000?oo
+o`3oool04@3oool00`000000oooo0?ooo`1j0?ooo`00O03oool00`000000oooo0?ooo`0@0?ooo`03
+0000003oool0oooo0100oooo00<000000?ooo`3oool0N`3oool007`0oooo00<000000?ooo`3oool0
+403oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo07/0oooo001l0?ooo`030000003o
+ool0oooo0100oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`1k0?ooo`00O03oool0
+0`000000oooo0?ooo`0@0?ooo`8000004@3oool00`000000oooo0?ooo`1k0?ooo`00O03oool00`00
+0000oooo0?ooo`0@0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0N`3oool007`0
+oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo07/0
+oooo001l0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0403oool00`000000oooo
+0?ooo`1k0?ooo`00O03oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo0100oooo00<0
+00000?ooo`3oool0N`3oool007`0oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`0@
+0?ooo`030000003oool0oooo07/0oooo001m0?ooo`030000003oool0oooo00l0oooo00<000000?oo
+o`3oool0403oool00`000000oooo0?ooo`1k0?ooo`00O@3oool00`000000oooo0?ooo`0?0?ooo`03
+0000003oool0oooo0100oooo00<000000?ooo`3oool0N`3oool007d0oooo00<000000?ooo`3oool0
+3`3oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo07/0oooo001m0?ooo`030000003o
+ool0oooo00l0oooo00<000000?ooo`3oool0403oool00`000000oooo0?ooo`1k0?ooo`00O@3oool0
+0`000000oooo0?ooo`0?0?ooo`030000003oool0oooo0100oooo00<000000?ooo`3oool0N`3oool0
+07d0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`0@0?ooo`030000003oool0oooo
+07/0oooo001m0?ooo`030000003oool0oooo00l0oooo0P00000A0?ooo`030000003oool0oooo07/0
+oooo001m0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0403oool00`000000oooo
+0?ooo`1k0?ooo`00O@3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo00l0oooo00<0
+00000?ooo`3oool0O03oool007d0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`0?
+0?ooo`030000003oool0oooo07`0oooo001m0?ooo`030000003oool0oooo00l0oooo00<000000?oo
+o`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00O@3oool00`000000oooo0?ooo`0?0?ooo`03
+0000003oool0oooo00l0oooo00<000000?ooo`3oool0O03oool007d0oooo00<000000?ooo`3oool0
+3`3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo07`0oooo001m0?ooo`030000003o
+ool0oooo00l0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00O@3oool0
+0`000000oooo0?ooo`0?0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0O03oool0
+07d0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo
+07`0oooo001n0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool03`3oool00`000000
+oooo0?ooo`1l0?ooo`00OP3oool00`000000oooo0?ooo`0>0?ooo`800000403oool00`000000oooo
+0?ooo`1l0?ooo`00OP3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo00l0oooo00<0
+00000?ooo`3oool0O03oool007h0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`0?
+0?ooo`030000003oool0oooo07`0oooo001n0?ooo`030000003oool0oooo00h0oooo00<000000?oo
+o`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00OP3oool00`000000oooo0?ooo`0>0?ooo`03
+0000003oool0oooo00l0oooo00<000000?ooo`3oool0O03oool007h0oooo00<000000?ooo`3oool0
+3P3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo07`0oooo001n0?ooo`030000003o
+ool0oooo00h0oooo00<000000?ooo`3oool03`3oool00`000000oooo0?ooo`1l0?ooo`00OP3oool0
+0`000000oooo0?ooo`0>0?ooo`030000003oool0oooo00l0oooo00<000000?ooo`3oool0O03oool0
+07h0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`0?0?ooo`030000003oool0oooo
+07`0oooo001n0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool03P3oool00`000000
+oooo0?ooo`1m0?ooo`00OP3oool00`000000oooo0?ooo`080?ooo`<000000`3oool00`000000oooo
+0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n0?ooo`030000003oool0oooo00T0oooo00<0
+00000?ooo`3oool00P3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n
+0?ooo`030000003oool0oooo00H0oooo1@0000030?ooo`<000003P3oool00`000000oooo0?ooo`1m
+0?ooo`00OP3oool00`000000oooo0?ooo`060?ooo`040000003oool0oooo000000@0oooo00<00000
+0?ooo`3oool03P3oool00`000000oooo0?ooo`1m0?ooo`00OP3oool00`000000oooo0?ooo`070?oo
+o`030000003oool0000000@0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`1m0?oo
+o`00OP3oool00`000000oooo0?ooo`080?ooo`800000103oool00`000000oooo0?ooo`0>0?ooo`03
+0000003oool0oooo07d0oooo001n0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool0
+3P3oool00`000000oooo0?ooo`1m0?ooo`00OP3oool00`000000oooo0?ooo`0>0?ooo`030000003o
+ool0oooo00h0oooo00<000000?ooo`3oool0O@3oool007h0oooo00<000000?ooo`3oool03P3oool0
+0`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001n0?ooo`030000003oool0oooo
+00h0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`1m0?ooo`00O`3oool00`000000
+oooo0?ooo`0=0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool0O@3oool007l0oooo
+00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo
+001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?oo
+o`1m0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`8000003`3oool00`000000oooo0?ooo`1m
+0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00h0oooo00<000000?oo
+o`3oool0O@3oool007l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0>0?ooo`03
+0000003oool0oooo07d0oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool0
+3P3oool00`000000oooo0?ooo`1m0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003o
+ool0oooo00h0oooo00<000000?ooo`3oool0O@3oool007l0oooo00<000000?ooo`3oool03@3oool0
+0`000000oooo0?ooo`0>0?ooo`030000003oool0oooo07d0oooo001o0?ooo`030000003oool0oooo
+00d0oooo00<000000?ooo`3oool03P3oool00`000000oooo0?ooo`1m0?ooo`00O`3oool00`000000
+oooo0?ooo`0=0?ooo`030000003oool0oooo00h0oooo00<000000?ooo`3oool0O@3oool007l0oooo
+00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo
+001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?oo
+o`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00d0oooo00<00000
+0?ooo`3oool0OP3oool007l0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=0?oo
+o`030000003oool0oooo07h0oooo001o0?ooo`030000003oool0oooo00d0oooo0P00000>0?ooo`03
+0000003oool0oooo07h0oooo001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool0
+3@3oool00`000000oooo0?ooo`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003o
+ool0oooo00d0oooo00<000000?ooo`3oool0OP3oool007l0oooo00<000000?ooo`3oool03@3oool0
+0`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo001o0?ooo`030000003oool0oooo
+00d0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00O`3oool00`000000
+oooo0?ooo`0=0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool0OP3oool007l0oooo
+00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo
+001o0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?oo
+o`1n0?ooo`00O`3oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo00d0oooo00<00000
+0?ooo`3oool0OP3oool00800oooo00<000000?ooo`3oool0303oool00`000000oooo0?ooo`0=0?oo
+o`030000003oool0oooo07h0oooo00200?ooo`030000003oool0oooo00`0oooo00<000000?ooo`3o
+ool03@3oool00`000000oooo0?ooo`1n0?ooo`00P03oool00`000000oooo0?ooo`0<0?ooo`800000
+3P3oool00`000000oooo0?ooo`1n0?ooo`00P03oool00`000000oooo0?ooo`0<0?ooo`030000003o
+ool0oooo00d0oooo00<000000?ooo`3oool0OP3oool00800oooo00<000000?ooo`3oool0303oool0
+0`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo00200?ooo`030000003oool0oooo
+00`0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?ooo`1n0?ooo`00P03oool00`000000
+oooo0?ooo`0<0?ooo`030000003oool0oooo00d0oooo00<000000?ooo`3oool0OP3oool00800oooo
+00<000000?ooo`3oool0303oool00`000000oooo0?ooo`0=0?ooo`030000003oool0oooo07h0oooo
+00200?ooo`030000003oool0oooo00`0oooo00<000000?ooo`3oool03@3oool00`000000oooo0?oo
+o`1n0?ooo`00P03oool00`000000oooo0?ooo`0<0?ooo`030000003oool0oooo00d0oooo00<00000
+0?ooo`3oool0OP3oool00800oooo00<000000?ooo`3oool0303oool00`000000oooo0?ooo`0=0?oo
+o`030000003oool0oooo07h0oooo00200?ooo`030000003oool0oooo00`0oooo00<000000?ooo`3o
+ool03@3oool00`000000oooo0?ooo`1n0?ooo`00P03oool00`000000oooo0?ooo`040?ooo`<00000
+1@3oool00`000000oooo0?ooo`0<0?ooo`030000003oool0oooo07l0oooo00200?ooo`030000003o
+ool0oooo00@0oooo00@000000?ooo`3oool00000103oool00`000000oooo0?ooo`0<0?ooo`030000
+003oool0oooo07l0oooo00200?ooo`030000003oool0oooo00@0oooo00@000000?ooo`3oool00000
+103oool3000000`0oooo00<000000?ooo`3oool0O`3oool008L0oooo0`0000050?ooo`030000003o
+ool0oooo08h0oooo00280?ooo`030000003oool0oooo00@0oooo00<000000?ooo`3oool0SP3oool0
+08P0oooo0`0000040?ooo`030000003oool0oooo08h0oooo002?0?ooo`030000003oool0oooo08h0
+oooo002?0?ooo`030000003oool0oooo08h0oooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {287, 0}} -> {-6.26143, -6.25074, 0.0435592, \
+0.0435592}}],
+
+Cell[BoxData[
+    TagBox[\(\[SkeletonIndicator]  ContourGraphics  \[SkeletonIndicator]\),
+      False,
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ c - 4\ a\^5\ b\^2\ c - 
+        4\ a\^2\ b\^5\ c + 4\ a\ b\^6\ c - 4\ a\^5\ b\ c\^2 + 
+        4\ a\^4\ b\^2\ c\^2 + 4\ a\^2\ b\^4\ c\^2 - 4\ a\ b\^5\ c\^2 - 
+        2\ a\^4\ c\^4 + 4\ a\^2\ b\^2\ c\^4 - 2\ b\^4\ c\^4 - 
+        4\ a\^2\ b\ c\^5 - 4\ a\ b\^2\ c\^5 + 4\ a\ b\ c\^6 + 
+        c\^8\  /. {c \[Rule] b, a \[Rule] 2}\)], "Input"],
+
+Cell[BoxData[
+    \(256 + 256\ b\^2 - 256\ b\^3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(bmax\  = 
+      b\  /. \ \(N[
+            Simplify[
+              Solve[256 + 256\ b\^2 - 256\ b\^3 \[Equal] 0, 
+                b]\ ]]\)[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(1.4655712318767682`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sqrt[bmax^2 - 1\^2]\)], "Input"],
+
+Cell[BoxData[
+    \(1.0714005020088369`\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[d]\)], "Input"],
+
+Cell[BoxData[
+    \(\(c = b + d;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ c - 4\ a\^5\ b\^2\ c - 
+      4\ a\^2\ b\^5\ c + 4\ a\ b\^6\ c - 4\ a\^5\ b\ c\^2 + 
+      4\ a\^4\ b\^2\ c\^2 + 4\ a\^2\ b\^4\ c\^2 - 4\ a\ b\^5\ c\^2 - 
+      2\ a\^4\ c\^4 + 4\ a\^2\ b\^2\ c\^4 - 2\ b\^4\ c\^4 - 
+      4\ a\^2\ b\ c\^5 - 4\ a\ b\^2\ c\^5 + 4\ a\ b\ c\^6 + c\^8\)], "Input"],
+
+Cell[BoxData[
+    \(a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ \((b + d)\) - 
+      4\ a\^5\ b\^2\ \((b + d)\) - 4\ a\^2\ b\^5\ \((b + d)\) + 
+      4\ a\ b\^6\ \((b + d)\) - 4\ a\^5\ b\ \((b + d)\)\^2 + 
+      4\ a\^4\ b\^2\ \((b + d)\)\^2 + 4\ a\^2\ b\^4\ \((b + d)\)\^2 - 
+      4\ a\ b\^5\ \((b + d)\)\^2 - 2\ a\^4\ \((b + d)\)\^4 + 
+      4\ a\^2\ b\^2\ \((b + d)\)\^4 - 2\ b\^4\ \((b + d)\)\^4 - 
+      4\ a\^2\ b\ \((b + d)\)\^5 - 4\ a\ b\^2\ \((b + d)\)\^5 + 
+      4\ a\ b\ \((b + d)\)\^6 + \((b + d)\)\^8\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Expand[
+      a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ \((b + d)\) - 
+        4\ a\^5\ b\^2\ \((b + d)\) - 4\ a\^2\ b\^5\ \((b + d)\) + 
+        4\ a\ b\^6\ \((b + d)\) - 4\ a\^5\ b\ \((b + d)\)\^2 + 
+        4\ a\^4\ b\^2\ \((b + d)\)\^2 + 4\ a\^2\ b\^4\ \((b + d)\)\^2 - 
+        4\ a\ b\^5\ \((b + d)\)\^2 - 2\ a\^4\ \((b + d)\)\^4 + 
+        4\ a\^2\ b\^2\ \((b + d)\)\^4 - 2\ b\^4\ \((b + d)\)\^4 - 
+        4\ a\^2\ b\ \((b + d)\)\^5 - 4\ a\ b\^2\ \((b + d)\)\^5 + 
+        4\ a\ b\ \((b + d)\)\^6 + \((b + d)\)\^8]\)], "Input"],
+
+Cell[BoxData[
+    \(a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ d - 
+      12\ a\^5\ b\^2\ d - 4\ a\^5\ b\ d\^2 - 8\ a\^4\ b\^2\ d\^2 - 
+      12\ a\^2\ b\^4\ d\^2 + 16\ a\ b\^5\ d\^2 + 16\ b\^6\ d\^2 - 
+      8\ a\^4\ b\ d\^3 - 24\ a\^2\ b\^3\ d\^3 + 40\ a\ b\^4\ d\^3 + 
+      48\ b\^5\ d\^3 - 2\ a\^4\ d\^4 - 16\ a\^2\ b\^2\ d\^4 + 
+      40\ a\ b\^3\ d\^4 + 68\ b\^4\ d\^4 - 4\ a\^2\ b\ d\^5 + 
+      20\ a\ b\^2\ d\^5 + 56\ b\^3\ d\^5 + 4\ a\ b\ d\^6 + 28\ b\^2\ d\^6 + 
+      8\ b\ d\^7 + d\^8\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[
+      a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ d - 
+          12\ a\^5\ b\^2\ d - 4\ a\^5\ b\ d\^2 - 8\ a\^4\ b\^2\ d\^2 - 
+          12\ a\^2\ b\^4\ d\^2 + 16\ a\ b\^5\ d\^2 + 16\ b\^6\ d\^2 - 
+          8\ a\^4\ b\ d\^3 - 24\ a\^2\ b\^3\ d\^3 + 40\ a\ b\^4\ d\^3 + 
+          48\ b\^5\ d\^3 - 2\ a\^4\ d\^4 - 16\ a\^2\ b\^2\ d\^4 + 
+          40\ a\ b\^3\ d\^4 + 68\ b\^4\ d\^4 - 4\ a\^2\ b\ d\^5 + 
+          20\ a\ b\^2\ d\^5 + 56\ b\^3\ d\^5 + 4\ a\ b\ d\^6 + 
+          28\ b\^2\ d\^6 + 8\ b\ d\^7 + d\^8 \[Equal] 0, d]\)], "Input"],
+
+Cell[BoxData[
+    \({{d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 1]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 2]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 3]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 4]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 5]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 6]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 7]}, {d \[Rule] 
+          Root[a\^8 + 4\ a\^6\ b\^2 - 8\ a\^5\ b\^3 + 4\ a\^6\ b\ #1 - 
+                12\ a\^5\ b\^2\ #1 - 4\ a\^5\ b\ #1\^2 - 
+                8\ a\^4\ b\^2\ #1\^2 - 12\ a\^2\ b\^4\ #1\^2 + 
+                16\ a\ b\^5\ #1\^2 + 16\ b\^6\ #1\^2 - 8\ a\^4\ b\ #1\^3 - 
+                24\ a\^2\ b\^3\ #1\^3 + 40\ a\ b\^4\ #1\^3 + 
+                48\ b\^5\ #1\^3 - 2\ a\^4\ #1\^4 - 16\ a\^2\ b\^2\ #1\^4 + 
+                40\ a\ b\^3\ #1\^4 + 68\ b\^4\ #1\^4 - 4\ a\^2\ b\ #1\^5 + 
+                20\ a\ b\^2\ #1\^5 + 56\ b\^3\ #1\^5 + 4\ a\ b\ #1\^6 + 
+                28\ b\^2\ #1\^6 + 8\ b\ #1\^7 + #1\^8 &, 8]}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[
+      a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ c - 4\ a\^5\ b\^2\ c - 
+          4\ a\^2\ b\^5\ c + 4\ a\ b\^6\ c - 4\ a\^5\ b\ c\^2 + 
+          4\ a\^4\ b\^2\ c\^2 + 4\ a\^2\ b\^4\ c\^2 - 4\ a\ b\^5\ c\^2 - 
+          2\ a\^4\ c\^4 + 4\ a\^2\ b\^2\ c\^4 - 2\ b\^4\ c\^4 - 
+          4\ a\^2\ b\ c\^5 - 4\ a\ b\^2\ c\^5 + 4\ a\ b\ c\^6 + c\^8 \[Equal] 
+        0, b]\)], "Input"],
+
+Cell[BoxData[
+    \({{b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 1]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 2]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 3]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 4]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 5]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 6]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 7]}, {b \[Rule] 
+          Root[a\^8 - 2\ a\^4\ c\^4 + c\^8 + 4\ a\^6\ c\ #1 - 
+                4\ a\^5\ c\^2\ #1 - 4\ a\^2\ c\^5\ #1 + 4\ a\ c\^6\ #1 - 
+                4\ a\^5\ c\ #1\^2 + 4\ a\^4\ c\^2\ #1\^2 + 
+                4\ a\^2\ c\^4\ #1\^2 - 4\ a\ c\^5\ #1\^2 - 2\ a\^4\ #1\^4 + 
+                4\ a\^2\ c\^2\ #1\^4 - 2\ c\^4\ #1\^4 - 4\ a\^2\ c\ #1\^5 - 
+                4\ a\ c\^2\ #1\^5 + 4\ a\ c\ #1\^6 + #1\^8 &, 
+            8]}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[a, b, c]\)], "Input"],
+
+Cell[BoxData[
+    \(\(expr := 
+        a\^8 - 2\ a\^4\ b\^4 + b\^8 + 4\ a\^6\ b\ c - 4\ a\^5\ b\^2\ c - 
+          4\ a\^2\ b\^5\ c + 4\ a\ b\^6\ c - 4\ a\^5\ b\ c\^2 + 
+          4\ a\^4\ b\^2\ c\^2 + 4\ a\^2\ b\^4\ c\^2 - 4\ a\ b\^5\ c\^2 - 
+          2\ a\^4\ c\^4 + 4\ a\^2\ b\^2\ c\^4 - 2\ b\^4\ c\^4 - 
+          4\ a\^2\ b\ c\^5 - 4\ a\ b\^2\ c\^5 + 4\ a\ b\ c\^6 + 
+          c\^8;\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(N[Solve[\((expr\  /. {a \[Rule] \ 2, b \[Rule] 100000})\) \[Equal] 0\ , 
+        c]]\)], "Input"],
+
+Cell[BoxData[
+    \({{c \[Rule] 99999.99999987351`}, {c \[Rule] 
+          100000.00000012649`}, {c \[Rule] \(-99998.0000000012`\) - 
+            0.00004000039995399782`\ \[ImaginaryI]}, {c \[Rule] \
+\(-99998.0000000012`\) + 
+            0.00004000039995399782`\ \[ImaginaryI]}, {c \[Rule] \
+\(-2.4142135610306026`\) - 
+            100002.41423770526`\ \[ImaginaryI]}, {c \[Rule] \
+\(-2.4142135610306026`\) + 
+            100002.41423770526`\ \[ImaginaryI]}, {c \[Rule] \
+\(\(0.41421356223063444`\)\(\[InvisibleSpace]\)\) - 
+            99999.58578229533`\ \[ImaginaryI]}, {c \[Rule] \
+\(\(0.41421356223063444`\)\(\[InvisibleSpace]\)\) + 
+            99999.58578229533`\ \[ImaginaryI]}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData[
+    \(Syntax::"sntxf" \(\(:\)\(\ \)\) "\<\"\!\(expr ==\)\" cannot be followed \
+by \"\!\(0\\. \(\({\(\(b \[Rule] 10\)\), \(\(a \[Rule] \
+2\)\)}\)\)\)\".\!\(\"\"\) \!\(\*ButtonBox[\"More\[Ellipsis]\", \
+ButtonStyle->\"RefGuideLinkText\", ButtonFrame->None, \
+ButtonData:>\"General::sntxf\"]\)\>"\)], "Message"],
+
+Cell[BoxData[
+    StyleBox[
+      RowBox[{"Solve", "[", 
+        RowBox[{"expr", "==", 
+          ErrorBox[\(0  \\.  {b \[Rule] 10, a \[Rule] 2}\)]}], "]"}],
+      ShowStringCharacters->True]], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(a\)], "Input"],
+
+Cell[BoxData[
+    \(a\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 800}, {0, 527}},
+WindowSize->{792, 500},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 63, 1, 31, "Subsubtitle"],
+Cell[1842, 56, 519, 20, 52, "Text"],
+Cell[2364, 78, 123, 2, 50, "Input"],
+Cell[2490, 82, 113, 3, 33, "Text"],
+Cell[2606, 87, 193, 3, 70, "Input"],
+Cell[2802, 92, 188, 4, 33, "Text"],
+Cell[2993, 98, 436, 9, 70, "Input"],
+Cell[3432, 109, 61, 0, 33, "Text"],
+
+Cell[CellGroupData[{
+Cell[3518, 113, 193, 3, 70, "Input"],
+Cell[3714, 118, 148, 3, 29, "Output"],
+Cell[3865, 123, 146, 2, 29, "Output"],
+Cell[4014, 127, 153, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4204, 135, 163, 2, 90, "Input"],
+Cell[4370, 139, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4442, 145, 158, 3, 70, "Input"],
+Cell[4603, 150, 223, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4863, 158, 76, 1, 30, "Input"],
+Cell[4942, 161, 64, 1, 29, "Output"]
+}, Open  ]],
+Cell[5021, 165, 204, 3, 42, "Input"],
+Cell[5228, 170, 136, 2, 47, "Input"],
+Cell[5367, 174, 336, 5, 45, "Input"],
+
+Cell[CellGroupData[{
+Cell[5728, 183, 54, 1, 30, "Input"],
+Cell[5785, 186, 88, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5910, 192, 128, 3, 30, "Input"],
+Cell[6041, 197, 244, 4, 49, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6322, 206, 298, 6, 47, "Input"],
+Cell[6623, 214, 223, 3, 29, "Output"]
+}, Open  ]],
+Cell[6861, 220, 215, 4, 30, "Input"],
+Cell[7079, 226, 82, 1, 30, "Input"],
+Cell[7164, 229, 82, 1, 30, "Input"],
+Cell[7249, 232, 346, 5, 68, "Input"],
+
+Cell[CellGroupData[{
+Cell[7620, 241, 49, 1, 30, "Input"],
+Cell[7672, 244, 61, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7770, 250, 102, 2, 30, "Input"],
+Cell[7875, 254, 808, 12, 100, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8720, 271, 78, 1, 30, "Input"],
+Cell[8801, 274, 614, 9, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9452, 288, 128, 3, 30, "Input"],
+Cell[9583, 293, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9655, 299, 68, 1, 30, "Input"],
+Cell[9726, 302, 999, 17, 135, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10762, 324, 80, 1, 31, "Input"],
+Cell[10845, 327, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10917, 333, 54, 1, 30, "Input"],
+Cell[10974, 336, 88, 1, 29, "Output"]
+}, Open  ]],
+Cell[11077, 340, 114, 2, 31, "Text"],
+
+Cell[CellGroupData[{
+Cell[11216, 346, 70, 1, 30, "Input"],
+Cell[11289, 349, 392, 6, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[11718, 360, 151, 3, 34, "Input"],
+Cell[11872, 365, 1218, 18, 159, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[13127, 388, 154, 2, 30, "Input"],
+Cell[13284, 392, 42, 1, 29, "Output"]
+}, Open  ]],
+Cell[13341, 396, 1433, 26, 202, "Input"],
+Cell[14777, 424, 69, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[14871, 429, 65, 1, 30, "Input"],
+Cell[14939, 432, 163, 2, 29, "Output"]
+}, Open  ]],
+Cell[15117, 437, 26, 0, 30, "Input"],
+Cell[15146, 439, 1325, 22, 152, "Input"],
+
+Cell[CellGroupData[{
+Cell[16496, 465, 26, 0, 30, "Input"],
+Cell[16525, 467, 1309, 24, 197, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[17871, 496, 106, 2, 30, "Input"],
+Cell[17980, 500, 64, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[18081, 506, 72, 1, 30, "Input"],
+Cell[18156, 509, 62, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[18255, 515, 142, 2, 30, "Input"],
+Cell[18400, 519, 39171, 1114, 296, 11353, 766, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[57574, 1635, 137, 3, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[57748, 1643, 404, 6, 50, "Input"],
+Cell[58155, 1651, 61, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[58253, 1657, 179, 5, 31, "Input"],
+Cell[58435, 1664, 53, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[58525, 1670, 52, 1, 31, "Input"],
+Cell[58580, 1673, 53, 1, 29, "Output"]
+}, Open  ]],
+Cell[58648, 1677, 41, 1, 30, "Input"],
+Cell[58692, 1680, 47, 1, 30, "Input"],
+
+Cell[CellGroupData[{
+Cell[58764, 1685, 355, 5, 50, "Input"],
+Cell[59122, 1692, 527, 8, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[59686, 1705, 555, 9, 72, "Input"],
+Cell[60244, 1716, 520, 8, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[60801, 1729, 575, 9, 72, "Input"],
+Cell[61379, 1740, 5082, 73, 466, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[66498, 1818, 408, 7, 52, "Input"],
+Cell[66909, 1827, 3487, 50, 314, "Output"]
+}, Open  ]],
+Cell[70411, 1880, 47, 1, 30, "Input"],
+Cell[70461, 1883, 404, 7, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[70890, 1894, 117, 2, 30, "Input"],
+Cell[71010, 1898, 700, 13, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[71747, 1916, 26, 0, 30, "Input"],
+Cell[71776, 1918, 323, 5, 52, "Message"],
+Cell[72102, 1925, 204, 5, 25, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[72343, 1935, 34, 1, 30, "Input"],
+Cell[72380, 1938, 35, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

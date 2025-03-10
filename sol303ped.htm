@@ -1,0 +1,700 @@
+﻿<html>
+<head>
+<meta name="generator" content="Corel WordPerfect 12">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+
+body
+{
+	font-family: "Verdana", sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	font-style: normal;
+	color: #71828a;
+	background-color: #A8B1B5;
+	text-align:justify
+}
+
+table
+{
+	border-color: black;
+	font-size: 10px;
+	font-weight: normal;
+	font-style: normal;
+	text-align:justify
+}
+
+td
+{
+	border-color: black
+}
+
+td.Seccion
+{
+	padding-left: 0.2in;
+	padding-right: 0.2in;
+	border: 0.01in solid;
+	width:100%;
+	background-color: #71828a;
+	font-size:12px;
+	font-weight: bold;
+	color: #ffff90;
+	text-align: center
+}
+
+td.Vacio
+{
+	padding-left: 0.2in;
+	padding-right: 0.2in;
+	width:100%;
+	border: none
+}
+
+td.Table1Column1
+{
+	padding-left: 0.2in;
+	padding-right: 0.2in;
+	border: 0.01in solid;
+	width:100%;
+	background-color: #ffffff;
+	text-align:justify
+}
+
+td.Comentario
+{
+	padding-left: 0.2in;
+	padding-right: 0.2in;
+	border: none;
+	width:100%;
+	background-color: #ffffff;
+	width:100%;
+	background-color: #cccccc;
+	font-weight: bold;
+	text-align:justify
+}
+
+td.Teorema
+{
+	padding-left: 0.2in;
+	padding-right: 0.2in;
+	border: 0.01in solid;
+	width:100%;
+	background-color: #ffffc7;
+	font-weight: bold;
+	text-align:justify
+
+}
+
+p
+{
+	margin-top: 0px;
+	margin-bottom: 1px
+}
+
+body,td,th {
+	color: #71828a;
+}
+
+a:link {
+	text-decoration: none;
+	color: #71828a;
+}
+a:visited {
+	text-decoration: none;
+	color: #71828a;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: none;
+	color: #000000;
+}
+
+.Figura {color: #000000; font-size: 8px; 	text-align: center }
+.Ecuacion{text-align: center}
+.Link {color:#000000; font-weight:bold;}
+
+</style>
+</head>
+<body>
+<div align="center">
+<table width="660" cellpadding="6" cellspacing="0">
+<tr><td class="Seccion"><br>
+UNA GENERALIZACI&Oacute;N DEL PROBLEMA 137<br><br>
+<p style="text-align: right; font-size: 8px; font-weight: bold; color: #ffffff">Jos&eacute; Mar&iacute;a Pedret. Ingeniero Naval. Esplugues de Llobregat (Barcelona)<br>(marzo-2006)</p>
+</td></tr>
+<tr><td class="Vacio">&#160;</td></tr>
+<tr><td class="Table1Column1"><br>
+Luigi Cremona en el n&ordm; 217 de la p&aacute;gina 180 de la edici&oacute;n inglesa de su obra<br><br>
+		
+<div class="Figura"><a href="http://www.hti.umich.edu/cgi/t/text/pageviewer-idx?c=umhistmath&cc=umhistmath&idno=acv3398.0001.001&frm=frameset&view=pdf&seq=207" target="_blank"><img src="sol303ped/01.gif" alt="Luigi Cremona. Elements of projective geometry" width="219" height="250" border="0"><span class="Link"><sup>?</sup></span></a></div>
+<br>
+
+nos dice:<br><br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">&quot;.. Y el problema,</p><br>
+<p style="margin-left: 1.00in; margin-right: 1.00in; font-weight: bold; font-style:italic">Trazar una recta por un punto dado que divida un tri&aacute;ngulo dado en dos partes cuyas &aacute;reas est&eacute;n seg&uacute;n una raz&oacute;n dada</p><br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">puede resolverse reduci&eacute;ndolo a la siguiente construcci&oacute;n:</p><br>
+<p style="margin-left: 1.00in; margin-right: 1.00in; font-weight: bold; font-style:italic">Trazar desde un punto dado la tangente a una hip&eacute;rbola de la que se conocen las as&iacute;ntotas y una tangente.</p><br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">Se deja como ejercicio para el estudiante.&quot;</p><br>
+</td></tr>
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion"><br>
+<p style="text-align:left; font-size: 10px; font-weight: bold; color: #ffffff">Resolver este problema:</p><br>
+TRAZAR UNA RECTA POR UN PUNTO DADO QUE DIVIDA UN TRI&Aacute;NGULO DADO EN DOS PARTES CUYAS &Aacute;REAS EST&Eacute;N SEG&Uacute;N UNA RAZ&Oacute;N DADA<br><br>
+<p style="text-align:left; font-size: 10px; font-weight: bold; color: #ffffff">Indicaci&oacute;n:<br>
+
+<a href="http://www.aloj.us.es/optico/rbarroso/trianguloscabri/sol/sol137garcap/indice.htm" target="_blank">
+<span style="font-size: 10px; font-weight: bold; color: #ffffff">Ver la soluci&oacute;n al problema 137 de FRANCISCO JAVIER GARC&Iacute;A CAPIT&Aacute;N en las p&aacute;ginas de RICARDO BARROSO</span>
+<span class="Link"><sup>?</sup></span></a></p>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">1. DIBUJO DEL ENUNCIADO</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<p class="Figura"><img src="sol303ped/02.gif" alt="enunciado" width="361" height="272" border="0"><br>
+	figura 2</p><br>
+Dibujamos un tri&aacute;ngulo cualquiera en el plano definido por sus tres v&eacute;rtices A, B, C.<br><br>
+En el plano del tri&aacute;ngulo, dibujamos un punto cualquiera P.<br><br>
+La raz&oacute;n &#961; la expresamos como la raz&oacute;n entre dos segmentos m y n<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole.gif" alt="ole.gif" width="38" height="33" border="0"></p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">2. PLANTEAMIENTO</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Comentario">
+Prescindimos del punto P, tomamos, por ejemplo, un punto N cualquiera sobre CA y estudiamos la recta por N que corta a AB en N' y divide al tri&aacute;ngulo en dos figuras cuyas &aacute;reas est&aacute;n seg&uacute;n la raz&oacute;n dada &#961;
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>2.1 SUPONEMOS ESTA PARTE DEL PROBLEMA RESUELTO</b><br>
+<br>
+<p class="Figura"><img src="sol303ped/03.gif" alt="esta parteresuelto" width="361" height="272" border="0"><br>
+	figura 3</p><br>
+
+Suponemos que en la figura 3 tenemos el problema resuelto. En esta situaci&oacute;n se cumplir&aacute;:<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole1.gif" alt="ole1.gif" width="525" height="61" border="0"></p><br>
+
+Ahora bien los tri&aacute;ngulos AHC y AKN son semejantes por tener los lados paralelos<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole2.gif" alt="ole2.gif" width="166" height="33" border="0"></p><br>
+
+Introduciendo este resultado en la ecuaci&oacute;n anterior<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole3.gif" alt="ole3.gif" width="483" height="64" border="0"></p><br>
+
+Por lo tanto a partir de N obtenemos N' mediante la <b>biyecci&oacute;n</b><br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole4.gif" alt="ole4.gif" width="96" height="33" border="0"></p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>2.2 TRAZADO DE C' SOBRE AB</b><br><br>
+
+<p class="Figura"><img src="sol303ped/04.gif" alt="trazado de C'" width="360" height="272" border="0"><br>
+	figura 4</p><br>
+
+Veamos<br>
+<p class="Ecuacion"><img src="sol303ped/ole5.gif" alt="ole5.gif" width="190" height="33" border="0"></p><br>
+
+Trazamos con centro en A los c&iacute;rculos de radios n y radio m+n. Estos c&iacute;rculos cortan a CA.<br><br>
+
+Por B, recta al extremo de m+n en CA; una paralela a esta &uacute;ltima, por el extremo de m en CA, da C' en AB.<br><br>
+
+C' es el transformado de C por la biyecci&oacute;n establecida en <b>2.1</b><br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole6.gif" alt="ole6.gif" width="265" height="33" border="0"></p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr>
+<td class="Table1Column1"><br>
+<b>2.3 DADO UN PUNTO N DE AC; TRAZADO DE N' SOBRE AB</b><br><br>
+
+<p class="Figura"><img src="sol303ped/05.gif" alt="dado N de AC trazar N' de AB" width="361" height="272" border="0"><br>
+	figura 5</p>
+
+Como<br>
+<p class="Ecuacion"><img src="sol303ped/ole7.gif" alt="ole7.gif" width="63" height="33" border="0"></p><br>
+
+Podemos expresar esta proporci&oacute;n mediante una paralela a NC' que pasa por el punto C y corta a AB en N'. NN' divide a ABC seg&uacute;n la raz&oacute;n del enunciado.<br><br>
+
+<b>2.3.1 COMPROBACIÓN CON CABRI II</b><br><br>
+De momento prescindimos del punto P.<br><br>
+<p class=Figura>
+<applet code="CabriJava.class" width="650" height="600" archive="CabriJava.jar">
+	<param name=file value="sol303ped1.fig">
+	<param name=lang value="es">
+	<param name=border value="0">
+	<param name=opaque value="false">
+	<param name=controller value="false">
+</applet>
+Figura 6</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>2.4 LA TRANSFORMACI&Oacute;N QUE LIGA N Y N'</b><br><br>
+
+<p class="Figura"><img src="sol303ped/07.gif" alt="N -&gt; N'" width="360" height="272" border="0"><br>
+	figura 7</p><br>
+
+Suponemos ahora que N<sub>1</sub> y N<sub>2</sub> son dos puntos sobre AC que se transforman en N'<sub>1</sub> y N'<sub>2</sub> sobre AB.<br><br>
+A partir de lo visto en <b>2.1 &iquest;C&oacute;mo se transforma un segmento N<sub>1</sub>N<sub>2</sub>?</b><br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole8.gif" alt="ole8.gif" width="617" height="41" border="0"></p><br>
+
+Sabiendo manejar segmentos sabemos manejar razones dobles<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole9.gif" alt="ole9.gif" width="557" height="70" border="0"></p>
+<p class="Ecuacion"><img src="sol303ped/ole10.gif" alt="ole10.gif" width="446" height="39" border="0"></p><br>
+
+Vemos pues que la transformaci&oacute;n que liga N con N' es una biyecci&oacute;n que conserva la raz&oacute;n
+doble y por tanto podemos enunciar<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole11.gif" alt="ole11.gif" width="380" height="33" border="0"></p>
+entonces<br>
+<p style="text-align: center; font-weight: bold">h ES UNA HOMOGRAF&Iacute;A ENTRE RECTAS PROYECTIVAS.</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">3. PASO AL MUNDO DE LAS C&Oacute;NICAS</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Comentario"><a href="http://www.aloj.us.es/optico/rbarroso/trianguloscabri/sol/sol182ped.htm" target="_blank">En este apartado, la clave est&aacute; en el uso del TEOREMA DUAL del TEOREMA DE CHASLES-STEINER. Un estudio detallado de este teorema y sus vinculados se puede ver en los apartados 3 y 4 de la soluci&oacute;n al problema 182 de las p&aacute;ginas de RICARDO
+BARROSO. Aqu&iacute; para practicar el paso al dual, enunciamos el teorema de CHASLES-STEINER y
+lo dualizamos.<span class="Link"><sup>?</sup></span></a><br><br>
+
+<a href="http://www.aloj.us.es/rbarroso/trianguloscabri/sol/sol137pedcp.pdf" target="_blank">
+Tambi&eacute;n puede verse el documento que acompa&ntilde;a a la resoluci&oacute;n del problema 137 de TRIANGULOSCABRI DE RICARDO BARROSO: SI SOLO TENEMOS LOS CINCO PUNTOS QUE DEFINEN UNA CONICA 
+(Un enfoque pr&aacute;ctico para las construcciones con regla y comp&aacute;s)<span class="Link"><sup>?</sup></span></a>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Teorema"><br>
+<b>TEOREMA DE CHASLES-STEINER</b><br><br>
+
+<p style="margin-left:0.50in; margin-right:0.50in">Sean dos haces de rectas A* (de centro el punto A) y B* (de centro el punto B) y sea una biyecci&oacute;n de haces de rectas</p>
+
+<p class="Ecuacion"><img src="sol303ped/ole12.gif" alt="ole12.gif" width="231" height="38" border="0"></p><br>
+
+<p style="margin-left:0.50in; margin-right:0.50in">El lugar geom&eacute;trico de la intersecci&oacute;n de las rectas hom&oacute;logas</p><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole13.gif" alt="ole13.gif" width="75" height="17" border="0"></p><br>
+
+<p style="margin-left:0.50in; margin-right:0.50in">es una c&oacute;nica por A y B, si y s&oacute;lo si h* es una homograf&iacute;a entre haces de rectas.</p><br>
+
+<b>DUALIZACI&Oacute;N</b><br><br>
+
+<p style="margin-left:0.50in; margin-right:0.50in">Sean dos rectas proyectivas a y b y sea una biyecci&oacute;n de rectas proyectivas</p><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole14.gif" alt="ole14.gif" width="200" height="38" border="0"></p><br>
+
+<p style="margin-left:0.50in; margin-right:0.50in">El lugar geom&eacute;trico (envolvente) de las rectas que unen puntos hom&oacute;logos</p><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole15.gif" alt="ole15.gif" width="60" height="17" border="0"></p><br>
+
+<p style="margin-left:0.50in; margin-right:0.50in">es una c&oacute;nica tangente a a y b, si y s&oacute;lo si h es una homograf&iacute;a entre rectas proyectivas.</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>3.1 NUESTRA C&Oacute;NICA</b><br><br>
+
+<b>EL TEOREMA DUAL DE CHASLES-STEINER</b>, aplicado a nuestra situaci&oacute;n, nos dice:<br><br>
+
+Dadas dos rectas AC y AB y la homograf&iacute;a entre rectas proyectivas<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole16.gif" alt="ole16.gif" width="367" height="33" border="0"></p><br>
+
+entonces el lugar geom&eacute;trico (envolvente) de las rectas NN' es una <span style="font-weight: bold">c&oacute;nica</span> tangente a AC y a AB.<br><br>
+
+Es claro que<br>
+
+<p style="text-align: center; font-weight: bold">PARA CUALQUIER N, NN' ES UNA TANGENTE DE DICHA C&Oacute;NICA.</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">4. EL PUNTO DE CONTACTO ENTRE UNA C&Oacute;NICA Y SU TANGENTE</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Comentario">
+Por la homograf&iacute;a h definida en el apartado 2, ya sabemos que NN' es tangente a una cierta c&oacute;nica envolvente de todas las rectas que unen a cualquier punto N de AC con su imagen N' de AB.<br><br>
+Para avanzar un poco m&aacute;s, buscamos el punto de contacto entre la tangente y la c&oacute;nica; para ello, utilizamos el TEOREMA DE BRIANCHON que, despu&eacute;s de consultar los documentos hasta aqu&iacute; citados, podemos presentarlo como DUAL DEL TEOREMA DE PASCAL y usarlo sin m&aacute;s.<br><br>
+En 4.1 y 4.2 explicamos un procedimiento general par la determinaci&oacute;n del punto de contacto. En 4.3 lo particularizamos para nuestro enunciado.
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Teorema"><br>
+EL TEOREMA DE BRIANCHON<br><br>
+<p style="margin-left:0.50in; margin-right:0.50in">En un hex&aacute;gono circunscrito a una c&oacute;nica, las diagonales que unen los v&eacute;rtices opuestos pasan por un mismo punto.</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>4.1 CINCO TANGENTES A UNA C&Oacute;NICA FORMAN UN HEX&Aacute;GONO CIRCUNSCRITO A LA MISMA</b><br><br>
+<p class="Figura"><img src="sol303ped/08.gif" alt="cinco tangentes" width="402" height="272" border="0"><br>
+	figura 8</p><br>
+
+Sean t<sub>1</sub>, t<sub>2</sub>, t<sub>3</sub>, t<sub>4</sub>, t<sub>5</sub> las cinco tangentes cuya c&oacute;nica queremos determinar. En principio forman
+un pent&aacute;gono circunscrito a la c&oacute;nica con cinco v&eacute;rtices<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole17.gif" alt="ole17.gif" width="70" height="99" border="0"></p><br>
+
+Pero podemos considerar al punto de contacto T<sub>1</sub> sobre t<sub>1</sub> como el sexto v&eacute;rtice V<sub>6</sub> y considerar el hex&aacute;gono V<sub>1</sub>V<sub>2</sub>V<sub>3</sub>V<sub>4</sub>V<sub>5</sub>V<sub>6</sub> como el hex&aacute;gono circunscrito que menciona el <b>TEOREMA DE BRIANCH&Oacute;N.</b><br><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>4.2 DETERMINACI&Oacute;N DE T<sub>1</sub>, PUNTO DE CONTACTO ENTRE LA C&Oacute;NICA Y t<sub>1</sub></b><br><br>
+<p class="Figura"><img src="sol303ped/09.gif" alt="determinación del punto de contacto por medio del TEOREMA DE BRIANCHON" width="402" height="272" border="0"><br>
+	figura 9</p><br>
+
+Aplicaremos al hex&aacute;gono determinado por las cinco tangentes el <b>TEOREMA DE BRIANCHON</b>.<br><br>
+
+No conocemos el punto de contacto buscado (v&eacute;rtice V<sub>6</sub>); pero sabemos, por el <b>TEOREMA</b> que la diagonal V<sub>3</sub>V<sub>6</sub> coincide en un mismo punto O con las otras diagonales.<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole18.gif" alt="ole18.gif" width="274" height="20" border="0"></p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>4.3 APLICACI&Oacute;N A NUESTRO ENUNCIADO</b><br><br>
+
+<p class="Figura"><img src="sol303ped/10.gif" alt="" width="361" height="272" border="0"><br>
+	figura 10</p><br>
+
+<b>4.3.1 IDENTIFICACI&Oacute;N DE LA NOTACI&Oacute;N</b><br><br>
+
+Necesitamos cinco tangentes. Hasta llegar a este punto, ya hemos identificado cuatro de ellas CC', AC, AB y NN'. Nos falta otra m&aacute;s. Si aplicamos la construcci&oacute;n desarrollada en <b>2.3</b>, una paralela por C' a BC corta a AC en la anti-imagen de B, entonces<br>
+<p class="Ecuacion"><img src="sol303ped/ole19.gif" alt="ole19.gif" width="44" height="20" border="0"></p>
+es una tangente a la c&oacute;nica.<br><br>
+
+Punto de contacto buscado<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole20.gif" alt="ole20.gif" width="54" height="20" border="0"></p><br>
+
+Como buscamos el punto de contacto entre la c&oacute;nica y una tangente gen&eacute;rica denominamos<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole21.gif" alt="ole21.gif" width="51" height="20" border="0"></p>
+y luego, por ejemplo<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole22.gif" alt="ole22.gif" width="80" height="80" border="0"></p>
+y por lo tanto<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole23.gif" alt="ole23.gif" width="203" height="99" border="0"></p>
+<br>
+Utilizando este modelo, en el que las cuatro &uacute;ltimas tangentes son fijas y s&oacute;lo la primera NN'
+es variable,<br>
+<br>
+<p style="text-align: center; font-weight: bold">&iexcl;&iexcl;&iexcl; LOS PUNTOS V<sub>2</sub>, V<sub>3</sub>, V<sub>4</sub> SON FIJOS !!!</p><br>
+	
+<b>4.3.2 EL PUNTO DE CONTACTO</b><br><br>
+	
+<p class="Figura"><img src="sol303ped/11.gif" alt="el punto de contacto para NN'" width="361" height="272" border="0"><br>
+	figura 11</p><br>
+<p class="Ecuacion"><img src="sol303ped/ole24.gif" alt="ole24.gif" width="471" height="20" border="0"></p>
+<br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">5. AC Y AB SON AS&Iacute;NTOTAS DE LA C&Oacute;NICA</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Comentario">
+Ahora que sabemos determinar los puntos de contacto en nuestro problema, podemos ver que los puntos de contacto de AC y AB son respectivamente sus puntos de infinito.<br><br>
+En consecuencia, AC y AB son as&iacute;ntotas de la c&oacute;nica.
+</td>
+</tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>5.1 EL PUNTO DE CONTACTO DE LA TANGENTE AC</b><br><br>
+
+<p class="Figura"><img src="sol303ped/12.gif" alt="AC es una asíntota" width="360" height="272" border="0"><br>
+	figura 12</p><br>
+
+En este caso, el m&eacute;todo de construcci&oacute;n <b>2.3</b> nos indica que<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole25.gif" alt="ole25.gif" width="193" height="40" border="0"></p>
+
+y por lo tanto<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole26.gif" alt="ole26.gif" width="172" height="40" border="0"></p>
+
+de donde<br>
+<p class="Ecuacion"><img src="sol303ped/ole27.gif" alt="ole27.gif" width="336" height="25" border="0"></p>
+y as&iacute;<br>
+<p class="Ecuacion"><img src="sol303ped/ole28.gif" alt="ole28.gif" width="369" height="20" border="0"></p>
+<br>
+
+Por lo tanto el punto de contacto est&aacute; en el punto de infinito de AC y por ello<br><br>
+
+<p style="text-align: center; font-weight: bold">AC ES UNA AS&Iacute;NTOTA DE LA C&Oacute;NICA</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr>
+<td class="Table1Column1"><br>
+<b>5.2 EL PUNTO DE CONTACTO DE LA TANGENTE AB</b><br><br>
+
+<p class="Figura"><img src="sol303ped/13.gif" alt="AB es una asíntota" width="360" height="272" border="0"><br>
+	figura 13</p><br>
+
+En este caso, el m&eacute;todo de construcci&oacute;n <span style="font-weight: bold">2.3</span> nos indica que<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole29.gif" alt="ole29.gif" width="149" height="40" border="0"></p>
+y por lo tanto<br>
+<p class="Ecuacion"><img src="sol303ped/ole30.gif" alt="ole30.gif" width="142" height="40" border="0"></p>
+de donde<br>
+<p class="Ecuacion"><img src="sol303ped/ole31.gif" alt="ole31.gif" width="186" height="20" border="0"></p>
+y as&iacute;<br>
+<p class="Ecuacion"><img src="sol303ped/ole32.gif" alt="ole32.gif" width="373" height="20" border="0"></p><br>
+
+Por lo tanto el punto de contacto est&aacute; en el punto de infinito de AB y por ello<br><br>
+
+<p style="text-align: center; font-weight: bold">AB ES UNA AS&Iacute;NTOTA DE LA C&Oacute;NICA</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">6. LA SOLUCI&Oacute;N</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr>
+	<td class="Comentario">Hasta aqu&iacute;, hemos visto, como dice el enunciado, que trazar una recta que divide al tri&aacute;ngulo seg&uacute;n una raz&oacute;n dada, equivale a trazar una tangente a una c&oacute;nica de la que se conocen las as&iacute;ntotas y una tangente (CC').<br>
+		<br>
+Ya s&oacute;lo nos falta obligar a esa tangente a pasar por el punto dado P.<br><br>
+El problema general es trazar desde un punto P una tangente a una c&oacute;nica definida por cinco elementos (cinco puntos, cinco tangentes, cuatro puntos y una tangente...).
+Como conocemos tres tangentes y los puntos de contacto en dos de ellas (los puntos de infinito de las dos as&iacute;ntotas) ya tenemos nuestro caso de construcci&oacute;n de la<br>
+<br>
+<p style="text-align:center">TANGENTE POR UN PUNTO DADO A UNA C&Oacute;NICA DEFINIDA POR TRES TANGENTES Y LOS PUNTOS DE CONTACTO DE DOS DE ELLAS.</p><br>
+
+En esta parte, identificamos una homograf&iacute;a que facilita el camino y usamos que:<br>
+<br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">La inversa de una homograf&iacute;a es una homograf&iacute;a</p><br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">La composici&oacute;n de homograf&iacute;as es una homograf&iacute;a.</p>
+<br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">En espacios proyectivos de dimensi&oacute;n 1, tres pares de puntos correspondientes definen una homograf&iacute;a.</p>
+<br>
+<p style="margin-left: 0.50in; margin-right: 0.50in">Los puntos dobles (si existen) de una homograf&iacute;a de un c&iacute;rculo sobre s&iacute; mismo est&aacute;n en la intersecci&oacute;n del eje de la homograf&iacute;a con el c&iacute;rculo.</p><br>
+
+<p style="text-align: center"><a href="http://www.aloj.us.es/optico/rbarroso/trianguloscabri/200extraped/gergonne.htm" target="_blank">(Ver los apartados 3.3 y 3.4 de Gergonne y el Problema de Castillon)<span class="Link"><sup>?</sup></span></a></p>
+<br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><b>6.1 PROYECCIONES DE CENTRO P DE LAS RECTAS AC Y AB SOBRE UN C&Iacute;RCULO QUE PASA POR EL PUNTO DADO P</b><br><br>
+
+<p class="Figura"><img src="sol303ped/14.gif" alt="proyecciones de AC y AB sobre el círculo" width="402" height="272" border="0"><br>
+	figura 14</p><br>
+Trazamos un c&iacute;rculo &#937; cualquiera que pase por P.<br><br>
+
+Desde P proyectamos AC sobre &#937; del siguiente modo<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole33.gif" alt="ole33.gif" width="305" height="20" border="0"></p><br>
+
+y desde P proyectamos AB sobre &#937; del siguiente modo<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole34.gif" alt="ole34.gif" width="312" height="20" border="0"></p><br>
+
+Sabemos que ambas proyecciones son homograf&iacute;as; podemos entonces estudiar la biyecci&oacute;n<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole35.gif" alt="ole35.gif" width="203" height="20" border="0"></p><br>
+de aqu&iacute;<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole36.gif" alt="ole36.gif" width="532" height="40" border="0"></p><br>
+
+sabemos que la composici&oacute;n de homograf&iacute;as y la inversa de una homograf&iacute;a son tambi&eacute;n homograf&iacute;as, como<br>
+<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole37.gif" alt="ole37.gif" width="85" height="23" border="0"></p>
+podemos concluir que<br><br>
+
+<p style="text-align: center; font-weight: bold">LA HOMOGRAF&Iacute;A h ENTRE LAS RECTAS AB Y AC DEFINE UNA HOMOGRAF&Iacute;A h<sub>&#937;</sub> DEL C&Iacute;RCULO SOBRE S&Iacute; MISMO.</p>
+<br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>6.2 &iquest;QU&Eacute; ES UNA TANGENTE t<sub>P</sub> A LA C&Oacute;NICA QUE PASE POR EL PUNTO DADO P?</b><br><br>
+
+<p class="Figura"><img src="sol303ped/15.gif" alt="una tangente por P" width="402" height="272" border="0"><br>
+	figura 15</p><br>
+Sea t<sub>P</sub> una recta por P tangente a la c&oacute;nica.<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole38.gif" alt="ole38.gif" width="193" height="40" border="0"></p><br>
+
+Por ser tangente a la c&oacute;nica, t<sub>P</sub> divide al tri&aacute;ngulo en dos partes cuyas &aacute;reas est&aacute;n seg&uacute;n la raz&oacute;n dada en el enunciado y adem&aacute;s<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole39.gif" alt="ole39.gif" width="62" height="20" border="0"></p><br>
+
+Tomando la homograf&iacute;a h<sub>&#937;</sub> del c&iacute;rculo sobre s&iacute; mismo<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole40.gif" alt="ole40.gif" width="214" height="20" border="0"></p>
+
+Con lo que<br>
+<p class="Ecuacion"><img src="sol303ped/ole41.gif" alt="ole41.gif" width="107" height="20" border="0"></p>
+
+Vemos que<br>
+
+<p style="text-align: center; font-weight: bold">E<sub>&#937;</sub> ES UN PUNTO DOBLE DE LA HOMOGRAF&Iacute;A h<sub>&#937;</sub> DEL C&Iacute;RCULO SOBRE S&Iacute; MISMO.</p><br>
+
+Buscamos pues los puntos dobles de h<sub>&#937;</sub> y obtenemos EE' que nos da la tangente por P a la c&oacute;nica.<br><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>6.3 LA HOMOGRAF&Iacute;A h<sub>&#937;</sub> DEL C&Iacute;RCULO &#937; SOBRE S&Iacute; MISMO - DEFINICI&Oacute;N</b><br><br>
+
+Recordamos ahora que, en espacios proyectivos de dimensi&oacute;n 1, tres pares de elementos correspondientes (hom&oacute;logos) definen una &uacute;nica homograf&iacute;a.<br>
+<br>
+
+<p class="Figura"><img src="sol303ped/16.gif" alt="la homografía del círculo sobre sí mismo" width="402" height="272" border="0"><br>
+	figura 16</p><br>
+Tenemos los tres pares de puntos hom&oacute;logos necesarios para definir la homograf&iacute;a h<sub>&#937;</sub>. Y adem&aacute;s, s&oacute;lo dependen de los datos del enunciado.<br>
+<br>
+
+Hemos visto en <b>3.1</b> que podemos definir<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole42.gif" alt="ole42.gif" width="220" height="60" border="0"></p><br>
+
+por lo que con A, C, C' y las paralelas trazadas por P a AC y a AB definimos la homograf&iacute;a.<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole43.gif" alt="ole43.gif" width="466" height="60" border="0"></p><br>
+
+(Es decir, hemos definido h<sub>&#937;</sub> s&oacute;lo con dos as&iacute;ntotas, los puntos de contacto en ellas, y una tangente a la c&oacute;nica.)<br><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>6.4 LA HOMOGRAF&Iacute;A h<sub>&#937;</sub> DEL C&Iacute;RCULO &#937; SOBRE S&Iacute; MISMO - EJE DE HOMOGRAF&Iacute;A</b><br><br>
+
+<p class="Figura"><img src="sol303ped/17.gif" alt="eje de la homografía" width="402" height="272" border="0"><br>
+	figura 17</p><br>
+Recordemos que, dada una homograf&iacute;a k entre espacios proyectivos de dimensi&oacute;n 1, definida por tres pares de puntos homogr&aacute;ficos (M1,M1'), (M2,M2'), (M3,M3')<br>
+<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole44.gif" alt="ole44.gif" width="159" height="60" border="0"></p><br>
+
+el eje de homograf&iacute;a de k es la recta que pasa por las siguientes puntos de intersecci&oacute;n<br>
+<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole45.gif" alt="ole45.gif" width="145" height="40" border="0"></p><br>
+
+En nuestro caso, la homograf&iacute;a es h<sub>&#937;</sub> y los tres pares de puntos correspondientes son<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole46.gif" alt="ole46.gif" width="355" height="60" border="0"></p>
+<br>
+
+y el eje de homograf&iacute;a pasa por los siguientes puntos<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole47.gif" alt="ole47.gif" width="194" height="40" border="0"></p>
+<br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>6.5 LA HOMOGRAF&Iacute;A h<sub>&#937;</sub> DEL C&Iacute;RCULO &#937; SOBRE S&Iacute; MISMO - PUNTOS DOBLES</b><br><br>
+
+<p class="Figura"><img src="sol303ped/18.gif" alt="puntos dobles de la homografía" width="402" height="272" border="0"><br>
+	figura 18</p><br>
+Los puntos dobles de la homograf&iacute;a son<br><br>
+
+<p class="Ecuacion"><img src="sol303ped/ole48.gif" alt="ole48.gif" width="180" height="20" border="0"></p>
+<br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1"><br>
+<b>6.6 LA SOLUCI&Oacute;N</b><br><br>
+<p class="Figura"><img src="sol303ped/19.gif" alt="La solución: recta por P que divide al triángulo en áreas según la razón dada" width="402" height="272" border="0"><br>figura 19</p><br>
+
+la recta PE<sub>&#937;</sub> que une el punto dado P con un punto doble de la homograf&iacute;a es la tangente solución<br>
+<br>
+
+<p class="Ecuacion"><img src="sol303ped/ole49.gif" alt="ole49.gif" width="56" height="20" border="0"></p><br>
+
+El otro punto doble no es soluci&oacute;n por que su tangente no corta al tri&aacute;ngulo entre CA y entre AB.<br>
+<br>
+Obervamos, que<br>
+<p style="text-align:center; font-weight: bold">¡¡¡ EN NING&Uacute;N MOMENTO HEMOS NECESITADO EL TRAZADO DE LA C&Oacute;NICA!!!</p><br>
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Seccion">7. LA SOLUCI&Oacute;N DIN&Aacute;MICA (CABRI II)</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr>
+	<td class="Comentario">
+Hasta aqu&iacute;, hemos desarrollado la soluci&oacute;n para cuando la recta por P corte a CA y AB. Repetimos la misma construcción para el caso en que la recta corte a AB y BC; y lo mismo hacenos para el caso en que la recta corte a BC y CA.<br>
+<br>
+
+La recta sólo existe cuando corte simult&aacute;neamente a los dos lados del triángulo para los que se ha hecho la construcci&oacute;n.<br>
+<br>
+
+Dibujamos las tres cónicas posibles para facilitar la comprensión<br>
+<br>
+
+Puede haber de cero a seis rectas dependiendo de la forma del triángulo, de la posición de P y de la razón dada.
+</td></tr>
+
+<tr><td class="Vacio">&#160;</td></tr>
+
+<tr><td class="Table1Column1">
+<p class=Figura>
+<applet code="CabriJava.class" width="650" height="600" archive="CabriJava.jar">
+	<param name=file value="sol303ped2.fig">
+	<param name=lang value="es">
+	<param name=border value="0">
+	<param name=controller value="false">
+</applet>
+Figura 20</p><br>
+
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

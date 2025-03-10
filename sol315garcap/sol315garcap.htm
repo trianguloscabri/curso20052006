@@ -1,0 +1,160 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri315</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema 315 de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=16 bgcolor="#FFFF99"> 
+      <div class=Section1> 
+        <p>Dado un triangulo <i>ABC</i> y una cónica, sea <i>A'B'C'</i> el triangulo 
+          polar de <i>ABC</i> con respecto a la c&oacute;nica. Demostrar que <i>ABC</i> 
+          y <i>A'B'C'</i> estan en perspectiva.</p>
+      </div>
+      </TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=2> 
+      <DIV align=right> <font size="-1"><a name="PAULYIU"></a>Paul Yiu. <a href="http://www.math.fau.edu/yiu/geometry.html">Introduction 
+        to the Geometry of the Triangle, version 2.0402, Summer 2001</a>. Propuesto 
+        por José Carlos Ch&aacute;vez Sandoval.</font></DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<br>
+Soluci&oacute;n de <a href="http://garciacapitan.auna.com"><i>Francisco Javier 
+Garc&iacute;a Capit&aacute;n</i></a> 
+<table width="100%" border="0">
+  <tr> 
+    <td height="141" valign="top"> 
+      <p> En coordenadas baric&eacute;ntricas una c&oacute;nica se expresa como 
+        una ecuaci&oacute;n polin&oacute;mica de segundo grado</p>
+      <blockquote> 
+        <p><img src="ecuacion1.gif" width="288" height="24"></p>
+      </blockquote>
+      <p>a la que podemos asociar una matriz sim&eacute;trica:</p>
+      <blockquote> 
+        <p><img src="ecuacion2.gif" width="120" height="74"></p>
+      </blockquote>
+      <p>La recta polar de un punto <i>P</i>=(<i>u</i> : <i>v</i> : <i>w</i>) 
+        puede hallarse mediante el producto de matrices <i>MP<sup>t</sup></i>.</p>
+    </td>
+    <td height="141"><b><img src="polar.jpg" width="407" height="249" align="right"></b></td>
+  </tr>
+</table>
+<p><b>Tri&aacute;ngulo polar de una c&oacute;nica respecto de un tri&aacute;ngulo</b></p>
+<p>Dado un tri&aacute;ngulo <i>ABC</i> y una c&oacute;nica <i><font face="Symbol">G</font></i>, 
+  se llama tri&aacute;ngulo polar de la c&oacute;nica respecto de <i>ABC</i> al 
+  tri&aacute;ngulo formado por las polares de los v&eacute;rtices <i>A</i>, <i>B</i>, 
+  <i>C</i> respecto de la c&oacute;nica <font face="Symbol"><i>G</i></font>. </p>
+<p>Lo que tenemos que demostrar es un resultado atribuido a John Conway por Paul 
+  Yiu.</p>
+<p><b>Teorema (Conway)</b>. Sea <i>A'B'C' </i> el tri&aacute;ngulo <i></i>formado 
+  por las polares respecto de una c&oacute;nica de los v&eacute;rtices del tri&aacute;ngulo 
+  <i>ABC</i>. Entonces <i>ABC</i> y <i>A'B'C'</i> son perspectivos. </p>
+<p><img src="math2.jpg" width="343" height="265"></p>
+    
+<p>Si calculamos el centro de perspectiva de los dos tri&aacute;ngulos</p>
+<p><img src="math5.jpg" width="429" height="45"></p>
+<p>vemos que se trata del punto </p>
+<blockquote> 
+  <p><img src="ecuacion3.gif" width="189" height="48"></p>
+</blockquote>
+<p>A este punto se le llama centro de perspectiva de la c&oacute;nica respecto 
+  del tri&aacute;ngulo <i>ABC</i>. </p>
+<p><i><font size="-1"><b>Observaci&oacute;n</b></font></i><b><font size="-1">: 
+  Puede observarse que este punto no coincide exactamente con el punto (<i>p</i>:<i>q</i>:<i>r</i>) 
+  dado por <a href="#PAULYIU">Paul Yiu</a>. Ello es porque Paul Yiu supone impl&iacute;citamente 
+  que la c&oacute;nica es inscrita o circunscrita al tri&aacute;ngulo <i>ABC</i>, 
+  que es lo m&aacute;s usual.</font></b></p>
+<p><b>Casos particulares</b></p>
+<ul>
+  <li>Si la c&oacute;nica <i><font face="Symbol">G</font></i> pasa por los tres 
+    v&eacute;rtices del tri&aacute;ngulo entonces es <i>f</i> = <i>g</i> = <i>h</i> 
+    = 0, por lo que el centro de perspectiva de la c&oacute;nica se simplifica 
+    a (<i>p</i>:<i>q</i>:<i>r</i>), es decir coinciden el centro de perspectiva 
+    de la c&oacute;nica y el polo trilineal del eje de perspectiva de la c&oacute;nica 
+    ambos respecto del tri&aacute;ngulo <i>ABC</i>. </li>
+  <li>Si la c&oacute;nica <i><font face="Symbol">G</font></i> es una c&oacute;nica 
+    inscrita al tri&aacute;ngulo <i>ABC</i>, es decir es tangente a sus tres lados, 
+    puede verse que su ecuaci&oacute;n es de la forma 
+    <blockquote> 
+      <p><img src="ecuacion4.gif" width="237" height="44"></p>
+    </blockquote>
+    <p>de donde podemos deducir que su centro de perspectiva respecto del tri&aacute;ngulo 
+      <i>ABC</i> tambi&eacute;n es (<i>p</i>:<i>q</i>:<i>r</i>):</p>
+    <blockquote> 
+      <p><img src="ecuacion5.gif" width="265" height="45"></p>
+      <p><img src="ecuacion6.gif" width="596" height="50"></p>
+    </blockquote>
+  </li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table width="100%" border="0">
+  <tr> 
+    <td height="15" valign="top" colspan="3"> <b>Ejemplos</b></td>
+  </tr>
+  <tr> 
+    <td height="15" valign="top" colspan="3"> En estas figuras vemos varios ejemplos 
+      de c&oacute;nicas relacionadas con un tri&aacute;ngulo, su tri&aacute;ngulo 
+      polar y su centro de perspectiva.</td>
+  </tr>
+  <tr> 
+    <td height="154" valign="top" width="32%"> 
+      <p align="center"><img src="circunscrita.gif" width="200" height="194"></p>
+    </td>
+    <td height="154" valign="top" width="34%"> 
+      <div align="center"><img src="inscrita.gif" width="200" height="200"></div>
+    </td>
+    <td height="154" valign="top" width="34%"> 
+      <div align="center"><img src="circunsteiner.gif" width="200" height="184"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2" valign="top" width="32%">C&oacute;nica: <b>Circunferencia circunscrita</b></td>
+    <td height="2" valign="top" width="34%">C&oacute;nica: <b>Circunferencia inscrita</b></td>
+    <td height="2" valign="top" width="34%">C&oacute;nica: <b>Circunelipse de 
+      Steiner</b></td>
+  </tr>
+  <tr> 
+    <td height="2" valign="top" width="32%">Centro de perspectiva: <b>Punto simediano</b></td>
+    <td height="2" valign="top" width="34%">Centro de perspectiva: <b>Punto de 
+      Gergonne</b></td>
+    <td height="2" valign="top" width="34%">Centro de perspectiva: <b>Baricentro</b></td>
+  </tr>
+  <tr> 
+    <td height="193" valign="top" width="32%"> 
+      <div align="center"><img src="macbeath.gif" width="200" height="180"></div>
+    </td>
+    <td height="193" valign="top" width="34%"> 
+      <div align="center"><img src="elipsebaricentros.gif" width="200" height="200"></div>
+    </td>
+    <td height="193" valign="top" width="34%"> 
+      <div align="center"><img src="nuevepuntos.gif" width="200" height="200"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td height="22" valign="top" width="32%"> 
+      <p>C&oacute;nica: <b>Circunelipse de Macbeath</b></p>
+    </td>
+    <td height="22" valign="top" width="34%">C&oacute;nica: <b>Elipse de los baricentros</b></td>
+    <td height="22" valign="top" width="34%">C&oacute;nica. <b>Circunferencia 
+      de los 9 puntos </b></td>
+  </tr>
+  <tr> 
+    <td height="15" valign="top" width="32%">Centro de perspectiva: <b>Circuncentro</b></td>
+    <td height="15" valign="top" width="34%">Centro de perspectiva: <b>Baricentro</b></td>
+    <td height="15" valign="top" width="34%">Centro de perspectiva: ??? (*)</td>
+  </tr>
+</table>
+<p>(*) En el &uacute;ltimo ejemplo el centro de perspectiva tiene coordenadas 
+  baric&eacute;ntricas</p>
+<blockquote> 
+  <p><img src="math4.jpg" width="476" height="30"> </p>
+  <p>no se encuentra en la ETC y su coordenada de b&uacute;squeda es -5.990491370...</p>
+</blockquote>
+</BODY></HTML>

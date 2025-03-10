@@ -1,0 +1,52 @@
+<title>trianguloscabri290</title> 
+
+
+<body bgcolor="#FFFFFF">
+<h1>Problema 290 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0" height="33">
+  <tr> 
+    <td bgcolor="#FFFF99" height="22"> 
+      <p><font face="Times New Roman" size="3">Dado un triangulo <i>ABC</i>, se 
+        construyen los tri&aacute;ngulos sim&eacute;tricos con respecto a cada 
+        un de los lados del tri&aacute;ngulo <i>ABC</i>. Las rectas de Euler trazadas 
+        en cada uno de estos tri&aacute;ngulos se intersectan en un punto <i>P</i>. 
+        Adem&aacute;s, el punto <i>P</i> y los ortocentros de los tri&aacute;ngulos 
+        sim&eacute;tricos pertenecen a la circunferencia circunscrita en el tri&aacute;ngulo 
+        <i>ABC</i>.</font></p>
+    </td>
+  </tr>
+  <tr> 
+    <td height="4"> 
+      <div align="right"><font size="-1">Propuesto por David Ben&iacute;tez Mojica 
+        y Nora Lucia Leija Mendoza</font></div>
+    </td>
+  </tr>
+</table>
+<p>Soluci&oacute;n <a href="http://garciacapitan.auna.com/">Francisco Javier Garc&iacute;a 
+  Capit&aacute;n</a></p>
+<p>Usaremos coordenadas baric&eacute;ntricas:</p>
+<p><img src="Image1.jpg" width="128" height="18"></p>
+<p>Hallamos el punto sim&eacute;trico <i>A</i><sub>1</sub> de <i>A</i> respecto de <i>BC</i>:</p>
+<p><img src="Image2.jpg" width="241" height="45"></p>
+<p>Hallamos los el baricentro <i>G<sub>A</sub></i> y H<sub>A</sub> del tri&aacute;ngulo <i>A<sub>1</sub>BC</i>:</p>
+<p><img src="Image3.jpg" width="214" height="85"></p>
+<p><img src="Image4.jpg" width="645" height="88"></p>
+<p>La recta de Euler de este tri&aacute;ngulo unir&aacute; el baricentro y el 
+  ortocentro: </p>
+<p><img src="Image5.jpg" width="487" height="48"></p>
+<p>En lugar de repetir los c&aacute;lculos para los otros v&eacute;rtices, permutamos 
+  las coordenadas y las letras en el resultado hallado para el v&eacute;rtice 
+  <i>A</i>: </p>
+<p><img src="Image6.jpg" width="518" height="100"></p>
+<p>Comprobamos que las tres rectas de Euler son concurrentes:</p>
+<p><img src="Image7.jpg" width="119" height="45"></p>
+<p>Hallamos el punto <i>P</i> como intersecci&oacute;n de dos de las rectas:</p>
+<p><img src="Image8.jpg" width="437" height="45"></p>
+<p>Comprobamos que el punto <i>P</i> y el ortocentro <i>H<sub>A</sub></i> pertenece a la 
+  circunferencia circunscrita a <i>ABC</i>:</p>
+<p><img src="Image10.jpg" width="276" height="114"></p>
+<p>Finalmente, es razonable que este punto ya est&eacute; catalogado en la Enciclopedia 
+  de Kimberling. Hallemos su coordenada de b&uacute;squeda:</p>
+<p><img src="Image9.jpg" width="111" height="45"></p>
+<p>Mirando en la enciclopedia, vemos que se trata de <a href="http://faculty.evansville.edu/ck6/encyclopedia/part1.html#FocusOfKiepertParabola">X(110), 
+  el foco de la par&aacute;bola de Kiepert</a>.</p>

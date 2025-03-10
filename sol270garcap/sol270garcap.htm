@@ -1,0 +1,102 @@
+<title>trianguloscabri270</title> 
+
+
+<body bgcolor="#FFFFFF">
+<h1>Problema 270 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0">
+  <tr> 
+    <td bgcolor="#FFFF99" height="41"> 
+      <p>Un triángulo <i>ABC</i>, verifica entre uno de sus lados, a, la mediana 
+        correspondiente a ese lado <i>m<sub>a</sub></i>, y el radio del círculo 
+        <br>
+        circunscrito <i>R</i>, la relación&nbsp;<i>a</i><sup>2</sup> = 4 R <i>m<sub>a</sub></i>. 
+      </p>
+      <p>Probar si es cierto o no que aparte de los triángulos rectángulos en 
+        <i>A</i>, hay, al menos otro. </p>
+    </td>
+  </tr>
+  <tr> 
+    <td height="16"> 
+      <div align="right"> 
+        <p><font size="-1">Propuesto por Juan Bosco Romero M&aacute;rquez, dedicado 
+          a Murray S. Klamkin.</font></p>
+      </div>
+    </td>
+  </tr>
+</table>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><i>Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a></i> </font></p>
+<p><i>Soluci&oacute;n</i>:</p>
+<p>Usaremos <i>Mathematica </i>para efectuar los c&aacute;lculos y al final incluiremos 
+  un applet de CabriJava con la soluci&oacute;n. El c&oacute;digo fuente de <i>Mathematica</i> 
+  puede descargarse <a href="jbrm4.nb">aqu&iacute;</a>. Mostraremos que existe 
+  una infinidad de tri&aacute;ngulos no rect&aacute;ngulos que cumplen la relaci&oacute;n. 
+</p>
+<p>Comenzamos por escribir f&oacute;rmulas para el semiper&iacute;metro <i>s</i>, 
+  el &aacute;rea <i>S</i>, el radio <i>R</i> de la circunferencia circunscrita 
+  y la mediana <i><i>m<sub>a</sub></i></i> correspondiente al lado <i>a.</i></p>
+<p><img src="HTMLFiles/index_1.gif" alt="s = (a + b + c)/2 ;"  width="87" height="30"  style="vertical-align:middle" /> 
+</p>
+<p class="Input"> <img src="HTMLFiles/index_2.gif" alt="S = (s (s - a) (s - b) (s - c))^(1/2) ;"  width="187" height="20"  style="vertical-align:middle" /> 
+</p>
+<p class="Input"> <img src="HTMLFiles/index_3.gif" alt="R = (a b c)/(4 S) ;"  width="69" height="31"  style="vertical-align:middle" /> 
+</p>
+<p class="Input"> <img src="HTMLFiles/index_4.gif" alt="ma = 1/2 (2b^2 + 2c^2 - a^2)^(1/2) ;"  width="157" height="30"  style="vertical-align:middle" /> 
+</p>
+<p class="Input">Ahora usamos la funci&oacute;n <b><font face="Courier New, Courier, mono">Factor</font></b> 
+  para obtener una expresi&oacute;n conveniente del enunciado.</p>
+<p class="CellLabel"> <img src="HTMLFiles/index_5.gif" alt="Factor[a^4 - 16 R^2 ma^2]"  width="140" height="19"  style="vertical-align:middle" /> 
+</p>
+<p class="CellLabel"> <img src="HTMLFiles/index_6.gif" alt="(a^2 (a^2 - b^2 - c^2) (a^4 - a^2 b^2 - a^2 c^2 - 8 b^2 c^2))/((a - b - c) (a + b - c) (a - b + c) (a + b + c))"  width="265" height="35"  style="vertical-align:middle" /> 
+</p>
+<p class="CellLabel"><img src="jbrm4b.jpg" width="368" height="184" align="right">Vemos 
+  que, efectivamente, si el tri&aacute;ngulo es rect&aacute;ngulo en <i>A</i>, 
+  la f&oacute;rmula es cierta. </p>
+<p class="CellLabel">Para hallar los tri&aacute;ngulos que anulan el otro factor 
+  del numerador, consideramos que nuestro tri&aacute;ngulo tiene su v&eacute;rtice 
+  <i>B </i>en el origen de coordenadas, el v&eacute;rtice <i>C</i> en el eje de 
+  abscisas y el v&eacute;rtice <i>A</i> en un punto variable (<i>x</i>,<i>y</i>). 
+  Realmente la &uacute;nica limitaci&oacute;n que hemos impuesto es <i>a=</i>1, 
+  aunque dicha limitaci&oacute;n ser&aacute; f&aacute;cil de salvar.</p>
+<p class="CellLabel"><img src="HTMLFiles/index_7.gif" alt="a2 = 1 ;"  width="46" height="18"  style="vertical-align:middle" /> 
+  <br>
+  <img src="HTMLFiles/index_8.gif" alt="b2 = (x - 1)^2 + y^2 ;"  width="113" height="18"  style="vertical-align:middle" /><br>
+  <img src="HTMLFiles/index_9.gif" alt="c2 = x^2 + y^2 ;"  width="81" height="18"  style="vertical-align:middle" /> 
+</p>
+<p class="Input"><img src="HTMLFiles/index_10.gif" alt="Factor[a2^2 - a2 (b2 + c2) - 8 b2 c2]"  width="220" height="19"  style="vertical-align:middle" /> 
+</p>
+<p class="Input"><img src="HTMLFiles/index_11.gif" alt="-2 (-x + 5 x^2 - 8 x^3 + 4 x^4 + 5 y^2 - 8 x y^2 + 8 x^2 y^2 + 4 y^4)"  width="322" height="17"  style="vertical-align:middle" /> 
+</p>
+<p class="Input">Para representar esta curva, en la que x e y aparecen relacionadas 
+  de forma impl&iacute;cita, usamos <b><font face="Courier New, Courier, mono">ImplicitPlot</font></b>:</p>
+<p class="CellLabel"> <img src="HTMLFiles/index_12.gif" alt="&lt;&lt;Graphics`ImplicitPlot` ;"  width="183" height="18"  style="vertical-align:middle" /> 
+</p>
+<p class="CellLabel"> <img src="HTMLFiles/index_13.gif" alt="curva = ImplicitPlot[-x + 5 x^2 - 8 x^3 + 4 x^4 + 5 y^2 - 8 x y^2 + 8 x^2 y^2 + 4 y^4 == 0, {x, 0, 1}, {y, -0.5, 0.5}, AspectRatio&#62754;Automatic] ;"  width="820" height="19"  style="vertical-align:middle" /> 
+</p>
+<p class="Graphics"> <img src="HTMLFiles/index_14.gif" alt="[Graphics:HTMLFiles/index_14.gif]"  width="156" height="156"  style="vertical-align:middle" /> 
+</p>
+<p class="CellLabel"> <img src="HTMLFiles/index_15.gif" alt="Show[curva, Graphics[Line[{{0, 0}, {1, 0}}]]]"  width="309" height="18"  style="vertical-align:middle" /> 
+</p>
+<p class="Graphics"> <img src="HTMLFiles/index_16.gif" alt="[Graphics:HTMLFiles/index_16.gif]"  width="288" height="71"  style="vertical-align:middle" /> 
+</p>
+<p class="Graphics">Para conseguir esta figura con Cabri G&eacute;om&egrave;tre 
+  expresamos <i>y</i> en funci&oacute;n de <i>x</i> de manera explicita:</p>
+<p class="CellLabel"><img src="HTMLFiles/index_18.gif" alt="Solve[-x + 5 x^2 - 8 x^3 + 4 x^4 + 5 y^2 - 8 x y^2 + 8 x^2 y^2 + 4 y^4 == 0, y]"  width="391" height="19"  style="vertical-align:middle" /> 
+</p>
+<p class="CellLabel"><img src="HTMLFiles/index_19.gif" alt="{{y&#62754; -(-5 + 8 x - 8 x^2 - (25 - 64 x + 64 x^2)^(1/2))^(1/2)/(2 2^(1/2))}, {y&#62754;  ...  x + 64 x^2)^(1/2))^(1/2)}, {y&#62754; (-5/8 + x - x^2 + 1/8 (25 - 64 x + 64 x^2)^(1/2))^(1/2)}}"  width="557" height="90"  style="vertical-align:middle" /> 
+</p>
+<p class="CellLabel">La expresi&oacute;n que nos sirve es la &uacute;ltima de 
+  las cuatro, que tal como se la tenemos que introducir a Cabri es:</p>
+<p><font face="Courier New, Courier, mono"><b>sqrt(-(5/8) + a - a^2 + (1/8)*sqrt(25 
+  - 64*a + 64*a^2))</b></font> </p>
+<p>(recordemos que la <b>Calculadora</b> de Cabri comienza a nombrar las variables 
+  como <i>a</i>, <i>b</i>, <i>c</i>, ...). </p>
+<p align="center"><applet codebase="../" archive="CabriJava.jar" 
+code="CabriJava.class"
+width=700 height=480>
+    <param name=file value="jbrm4a.fig">
+    <param name=lang value="es">
+    <param name=border value=0>
+    <param name=bgcolor value=#FFFFCC>
+    <param name=controller value=false>
+  </applet></p>

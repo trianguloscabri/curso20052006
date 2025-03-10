@@ -1,0 +1,1330 @@
+/* --------------------------------------------------------------------------------*/
+/* ESTILOS COMUNES EN TODAS LAS PAGINAS DE TODOS LOS PORTALES  ------------------- */
+/* --------------------------------------------------------------------------------*/
+
+body {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    background-color: white;
+    margin: 0;
+}
+
+a img {
+   border: 0;
+}
+
+form,
+form input,
+form select,
+form button {
+    margin: 0;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    background-repeat: no-repeat;
+
+}
+
+.cuadroimpresora {
+    display: none;
+}
+
+/* alertas que no son urgentes */
+
+.urgente {
+	width: 764px;
+	margin-left: 10px;
+        clear: both;
+}
+
+.urgente table {
+    margin: 0 0 10px 0;
+}
+
+.urgente table td {    
+    border: 0;
+
+}
+
+.urgente table td .alertablanco {
+    font-size: 12px;    
+}
+
+/* fin alertas que no son urgentes */
+
+.miga {
+    font-size: 11px;
+    clear: both;
+    padding: 10px 0 10px 10px;
+    font-family: Arial,Helvetica,sans-serif;
+    width: 748px;
+
+}
+
+.rompedor {
+    clear: both;
+}
+
+
+#migaymenusecciones {
+    height: 25px;
+    width: 745px;
+    margin: 10px 0 0 10px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+
+#migaymenusecciones .miga {
+    clear: none;
+    padding: 0;
+    float: left;
+    width: auto;
+}
+
+#migaymenusecciones .patrocinio {	
+    padding-left: 155px;
+    
+
+}
+
+#migaymenusecciones .patrocinio img {
+vertical-align: top;
+margin-left: 3px;
+margin-bottom: 10px;
+}
+
+
+#migaymenusecciones #menusecciones {
+
+
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#migaymenusecciones #menusecciones a {
+    padding: 1px 3px 1px 3px;
+    color: white;
+    text-decoration: none;
+    background-color: #036;
+}
+
+
+
+
+/* MENU OTRAS SECCIONES -------------------------------------------------- */
+
+/* alinea a la derecha todo */
+
+#migaymenusecciones #menusecciones {
+    float: right;
+    height: 1em;
+}
+
+#menusecciones #caja {
+    display:block;
+}
+
+
+/* 
+#boton es el boton en si de OTRAS SECCIONES, por el que hay que pasar 
+el raton para que se despliegue el menu 
+*/
+
+#menusecciones #boton {
+    width: 92px;    
+    margin-left: -109px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    position:absolute;
+    z-index: 10;
+}
+
+#menusecciones a#boton {
+    padding: 1px 4px 1px 14px;
+    text-decoration: none;
+    background-image: url(/elmundo/iconos/v2.0/otrassecciones-flecha.gif);
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+    background-color: white;  
+    border: 1px solid #ccc;
+    color: #036;  
+    
+}
+
+#menusecciones a#boton:hover {
+    background-color: #eee;    
+}
+
+/* 
+#caja es todo el recuadro que aparece cuando pasamos el raton
+por el boton de OTRAS SECCIONES.
+*/
+
+
+#menusecciones #menusecciones #caja {
+    margin-right: -30px;
+    position:relative;
+    top:-10px;
+    z-index: 10;
+    font-family: Verdana,Helvetica,sans-serif;
+    font-size: 11px;
+    }
+
+/*
+Aqui definimos los estilos que asignamos mediante javascript, 
+y que cambian la propiedad CSS visibility 
+*/
+
+#menusecciones #caja div.oculto {
+    visibility: hidden;
+    position:absolute;
+}
+
+
+#menusecciones #caja div.muestra,
+#menusecciones #caja div.oculto 
+{
+    width:282px;
+    margin-left: -297px;
+}
+
+#menusecciones #caja div.muestra {
+    width:282px;
+    margin-left: -297px;
+    visibility: visible;
+    position:absolute;
+    background:#fff;
+    padding: 20px 8px 0 8px;
+    background-color:white;
+    border:1px solid #ccc;
+    border-bottom:3px solid #ccc;
+    margin-top: 0;    
+}
+    
+    
+#menusecciones #caja a {
+    color: #036;
+}
+
+#menusecciones #caja h3,
+#menusecciones #caja h3 a {
+    font-family: Arial,Helvetica,sans-serif;
+    margin:0;
+    padding: 0;
+    font-weight:bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    background-color: white;
+    height: 1.4em;  
+}
+
+#menusecciones #caja #bloque1,
+#menusecciones #caja #bloque2,
+#menusecciones #caja #bloque3 {
+    float:left;        
+    width:33%;
+}
+
+#menusecciones #caja ul {
+    margin:0 0 8px 0;
+    padding: 0;
+    list-style-type: none;    
+}
+
+
+#menusecciones #caja ul li {    
+    padding: 0 !important;
+    margin: 0 !important;     
+    font-size: 11px;        
+    width:93px;
+    list-style-type: none;            
+    
+}
+
+#menusecciones #caja ul li a {
+    background-color: white;
+    font-weight: normal;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;        
+    padding: 0 !important;
+    margin: 0 !important;        
+    line-height: 1.5em;   
+    
+}
+
+/* 
+ajustamos los altos individualmente para cada
+columna para que coincida el alto
+*/
+
+#menusecciones #caja #bloque3 ul {
+    margin-bottom: 16px;
+}
+
+
+
+#menusecciones #caja ul li a:hover {
+    color:#900;
+    text-decoration: underline;
+}
+
+#menusecciones #caja h3 a:hover {    
+    text-decoration: underline;
+}
+
+/* FIN MENU OTRAS SECCIONES -------------------------------------------------- */
+
+
+
+/* PUBLICIDADES ------------------------------------------------------------------- */
+
+.noticia .columna .publicidadnoticia {
+    margin: 0 0 0px 0;
+
+
+}
+
+.noticia .columna .publicidadnoticia table {
+    float: none;
+    display: block;
+    margin: 0;
+    border-bottom: 10px solid white;    
+}
+
+.noticia .columna .publicidadnoticia table td,
+.noticia .columna .publicidadnoticia table th {
+   padding: 0;
+}
+
+.publicidadhorizontal {
+    width: 756px;
+    text-align: center;
+}
+
+.publicidadtexto {
+    width: 748px;
+    padding-left: 10px;
+}
+
+.publicidadtira1 {    
+    width: 748px;
+}
+
+.publicidadofertasaloslectores {
+    text-align: center;
+    margin: 10px 0 0 10px;
+    width: 718px;
+}
+
+/* FIN PUBLICIDADES */
+
+
+/* PIE DE PAGINA -------------------------- */
+
+#piepagina {
+    width: 738px;
+    clear: both;
+    border-top: 1px solid #ccc;
+    padding:10px 10px 20px 0;
+    margin:20px 0 20px 10px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+
+#piepagina p {
+    margin: 0 0 10px 0;
+    padding: 5px 0 0 0;
+    text-align: left;
+    float: right;
+}
+
+#piepagina img {
+    float: left;
+    width: 140px;
+    height: 19px;
+}
+
+/* FIN PIE DE PAGINA */
+
+
+/* Estilos para Urgentes */
+.cuadrourgente {
+    border-top: 1px solid #ff0000;
+    border-bottom: 2px solid #ff0000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    line-height: 14px;
+    margin: 4px 0 15px 0;
+
+}
+
+.cuadrourgente th {
+    background-color: #FF0000;
+    width: 110px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cuadrourgente td {
+    padding: 5px;
+    text-align: left;
+}
+
+.cuadrourgente h1 {
+    display: inline;
+    font-size: 12px !important;
+    font-weight: bold;
+}
+
+.cuadrourgente a {
+    text-decoration: none;
+
+}
+.cuadrourgente a:hover {
+    text-decoration: underline;
+
+}
+
+.cuadrourgente p {
+    color: #000000;
+    display: inline;
+    font-size: 9px;
+}
+
+.cuadrourgente p a {
+    color: #000000;
+}
+
+.alertablanco {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-decoration: none;
+    font-weight: bold; color: #ffffff
+}
+
+.alertaenlace {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    color: #000000
+}
+
+.alertaenlace:hover {
+    text-decoration: underline
+}
+
+/* Fin de estilos para Urgentes */
+/* ------------------------------------------------------------------------*/
+/* ESTILOS COMUNES EN TODAS LAS PAGINAS DE ELMUNDO.ES ---------------------*/
+/* ------------------------------------------------------------------------*/
+
+a {
+    color: #036;
+}
+
+/* CABECERA ELMUNDO.ES -------------------------- */
+
+#cabecera {
+    width: 756px;
+    height: 51px;
+    background-color: #036;
+    background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/esquinaredondeada.gif);
+    background-position: top right;
+    background-repeat: no-repeat;
+    margin-left: 2px;
+}
+
+#cabecera h2 {
+    display: none;
+}
+
+#cabecera img {
+    float: left;
+}
+
+#cabecera #buscador {
+    float: right;
+    padding: 10px 15px 0 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+}
+
+#cabecera #buscador input,
+#cabecera #buscador select {
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    border: 1px solid #ccc;
+}
+
+#cabecera #buscador img {
+    vertical-align: middle;
+    margin: 1px 2px 0 0;
+}
+
+
+#cabecera ul {
+    clear: both;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+#cabecera ul li {
+    display: inline;
+    border-left: 1px solid #fff;
+    margin: 0;
+    padding: 0;
+}
+#cabecera ul > li:first-child {
+    border-left: 0;
+}
+
+#cabecera ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 5px 0 5px;
+}
+#cabecera li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* FIN CABECERA ELMUNDO.ES */
+
+/* MENU OTRAS SECCIONES */
+
+
+#menusecciones #boton {
+    background-color: #036;
+}
+
+#menusecciones #caja h3,
+#menusecciones #caja h3 a {
+    color: #900;
+}
+
+
+/* FIN MENU OTRAS SECCIONES */
+
+/* --------------------------------------------------------------------------------*/
+/* NOTICIA: ESTILOS COMUNES DE TODOS LOS PORTALES -------------------------------- */
+/* --------------------------------------------------------------------------------*/
+
+
+#cabeceraimpresora img {
+	width: 260px;
+	height: 37px;
+}
+
+#cabeceraimpresora {
+	display: none;
+}
+
+
+.noticia {
+	clear: both;
+	margin: 0px 0 0px 10px;
+	padding: 0 0 10px 0;
+	width: 748px;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	line-height: 1.2em;
+}
+
+
+.noticia ul,
+.noticia ol {
+	margin: 1.5em 0 1.5em 0;
+	padding: 0 0 0 2em;
+}
+
+.noticia ul li,
+.noticia ol li {
+	margin-bottom: 1em;
+	padding: 0;
+	line-height: 1.4em;
+}
+
+.noticia ul li {
+	list-style-type: square;
+}
+
+
+.noticia #tamano {
+	padding-top: 10px;
+}
+
+
+.noticia h1 {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 25px;
+	letter-spacing: 0px;
+	margin: 0 0 5px 0;
+	line-height: 1.2em;
+}
+
+.noticia .subtitulo {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 5px 0 0 0;
+	line-height: 1em;
+}
+
+.noticia .subtitulo ul {
+	margin: 10px 0 10px 0;
+	padding: 0 0 0 15px;
+	list-style-type: square;
+}
+
+.noticia .subtitulo ul li {
+	margin: 3px 0 3px 0;
+	padding: 0;
+}
+
+.noticia .subtitulo a {
+	text-decoration: underline;
+}
+
+.noticia h3 {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	margin: 15px 0 5px 0;
+	padding: 10px 0 0 0;
+}
+
+.noticia h4 {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 13px;
+	margin: 20px 0 5px 0;	
+}
+
+
+.noticia p {
+	line-height: 1.4em;
+	padding: 5px 0 0 0;
+	margin: 0 0 10px 0;
+
+}
+
+.noticia p.entradilla {
+	margin: 0px 0 15px 0;
+	font-weight: bold;
+	font-size: 13px;
+
+
+}
+
+.noticia .superior {
+	height: 20px;
+	margin-bottom: 10px;
+
+}
+
+
+.noticia .superior .fechayhora {
+	font-family: Arial,Helvetica,Verdana,sans-serif;
+	font-size: 11px;
+	padding-top: 2px;
+	float: left;
+
+}
+
+
+.noticia .superior .fechayhora a {
+	text-decoration: none;
+}
+
+.noticia .superior .herramientasarriba {
+	float: right;
+
+}
+
+.noticia .superior .herramientasarriba img {
+	margin-left: 3px;
+	border:0;
+	width: 19px;
+	height: 18px;
+
+}
+
+.noticia .superior .herramientasarriba img.aumentaletra {
+	margin-left: 0;
+
+}
+
+
+
+.noticia .firma {
+	font-size: 11px;
+	font-weight: bold;
+
+}
+
+
+.noticia .localizacion {
+	font-size: 85%;
+	font-weight: normal;
+	
+
+}
+
+.noticia hr {
+	background-color: #ccc;
+	color: #ccc;
+	height: 1px;
+	border: 0;
+	margin: 10px 0 10px 0;
+}
+
+.noticia .antetitulo {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 0;
+	color: #900;
+}
+
+.noticia .columna {
+	width: 300px;
+	padding-top: 0px;
+	padding-bottom: 12px;
+
+}
+
+.noticia .derecha .columna {
+	float: right;
+	padding-left: 15px;
+	padding-right: 0;
+}
+
+.noticia .izquierda .columna {
+	float: left;
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+.noticia .columna img {
+	margin: 0;
+}
+
+
+
+.noticia .foto {
+margin: 0 0 10px 0;
+}
+
+.noticia .foto p {
+	font-size: 11px;
+	padding: 0 3px 0px 3px;
+	line-height: 1.4em;
+	text-indent: 12px;
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/flechafoto.gif);
+	background-repeat: no-repeat;
+	background-position: 2px 4px;
+	margin: 4px 0 0 0;
+}
+
+
+.noticia .foto p a {
+	text-decoration: none;
+	font-weight: bold;
+
+}
+
+.noticia .columna .foto p.album a:hover {
+	background-color: #eee;
+
+}
+
+.noticia .foto p a.album {
+	padding-left: 15px;
+	font-size:9px;
+}
+
+
+.noticia .foto .ampliarfoto {
+	text-align: right;
+
+}
+
+.noticia .foto .ampliarfoto a  {
+	border: 0;
+
+}
+
+.noticia .foto .ampliarfoto a:hover {
+	text-decoration: underline;
+}
+
+.noticia .foto a img {
+	border-color: black;
+}
+
+/* estilos para tablas dentro de noticias */
+
+.noticia table {
+	width: 100%;
+	margin: 0 0 2em 0;
+	border-top: 1px solid #ccc;	
+	border-right: 1px solid #ccc;
+}
+
+.noticia table caption {
+	background-color: #DFDFDF;
+	padding: 6px;	
+	font-weight: bold;
+}
+
+.noticia table tr td {
+	text-align: center;	
+
+	
+}
+
+.noticia table tr td,
+.noticia table tr th {
+	border-bottom: 1px solid #ccc;	
+	border-left: 1px solid #ccc;
+		padding: 4px;
+}
+
+.noticia table tr th {
+	background-color: #eee;
+	
+}
+
+
+/* fin tablas dentro de noticias */
+
+
+
+/* FIN NOTICIA  */
+
+/* APOYOS ------------------------------------------------------------------- */
+
+.noticia .columna .recuadro {
+	margin-bottom: 10px;
+	clear: both;
+}
+
+.noticia .columna .recuadro h3 {
+	padding: 2px 0 2px 10px;
+	font-size: 11px;
+	margin: 0;
+}
+
+.noticia .columna .recuadro ul {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 11px;
+	margin: 1px 0 0 0;
+	padding: 0;
+	border-top: 0;
+}
+
+
+.noticia .columna .recuadro ul li {
+	padding: 5px 0 5px 30px;
+	margin: 0;
+	list-style-type: none;
+	background-position: 7px 6px;
+}
+
+
+.noticia .columna .recuadro ul li a {
+	text-decoration: none;
+}
+
+.noticia .columna .recuadro ul li a:hover {
+	text-decoration: underline;
+}
+
+
+.noticia .recuadrorelacionados ul {
+	margin:0;
+	padding:0;	
+}
+
+.noticia .recuadrorelacionados ul li {
+	padding: 5px 5px 5px 32px;
+	margin: 0px 0 0 0;
+	font-size: 11px;
+	background-position: 7px 5px;
+	list-style-type: none;
+}
+
+.noticia .recuadrorelacionados ul li a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.noticia .recuadrorelacionados ul li a:hover {
+	text-decoration: underline;
+}
+
+/* FIN APOYOS */
+
+/* HERRAMIENTAS NOTICIAS  ------------------------------------------------------------------- */
+
+
+.noticia .herramientas {
+	clear: both;
+	margin-top: 20px;
+}
+.noticia .herramientas ul {
+	font-size: 11px;
+	font-family: Arial;
+	margin: 0;
+	padding: 0;
+	height: 15px;
+}
+
+.noticia .herramientas ul li {
+	background-repeat: no-repeat;
+	float: left;
+	font-weight: bold;
+	list-style-type: none;
+	margin: 0 10px 0 0;
+	background-position: 2px 0px;
+	padding: 1px 0 4px 0;
+
+
+}
+
+.noticia .herramientas a {
+	text-decoration: none;
+	padding: 3px 3px 4px 23px;
+
+}
+
+.noticia .herramientas a:hover {
+
+	text-decoration: underline;
+
+}
+
+
+.noticia .herramientas li.portadalectores {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/herramientas/portadalectores.gif);
+}
+
+.noticia .herramientas li.enviaramigo {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/herramientas/enviar.gif);
+}
+
+.noticia .herramientas li.imprimir {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/herramientas/imprimir.gif);
+}
+
+.noticia .herramientas li.recomendar {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/herramientas/recomendar.gif);
+}
+
+.noticia .herramientas li.movil {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/herramientas/movil.gif);
+}
+
+.noticia .herramientas li.leer {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/herramientas/voz.gif);
+}
+
+/* FIN HERRAMIENTAS NOTICIAS */
+
+
+.textointegro {
+	
+	margin: 20px 0 10px 0;
+	padding: 3px;	
+
+}
+
+.textointegro a {
+	text-decoration: none;
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/euro.gif);
+	background-repeat: no-repeat;
+	padding-left: 22px;
+}
+
+.textointegro a:hover {
+	text-decoration: underline;	
+}
+
+
+
+/* SUMARIOS ------------------------------------------------------------------- */
+
+
+.noticia .columnasumario {
+	width:300px;
+	margin-bottom: 10px;
+	padding-top: 8px;
+
+
+}
+
+.noticia .columnasumario hr {
+	color: #e3e3e3;
+	background-color: #e3e3e3;
+	height: 6px;
+	margin: 5px 0 0 0;
+	padding: 0;
+	border: 0;
+
+}
+
+
+
+.noticia .centro .columnasumario {
+	width: auto;
+	float: none;
+}
+
+.noticia .centro .columnasumario .sumario p {
+	text-align: center;
+}
+
+
+
+.noticia .derecha .columnasumario {
+	float: right;
+	margin-left: 10px;
+
+}
+
+.noticia .derecha .columnasumario .foto {
+	float: right;
+	margin-left: 5px;
+
+}
+
+.noticia .derecha .columnasumario .sumario p {
+	text-align: right;
+}
+
+
+.noticia .izquierda .columnasumario {
+	float: left;
+	width: 180px;	
+	margin-right: 10px;
+	margin-bottom: 0;
+}
+
+.noticia .izquierda .columnasumario .foto {
+	float: left;
+
+}
+
+.noticia .izquierda .columnasumario .sumario p {
+	text-align: left;	
+}
+
+
+
+
+
+
+.noticia .sumario p {
+	margin: 0;
+	line-height: 1.6em;
+
+}
+
+.noticia .sumario p.cita {
+	font-style: italic;
+	line-height: 1.6em;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+
+
+.noticia .sumario p .autor,
+.noticia .sumario p .cargo {
+	font-size: 11px;
+}
+
+
+
+.cargo {
+	font-size: 11px;
+}
+
+
+/* FIN SUMARIOS */
+
+
+/* NECESARIOS PARA LA FUNCION DE AUMENTAR Y DISMINUIR LETRA */
+
+
+/* 7 */
+.tamanoletra7 p,
+.tamanoletra7 p.entradilla {
+	font-size: 18px !important;
+}
+.tamanoletra7 ul,
+.tamanoletra7 .foto p,
+.tamanoletra7 .recuadrorelacionados ul li {
+	font-size: 16px !important;
+}
+.tamanoletra7 .herramientas ul {
+	font-size: 11px !important;
+}
+
+
+
+/* 6 */
+.tamanoletra6 p,
+.tamanoletra6 p.entradilla {
+	font-size: 16px !important;
+}
+.tamanoletra6 ul,
+.tamanoletra6 .foto p,
+.tamanoletra6 .recuadrorelacionados ul li {
+	font-size: 14px !important;
+}
+.tamanoletra6 .herramientas ul {
+	font-size: 11px !important;
+}
+
+
+
+/* 5 */
+.tamanoletra5 p,
+.tamanoletra5 p.entradilla {
+	font-size: 13px !important;
+}
+.tamanoletra5 ul,
+.tamanoletra5 .foto p,
+.tamanoletra5 .recuadrorelacionados ul li {
+	font-size: 11px !important;
+}
+.tamanoletra5 .herramientas ul {
+	font-size: 11px !important;
+}
+
+
+/* 4 */
+.tamanoletra4 p,
+.tamanoletra4 p.entradilla {
+	font-size: 11px !important;
+}
+.tamanoletra4 ul,
+.tamanoletra4 .foto p,
+.tamanoletra4 .recuadrorelacionados ul li {
+	font-size: 10px !important;
+}
+.tamanoletra4 .herramientas ul {
+	font-size: 11px !important;
+}
+
+/* 3 */
+.tamanoletra3 p,
+.tamanoletra3 p.entradilla {
+	font-size: 9px !important;
+}
+.tamanoletra3 ul,
+.tamanoletra3 .foto p,
+.tamanoletra3 .recuadrorelacionados ul li {
+	font-size: 9px !important;
+}
+.tamanoletra3 .herramientas ul {
+	font-size: 11px !important;
+}
+
+/* FIN AUMENTAR DISMINUIR LETRA */
+
+
+
+
+
+/* --------------------------------------------------------------------------------*/
+/* NOTICIA: ESTILOS ESPECIFICOS PARA ELMUNDO.ES -----------------------------------*/
+/* --------------------------------------------------------------------------------*/
+
+
+.noticia h1,
+.noticia .columna .foto p a
+{	
+	color: #036;
+}
+
+#antetitulo {
+	color: #900;
+}
+
+
+.noticia .subtitulo,
+.noticia .subtitulo a {
+	color: #505050;
+
+}
+
+
+
+.noticia h3 {
+	color: black;
+}
+
+.noticia .superior #fechayhora {
+	color: #666;
+
+}
+
+.noticia .columna .recuadro h3 {
+	color: white;
+	background-color: #036;
+}
+
+
+.noticia p.entradilla {
+	color: black;
+	font-weight: normal;
+}
+
+.noticia .columna .recuadro ul {
+	border: 2px solid #E3E3E3;
+	border-bottom: 1px solid #E3E3E3;
+	border-top: 0;
+}
+
+.noticia {
+	border-bottom: 1px solid #ccc;
+}
+
+
+.noticia .foto .ampliarfoto {
+	border-top: 3px solid #036;
+}
+
+
+.noticia .columna .foto p a,
+.noticia .foto p a {
+	border-bottom: 1px solid #036;
+}
+
+.noticia .foto p a.album {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/masfotos.gif);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+
+}
+
+
+
+.noticia .columna .recuadro ul li {
+	border-bottom: 1px solid #E3E3E3;
+}
+
+.noticia .columna .recuadro ul li.noticia {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/noticia.gif);
+	float: none; 
+	font-size: 11px; 
+	width: auto;
+}
+
+.noticia .columna .recuadro ul li.especial {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/noticia.gif);
+}
+
+.noticia .columna .recuadro ul li.grafico {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/grafico.gif);
+}
+
+.noticia .columna .recuadro ul li.foto {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/album.gif);
+}
+
+.noticia .columna .recuadro ul li.foro {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/foro.gif);
+}
+
+.noticia .columna .recuadro ul li.enlared {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/enlared.gif);
+}
+
+.noticia .columna .recuadro ul li.blog {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/blog.gif);
+}
+
+.noticia .columna .recuadro ul li.debate {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/debate.gif);
+}
+
+.noticia .columna .recuadro ul li.video {
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/video.gif);
+}
+
+.noticia .recuadrorelacionados ul li {
+	border: 2px solid #ddd;
+	background-image: url(http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/relacionadas.gif);
+}
+
+.noticia .columna .recuadro ul li.euro {
+    background-image: url("http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/euro.gif");
+}
+
+.noticia .columna .recuadro ul li.audio{
+    background-image: url("http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/audio.gif");
+}
+
+.noticia .columna .recuadro ul li.especial {
+    background-image: url("http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/especial.gif");
+}
+
+.noticia .columna .recuadro ul li.pdf {
+    background-image: url("http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/pdf.gif");
+}
+
+
+
+/*
+Anyadidos por Miguel para solucionar momentaneamente los problemas
+*/
+.piefotoladillo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 14px;
+    text-decoration: none;
+    text-indent: 0px;
+    color: #000;
+}
+
+.barra-ampliarfoto {
+    width: 100%;
+    border-top: 3px solid #036;
+    text-align: right;
+}
+
+
+.noticia .columna .recuadro ul li.cuadrado {
+    background-image: url("http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/noticia.gif");
+}
+
+
+LI.pixelblanco {
+    background-image: url("http://estaticos.elmundo.es/elmundo/iconos/v2.0/apoyos/pixelblanco.gif");
+}
+
+h1.centrado {
+    text-align: center;
+}
+
+
+/* Inicio estilos para compatibilidad */
+.oncepixazul {
+}
+/* Fin estilos para compatibilidad */

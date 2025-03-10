@@ -1,0 +1,77 @@
+
+<body bgcolor="#FFFFFF">
+<h1>Problema 274 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0">
+  <tr> 
+    <td bgcolor="#FFFF99">Sea <i>X</i> un punto arbitrario del tri&aacute;ngulo 
+      <i>ABC</i>. Construimos los puntos <i>C'</i>, <i>B'</i>, <i>A'</i> como 
+      los centros de gravedad de los tri&aacute;ngulos <i>ABX</i>,&nbsp;&nbsp;<i>AXC</i> 
+      y <i>BXC</i>. Sea <i>X*</i> el punto de intersecci&oacute;n de las rectas 
+      <i>AA'</i>, <i>BB'</i>, y <i>CC'</i>.<br />
+      Se pide :<br />
+      a) El tri&aacute;ngulo <i>A'B'C'</i> es homot&eacute;tico al tri&aacute;ngulo 
+      <i>ABC</i>, Calcular el centro y la raz&oacute;n de la homotecia.<br />
+      b) Si <i>G</i> y <i>G' </i>son los centros de gravedad de los tri&aacute;ngulos 
+      <i>ABC</i>, y <i>A'B'C'</i>, respectivamente, probar que los puntos <i>G</i>, 
+      <i>G'</i>, <i>X</i> y <i>X*</i> son colineales y calcular su raz&oacute;n 
+      doble. </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="right"><font size="-1">Romero, J.B.(2005): Comunicaci&oacute;n 
+        personal </font></div>
+    </td>
+  </tr>
+</table>
+<p>Usaremos coordenadas baric&eacute;ntricas. </p>
+<p>Sea <i>X</i> un punto cualquiera con coordenadas (<i>u</i> : <i>v</i> : <i>w</i>). 
+  Para facilitar los c&aacute;lculos que siguen supondremos que estas coordenadas 
+  est&aacute;n normalizadas, es decir cumplen <i>u</i> + <i>v</i> + <i>w</i> = 
+  1.</p>
+<p></p>
+<p>Comencemos diciendo que el baricentro el tri&aacute;ngulo de referencia <i>ABC</i>, 
+  donde <i>A</i>=(1:0:0), <i>B</i>=(0:1:0) y <i>C</i>=(0:0:1) es <i>G</i>=(1:1:1), 
+  y que estas coordenadas se obtienen sumando las coordendas de los tres v&eacute;rtices 
+  ya que &eacute;stas tienen la misma suma (es decir, el mismo peso). </p>
+<p>De forma similar, el baricentro de los puntos <i>A</i>=(<i>u</i> + <i>v </i>+ 
+  <i>w</i> : 0 : 0), <i>B</i>=(0 : <i>u</i> + <i>v </i>+ <i>w</i> : 0) y <i>X</i>=(<i>u</i> 
+  : <i>v</i> : <i>w</i>) (todos con la misma suma) se obtiene sumando coordenadas:<i><br>
+  C'</i> = (2<i>u</i> + <i>v </i>+ <i>w</i> : <i>u</i> + 2<i>v </i>+ <i>w</i>: 
+  <i>w</i>). </p>
+<p>De forma sim&eacute;trica obtenemos <i>A'</i> = (<i>u</i>, <i>u</i> + 2<i>v</i> 
+  + <i>w</i> : <i>u</i> + <i>v </i>+2<i>w</i>), <i>B'</i> = (2<i>u</i> + <i>v</i> 
+  + <i>w</i> : <i>v</i> : <i>u</i> + <i>v</i> + 2<i>w</i>).</p>
+<p>Otra vez lo mismo, las coordenadas de <i>A'</i>, <i>B'</i>, <i>C'</i>, suman 
+  lo mismo, su baricentro es <i>G'</i>=(5<i>u</i>+2<i>v</i>+2<i>w</i> : 2<i>u</i>+5v+2<i>w</i> 
+  : 2<i>u</i>+2<i>v</i>+5<i>w</i>).</p>
+<p>Por &uacute;ltimo, para hallar las coordenadas del punto <i>X*</i>, hallamos 
+  las ecuaciones de las rectas <i>AA'</i> y <i>BB'</i>. </p>
+<p><img src="ecuacion1.gif" width="461" height="149"></p>
+<p>resultando <i>X*</i> = (2<i>u</i> + <i>v</i> + <i>w</i> : <i>u</i> + 2<i>v</i> 
+  + <i>w</i> : <i>u</i> + <i>v</i> + 2<i>w</i>).</p>
+<p>Observemos primero que </p>
+<p align="center"><img src="ecuacion2.gif" width="456" height="73"></p>
+<p>Esto quiere decir que <i>AX*</i> : <i>X*A'</i> = 3:1 o que <i>X*A'</i> : <i>X*A</i> 
+  = -1/3. </p>
+<p align="center"><img src="274-2.jpg" width="228" height="67"></p>
+<p>Como lo mismo puede decirse para <i>B</i> y <i>B'</i>, y <i>C</i> y <i>C'</i>, 
+  resultar&aacute; que <b><font color="#0000FF">el tri&aacute;ngulo <i>A'B'C'</i> 
+  es homot&eacute;tico al tri&aacute;ngulo <i>ABC</i> con centro X* y raz&oacute;n 
+  de homotecia -1/3</font></b>. </p>
+<p>Ahora, considerando que </p>
+<p align="center"><img src="ecuacion3.gif" width="498" height="141"></p>
+<p>deducimos no s&oacute;lo que <i><font color="#0000FF"><b>G</b></font></i><b><font color="#0000FF">, 
+  <i>G'</i>, <i>X</i> y <i>X*</i> est&aacute;n alineados</font></b>, sino tambi&eacute;n 
+  cu&aacute;l es la ubicaci&oacute;n exacta de unos respecto de otros. </p>
+<p>As&iacute;, <i>GG'</i> : <i>G'X</i> = 3:6 = 1:2 y <i>GX*</i> : <i>X*X</i> =1:3. 
+  Por tanto, los puntos quedar&iacute;an as&iacute; a lo largo de la recta:</p>
+<p align="center"><img src="274-3.jpg" width="366" height="78"></p>
+<p align="left">Entonces <b><font color="#0000FF">la raz&oacute;n doble</font></b> 
+  pedida es <img src="ecuacion4.gif" width="257" height="44" align="absmiddle"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class='Text' style='text-align: right;'>&nbsp; </p>
+<p class="Text">&nbsp; </p>
+</body>
+</html>
+

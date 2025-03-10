@@ -1,0 +1,220 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri296</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema 296 de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=87 bgcolor="#FFFF99"> 
+      <p align=justify>Sea <i>ABC</i> un tri&aacute;ngulo de lados <i>a</i>=<i>BC</i>, 
+        <i>b</i> =<i>AC</i> y <i>c</i> =<i>AB</i>. Sea, <i>DEF</i> un tri&aacute;ngulo 
+        inscrito en <i>ABC</i>, tal que los puntos <i>D</i>, <i>E</i> y <i>F</i>, 
+        est&eacute;n respectivamente sobre los lados <i>BC</i>, <i>AC</i> y <i>AB</i>. 
+        Si <i>S'</i>, es el &aacute;rea de <i>DEF</i> y <i>S</i> es el &aacute;rea 
+        de <i>ABC</i> respectivamente, se pide:<br>
+        <i>a</i>) Hallar el cociente de las &aacute;reas <i>S'</i>/<i>S</i>.<br>
+        <i>b</i>) &iquest;Cu&aacute;nto vale <i>S'</i>/<i>S</i> si las cevianas 
+        <i>AD</i>, <i>BE</i> y <i>CF</i>, concurren? <br>
+        <i>c</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las medianas, 
+        S'/S=1/4 <br>
+        <i>d</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las bisectrices 
+        interiores, es <i>S'</i>/<i>S</i>= 2<i>abc</i>/((<i>a</i>+<i>b</i>)(<i>a</i>+<i>c</i>)(<i>b</i>+<i>c</i>)).<br>
+        <i>e</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las alturas, 
+        es: <i>S'</i>/<i>S</i> = ((a<sup>2</sup>+b<sup>2</sup>-c<sup>2</sup>) (<i>a</i><sup>2</sup>+<i>c</i><sup>2</sup>-<i>b</i><sup>2</sup>) 
+        (<i>b</i><sup>2</sup>+<i>c^</i>2-<i>a^</i>2))/ (4<i>a</i><sup>2</sup> <i>b</i><sup>2</sup> <i>c</i><sup>2</sup>)<br>
+        <i>f</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las perpendiculares 
+        a los lados desde el centro de la circunferencia inscrita,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<i> S'</i>/<i>S</i>=((<i>a</i> + <i>b </i>-<i>c</i>) 
+        (<i>a</i>+<i>c</i>-<i>b</i>) (<i>b</i>+<i>c</i>-<i>a</i>))/ (4<i>abc</i>) 
+        <br>
+        <i>g</i>) Comparar los resultados de <i>f</i>) y <i>e</i>) </p>
+      </TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=11> 
+      <DIV align=right> <FONT size=-1>Scheffer, J.( 1881 ) : &quot;On the Ratio 
+        of the Area of a Given Triangle to That of an Inscribed Triangle&quot; 
+        The Analyst, (Nov.) Vol.8 N.6 , pp.173-174<br>
+        Propuesto por Juan Bosco Romero M&aacute;rquez.</FONT></DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><font face="Arial, Helvetica, sans-serif">Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a></font></P>
+<P>Usando <i>Mathematica</i> y coordenadas baric&eacute;ntricas haremos r&aacute;pido 
+  los apartados <i>a</i>) - <i>f</i>), deteni&eacute;ndonos algo m&aacute;s en 
+  el &uacute;ltimo apartado. </P>
+<P>Suponemos que los puntos <i>D, E</i>, <i>F</i> dividen a los segmentos <i>BC</i>, 
+  <i>CA</i>, <i>AB</i> en las razones <font face="Symbol">l</font>:1, <font face="Symbol">m</font>:1, 
+  <font face="Symbol">n</font>:1. Esto quiere decir que los puntos <i>D</i>, <i>E</i> 
+  y <i>F</i> tienen coordenadas baric&eacute;ntricas</P>
+<P><img src="Image1.jpg" width="113" height="58"></P>
+<P><i>a</i>) Hallar el cociente de las &aacute;reas <i>S'</i>/<i>S</i>.</P>
+<P>Recordemos que la funci&oacute;n <b>AreaTriangulo</b> definida en <i>Baricentricas.nb</i> 
+  calcula precisamente este cociente.</P>
+<P><img src="Image2.jpg" width="258" height="60"><br>
+</P>
+<P><i>b</i>) &iquest;Cu&aacute;nto vale <i>S'</i>/<i>S</i> si las cevianas <i>AD</i>, 
+  <i>BE</i> y <i>CF</i>, concurren? </P>
+<P>Usando el teorema de Ceva tendremos que <font face="Symbol">l</font><font face="Symbol">m</font><font face="Symbol">n 
+  =</font>1. Entonces la f&oacute;rmula del &aacute;rea queda</P>
+<P><img src="Image3.jpg" width="471" height="40"></P>
+<P>Para los apartados siguientes definimos dos funciones:</P>
+<P><img src="Image4.jpg" width="269" height="138"></P>
+<P><img src="Image5.jpg" width="269" height="138"></P>
+<P>Ahora las aplicamos a los casos particulares planteados:</P>
+<P><i>c</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las medianas, <i>S'</i>/<i>S</i>=1/4 
+</P>
+<blockquote>
+  <p><img src="Image6.jpg" width="180" height="58"><br>
+  </p>
+</blockquote>
+<P><i>d</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las bisectrices 
+  interiores, es <i>S'</i>/<i>S</i>= 2<i>abc</i>/((<i>a</i>+<i>b</i>)(<i>a</i>+<i>c</i>)(<i>b</i>+<i>c</i>)).</P>
+<blockquote>
+  <p><img src="Image8.jpg" width="237" height="60"><br>
+  </p>
+</blockquote>
+<P><i>e</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las alturas, es: 
+  <i>S'</i>/<i>S</i> = ((a<sup>2</sup>+b<sup>2</sup>-c<sup>2</sup>) (<i>a</i><sup>2</sup>+<i>c</i><sup>2</sup>-<i>b</i><sup>2</sup>) (<i>b</i><sup>2</sup>+<i>c^</i>2-<i>a^</i>2))/ 
+  (4<i>a</i><sup>2</sup> <i>b</i><sup>2</sup> <i>c</i><sup>2</sup>)</P>
+<blockquote> 
+  <p><img src="Image7.jpg" width="256" height="61"><br>
+  </p>
+</blockquote>
+<p><i>f</i>) Si <i>D</i>, <i>E</i> y <i>F</i> son los pies de las perpendiculares 
+  a los lados desde el centro de la circunferencia inscrita,<br>
+  <i>&nbsp;&nbsp;&nbsp;<i> </i>S'</i>/<i>S</i>=((<i>a</i> + <i>b </i>-<i>c</i>) 
+  (<i>a</i>+<i>c</i>-<i>b</i>) (<i>b</i>+<i>c</i>-<i>a</i>))/ (4<i>abc</i>)</p>
+<blockquote>
+  <p><img src="Image9.jpg" width="223" height="58"></p>
+</blockquote>
+<P><i>g</i>) Comparar los resultados de <i>f</i>) y <i>e</i>) </P>
+<P>Restemos las &aacute;reas obtenidas y factoricemos el resultado:</P>
+<blockquote> 
+  <p><img src="Image10.jpg" width="518" height="76"></p>
+</blockquote>
+<p>Vamos a demostrar que </p>
+<blockquote>
+  <p><img src="Image12.jpg" width="442" height="18"></p>
+</blockquote>
+<p>Lo escribimos as&iacute;:</p>
+<blockquote>
+  <p><img src="Image13.jpg" width="454" height="19"></p>
+</blockquote>
+<p>En t&eacute;rminos de sumas sim&eacute;tricas (donde los &iacute;ndices recorren 
+  las permutaciones de las letras <i>a</i>, <i>b</i>, <i>c</i>)</p>
+<blockquote>
+  <p><img src="Image14.jpg" width="189" height="35"></p>
+</blockquote>
+<p>Con la notaci&oacute;n de Muirhead, la desigualdad se escribe</p>
+<blockquote> 
+  <p><img src="Image15.jpg" width="219" height="18"></p>
+</blockquote>
+<p>La notaci&oacute;n consiste en expresar entre corchetes los exponentes de los 
+  sumandos en cada caso.</p>
+<table width="90%" border="0" align="center" bgcolor="#CCFFCC">
+  <tr> 
+    <td height="739"> 
+      <p><b>Sobre el teorema de Muirhead.</b> El teorema de Muirhead es muy &uacute;til 
+        para resolver desigualdades como &eacute;sta, en la que intervienen polinomios 
+        homog&eacute;neos sim&eacute;tricos cuyas variables son los lados <i>de 
+        un tri&aacute;ngulo. </i></p>
+      <p>Esto es s&oacute;lo una peque&ntilde;a introducci&oacute;n. Para saber 
+        m&aacute;s, consultar las referencias siguientes:</p>
+      <table width="90%" border="0" align="center" bgcolor="#CCFFCC">
+        <tr> 
+          <td height="42"> 
+            <ul>
+              <li>[1] G. H. Hardy, J. E. Littlewood, G. P&oacute;lya. Inequalities, 
+                p&aacute;gs 44-45.</li>
+              <li>[2] Stanley Rabinowitz, <a href="http://www.mathpropress.com/stan/bibliography/inequalities.pdf">On 
+                the Computer Solution of Symmetric Homogeneous Triangle Inequalities</a>.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <p>Consideremos los s&iacute;mbolos [5,0,0], [3, 1, 1], [4, 1, 1] todos 
+        los con la misma suma y formados por tres n&uacute;meros decrecientes.. 
+        Decimos que un s&iacute;mbolo [i<sub>2</sub>, j<sub>2</sub>, k<sub>2</sub>] 
+        <i>mayora</i> a otro s&iacute;mbolo [i<sub>1</sub>, j<sub>1</sub>, k<sub>1</sub>] 
+        si <br>
+        &nbsp;&nbsp;&nbsp;1) i<sub>2</sub> &gt;= i<sub>1</sub>,<br>
+        &nbsp;&nbsp;&nbsp;2) i<sub>2</sub> + j<sub>2</sub> &gt;= i<sub>1</sub> 
+        + j<sub>1</sub>.<br>
+        Escribiremos [i<sub>2</sub>, j<sub>2</sub>, k<sub>2</sub>] &gt;= [i<sub>1</sub>, 
+        j<sub>1</sub>, k<sub>1</sub>]. En nuestro ejemplo tenemos que [5, 0, 0] 
+        &gt;= [4, 1, 0] &gt;= [3, 1, 1]. </p>
+      <p>El <b>teorema de Muirhead</b> dice que un s&iacute;mbolo mayora a otro 
+        si y solo si la desigualdad correspondiente se cumple para todos los valores 
+        positivos de las variables y que la iguadad se cumple si y solo si las 
+        variables son todas iguales. </p>
+      <p>En nuestro caso se cumplir&iacute;a que </p>
+      <blockquote> 
+        <p><img src="Image16.jpg" width="191" height="35"></p>
+      </blockquote>
+      <p>y esta desigualdad nos es desfavorable. Si fuera [5, 0, 0] &gt;= [3, 
+        1, 1] &gt;= [4, 1, 0] s&iacute; podriamos razonar f&aacute;cilmente que 
+        [5,0,0] + [3,1,1] &gt;= [4,1,0] + [4, 1, 0] = 2 [4, 1, 0]. Un m&eacute;todo 
+        apuntado en [2] es tener en cuenta que <i>a</i>,<i> b</i>, <i>c</i> son 
+        los lados de un tri&aacute;ngulo, por lo que las cantidades <i>x=b</i>+<i>c</i>-<i>a</i>, 
+        <i>y</i>=<i>c</i>+<i>a</i>-<i>b</i>, <i>z</i>=<i>a</i>+<i>b</i>-<i>c</i> 
+        son positivas y podemos expresar la desigualdad en t&eacute;rminos de 
+        ellas. En este caso la transformaci&oacute;n require bastante c&aacute;lculo, 
+        pero para eso tenemos a <i>Mathematica</i>:</p>
+      <blockquote> 
+        <p><img src="Image17.jpg" width="473" height="89"></p>
+      </blockquote>
+      <p>La expresi&oacute;n del par&eacute;ntesis puede expresarse en la forma 
+        [3,2,0] - [3,1,1], y como [3,2,0] mayora a [3, 1,1] concluimos la que 
+        desigualdad es cierta. Por tanto: </p>
+      <p align="center"><b>El &aacute;rea obtenida en <i>f</i>) es siempre mayor 
+        o igual que la obtenida en <i>e</i>). </b></p>
+      </td>
+  </tr>
+</table>
+<p>Rematemos la faena comparando las &aacute;reas de los tri&aacute;ngulos de 
+  los otros apartados:</p>
+<table width="90%" border="0" align="center">
+  <tr> 
+    <td bgcolor="#CCFFFF"> 
+      <p><b>El &aacute;rea obtenida en <i>d</i>) es siempre mayor o igual que 
+        la obtenida en <i>f</i>)</b></p>
+      <blockquote> 
+        <p><img src="Image18.jpg" width="602" height="79"></p>
+      </blockquote>
+      <p>Tenemos que demostrar que [4, 1, 0] + [2, 2, 1] &gt;= [3,2,0] + [3,1,1], 
+        que como antes no se deduce directamente, ya que aunque [4,1,0] mayora 
+        tanto [3,2,0] y [3,1,1], no le ocurre lo mismo a [2,2,1], que no mayora 
+        a ninguna de las dos. Hacemos como antes, un cambio de variable, </p>
+      <blockquote> 
+        <p><img src="Image19.jpg" width="608" height="109"></p>
+      </blockquote>
+      <p>y, tambi&eacute;n como antes, ahora si deducimos f&aacute;cilmente que 
+        la expresi&oacute;n del par&eacute;ntesis es positiva, pues tenemos [3,2,0] 
+        &gt;= [2,2,1]. </p>
+      <p><b>El &aacute;rea obtenida en <i>c</i>) es siempre mayor o igual que 
+        la obtenida en <i>d</i>)</b></p>
+      <p>En este caso la cosa es m&aacute;s f&aacute;cil ya que si hacemos </p>
+      <blockquote> 
+        <p><img src="Image20.jpg" width="259" height="77"></p>
+      </blockquote>
+      <p>obtenemos que el numerador se escribe [2,1,0] - [1,1,1], y claramente 
+        es [2,1,0] &gt;= [1,1,1].</p>
+      <p>Adem&aacute;s esta desigualdad es f&aacute;cil de obtener de una forma 
+        elemental, teniendo en cuenta que </p>
+      <blockquote> 
+        <p><img src="Image21.jpg" width="281" height="85"></p>
+      </blockquote>
+      <p>y que la &uacute;ltima desigualdad se deduce de que <img src="Image22.jpg" width="62" height="30" align="absmiddle"> 
+        para cualquier n&uacute;mero positivo <i>x</i>. </p>
+    </td>
+  </tr>
+</table>
+<div align="center"></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</BODY></HTML>

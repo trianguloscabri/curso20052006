@@ -1,0 +1,104 @@
+<title>trianguloscabri287</title> 
+
+
+<body bgcolor="#FFFFFF">
+<h1>Problema 287 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0" height="33">
+  <tr> 
+    <td bgcolor="#FFFF99" height="22"> 
+      <p><i>ABC</i> es un tri&aacute;ngulo equil&aacute;tero. <i>I</i>, <i>J</i>, 
+        <i>P</i> son los puntos medios de los lados. Se parte <i>CB</i> en cuatro 
+        partes iguales seg&uacute;n los puntos <i>E</i> (medio de <i>CP</i>), 
+        <i>P</i> y <i>F</i> (medio de<i> PB</i>). Sea <i>H</i> la proyecci&oacute;n 
+        ortogonal de <i>I</i> sobre <i>EJ</i> y <i>K</i> la proyecci&oacute;n 
+        ortogonal de <i>F</i> sobre <i>EJ</i>. Sea <i>R</i> el sim&eacute;trico 
+        de <i>H</i> en relaci&oacute;n al punto <i>I</i>, <i>S</i> el sim&eacute;trico 
+        de <i>K</i> en relaci&oacute;n al punto <i>J</i>, <i>U</i> el sim&eacute;trico 
+        de <i>E</i> en realci&oacute;n a <i>I</i>, y <i>T</i> el sim&eacute;trico 
+        de <i>F</i> en relaci&oacute;n a <i>J. </i>Las rectas <i>RU</i> y <i>TS</i> 
+        se cortan en<i> V</i>. &iquest;Est&aacute;n alineados los puntos <i>U</i>, 
+        <i>A</i>, <i>T</i>? &iquest;Es <i>RVSH </i> un cuadrado?</p>
+    </td>
+  </tr>
+  <tr> 
+    <td height="4"> 
+      <div align="right"><font size="-1">Propuesto por xxx</font> </div>
+    </td>
+  </tr>
+</table>
+<p>Soluci&oacute;n <a href="http://garciacapitan.auna.com/">Francisco Javier Garc&iacute;a 
+  Capit&aacute;n</a></p>
+<p><b><img src="287a.jpg" width="220" height="254" align="right"></b><b>Una primera 
+  aproximaci&oacute;n</b></p>
+<ul>
+  <li>En cualquier tri&aacute;ngulo <i>ABC</i>, no necesariamente rect&aacute;ngulo, 
+    los puntos <i>U</i>, <i>A</i>, <i>T</i> no s&oacute;lo est&aacute;n alineados, 
+    sino que <i>A</i> es punto medio de <i>UT</i>. En efecto, teniendo en cuenta 
+    las definiciones de los puntos <i>I, J</i>, <i>E</i>, <i>F</i>, <i>T</i> y 
+    <i>U</i>, 
+    <p><img src="ecuacion1.gif" width="414" height="69"></p>
+  </li>
+</ul>
+<blockquote> 
+  <p>Sumando las dos &uacute;ltimas igualdades, <br>
+    <img src="ecuacion2.gif" width="188" height="18"> </p>
+</blockquote>
+<ul>
+  <li>Una medici&oacute;n con Cabri nos dice r&aacute;pidamente que el cuadril&aacute;tero 
+    <i>RVSH</i> <b>no</b> es un cuadrado.</li>
+</ul>
+<p>Por tanto en este problema las afirmaciones de los enunciados no tienen nada 
+  que ver con el tri&aacute;ngulo equil&aacute;tero, pues la primera propiedad 
+  se cumple para cualquier tri&aacute;ngulo y la seguna no se cumple para el equil&aacute;tero.</p>
+<p>En el siguiente apartado investigamos cu&aacute;ndo se cumple la segunda parte 
+  del enunciado.</p>
+<p><b>Investigaci&oacute;n</b></p>
+<p>Usamos <i>Mathematica</i> y el cuaderno<i> Baricentricas.nb</i> para introducir 
+  las coordenadas de los primeros puntos de la construcci&oacute;n:</p>
+<blockquote> 
+  <p><img src="287b.jpg" width="310" height="429"></p>
+</blockquote>
+<p>Ahora definimos una funci&oacute;n para calcular el sim&eacute;trico de un 
+  punto e introducimos los puntos restantes:</p>
+<blockquote> 
+  <p><img src="287c.jpg" width="336" height="261"></p>
+</blockquote>
+<p><img src="287e.jpg" width="413" height="373" align="right">Podemos ver a ojo 
+  que la recta <i>TU</i> es <i>x+y=</i>0, y <b><font color="#0000FF">la recta 
+  <i>TU </i>contiene al punto <i>A</i>, para cualquier tri&aacute;ngulo <i>ABC</i></font></b><i>. 
+  </i>Tambi&eacute;n podemos ver esto haciendo el punto medio de <i>T</i> y <i>U</i>, 
+  resultando el punto <i>A</i>.</p>
+<p>Veamos si las rectas <i>SH</i> y <i>VR</i>, <i>SV</i> y <i>HR</i> son paralelas.</p>
+<blockquote>
+  <p><img src="287d.jpg" width="308" height="94"></p>
+</blockquote>
+<p>En efecto, lo dos pares de rectas se cortan en puntos cuyas coordenadas suman 
+  0, lo que indica que los puntos de intersecci&oacute;n de las rectas son puntos 
+  del infinito y <i><b><font color="#0000FF">RVSH</font></b></i><font color="#0000FF"><b> 
+  es un rect&aacute;ngulo, para cualquier tri&aacute;ngulo <i>ABC</i></b></font>.</p>
+<p>Investiguemos cuando este rect&aacute;ngulo es un cuadrado:</p>
+<p><img src="287f.jpg" width="450" height="63"></p>
+<p>El numerador debe anularse. Haciendo <i>b</i>=<i>a</i> y <i>c</i>=<i>a</i> 
+  el numerador se reduce a <img src="287g.jpg" width="17" height="17" align="absmiddle">, 
+  expresi&oacute;n que no se anula. Por tanto, <b><font color="#0000FF">el rect&aacute;ngulo 
+  <i>RVSH </i>no ser&aacute; un cuadrado cuando el tri&aacute;ngulo es equil&aacute;tero</font></b>. 
+</p>
+<p><img src="287i.jpg" width="339" height="224" align="right">Para hallar los 
+  tri&aacute;ngulos <i>ABC</i> para los cuales el tri&aacute;ngulo <i>RVSH</i> 
+  es un cuadrado elegimos un sistema de coordenadas en el que <i>B</i>=(-1,0), 
+  <i>C</i>=(1,0) son fijos y <i>A</i>=(<i>x</i>,<i>y</i>) es variable. Entonces 
+  escribimos: </p>
+<blockquote>
+  <p><img src="287h.jpg" width="343" height="112"> </p>
+</blockquote>
+<p>Vemos entonces que el lugar geom&eacute;trico del v&eacute;rtice <i>A</i> est&aacute; 
+  formado por dos circunferencias de radio 2 centradas en los puntos (2,2) y (-2,2).</p>
+<p align="center"><applet codebase="../" archive="CabriJava.jar" 
+code="CabriJava.class"
+width=640 height=480>
+    <param name=file value="287d.fig">
+    <param name=lang value="es">
+    <param name=border value=0>
+    <param name=bgcolor value=#FFFFCC>
+    <param name=controller value=true>
+  </applet></p>

@@ -1,0 +1,78 @@
+FIGURE CabriII vers. MS-Windows 1.0
+
+Window center x: -0.529166666666667 y: -0.423333333333333 Window size x: 26.6435416666667 y: 16.5364583333333
+
+1: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Val: 0 0
+
+2: Axes, 1, CN:1, VN:3
+Gr, W, t, DS:1 1, GT:0, I, nSt
+Const: 1, Val: 1 0, 0 1
+
+3: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Val: -1.11125 -0.396875
+
+4: Cir, 0, CN:1, VN:2
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 3, Val: 2.77409032418487
+
+"B", NP: 30, -98, NS: 12, 18
+5: Pt/, 0, CN:1, VN:3
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 4, Val: 0.483211801005158 1.87320620821073
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"A", NP: -169, 38, NS: 10, 18
+6: Pt/, 0, CN:1, VN:3
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 4, Val: -3.73751803392248 -1.29034763009734
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"C", NP: 33, 90, NS: 11, 18
+7: Pt/, 0, CN:1, VN:3
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 4, Val: 0.439446332082685 -2.69707455925598
+p: 0, System, S: 0 C: 3 Fa: 0
+
+8: Tr, 0, CN:3, VN:0
+V, W, t, DS:1 1, GT:0, V, nSt
+Const: 5 6 7
+
+9: Seg, 0, CN:2, VN:0
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 3 6
+
+10: Perp, 0, CN:2, VN:2
+V, W, t, DS:1 1, GT:0, V, nSt
+Const: 6 9
+
+"T", NP: -138, 130, NS: 10, 18
+11: Pt/, 0, CN:1, VN:3
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 10, Val: -2.9073205781824 -3.730625
+p: 0, System, S: 0 C: 3 Fa: 0
+
+12: AngVal, 0, CN:3, VN:1
+B, W, NbD:129, FD, deg, GT:0, V, nSt
+Const: 7 5 6, Val: -1 -32 0.918022, A, P
+p: 0, System, S: 0 C: 15 Fa: 0
+
+13: Text, 0, CN:4, VN:3
+B, W, BTh:2, DS:1 1, GT:0, V, nSt
+Const: 7 5 6 12, Val: -1 -32 0, nA, nP, TP: -0.0264583333333333, 0.846666666666667,TS: 1.37583333333333, -0.47625
+""#"
+p: 0, System, S: 0 C: 15 Fa: 0
+
+14: AngVal, 0, CN:3, VN:1
+B, W, NbD:129, FD, deg, GT:0, V, nSt
+Const: 7 6 11, Val: -124 65 0.918022, A, P
+p: 0, System, S: 0 C: 15 Fa: 0
+
+15: Text, 0, CN:4, VN:3
+B, W, BTh:2, DS:1 1, GT:0, V, nSt
+Const: 7 6 11 14, Val: -124 65 0, nA, nP, TP: -3.28083333333333, -1.71979166666667,TS: 1.16416666666667, -0.47625
+""#"
+p: 0, System, S: 0 C: 15 Fa: 0
+

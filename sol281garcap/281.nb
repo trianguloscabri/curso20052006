@@ -1,0 +1,243 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.1'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4793,        161]*)
+(*NotebookOutlinePosition[      5497,        185]*)
+(*  CellTagsIndexPosition[      5453,        181]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Transformaciones", "Subsubtitle"],
+
+Cell[BoxData[{\(Traslacion[{x0_, y0_}, {x_, y_}]\  := \ {x0 + x, 
+        y0 + y}\), "\[IndentingNewLine]", \(Homotecia[{x0_, y0_}, 
+        k_, {x_, y_}]\  := \ {x0, y0}\  + \ 
+        k\ {x - x0, y - y0}\), "\[IndentingNewLine]", 
+    RowBox[{\(Giro[{x0_, y0_}, \[Alpha]_, {x_, y_}]\), " ", ":=", 
+      RowBox[{\({x0, y0}\), "+", " ", 
+        RowBox[{"Flatten", "[", 
+          RowBox[{
+            RowBox[{"(", GridBox[{
+                  {\(Cos[\[Alpha]]\), \(-Sin[\[Alpha]]\)},
+                  {\(Sin[\[Alpha]]\), \(Cos[\[Alpha]]\)}
+                  }], ")"}], ".", 
+            RowBox[{"(", GridBox[{
+                  {\(x - x0\)},
+                  {\(y - y0\)}
+                  }], ")"}]}], "]"}]}]}]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Los datos del problema", "Subsubtitle"],
+
+Cell[BoxData[{
+    \(\(ptP = {0, 0};\)\), "\[IndentingNewLine]", 
+    \(\(ptB = {1, 0};\)\), "\[IndentingNewLine]", 
+    \(\(ptC = {6, 0};\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[{\((x - 1)\)\^2 + y\^2 \[Equal] 9, \((x - 6)\)\^2 + y\^2 \[Equal] 
+          16}, {x, y}]\)], "Input"],
+
+Cell[BoxData[
+    \({{y \[Rule] \(-\(12\/5\)\), x \[Rule] 14\/5}, {y \[Rule] 12\/5, 
+        x \[Rule] 14\/5}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptA = {x, y}\  /. \ %[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({14\/5, \(-\(12\/5\)\)}\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Una aproximaci\[OAcute]n", "Subsubtitle"],
+
+Cell["\<\
+Descomponemos la semejanza en tres transformaciones: una homotecia con centro \
+B y radio 1/2, un giro de 30\.ba alrededor de P y una traslaci\[OAcute]n con \
+un vector de m\[OAcute]dulo 1 a lo largo de la segunda recta \
+\>", "Text"],
+
+Cell[BoxData[{
+    \(\(T1[X_]\  := \ Homotecia\ [ptB, 1\/2, X];\)\), "\[IndentingNewLine]", 
+    \(\(T2[X_]\  := \ Giro[ptP, \[Pi]\/6, X];\)\), "\[IndentingNewLine]", 
+    \(\(T3[X_]\  := \ Traslacion[T2[ptB], \[Pi]\/6, X];\)\)}], "Input"],
+
+Cell[BoxData[
+    \(T[X_]\  := \ T3[T2[T1[X]]]\)], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["El punto fijo", "Subsubtitle"],
+
+Cell["Hallamos el punto fijo", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ptO = {x, 
+          y}\  /. \(Solve[T[{x, y}] == {x, y}, {x, y}]\)[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({\(-\(\(\(-1\) + \@3\)\/\(\(-5\) + 2\ \@3\)\)\), \(-\(1\/\(\(-5\) + 
+              2\ \@3\)\)\)}\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Comprobaci\[OAcute]n", "Subsubtitle"],
+
+Cell["\<\
+Comprobamos que la semejanza es producto de un giro y una homotecia, ambos \
+con centro el punto fijo:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(T4[X_]\  := \ Giro[ptO, \[Pi]\/6, X];\)\), "\[IndentingNewLine]", 
+    \(\(T5[X_]\  := \ Homotecia\ [ptO, 1\/2, X];\)\), "\[IndentingNewLine]", 
+    \(Simplify[T[{x, y}] - T5[T4[{x, y}]]]\)}], "Input"],
+
+Cell[BoxData[
+    \({0, 0}\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.1 for Microsoft Windows",
+ScreenRectangle->{{0, 800}, {0, 527}},
+WindowSize->{788, 500},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 39, 0, 30, "Subsubtitle"],
+Cell[1818, 55, 727, 15, 82, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2582, 75, 45, 0, 30, "Subsubtitle"],
+Cell[2630, 77, 154, 3, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[2809, 84, 128, 2, 31, "Input"],
+Cell[2940, 88, 124, 2, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3101, 95, 63, 1, 30, "Input"],
+Cell[3167, 98, 57, 1, 42, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3273, 105, 47, 0, 30, "Subsubtitle"],
+Cell[3323, 107, 244, 4, 52, "Text"],
+Cell[3570, 113, 239, 3, 105, "Input"],
+Cell[3812, 118, 59, 1, 30, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3908, 124, 36, 0, 30, "Subsubtitle"],
+Cell[3947, 126, 38, 0, 33, "Text"],
+
+Cell[CellGroupData[{
+Cell[4010, 130, 109, 2, 30, "Input"],
+Cell[4122, 134, 130, 2, 51, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4301, 142, 43, 0, 30, "Subsubtitle"],
+Cell[4347, 144, 126, 3, 33, "Text"],
+
+Cell[CellGroupData[{
+Cell[4498, 151, 224, 3, 95, "Input"],
+Cell[4725, 156, 40, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

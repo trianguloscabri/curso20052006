@@ -1,0 +1,320 @@
+FIGURE CabriII vers. MS-Windows 1.0
+
+Used macro
+
+Dividir segmento en razón dada, Este punto
+Icon:
+0000000000000000
+0000000000000000
+00FF00000000FF00
+00FFF000000FFF00
+00FFFF0000FFFF00
+00FF0FF00FF0FF00
+00FF00FFFF00FF00
+00FF000FF000FF00
+00FF00000000FF00
+00FF00000000FF00
+00FF00000000FF00
+00FF00000000FF00
+00FF00000000FF00
+0000000000000000
+0000000000000000
+0000000000000000
+Mth: 0
+CN:6, ON:13, FN:1, PO:12
+CT:
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+Const:
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 1 2
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 3 1
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 5 1
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 4 9
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 1 10
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 6 1
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 4 12
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 1 13
+Int, Mth:1, 0, 256, CN:2, VN:1, Const: 8 11
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 15 2
+Int, Mth:1, 0, 256, CN:2, VN:1, Const: 8 14
+Par, Mth:0, 0, 0, CN:2, VN:2, Const: 17 16
+Int, Mth:0, 1, 0, CN:2, VN:1, Const: 18 7, B, W, t, DS:1 1, GT:1, V, nSt
+
+Hipérbola envolvente, Esta hipérbola
+Icon:
+0000000000330000
+0000000000330000
+0000000000330000
+0000000003300000
+0000000003300000
+0000000033000000
+0000000330000000
+0000033300000000
+0333333000000000
+0333300000000000
+0000000000000000
+0000000003330000
+0000003333330000
+0003333330003330
+3333330000003330
+3330000000000003
+Mth: 0
+CN:6, ON:56, FN:6, PO:55
+CT:
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, Bl, W, t, DS:1 1, GT:1, V, nSt
+Const:
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 1 3
+Biss, Mth:0, 0, 0, CN:3, VN:2, Const: 2 1 3
+Perp, Mth:0, 0, 0, CN:2, VN:2, Const: 1 8
+Biss, Mth:0, 0, 0, CN:3, VN:2, Const: 1 3 2
+Int, Mth:0, 0, 0, CN:2, VN:1, Const: 9 10
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 2 3
+Perp, Mth:0, 0, 0, CN:2, VN:2, Const: 11 12
+Int, Mth:0, 0, 0, CN:2, VN:1, Const: 12 13
+Perp, Mth:0, 0, 0, CN:2, VN:2, Const: 3 10
+Int, Mth:0, 0, 0, CN:2, VN:1, Const: 9 15
+Perp, Mth:0, 0, 0, CN:2, VN:2, Const: 16 12
+Int, Mth:0, 0, 0, CN:2, VN:1, Const: 12 17
+Perp, Mth:0, 0, 0, CN:2, VN:2, Const: 2 12
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 4 2
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 6 20
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 2 21
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 4 2
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 5 23
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 2 24
+Int, Mth:1, 0, 0, CN:2, VN:1, Const: 19 25
+Seg, Mth:0, 0, 0, CN:2, VN:0, Const: 26 18
+Int, Mth:1, 0, 0, CN:2, VN:1, Const: 19 22
+Par, Mth:0, 0, 0, CN:2, VN:2, Const: 28 27
+Int, Mth:0, 0, 0, CN:2, VN:1, Const: 29 12
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 30 14
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 31 30
+Int, Mth:1, 0, 256, CN:2, VN:1, Const: 19 32
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 2 1
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 33 34
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 1 35
+Int, Mth:1, 0, 32768, CN:2, VN:1, Const: 8 36
+Int, Mth:1, 1, 33024, CN:2, VN:1, Const: 8 36, B, W, t, DS:1 1, GT:1, I, nSt
+Perp, Mth:0, 0, 0, CN:2, VN:2, Const: 38 8
+Int, Mth:0, 0, 0, CN:2, VN:1, Const: 39 7
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 1 40
+Int, Mth:1, 0, 32768, CN:2, VN:1, Const: 8 41
+Int, Mth:1, 0, 33024, CN:2, VN:1, Const: 8 41
+Pt/, Mth:0, 0, 0, CN:1, VN:3, Const: 8
+Pt/, Mth:0, 0, 0, CN:1, VN:3, Const: 8
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 38 43
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 44 46
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 43 47
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 37 42
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 44 49
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 42 50
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 38 43
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 45 52
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 43 53
+Mid, Mth:0, 0, 0, CN:2, VN:1, Const: 37 42
+Sym, Mth:0, 0, 0, CN:2, VN:1, Const: 45 55
+Cir, Mth:1, 0, 0, CN:2, VN:2, Const: 42 56
+Int, Mth:3, 1, 32896, CN:2, VN:1, Const: 48 51, R, W, t, DS:1 1, GT:1, I, nSt
+Int, Mth:3, 1, 32897, CN:2, VN:1, Const: 48 51, R, W, t, DS:1 1, GT:1, I, nSt
+Int, Mth:3, 1, 32896, CN:2, VN:1, Const: 57 54, R, W, t, DS:1 1, GT:1, I, nSt
+Int, Mth:3, 1, 32897, CN:2, VN:1, Const: 57 54, R, W, t, DS:1 1, GT:1, I, nSt
+Con, Mth:0, 1, 1, CN:5, VN:6, Const: 38 59 60 58 61, R, W, t, DS:1 1, GT:0, V, nSt
+
+Figure description:
+
+Window center x: -1.825625 y: 2.72520833333333 Window size x: 20.7433333333333 y: 12.3825
+
+1: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Val: 0 0
+
+2: Axes, 1, CN:1, VN:3
+Gr, W, t, DS:1 1, GT:0, I, nSt
+Const: 1, Val: 1 0, 0 1
+
+"A", NP: -198, -205, NS: 10, 18
+3: Pt, 0, CN:0, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Val: -5.3975 5.10645833333333
+p: 0, System, S: 0 C: 6 Fa: 0
+
+"B", NP: -387, 103, NS: 12, 18
+4: Pt, 0, CN:0, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Val: -10.239375 -2.72520833333333
+p: 0, System, S: 0 C: 6 Fa: 0
+
+"C", NP: 18, 106, NS: 11, 18
+5: Pt, 0, CN:0, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Val: 0.740833333333333 -2.72520833333333
+p: 0, System, S: 0 C: 6 Fa: 0
+
+6: Line, 0, CN:2, VN:2
+Gr, W, t, DS:1 1, GT:0, V, nSt
+Const: 3 4
+
+7: Line, 0, CN:2, VN:2
+Gr, W, t, DS:1 1, GT:0, V, nSt
+Const: 4 5
+
+8: Line, 0, CN:2, VN:2
+Gr, W, t, DS:1 1, GT:0, V, nSt
+Const: 5 3
+
+9: Tr, 0, CN:3, VN:0
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 3 4 5
+
+"0", NP: -139, -186, NS: 10, 18
+10: Pt, 0, CN:0, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Val: -3.59833333333333 4.97416666666667
+p: 0, System, S: 0 C: 6 Fa: 0
+
+11: Line, 0, CN:1, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 10, Val: 1 0
+
+"1", NP: -39, -185, NS: 10, 18
+12: Pt/, 0, CN:1, VN:3
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 11, Val: -1.00541666666667 4.97416666666667
+p: 0, System, S: 0 C: 6 Fa: 0
+
+13: Seg, 0, CN:2, VN:0
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 10 12
+
+"m:n", NP: -103, -187, NS: 26, 18
+14: Pt/, 0, CN:1, VN:3
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 13, Val: -2.54 4.97416666666667
+p: 0, System, S: 0 C: 6 Fa: 0
+
+Ma: Dividir segmento en razón dada, Const: 3 i: 0 4 i: 0 5 i: 0 10 i: 0 12 i: 0 14 i: 0
+27: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+
+Ma: Dividir segmento en razón dada, Const: 3 i: 0 5 i: 0 4 i: 0 10 i: 0 12 i: 0 14 i: 0
+40: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+
+Ma: Dividir segmento en razón dada, Const: 4 i: 0 5 i: 0 3 i: 0 10 i: 0 12 i: 0 14 i: 0
+53: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+
+Ma: Dividir segmento en razón dada, Const: 4 i: 0 3 i: 0 5 i: 0 10 i: 0 12 i: 0 14 i: 0
+66: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+
+Ma: Dividir segmento en razón dada, Const: 5 i: 0 3 i: 0 4 i: 0 10 i: 0 12 i: 0 14 i: 0
+79: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+
+Ma: Dividir segmento en razón dada, Const: 5 i: 0 4 i: 0 3 i: 0 10 i: 0 12 i: 0 14 i: 0
+92: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+
+93: Line, 0, CN:2, VN:2
+R, W, t, DS:1 1, GT:0, V, nSt
+Const: 4 40
+
+94: Line, 0, CN:2, VN:2
+R, W, t, DS:1 1, GT:0, V, nSt
+Const: 5 27
+
+95: Line, 0, CN:2, VN:2
+G, W, t, DS:1 1, GT:0, V, nSt
+Const: 53 3
+
+96: Line, 0, CN:2, VN:2
+G, W, t, DS:1 1, GT:0, V, nSt
+Const: 66 5
+
+97: Line, 0, CN:2, VN:2
+lBl, W, t, DS:1 1, GT:0, V, nSt
+Const: 92 3
+
+98: Line, 0, CN:2, VN:2
+lBl, W, t, DS:1 1, GT:0, V, nSt
+Const: 79 4
+
+Ma: Hipérbola envolvente, Const: 3 i: 0 4 i: 0 5 i: 0 10 i: 0 12 i: 0 14 i: 0
+130: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, I, nSt
+
+150: Ma R, F No2, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+151: Ma R, F No3, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+152: Ma R, F No4, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+153: Ma R, F No5, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+154: Ma R, F No6, VN:6
+R, W, t, DS:1 1, GT:0, V, nSt
+
+Ma: Hipérbola envolvente, Const: 4 i: 0 5 i: 0 3 i: 0 10 i: 0 12 i: 0 14 i: 0
+186: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, I, nSt
+
+206: Ma R, F No2, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+207: Ma R, F No3, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+208: Ma R, F No4, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+209: Ma R, F No5, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+210: Ma R, F No6, VN:6
+G, W, t, DS:1 1, GT:0, V, nSt
+
+Ma: Hipérbola envolvente, Const: 5 i: 0 3 i: 0 4 i: 0 10 i: 0 12 i: 0 14 i: 0
+242: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, I, nSt
+
+262: Ma R, F No2, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+263: Ma R, F No3, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+264: Ma R, F No4, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+265: Ma R, F No5, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+266: Ma R, F No6, VN:6
+lBl, W, t, DS:1 1, GT:0, V, nSt
+
+267: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Val: -4.25979166666667 -0.15875
+
+268: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:0, I, nSt
+Val: -4.10104166666667 -0.15875
+
+269: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:0, V, nSt
+Val: -3.46604166666667 -0.714375
+

@@ -1,0 +1,193 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri293</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<H1>Problema 293 de <I>triánguloscabri</I> </H1>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=16 bgcolor="#FFFF99"> 
+      <p>Trazamos dos circulos (<i>O</i><sub>1</sub>,r<sub>1</sub>) y (<i>O</i><sub>2</sub>,<i>r</i><sub>2</sub>) 
+        tangentes externamente entre si, y a su vez tangentes a <i>BC</i> y al 
+        circuncirculo (<i>O</i>) del triángulo <i>ABC</i> externamente, de tal 
+        forma que la tangente común interna de (<i>O</i><sub>1</sub>) y (<i>O</i><sub>2</sub>) 
+        pase por <i>A</i>. Además (<i>O</i><sub>1</sub>) y (<i>O</i><sub>2</sub>) 
+        se encuentran del lado opuesto a <i>A</i> con respeto a <i>BC</i>. </p>
+      <p>De manera similar trazamos los circulos (<i>O</i><sub>3</sub>, <i>r</i><sub>3</sub>) 
+        y (<i>O</i><sub>4</sub>,<i>r</i><sub>4</sub>) tangentes a <i>AC</i> y 
+        (<i>O</i>) con su tangente común interna que pase por <i>B</i> y los circulos 
+        (<i>O</i><sub>5</sub>,<i>r</i><sub>5</sub>) y (<i>O</i><sub>6</sub>,<i>r</i><sub>6</sub>) 
+        tangentes a AB y (<i>O</i>) con su tangente común interna que pase por 
+        <i>C</i>. </p>
+      <p>Demostrar que: 1/<i>r</i><sub>1</sub>+1/<i>r</i><sub>2</sub>+1/r<sub>3</sub>+1/<i>r</i><sub>4</sub>+1/<i>r</i><sub>5</sub>+1/<i>r</i><sub>6</sub> 
+        = 2/<i>r</i>, Donde <i>r</i> = inradio de <i>ABC</i>.</p>
+    </TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=16> 
+      <DIV align=right> 
+        <P><FONT size=-1>Propuesto por Juan Carlos Salazar.</FONT></P>
+      </DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><FONT face="Verdana, Arial, Helvetica, sans-serif"><I>Solución parcial de <A 
+href="http://garciacapitan.auna.com/">Francisco Javier García Capitán</A></I> 
+  <BR>
+  </FONT></P>
+<P><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Trazado preliminar 
+  de la figura con Cabri</b></i></font></P>
+<p><a href="293a.fig"><img src="293a.jpg" width="375" height="406" align="right" border="0"></a>El 
+  enunciado planteado por nuestro amigo Juan Carlos es de cierta complejidad, 
+  por lo que vamos a aproximarnos a la soluci&oacute;n trazando primero la figura 
+  con Cabri. </p>
+<p>Como las hip&oacute;tesis sobre tangencias son abundantes, liber&eacute;monos 
+  para empezar de alguna de ellas. Consideremos un punto cualquiera <i>T</i><sub>1</sub> 
+  sobre la recta <i>BC</i> (concretamente a la izquierda de <i>B</i>, como en 
+  la figura), y supongamos que &eacute;se es el punto de tangencia con la circunferencia 
+  (<i>O</i><sub>1</sub>) (esto no ser&aacute; as&iacute;, puesto que hemos elegido a <i>T</i><sub>1</sub> 
+  de forma arbitraria, pero servir&aacute; para comenzar).</p>
+<p>A partir de <i>T</i><sub>1</sub>, podemos obtener el centro <i>O</i><sub>1</sub> de la 
+  circunferencia tangente a <i>BC</i> en <i>T</i><sub>1</sub> y tangente a la 
+  circunferencia circunscrita. Para ello, </p>
+<ol>
+  <li>Trazamos un di&aacute;metro perpendicular a <i>BC</i> y consideramos el 
+    extremo <i>Q</i> que no est&aacute; en el mismo lado de <i>BC</i> que <i>A</i>.</li>
+  <li>Unimos <i>Q</i> con <i>T</i><sub>1</sub>, cortando a la circunferencia circunscrita 
+    en <i>Z</i>. </li>
+  <li>Hallamos <i>O</i><sub>1</sub> como intersecci&oacute;n de la perpendicular por <i>T</i><sub>1</sub> 
+    a <i>BC</i> y la mediatriz del segmento <i>ZT</i><sub>1</sub>. </li>
+</ol>
+<p>Ahora, la recta tangente desde <i>A </i>a la circunferencia (<i>O</i><sub>1</sub>) 
+  deber&aacute; ser la tangente com&uacute;n a (<i>O</i><sub>1</sub>) y (<i>O</i><sub>2</sub>), 
+  y el mismo punto <i>W</i> servir&aacute; para las dos rectas. Llamemos <i>D</i> 
+  al punto de intersecci&oacute;n de la recta tangente con <i>BC</i>. El centro 
+  <i>O</i><sub>2</sub> deber&aacute; estar en la intersecci&oacute;n de la recta 
+  <i>O</i><sub>1</sub><i>W</i> y la bisectriz del &aacute;ngulo <i>WDC</i>. </p>
+<p>Moviendo <i>T</i><sub>1</sub> sobre la recta <i>BC</i> hasta conseguir que 
+  la circunferencia (O<sub>2</sub>) sea tangente a la circunferencia circunscrita, 
+  observaremos que ello parece siempre ocurrir cuando </p>
+<table width="90%" border="0" align="center">
+  <tr> 
+    <td bgcolor="#FFFF66"><font face="Arial, Helvetica, sans-serif" color="#000000">Conjetura 
+      1 </font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#FFFF66" height="20"><font size="+2" color="#000000">La recta 
+      <i>AD</i> es la bisectriz interior del &aacute;ngulo <i>A</i></font></td>
+  </tr>
+</table>
+<p>Recordemos que ello equivale a que <i>AD</i> pase por <i>Q</i>. </p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Trazado 
+  de la figura con Cabri</b></i></font></p>
+<p align="left">Vamos a aprovechar la propiedad que hemos descubierto para trazar 
+  con exactitud la figura del enunciado del problema. Comenzamos en este caso 
+  por trazar la bisectriz interior <i>AD</i> del &aacute;ngulo <i>A</i>, y ahora 
+  trazaremos una circunferencia que sea tangente a <i>BC</i>, <i>AD</i> y la circunferencia 
+  circunscrita. </p>
+<p align="left"><a href="293b.fig"><img src="293b.jpg" width="430" height="347" align="right" border="0"></a>Para 
+  ello, supongamos que la circunferencia circunscrita tiene centro <i>O</i> y 
+  radio <i>R</i>. Siguiendo a Jos&eacute; Mar&iacute;a Pedret en una construcci&oacute;n 
+  similar,</p>
+<ol>
+  <li>Trazamos las rectas <i>XK</i> y <i>XJ</i> paralelas a <i>AD</i> y <i>BC</i>, 
+    respectivamente y a distancia <i>R</i> de ellas. Esta circunferencia ser&aacute; 
+    tangente a otra circunferencia con radio <i>R</i> y centro en <i>D</i> (punteada 
+    en la figura). </li>
+  <li>Unimos <i>XO</i>, que corta en <i>U</i> a la circunferencia circunscrita. 
+  </li>
+  <li>Trazamos una paralela por <i>O</i> a <i>UD</i>, que corta en <i>O</i>1 a 
+    la recta <i>XD</i>. </li>
+  <li>Una perpendicular por <i>O</i><sub>1</sub> a <i>BC</i> da el punto de tangencia 
+    <i>T</i><sub>1</sub> en <i>BC</i>. </li>
+</ol>
+<p align="left">Para hallar la circunferencia (O<sub>2</sub>) proceder&iacute;amos 
+  de la misma forma, aunque es m&aacute;s f&aacute;cil trazar una perpendicular 
+  por <i>O</i><sub>1</sub> a <i>AD</i>, y hallar su intersecci&oacute;n con la 
+  perpendicular a <i>XD</i> (<i>XD</i> y su perpendicular son bisectrices del 
+  &aacute;ngulo <i>ADC</i>). </p>
+<p align="center"><a href="293c.fig"><img src="293c.jpg" width="549" height="446" border="0"></a> 
+</p>
+<p align="center">&nbsp;</p>
+<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Estudio 
+  con Cabri</b></i></font></p>
+<p align="left">Una vez realizada la construcci&oacute;n con Cabri, podemos mover 
+  el v&eacute;rtice <i>A</i>, comprobando que se cumple perfectamente la propiedad 
+  que hemos visto antes (la recta <i>AD</i> es la bisectriz interior del &aacute;ngulo 
+  <i>A</i>). Adem&aacute;s tambi&eacute;n podemos observar que </p>
+<ul>
+  <li><i>D</i> es el punto medio de <i>T</i><sub>1</sub> y <i>T</i><sub>2</sub>. 
+  </li>
+  <li>El punto de tangencia <i>W</i> est&aacute; en la circunferencia de di&aacute;metro 
+    <i>T</i><sub>1</sub><i>T</i><sub>2</sub>. </li>
+</ul>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Algo de Mathematica</b></i></font></p>
+<p>Unos c&aacute;lculos con <i>Mathematica</i> siguiendo la primera construcci&oacute;n</p>
+<table width="50%" border="0" align="center">
+  <tr> 
+    <td bgcolor="#006600" height="262">&nbsp;</td>
+    <td height="262"><img src="293d.jpg" width="639" height="342"></td>
+  </tr>
+</table>
+<p> nos llevan a que </p>
+<table width="90%" border="0" align="center">
+  <tr> 
+    <td bgcolor="#FFFF66"><font face="Arial, Helvetica, sans-serif" color="#000000">Conjetura 
+      2</font></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#FFFF66"><font size="+2" color="#000000">El punto de tangencia 
+      <i>W</i> es el excentro correspondiente al v&eacute;rtice <i>A</i></font></td>
+  </tr>
+</table>
+<div align="center"></div>
+<div align="center"></div>
+<p>&nbsp;</p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>Vuelta a Cabri</b></i></font></p>
+<p>La localizaci&oacute;n del punto <i>W</i> es demoledora: ahora la construcci&oacute;n 
+  es extremadamente sencilla. </p>
+<ul>
+  <li>Trazamos la bisectriz <i>AD</i> y, por ejemplo, la bisectriz exterior del 
+    &aacute;ngulo <i>C</i>, que se cortar&aacute;n en <i>W</i>. </li>
+  <li>Trazamos la circunferencia de centro <i>D</i> y radio <i>DW</i>, que cortar&aacute; 
+    a <i>BC</i> en los puntos <i>T</i><sub>1</sub> y <i>T</i><sub>2</sub>.</li>
+  <li>Trazamos la perpendicular a <i>AD</i> por <i>W</i> y las perpendiculares 
+    por <i>T</i><sub>1</sub> y <i>T</i><sub>2</sub> a <i>BC</i>, que determinar&aacute;n 
+    los centros <i>O</i><sub>1</sub> y <i>O</i><sub>2</sub>.</li>
+</ul>
+<blockquote> 
+  <blockquote> 
+    <blockquote> 
+      <p><a href="293e.fig"><img src="293e.jpg" width="455" height="412" border="0"></a></p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<p><font face="Verdana, Arial, Helvetica, sans-serif"><i><b>M&aacute;s Mathematica</b></i></font></p>
+<p>Usemos <i>Mathematica </i> de nuevo para descubrir alguna relaci&oacute;n m&aacute;s.</p>
+<p>En primer lugar, hallamos las coordenadas de los puntos de tangencia <i>T</i><sub>1</sub> 
+  y <i>T</i><sub>2</sub>. Para ello, hallamos la intersecci&oacute;n de la circunfernecia 
+  con centro <i>D</i> y radio <i>DW</i> con la recta <i>BC</i>. </p>
+<p><img src="293f.jpg" width="611" height="174"></p>
+<p>Ahora hallamos las coordenadas de los centros (<i>O</i><sub>1</sub>) y (<i>O</i><sub>2</sub>), 
+  y los cuadrados de los radios <i>r</i><sub>1</sub> y <i>r</i><sub>2</sub>.</p>
+<p><img src="293g.jpg" width="600" height="194"></p>
+<p>Con esto podemos hallar el valor de la suma 1/<i>r</i><sub>1</sub>+1/<i>r</i><sub>2 
+ </sub>:</p>
+<p><img src="293h.jpg" width="420" height="67"></p>
+<p>El resultado lo expresamos as&iacute;:</p>
+<blockquote>
+  <p><img src="293i.jpg" width="203" height="42"></p>
+</blockquote>
+<p>De forma parecida tendremos las igualdades:</p>
+<blockquote>
+  <p><img src="293j.jpg" width="407" height="42"></p>
+</blockquote>
+<p>Sumando las tres f&oacute;rmulas, obtenemos el resultado propuesto. </p>
+<blockquote> 
+  <p><img src="293k.jpg" width="554" height="100"></p>
+</blockquote>
+<p>En la &uacute;ltima parte hemos usado dos de las f&oacute;rmulas conocidas 
+  del &aacute;rea <i>S</i> del tri&aacute;ngulo <i>ABC</i>.</p>
+</BODY></HTML>

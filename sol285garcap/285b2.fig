@@ -1,0 +1,164 @@
+FIGURE CabriII vers. MS-Windows 1.0
+
+Window center x: 2.2225 y: 1.666875 Window size x: 20.7433333333333 y: 12.3825
+
+1: Pt, 0, CN:0, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Val: 0 0
+
+2: Axes, 1, CN:1, VN:3
+Gr, W, t, DS:1 1, GT:0, I, nSt
+Const: 1, Val: 1 0, 0 1
+
+3: Text, 0, CN:0, VN:1
+B, W, BTh:4, DS:1 1, GT:0, V, nSt
+Val: 92 -225 0, nA, nP, TP: 2.43416666666667, 5.953125,TS: 9.02229166666667, -7.67291666666667
+"a) El triángulo A*B*C*  es congruente o isométrico al triángulo ABC. 
+b) Si G y G* son los baricentros de los triángulos ABC y A*B*C*, entonces el segmento GG* es paralelo a AA*  y es 1/3 de AA*. ¿Qué ocurre con los incentros de esos triángulos con relación a AA'? 
+c) Al variar la ceviana AA' sobre el lado BC se construyen infinitos triángulos congruentes a ABC. Se pide c1) Lugar geométrico descrito por  todos los baricentros de esos triángulos 
+c2) Lugar geométrico descrito por todos los incentros de esos triángulos. 
+d) ¿Qué se podría decir si hacemos la construcción anterior para los catetos del triángulo rectángulo anterior? 
+e) ¿Qué se podría decir de todo lo anterior para un triángulo cualquiera, obtusángulo o acutángulo? 
+"
+p: 0, System, S: 0 C: 15 Fa: 0
+
+"O", NP: -92, -24, NS: 12, 18
+4: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Val: -2.51354166666667 0.661458333333333
+p: 0, System, S: 0 C: 15 Fa: 0
+
+5: Cir, 0, CN:1, VN:2
+B, W, t, DS:1 1, GT:0, V, nSt
+Const: 4, Val: 3.07941356982588
+
+6: Line, 0, CN:1, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 4, Val: -1 0
+
+"A", NP: -87, -157, NS: 10, 18
+7: Pt/, 0, CN:1, VN:3
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 5, Val: -2.24511857713129 3.72915078516615
+p: 0, System, S: 0 C: 6 Fa: 0
+
+"B", NP: -225, -30, NS: 12, 18
+8: Int, 33024, CN:2, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 6 5
+p: 0, System, S: 0 C: 6 Fa: 0
+
+"C", NP: 24, -24, NS: 11, 18
+9: Int, 32768, CN:2, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 6 5
+p: 0, System, S: 0 C: 6 Fa: 0
+
+10: Tr, 0, CN:3, VN:0
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 7 8 9
+
+11: Seg, 0, CN:2, VN:0
+V, W, t, DS:1 1, GT:0, V, nSt
+Const: 8 9
+
+"A'", NP: -135, -21, NS: 14, 18
+12: Pt/, 0, CN:1, VN:3
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 11, Val: -3.59833333333333 0.661458333333333
+p: 0, System, S: 0 C: 6 Fa: 0
+
+13: Line, 0, CN:2, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 7 12
+
+"A*", NP: -190, 60, NS: 16, 18
+14: Int, 0, CN:3, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 13 5 7
+p: 0, System, S: 0 C: 3 Fa: 0
+
+15: Seg, 0, CN:2, VN:0
+V, W, t, DS:1 1, GT:0, V, nSt
+Const: 7 14
+
+16: Par, 0, CN:2, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 8 15
+
+17: Par, 0, CN:2, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 9 15
+
+"C*", NP: -16, 61, NS: 17, 18
+18: Int, 0, CN:3, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 17 5 9
+p: 0, System, S: 0 C: 3 Fa: 0
+
+"B*", NP: -188, -127, NS: 18, 18
+19: Int, 0, CN:3, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 16 5 8
+p: 0, System, S: 0 C: 3 Fa: 0
+
+20: Seg, 0, CN:2, VN:0
+B, W, t, DS:1 1, GT:0, V, nSt
+Const: 8 19
+
+21: Seg, 0, CN:2, VN:0
+B, W, t, DS:1 1, GT:0, V, nSt
+Const: 9 18
+
+22: Tr, 0, CN:3, VN:0
+R, W, t, DS:1 1, GT:0, V, nSt
+Const: 18 19 14
+
+23: Biss, 0, CN:3, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 8 7 9
+
+24: Biss, 0, CN:3, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 7 8 9
+
+"I", NP: -85, -73, NS: 6, 18
+25: Int, 0, CN:2, VN:1
+Bl, W, t, DS:1 1, GT:1, V, nSt
+Const: 24 23
+p: 0, System, S: 0 C: 6 Fa: 0
+
+26: Perp, 512, CN:2, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 25 10
+
+27: Int, 2, CN:2, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Const: 10 26
+
+28: Cir, 0, CN:2, VN:2
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 25 27
+
+29: PBiss, 0, CN:1, VN:2
+V, W, t, DS:1 1, GT:0, I, nSt
+Const: 15
+
+"I*", NP: -126, 16, NS: 12, 18
+30: Refl, 0, CN:2, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 25 29
+p: 0, System, S: 0 C: 3 Fa: 0
+
+31: Refl, 0, CN:2, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+Const: 27 29
+
+32: Cir, 0, CN:2, VN:2
+R, W, t, DS:1 1, GT:0, V, nSt
+Const: 30 31
+
+33: Seg, 0, CN:2, VN:0
+V, W, t, DS:1 1, GT:0, V, nSt
+Const: 25 30
+

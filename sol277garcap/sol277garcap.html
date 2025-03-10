@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
+        "HTMLFiles/xhtml-math11-f.dtd">
+
+<!-- Created by Wolfram Mathematica 5.1 -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>
+  trianguloscabri277.nb
+ </title>
+ <link href="HTMLFiles/Textbook.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p class="Title">
+ Problema 277 de <span style='font-style: italic;'>trianguloscabri</span>
+</p>
+
+
+
+<p class='Subsubtitle' style='background-color: #FFFF80;'>
+ [1] (Juan Bosco Romero) Sea A* un punto interior de BC en el tri&aacute;ngulo ABC. Las bisectrices interiores de loa &aacute;ngulos BA*A y CA*A intersecan a AB y a AC en D y E respectivamente. Demostrar que AA*, BE y CD son concurrentes.<br />[2] (Loeffer) Lugar geom&eacute;trico del punto de concurrencia si ABC es equil&aacute;tero. <br />[3] (J.B. Romero) Lugar geom&eacute;trico de los baricentros, circuncentros, ortocentros e incentros de los tri&aacute;ngulos A*ED, rect&aacute;ngulos en A*, cuando A* varia sobre BC. 
+</p>
+
+
+
+<p class='Text' style='text-align: right;'>
+ Propuesto por Juan Bosco Romero M&aacute;rquez.
+</p>
+
+
+
+<p class="MathCaption"> Este documento contiene soluciones para los apartados 
+  [1] y [2]. El c&oacute;digo fuente con las instrucciones de Mathematica <a href="sol277garcap.nb">est&aacute; 
+  aqu&iacute;</a>. </p>
+
+
+
+<p class='Subsection' style='color: #0000FF;'>
+ Preliminares
+</p>
+
+
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Usaremos coordenadas baric&eacute;ntricas:
+</p>
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_1.gif" alt="&lt;&lt;Baricentricas` ;"  width="128" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Tambi&eacute;n representaremos gr&aacute;ficas de curvas con ecuaciones impl&iacute;citas:
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_2.gif" alt="&lt;&lt;Graphics`ImplicitPlot` ;"  width="183" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Adem&aacute;s definimos una nueva funci&oacute;n para calcular las bisectrices del &aacute;ngulo formado por dos rectas. 
+</p>
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_3.gif" alt="BisectrizRectas[{a1_, b1_, c1_}, {a2_, b2_, c2_}] := (a1 x + b1 y + c1 z)^2/(SA (b1 - c1)^2  ...  (a1 - b1)^2) - <br /> (a2 x + b2 y + c2 z)^2/(SA (b2 - c2)^2 + SB (c2 - a2)^2 + SC (a2 - b2)^2)"  width="426" height="60"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ El problema de esta funci&oacute;n es que devuelve el producto de las dos ecuaciones correspondientes a las bisectrices interiores y exteriores, y pocas veces es f&aacute;cil separarlas. Afortunadamente, en el caso que nos ocupa, no necesitamos expl&iacute;citamente las&nbsp;&nbsp;ecuaciones, s&oacute;lo el lugar en que cortan las bisectrices a los lados del tri&aacute;ngulo, por lo que los c&aacute;lculos se simplificar&aacute;n.
+</p>
+
+
+
+<p class='Subsection' style='color: #0000FF;'>
+ [1] (Juan Bosco Romero) Sea A*un punto interior de BC en el tri&aacute;ngulo ABC.Las bisectrices interiores de loa &aacute;ngulos BA*A y CA*A intersecan a AB y a AC en D y E respectivamente.Demostrar que AA*,BE y CD son concurrentes.
+</p>
+
+
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Comenzamos introduciendo las coordenadas del punto A*
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_4.gif" alt="ptA1 = {0, v, w} ;"  width="114" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Ahora hallamos los puntos de intersecci&oacute;n D y E.
+</p>
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_5.gif" alt="Solve[{BisectrizRectas[Recta[ptA1, ptA], Recta[ptA1, ptB]] &#62513;0, z&#62513;0}, x]"  width="507" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_6.gif" alt="Solve[{BisectrizRectas[Recta[ptA1, ptA], Recta[ptA1, ptC]] &#62513;0, y&#62513;0}, x]"  width="507" height="18"  style="vertical-align:middle" />
+</p>
+
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_7.gif" alt="{{x&#62754; -(a w y)/(c^2 v^2 - a^2 v w + b^2 v w + c^2 v w + b^2 w^2)^(1/2)}, {x&#62754; (a w y)/(c^2 v^2 - a^2 v w + b^2 v w + c^2 v w + b^2 w^2)^(1/2)}}"  width="564" height="32"  style="vertical-align:middle" />
+</p>
+
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_8.gif" alt="{{x&#62754; -(a v z)/(c^2 v^2 - a^2 v w + b^2 v w + c^2 v w + b^2 w^2)^(1/2)}, {x&#62754; (a v z)/(c^2 v^2 - a^2 v w + b^2 v w + c^2 v w + b^2 w^2)^(1/2)}}"  width="564" height="32"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Entonces, podemos definir
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_9.gif" alt="ptD = {a w, (c^2 v^2 - a^2 v w + b^2 v w + c^2 v w + b^2 w^2)^(1/2), 0} ; "  width="347" height="22"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_10.gif" alt="ptE = {a v, 0, (c^2 v^2 - a^2 v w + b^2 v w + c^2 v w + b^2 w^2)^(1/2)} ;"  width="339" height="22"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Comprobamos que AA*,&nbsp;&nbsp;BE y CD&nbsp;&nbsp;est&aacute;n alineados.
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_11.gif" alt="Det[{Recta[ptA, ptA1], Recta[ptB, ptE], Recta[ptC, ptD]}]"  width="402" height="18"  style="vertical-align:middle" />
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_12.gif" alt="0"  width="11" height="17"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsection' style='color: #0000FF;'>
+ [2] (Loeffer) Lugar geom&eacute;trico del punto de concurrencia si ABC es equil&aacute;tero.
+</p>
+
+
+
+<p class="MathCaption">
+ Esta es la soluci&oacute;n para el caso general de cualquier tri&aacute;ngulo ABC.
+</p>
+
+
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Hallemos el punto de concurrencia P de AA*, BE y CD.
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_13.gif" alt="ptP = Punto[Recta[ptA, ptA1], Recta[ptB, ptE]]"  width="318" height="18"  style="vertical-align:middle" />
+</p>
+
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_14.gif" alt="{a v w, v (c^2 v (v + w) + w (-a^2 v + b^2 (v + w)))^(1/2), w (c^2 v (v + w) + w (-a^2 v + b^2 (v + w)))^(1/2)}"  width="525" height="26"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Para hallar el lugar geom&eacute;trico de P,&nbsp;&nbsp;despejamos&nbsp;&nbsp;v, w de las dos &uacute;ltimas coordenadas y sustiuimos en la primera:
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_15.gif" alt="Solve[{y == %[[2]], z == %[[3]]}, {v, w}]"  width="271" height="18"  style="vertical-align:middle" />
+</p>
+
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_16.gif" alt="{{v&#62754; -y/(c^2 y^2 - a^2 y z + b^2 y z + c^2 y z + b^2 z^2)^(1/4), w&#62754; -z/(c^2 y^ ... + c^2 y z + b^2 z^2)^(1/4), w&#62754;z/(c^2 y^2 - a^2 y z + b^2 y z + c^2 y z + b^2 z^2)^(1/4)}}"  width="587" height="141"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_17.gif" alt="[Graphics:HTMLFiles/index_17.gif]"  width="311" height="34"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Entonces la ecuaci&oacute;n del lugar del punto P es 
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_18.gif" alt="lugarP = x^2 (c^2 y^2 - a^2 y z + b^2 y z + c^2 y z + b^2 z^2) - a^2y^2z^2 ;"  width="359" height="19"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Para obtener una figura simple de esta curva consideramos un tri&aacute;ngulo concreto y definimos una ventana para la figura:
+</p>
+
+
+
+<p class="CellLabel">
+ In[14]:=
+</p>
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_19.gif" alt="cA = {0, 3} ;"  width="79" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_20.gif" alt="cB = {-4, -1} ;"  width="94" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_21.gif" alt="cC = {2, -1} ;"  width="86" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_22.gif" alt="ampl = 5 ;"  width="60" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_23.gif" alt="vax = {x, -ampl, ampl} ; vay = {y, -ampl, ampl} ;"  width="306" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Ahora dibujamos el tri&aacute;ngulo y la curva:
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_24.gif" alt="triangulo = Graphics[{RGBColor[0, 0, 1], Line[{cA, cB, cC, cA}]}] ;"  width="445" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_25.gif" alt="curvalugarP = ImplicitPlot[BarCar[lugarP&#62513;0, cA, cB, cC], vax, vay, DisplayFunction&#6 ... dentity, PlotPoints&#62754;100, PlotStyle&#62754; {AbsoluteThickness[1.7], RGBColor[1, 0, 0]}] ;"  width="646" height="38"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_26.gif" alt="Show[{triangulo, curvalugarP}, Axes&#62754;False, AspectRatio&#62754;Automatic, ImageSize&#62754;400] ;"  width="589" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Graphics">
+ <img src="HTMLFiles/index_27.gif" alt="[Graphics:HTMLFiles/index_27.gif]"  width="400" height="252"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Para conseguir una descripci&oacute;n de esta curva, calculamos su conjugada isogonal, en busca de una f&oacute;rmula m&aacute;s sencilla: 
+</p>
+
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_28.gif" alt="Factor[lugarP /.{x&#62754;a^2/x, y&#62754;b^2/y, z&#62754; c^2/z}]"  width="296" height="35"  style="vertical-align:middle" />
+</p>
+
+<p class="CellLabel">
+ Out[22]=
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_29.gif" alt="-(a^2 b^2 c^2 (b^2 c^2 x^2 - a^2 c^2 y^2 + a^4 y z - a^2 b^2 y z - a^2 c^2 y z - a^2 b^2 z^2))/(x^2 y^2 z^2)"  width="402" height="35"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Obtenemos que la conjugada isogonal del lugar de P es una c&oacute;nica. Si localizamos CINCO puntos que pertenezcan a la c&oacute;nica, &eacute;sta quedar&aacute; determinada. Hallemos los puntos de corte con los lados (o sus prolongaciones del tri&aacute;ngulo ABC):
+</p>
+
+
+
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_30.gif" alt="isogonallugarP = b^2 c^2 x^2 - a^2 c^2 y^2 + a^4 y z - a^2 b^2 y z - a^2 c^2 y z - a^2 b^2 z^2 ;"  width="449" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_31.gif" alt="Solve[{isogonallugarP == 0, z == 0}, x]"  width="258" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_32.gif" alt="Solve[{isogonallugarP == 0, y == 0}, x]"  width="258" height="18"  style="vertical-align:middle" />
+</p>
+
+<p class="CellLabel">
+ Out[24]=
+</p>
+
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_33.gif" alt="{{x&#62754; -(a y)/b}, {x&#62754; (a y)/b}}"  width="160" height="28"  style="vertical-align:middle" />
+</p>
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_34.gif" alt="{{x&#62754; -(a z)/c}, {x&#62754; (a z)/c}}"  width="160" height="28"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Resulta entonces que la c&oacute;nica corta a la recta AB en los puntos <span><span><img src="HTMLFiles/index_35.gif" alt="C_1"  width="17" height="17"  style="vertical-align:middle" /></span></span>(a,b,0)&nbsp;&nbsp;y&nbsp;&nbsp;<span><span><img src="HTMLFiles/index_36.gif" alt="C_2"  width="17" height="17"  style="vertical-align:middle" /></span></span>(-a,b,0), que son los mismos puntos en los que las bisectrices del &aacute;ngulo C cortan a la recta AB (recordemos que (a,b,c) son las coordenadas del incentro). De forma parecida, la c&oacute;nica corta a AC en los puntos&nbsp;&nbsp;<span><span><img src="HTMLFiles/index_37.gif" alt="B_1"  width="17" height="17"  style="vertical-align:middle" /></span></span>(a,0, c) y&nbsp;&nbsp;<span><span><img src="HTMLFiles/index_38.gif" alt="B_2"  width="17" height="17"  style="vertical-align:middle" /></span></span>(-a,0,c). Con esto tenemos CUATRO puntos de la c&oacute;nica. 
+</p>
+
+
+
+<p class='MathCaption' style='font-weight: normal;'>
+ Necesitamos otro punto m&aacute;s de la c&oacute;nica. En esta parte agradezco la ayuda de Bernard Gibert, miembro del grupo Hyacinthos, por comunicarme que&nbsp;&nbsp;los v&eacute;rtices&nbsp;&nbsp;Y, Z, correspondientes a B y C del tri&aacute;ngulo tangencial XYZ de ABC tambi&eacute;n est&aacute;n en la c&oacute;nica. Su razonamiento es que como los puntos 1:1:-1 y 1:-1:1 pertenecen claramente a la curva del lugar geom&eacute;trico de P, sus puntos isogonales, es decir, los v&eacute;rtices del tri&aacute;ngulo tangencial, estar&aacute;n en la conjugada de la curva, la c&oacute;nica.
+</p>
+
+
+
+<p class='Subsubsection' style='font-weight: normal;'>
+ Comprobemos directamente que los v&eacute;rtices Y, Z est&aacute;n en la c&oacute;nica:
+</p>
+
+
+<p class="Input">
+ <img src="HTMLFiles/index_39.gif" alt="Factor[isogonallugarP /. {x&#62754;a^2, y&#62754;b^2, z&#62754; -c^2}]"  width="338" height="19"  style="vertical-align:middle" />
+</p>
+
+<p class="Input">
+ <img src="HTMLFiles/index_40.gif" alt="Factor[isogonallugarP /. {x&#62754;a^2, y&#62754; -b^2, z&#62754;c^2}]"  width="338" height="19"  style="vertical-align:middle" />
+</p>
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_41.gif" alt="0"  width="11" height="17"  style="vertical-align:middle" />
+</p>
+
+
+<p class="Output">
+ <img src="HTMLFiles/index_42.gif" alt="0"  width="11" height="17"  style="vertical-align:middle" />
+</p>
+
+<p class='Subsubsection' style='font-weight: normal;' align="center"> Con esto 
+  no tenemos CINCO, sino <span style='font-weight: bold;'>SEIS</span> puntos de 
+  la c&oacute;nica, por lo que dicha c&oacute;nica queda determinada. <br>
+  <img src="HTMLFiles/sol277garcap.jpg" width="505" height="418"> </p>
+
+
+
+<hr />
+
+<table><tr>
+<td style='font-family: Helvetica; font-size: 10px; width: 100%'>Created by
+ <a href="http://www.wolfram.com"><span style='font-style: italic'>Mathematica</span></a>
+ &nbsp;(October 17, 2005)</td>
+<td><img src='http://www.w3.org/Icons/valid-xhtml11.gif'
+ alt='Valid XHTML 1.1!' height='31' width='88' /></td>
+</tr></table>
+</body>
+
+</html>

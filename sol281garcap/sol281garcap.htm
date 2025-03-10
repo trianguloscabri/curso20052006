@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>trianguloscabri281</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<h1>Problema 281 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0">
+  <tr> 
+    <td bgcolor="#FFFF99" height="189"> 
+      <p> Las hipotenusas de dos tri&aacute;ngulos rect&aacute;ngulos semejantes 
+        est&aacute;n sobre dos rectas m y m&#146; que forman un &aacute;ngulo 
+        de 30&ordm; y se cortan en un punto P. Los v&eacute;rtices B y C del primero 
+        distan de P, PB=1, PC=6, y los v&eacute;rtices B&#146;y C&#146; del segundo, 
+        hom&oacute;logos de B y C en la semejanza, PB&#146;=2 PC&#146;=4,5. Los 
+        catetos del primer tri&aacute;ngulo miden b=4 c=3. Sabiendo que la semejanza 
+        entre los dos tri&aacute;ngulos es directa, halla:</p>
+      <p><i>a</i>) el centro o punto doble de la semejanza directa.<br>
+        <i>b</i>) dibujado el primer tri&aacute;ngulo ABC, halla A&#146;, hom&oacute;logo 
+        del v&eacute;rtice A del &aacute;ngulo recto del primero, utilizando para 
+        ello el giro y la homotecia de cuyo producto resulta la semejanza.</p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+  <tr> 
+    <td height="2"> 
+      <div align="right"> <font size="-1">Mart&iacute;nez, J. Bujanda, M.P., Velloso, 
+        J.M. (1984): Matem&aacute;ticas-1 (EU de Magisterio de E.G.B.) Ediciones 
+        S.M. Madrid (pag 382).</font> </div>
+    </td>
+  </tr>
+</table>
+<p>Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco Javier 
+  Garc&iacute;a Capit&aacute;n</a></p>
+<p>Usemos Cabri G&eacute;om&egrave;tre para resolver el problema. Al final, como 
+  complemento, se incluyen <a href="281.nb">instrucciones de <i>Mathematica</i></a> 
+  para mostrar otra forma de enfocar el problema.</p>
+<h3>Soluci&oacute;n con Cabri</h3>
+<p> En primer lugar, para trazar dos rectas que forman un &aacute;ngulo de 30&ordm;, 
+  elegimos un punto <i>Q</i> sobre una de ellas y trazamos las circunferencias 
+  con centros <i>P</i> y <i>Q</i> y radio <i>PQ</i>, que se cortan en un punto 
+  <i>R</i>. Ahora trazamos la recta que pasa por <i>P</i> y el punto medio de 
+  <i>QR</i>.</p>
+<p align="center"><img src="281a.gif" width="356" height="262"></p>
+<p align="left">Sobre la primera recta se&ntilde;alamos un punto <i>B</i>, de 
+  manera que <i>PB</i> es el segmento unidad, y a partir de el usando repetidamente 
+  la simetr&iacute;a respecto de un punto obtenemos los puntos <i>P</i>1 sim&eacute;trico 
+  de <i>P</i> respecto de <i>B</i>, <i>P</i>2 sim&eacute;trico de B respecto de 
+  P1, etc hasta C, sim&eacute;trico de <i>P</i>4 respecto de <i>P</i>3. Con centro 
+  <i>P</i> y radio <i>PP</i>1 trazamos una circunferencia que corta a la segunda 
+  recta en <i>B'</i>, y con centro <i>P</i> y radio <i>PZ</i> siendo <i>Z</i> 
+  el punto medio de <i>P</i>3<i>P</i>4 trazamos otra circunferencia que cortar&aacute; 
+  en <i>C'</i> a la segunda recta. </p>
+<p align="center"><img src="281b.gif" width="409" height="275"></p>
+<p align="left">Usando <i>B</i> y <i>C</i> como centro y radios <i>BP</i>3=3 y 
+  <i>CP</i>1=4 obtenemos dos circunferencias que se cortar&aacute;n en los posibles 
+  v&eacute;rtices <i>A</i>. Aqu&iacute; hemos puesto el que queda separado de 
+  <i>B'C'</i> por la recta <i>BC</i>.</p>
+<p align="center"><img src="281c.gif" width="540" height="353"></p>
+<p align="left">El punto <i>A'</i> podr&iacute;a obtenerse de forma similar dividiendo 
+  <i>B'C'</i> en cinco partes, pero en el ejercicio nos piden que lo hallemos 
+  de otra manera. </p>
+<p align="left">En primer lugar, para responder al <b>apartado <i>a</i>)</b>, 
+  vamos a hallar el punto fijo de la semejanza. </p>
+<p align="left"><img src="281d.gif" width="280" height="261" align="right">Para 
+  ello, hallamos la intersecci&oacute;n <i>Q</i> de las rectas <i>BB'</i> y <i>CC'</i> 
+  y el otro punto de intersecci&oacute;n de las circunferencias <i>BQC</i> y <i>B'QC'</i>. 
+  Teniendo en cuenta que </p>
+<ul>
+  <li>los &aacute;ngulos inscritos que abarcan el mismo arco son iguales,</li>
+  <li>los &aacute;ngulos opuestos de un cuadril&aacute;tero inscrito son suplementarios, 
+  </li>
+</ul>
+<p>deducimos que</p>
+<ul>
+  <li><font face="Symbol">&ETH;</font><i>OCB = <font face="Symbol">&ETH;</font><i>OQB</i> = </i><font face="Symbol">&ETH;</font><i><i>OQB' </i></i><font face="Symbol"> = &ETH;</font><i><i><i>OC'B'</i></i></i>.<i><i><i> </i></i></i></li>
+  <li><font face="Symbol">&ETH;</font><i>OBC</i> = 180&ordm; -<font face="Symbol">&ETH;</font><i>OQC</i> = 180&ordm; - <font face="Symbol">&ETH;</font><i>OQC'</i> = 180&ordm; -<font face="Symbol"> &ETH;</font><i>OB'C'</i>,</li>
+</ul>
+<p align="left">Por tanto, los tri&aacute;ngulos <i>OBC</i> y <i>OB'C'</i> son 
+  semejantes y el tri&aacute;ngulo <i>OB'C'</i> es el resultado de aplicar al 
+  tri&aacute;ngulo <i>OBC</i> primero un giro y despu&eacute;s una homotecia, 
+  ambos con centro <i>O</i>. El giro tendr&aacute; amplitud <font face="Symbol">&ETH;</font><i>BOB' 
+  =<font face="Symbol">&ETH;</font><i>COC' </i>=</i>30&ordm; que es el &aacute;ngulo 
+  formado por las rectas BC y <i>B'C'</i>. La homotecia tendr&aacute; raz&oacute;n 
+  1/2, que es el cociente entre las longitudes <i>B'C'</i> y <i>BC</i>.</p>
+<p align="left"><img src="281e.gif" width="413" height="360" align="right">Para 
+  responder al <b>apartado <i>b</i>)</b><i> </i>podriamos usar la herramienta 
+  <b>Rotaci&oacute;n</b> de Cabri, pero para hacerlo algo m&aacute;s artesanal 
+  seguimos los siguientes pasos:</p>
+<ol>
+  <li>Trazamos la recta OA.</li>
+  <li>Trazamos una circunferencia con centro <i>P</i> y radio <i>OA</i>, que corta 
+    a las rectas dadas en los puntos <i>K</i> y <i>L</i>. </li>
+  <li>Con centro A y radio KL trazamos una circunferencia.</li>
+  <li>Con centro <i>O</i> y radio <i>OA</i> trazamos otra circunferencia que corta 
+    a la anterior en un punto <i>L'</i> (tambi&eacute;n se cortar&aacute;n en 
+    otro punto sim&eacute;trico de <i>L' </i>respecto de la recta <i>OA</i>, pero 
+    &eacute;ste no nos interesa). El punto <i>L' </i>es el resultado de aplicar 
+    a A un giro con centro O y radio 30&ordm;.</li>
+  <li>Ahora hallamos el punto medio <i>A'</i> del segmento <i>OL</i> y <i>A'</i> 
+    es el punto buscado. </li>
+</ol>
+<h3>Instrucciones de <i>Mathematica</i></h3>
+<p><img src="math1.gif" width="581" height="105"></p>
+<p><img src="math2.gif" width="366" height="236"></p>
+<p><img src="math4.gif" width="714" height="210"></p>
+<p><img src="math5.gif" width="397" height="135"></p>
+<p><img src="math6.gif" width="534" height="178"></p>
+</body>
+</html>

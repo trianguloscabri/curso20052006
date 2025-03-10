@@ -1,0 +1,194 @@
+<title>trianguloscabri284</title> 
+
+
+<body bgcolor="#FFFFFF">
+<h1>Problema 289 de <i>tri&aacute;nguloscabri</i> </h1>
+<table width="100%" border="0" height="33">
+  <tr> 
+    <td bgcolor="#FFFF99" height="22"> 
+      <p>Construir un tri&aacute;ngulo conociendo <i>A</i>, <i>w'b (bisectriz 
+        exterior del &aacute;ngulo B) y </i> <i>ra</i> (radio de la circunferencia 
+        exinscrita correspondiente a <i>A</i>). </p>
+    </td>
+  </tr>
+  <tr> 
+    <td height="4"> 
+      <div align="right"><font size="-1">Propuesto por Lu&iacute;s Lopes</font> 
+      </div>
+    </td>
+  </tr>
+</table>
+<p>Soluci&oacute;n <a href="http://garciacapitan.auna.com/">Francisco Javier Garc&iacute;a 
+  Capit&aacute;n</a></p>
+<table width="17%" border="0" align="right">
+  <tr> 
+    <td><img src="289a.jpg" width="283" height="324" align="right"></td>
+    <td><img src="289b.jpg" width="209" height="331"></td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Figura 
+        1</font></div>
+    </td>
+    <td> 
+      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Figura 
+        2</font></div>
+    </td>
+  </tr>
+</table>
+<p><b>An&aacute;lisis</b></p>
+<p>Supongamos el problema resuelto. En las figuras 1 y 2 vemos c&oacute;mo la 
+  bisectriz interior de &aacute;ngulo <i>A</i> y la bisectriz exterior del &aacute;ngulo 
+  <i>B</i> se cortan en el excentro <i>I<sub>a</sub></i>. Tambi&eacute;n hemos 
+  situado los puntos <i>J</i>, proyecci&oacute;n ortogonal de <i>I<sub>a</sub></i> 
+  sobre <i>AB</i> y <i>D</i>, intersecci&oacute;n de la bisectriz exterior de 
+  <i>B</i> con la recta <i>AC</i>. </p>
+<p>Observamos que en la figura 1 el segmento <i>AI<sub>a</sub></i> es la bisectriz 
+  exterior del &aacute;ngulo <i>A </i>en el tri&aacute;ngulo <i>ABD</i>, mientras 
+  que en la figura 2 el mismo segmento es la bisectriz interior. </p>
+<p>Estas figuras sugieren los siguientes pasos en la soluci&oacute;n del problema:</p>
+<ul>
+  <li>A partir del &aacute;ngulo <i>A</i>/2 y de <i>r<sub>a</sub></i> construimos 
+    el tri&aacute;ngulo rect&aacute;ngulo <i>AJI<sub>a</sub></i> y entonces la 
+    longitud <i>AI<sub>a</sub></i>.</li>
+  <li>Construcci&oacute;n del tri&aacute;ngulo <i>ABD</i>: 
+    <ul>
+      <li>Siguiendo la figura 1 podemos ahora construir el tri&aacute;ngulo <i>ABD</i>, 
+        ya que tenemos el &aacute;ngulo 180-<i>A</i>, el lado opuesto <i>w'<sub>b</sub> 
+        </i>y la longitud de la bisectriz exterior de dicho &aacute;ngulo que 
+        es <i>AI<sub>a</sub></i>. Recordemos que esta construcci&oacute;n es la 
+        tratada en el problema 429 del libro <i>Problemas Gr&aacute;ficos de Geometr&iacute;a</i>, 
+        de Juan Sapi&ntilde;a Borja (ver <a href="sol/sol284garcap/sol284garcap.htm">problema 
+        284</a> del <i>Laboratorio de Tri&aacute;ngulos</i> de <i>Ricardo Barroso 
+        Campos</i>).</li>
+      <li><img src="429b.jpg" width="185" height="214" align="right">Atendiendo 
+        a la vez a la figura 2 tambi&eacute;n podemos construir otro tri&aacute;ngulo 
+        <i>ABD</i> en el que conocemos el &aacute;ngulo <i>A</i>, el lado opuesto 
+        <i>w'<sub>b</sub> </i>y la longitud de la bisectriz interior de dicho 
+        &aacute;ngulo que es <i>AI<sub>a</sub></i>. Para esta construcci&oacute;n 
+        podemos adaptar la soluci&oacute;n de Juan Sapi&ntilde;a en el <a href="sol/sol284garcap/sol284garcap.htm">problema 
+        284</a>, b&aacute;sicamente intercambiando los papeles de los puntos <i>S</i> 
+        y <i>T</i>. En efecto, observemos que si A, <i>a</i> y <i>w<sub>a</sub></i> 
+        son conocidos, entonces haciendo una figura parecida a la del problema 
+        284 tendremos que el cuadril&aacute;tero ALMS es c&iacute;clico y por 
+        ello tendrmeos que <i>TL</i>&middot;<i>TA</i> = <i>TM</i>.<i>TS</i> y 
+        que <i>TA</i> - <i>TL</i> = <i>w<sub>a</sub></i>. </li>
+    </ul>
+  </li>
+  <li>Una vez hallado el tri&aacute;ngulo <i>ABD</i>, la recta <i>BC</i> la obtenemos 
+    haciendo una simetr&iacute;a axial de la recta <i>AB</i> respecto de la recta 
+    <i>BD</i>, y el punto <i>C</i> se halla cortando las rectas <i>BC</i> y <i>AD.</i></li>
+</ul>
+<p><b>La construcci&oacute;n paso a paso</b></p>
+<p>Detallemos los pasos a seguir con Cabri para obtener las dos souciones:</p>
+<table width="100%" border="0">
+  <tr> 
+    <td width="61%" valign="top"><b>Figura 3</b>. Partimos del &aacute;ngulo <i>A 
+      </i> y los segmentos <i>w'<sub>b</sub></i> y <i>r<sub>a</sub></i>.</td>
+    <td width="39%"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td> 
+            <div align="center"><img src="paso1.jpg" width="362" height="103"></div>
+          </td>
+        </tr>
+        <tr> 
+          <td> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Figura 
+              3</font></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td width="61%" valign="top" height="279"> 
+      <p><b>Figura 4</b>. Fijamos un segmento <i>YZ</i> de longitud <i>r<sub>a</sub></i> 
+        y trazamos el arco capaz de dicho segmento para el &aacute;ngulo <i>A</i>/2.</p>
+      <p>Por Z levantamos una perpendicular a <i>YZ</i> y obtenemos <i>X</i> en 
+        la intersecci&oacute;n con el arco capaz. </p>
+      <p>Entonces el segmento <i>XY</i> medir&aacute; lo mismo que el segmento 
+        <i>AI<sub>a</sub></i> de las figuras 1 y 2.</p>
+      <p><b>Figura 5</b>. Ahora vamos a construir los tri&aacute;ngulos <i>ABD</i>. 
+        Para ello fijamos un segmento <i>BD</i> de longitud <i>w'<sub>b</sub></i> 
+        y construimos los arcos capaces <i>BSD</i> y <i>BTD</i> del segmento <i>BD</i> 
+        para los &aacute;ngulos 180&ordm;-<i>A</i> y <i>A</i>, respectivamente. 
+        Como se ve en la figura, estos dos arcos pertenecen a la misma circunferencia.</p>
+    </td>
+    <td width="39%" height="279"> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="52%"> 
+            <div align="center"><img src="paso2.jpg" width="241" height="246"></div>
+          </td>
+          <td width="48%"> 
+            <div align="center"><img src="paso3.jpg" width="233" height="258"></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="52%"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Figura 
+              4</font></div>
+          </td>
+          <td width="48%"> 
+            <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Figura 
+              5</font></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="5%" border="0" align="right">
+  <tr> 
+    <td> 
+      <div align="center"><img src="paso4.jpg" width="465" height="495"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">Figura 
+        6</font></div>
+    </td>
+  </tr>
+</table>
+<p><b>Figura 6</b>. Dibujemos el segmento <i>DB</i> de longitud <i>w'<sub>b</sub></i>. 
+  Hallamos el punto sim&eacute;trico <i>M'</i> de <i>M</i> respecto de <i>S</i> 
+  y trazamos una semicircunferencia con di&aacute;metro <i>TM'</i>. La perpendicular 
+  por S a ST corta a dicha semicircunferencia en <i>U</i>. Tendremos <i>SU^2</i> 
+  = <i>SM'</i>&middot;<i>ST</i> = <i>SM</i>&middot;<i>ST</i>. Ahora, si a continuaci&oacute;n 
+  del segmento TS trazamos la circunferencia con di&aacute;metro <i>SQ</i> = <i>XY</i> 
+  = <i>AI<sub>a</sub></i>, y desde U trazamos por su centro una recta que corta 
+  a &eacute;sta en V y W, tendremos <i>SU^2</i> = <i>UV</i>&middot;<i>UW</i>, 
+  y por tanto que <i>UV</i>&middot;<i>UW</i>=<i>SM</i>&middot;<i>ST</i>. Tambi&eacute;n 
+  es <i>UW</i>-<i>WV</i> = <i>VW</i>=<i>SQ</i>=<i>AI<sub>a</sub></i>.</p>
+<p>Ahora trazando un arco con centro <i>S</i> y radio <i>UW</i> cortamos en <i>K</i> 
+  a la recta <i>DB</i> y la recta <i>SK</i> corta a la circunferencia <i>ST</i> 
+  en <i>A<sub>1</sub></i>, siendo <i>A<sub>1</sub>K</i>=<i>AI<sub>a</sub></i> 
+  la tangente exterior del &aacute;ngulo <i>A<sub>1</sub></i> del tri&aacute;ngulo 
+  <i>A<sub>1</sub>DB</i>.</p>
+<p>Para obtener la segunda soluci&oacute;n hallamos el corte del mismo arco con 
+  cetro <i>S</i> y radio <i>UW</i> con la circunferencia de di&aacute;metro <i>ST</i>, 
+  obteniendo el punto <i>A<sub>2</sub>. </i></p>
+<p>Para completar las soluciones en ambos casos repetimos lo dicho anteriormente: 
+</p>
+<ul>
+  <li>Una vez hallado el tri&aacute;ngulo <i>ABD</i>, la recta <i>BC</i> la obtenemos 
+    haciendo una simetr&iacute;a axial de la recta <i>AB</i> respecto de la recta 
+    <i>BD</i>, y el punto <i>C</i> se halla cortando las rectas <i>BC</i> y <i>AD.</i></li>
+</ul>
+<p><b>Discusi&oacute;n</b></p>
+<p>En la segunda soluci&oacute;n, si el punto <i>C<sub>2</sub></i> no cae dentro 
+  de la circunferencia de di&aacute;metro <i>ST</i>, entonces la soluci&oacute;n 
+  no es v&aacute;lida ya que el &aacute;ngulo <i>A<sub>2</sub></i> no es igual 
+  al valor dado del &aacute;ngulo <i>A</i>, sino su sumplementario.</p>
+<p align="center"><applet codebase="../" archive="CabriJava.jar" 
+code="CabriJava.class"
+width=640 height=480>
+    <param name=file value="cons4.fig">
+    <param name=lang value="es">
+    <param name=border value=0>
+    <param name=bgcolor value=#FFFFCC>
+    <param name=controller value=true>
+  </applet></p>
+<p>&nbsp;</p>

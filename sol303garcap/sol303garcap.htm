@@ -1,0 +1,259 @@
+ 
+<HTML><HEAD><TITLE>trianguloscabri302</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<table width="100%" border="0">
+  <tr>
+    <td>
+      <h1>Problema 303 de <i>triánguloscabri</i> </h1>
+    </td>
+  </tr>
+  <tr>
+    <td>Una generalizaci&oacute;n del problema 137</td>
+  </tr>
+</table>
+<TABLE width="100%" border=0>
+  <TR> 
+    <TD height=108 bgcolor="#FFFF99" valign="top"> 
+      <p>Luigi Cremona en el nº 217 de la página 180 de la edición inglesa de 
+        su obra nos dice:</p>
+      <p><font size="-1">&quot;.. Y el problema, <i><span 
+            style="FONT-WEIGHT: bold"><br>
+        <br>
+        Trazar una recta por un punto dado que divida un triángulo dado en dos 
+        partes cuyas áreas estén según una razón dada</span></i>, <br>
+        <br>
+        puede resolverse reduciéndolo a la siguiente construcción: <i><span 
+            style="FONT-WEIGHT: bold"><br>
+        <br>
+        Trazar desde un punto dado la tangente a una hipérbola de la que se conocen 
+        las asíntotas y una tangente</span></i>. <br>
+        <br>
+        Se deja como ejercicio para el estudiante.&quot;</font></p>
+      <p>Trazar una recta por un punto dado que divida un tri&aacute;ngulo dado 
+        en dos partes cuyas &aacute;reas est&eacute;n seg&uacute;n una raz&oacute;n 
+        dada.</p>
+    </TD>
+    <TD height=108 bgcolor="#FFFFFF"><img src="pro303.gif" width="218" height="248" align="right"></TD>
+  </TR>
+  <TBODY> 
+  <TR> 
+    <TD height=9 colspan="2" valign="top"> 
+      <DIV align=right> <font size="-1">Propuesto por Jose Mar&iacute;a Pedret.</font></DIV>
+    </TD>
+  </TR>
+  </TBODY> 
+</TABLE>
+<P><font face="Arial, Helvetica, sans-serif">Soluci&oacute;n de <a href="http://garciacapitan.auna.com">Francisco 
+  Javier Garc&iacute;a Capit&aacute;n</a></font></P>
+
+<h2>An&aacute;lisis con coordenadas baric&eacute;ntricas</h2>
+<p>Haremos el an&aacute;lisis del problema usando las coordenadas baric&eacute;ntricas. 
+  Seguimos el esquema trazado por <a href="http://www.math.fau.edu/yiu/Geometry.html">Paul 
+  Yiu</a> en su <i>Introduction to the Gometry of the Triangle </i>(en adelante 
+  <i>Introducci&oacute;n</i>), en la secci&oacute;n 11.4.2, donde se trata el 
+  caso particular de que las dos &aacute;reas sean iguales. Por conveniencia, 
+  en lugar de comparar el &aacute;rea de las dos partes resultantes de la divisi&oacute;n, 
+  compararemos el &aacute;rea del tri&aacute;ngulo resultante con el &aacute;rea 
+  del tri&aacute;ngulo de partida, supondemos que las dos &aacute;reas est&aacute;n 
+  en la raz&oacute;n <i>m</i>:<i>n</i>. </p>
+<p>Sea <i>Y</i> un punto de la recta <i>AC</i>. Existe un &uacute;nico punto <i>Z</i> 
+  sobre la recta <i>AB</i> tal que el &aacute;rea (con signo) del tri&aacute;ngulo 
+  <i>AZY</i> es la fracci&oacute;n <i>m</i>:<i>n</i> del &aacute;rea del tri&aacute;ngulo 
+  <i>ABC</i>. Hallemos este punto <i>Z</i>:</p>
+<blockquote>
+  <p><img src="math1.jpg" width="401" height="117"></p>
+</blockquote>
+<p>Entonces la ecuaci&oacute;n de la recta <i>YZ</i> es </p>
+<blockquote>
+  <p><img src="math2.jpg" width="389" height="45"></p>
+</blockquote>
+<p>Seg&uacute;n podemos ver en el apartado 11.4 de la <i>Introducci&oacute;n</i>, 
+  la envolvente de la familia param&eacute;trica de rectas</p>
+<blockquote>
+  <p><img src="math3.jpg" width="396" height="19"></p>
+</blockquote>
+<p>es la c&oacute;nica de ecuaci&oacute;n</p>
+<blockquote>
+  <p><img src="math4.jpg" width="380" height="18"></p>
+</blockquote>
+<p>siempre que la matriz</p>
+<blockquote>
+  <p><img src="math5.jpg" width="86" height="45"></p>
+</blockquote>
+<p>tenga determinante no nulo. En nuestro caso, </p>
+<blockquote>
+  <p><img src="math6.jpg" width="267" height="45"></p>
+</blockquote>
+<p>Por tanto la envolvente ser&aacute;:</p>
+<blockquote> 
+  <p><img src="math7.jpg" width="336" height="58"></p>
+</blockquote>
+<p>Introduciendo la ecuaci&oacute;n de la c&oacute;nica podemos hallar f&aacute;cilmente 
+  su centro y su discriminante:</p>
+<blockquote> 
+  <p><img src="math8.jpg" width="368" height="114"></p>
+</blockquote>
+<p>Vemos que se trata de una <b>hip&eacute;rbola</b>, ya que su discriminante 
+  es positivo, y que el <b>centro es el v&eacute;rtice <i>A</i></b>. Adem&aacute;s, 
+  los puntos (1 : <font face="Symbol">-</font>1 : 0) y {1 : 0 : <font face="Symbol">-</font>1) 
+  cumplen evidentemente la ecuaci&oacute;n</p>
+<blockquote> 
+  <p><img src="math9.jpg" width="163" height="18"></p>
+</blockquote>
+<p>por lo que pertenecen a la hip&eacute;rbola. </p>
+<p>Estos puntos, cuyas coordenadas suman cero, son los puntos del infinito de 
+  las rectas <i>AB</i> y <i>AC</i>, respectivamente. </p>
+<p>Deducimos que estas rectas son las as&iacute;ntotas de la hip&eacute;rbola, 
+  y adem&aacute;s los ejes de la hip&eacute;rbola ser&aacute;n las bisectrices 
+  exterior e interior del &aacute;ngulo <i>A</i>. Esto permite hallar los v&eacute;rtices 
+  de la hip&eacute;rbola. Para ello, hallamos los puntos de intersecci&oacute;n 
+  de la c&oacute;nica con la bisectriz interior, resultando dos puntos. Si lo 
+  intentamos con la bisectriz exterior obtendremos puntos imaginarios. </p>
+<blockquote> 
+  <p><img src="math10.jpg" width="480" height="217"></p>
+</blockquote>
+<p>Desgraciadamente, las f&oacute;rmulas obtenidas para los v&eacute;rtices no 
+  son sencillas, pero podemos usar la f&oacute;rmula del cuadrado de la distancia 
+  para hallar la distancia entre ellos:</p>
+<blockquote> 
+  <p><img src="math11.jpg" width="207" height="58"></p>
+</blockquote>
+<p>Esto quiere decir que la distancia desde el centro <i>A</i> a cada uno de los 
+  v&eacute;rtices V<sub>1</sub> y V<sub>2</sub> de la hip&eacute;rbola ser&aacute;</p>
+<blockquote> 
+  <p><img src="math12.jpg" width="170" height="39"></p>
+</blockquote>
+<h2>Construcci&oacute;n con Cabri</h2>
+<p>La f&oacute;rmula que acabamos de encontrar permite la construcci&oacute;n 
+  con regla y comp&aacute;s de los v&eacute;rtices de la hip&eacute;rbola. A partir 
+  de ah&iacute; podemos encontrar los focos y algunos puntos de la hip&eacute;rbola, 
+  lo que nos permitr&aacute; trazar dicha hip&eacute;rbola con Cabri. </p>
+<table width="100%" border="0">
+  <tr>
+    <td>
+      <p><img src="cabri1.jpg" width="525" height="388" align="right">La figura 
+        muestra el tri&aacute;ngulo <i>ABC</i> y las circunferencias exinscrits 
+        (<i>I</i><sub>b</sub>) e (<i>I</i><sub>c</sub>), que tocan a la recta 
+        <i>BC</i> en <i>L</i> y <i>K</i>, respectivamente. Sabemos que <i>BK</i> 
+        = <i>s</i><font face="Symbol">-</font><i>a</i> y <i>BL</i> = <i>s</i>. 
+        Usaremos que el semiper&iacute;metro <i>s</i> del tri&aacute;ngulo <i>ABC</i> 
+        y la longitud <i>s</i><font face="Symbol">-</font><i>a </i>son f&aacute;ciles 
+        de identificar en un tri&aacute;ngulo <i>ABC</i>. En la figura tambi&eacute;n 
+        hemos colocado un <i>deslizador</i> que nos permitir&aacute; introducir 
+        la proporci&oacute;n <i>m</i>:<i>n</i>. Esta proporci&oacute;n variar&aacute; 
+        de 0 a 1. </p>
+      <p>Lo primero que hacemos es construir un punto <i>P</i> en <i>BL</i> tal 
+        que <i>BP</i>:<i>BL</i> = <i>m</i>:<i>n</i>. </p>
+      <p>Ahora bastar&aacute; hallar la media geom&eacute;trica de los segmentos 
+        <i>BK</i> y <i>BP</i>, es decir un segmento <i>BE</i> tal que <i>BE</i><sup>2</sup> 
+        =<i> BP</i>&middot;<i>BK</i>. Para ello hallamos una circunferencia con 
+        di&aacute;metro <i>KP</i> y hallamos el punto <i>E</i> en la intersecci&oacute;n 
+        de dicha circunferencia con la perpendicular a <i>KP</i> por <i>B</i>. 
+      </p>
+</td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr> 
+    <td>
+      <p><img src="cabri2.jpg" width="392" height="284" align="right">Una vez 
+        conocida la distancia AV<sub>1</sub> = AV<sub>2</sub> = BE, llemamos dicha 
+        distancia sobre la bisectriz interior del &aacute;ngulo <i>A</i> y obtenemos 
+        los v&eacute;rtices V<sub>1</sub> y V<sub>2</sub>. </p>
+      <p>A partir de aqu&iacute; podemos obtener los focos trazando una perpendicular 
+        a la bisectriz (eje principal) por uno de los v&eacute;rtices, que se 
+        encontrar&aacute; con uno de los lados en un punto <i>T</i>. La circunferencia 
+        con centro <i>A </i> y radio <i>T</i> corta a la bisectriz en los focos 
+        F<sub>1</sub> y F<sub>2</sub> de la hip&eacute;rbola. </p>
+      <p>Teniendo los focos de la hip&eacute;rbola basta aplicar el m&eacute;todo 
+        est&aacute;ndar para hallar algunos puntos de la curva que nos permitan 
+        usar la herramienta de Cabri para hallar trazar la c&oacute;nica que pasa 
+        por cinco puntos. </p>
+</td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr> 
+    <td>
+      <p><img src="cabri3.jpg" width="422" height="340" align="right">Esta construcci&oacute;n 
+        de puntos de la hip&eacute;rbola se hace tomando puntos arbitrarios <i>U</i>, 
+        <i>V</i>, ... sobre el eje focal (la bisectriz en nuestro caso) que no 
+        est&eacute;n en el segmento limitado por los focos. Ahora, con el punto 
+        <i>U </i>tomamos los radios <i>UV</i><sub>1</sub> y <i>UV</i><sub>2</sub> 
+        y trazamos las circunferencias con centros <i>F</i><sub>1</sub> y <i>F</i><sub>2</sub> 
+        respectivamente. Los puntos de intersecci&oacute;n de estas circunferencias 
+        pertenecer&aacute;n a la hip&eacute;rbola. </p>
+      <p>Haciendo la construcci&oacute;n para dos puntos obtendremos cuatro puntos 
+        de la hip&eacute;rbola, que a&ntilde;adidos a los dos v&eacute;rtices 
+        que conocemos hacen SEIS puntos, uno m&aacute;s de los que necesitamos. 
+      </p>
+</td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr> 
+    <td> 
+      <p><img src="cabri4.jpg" width="408" height="336" align="right">Una vez 
+        construida la hip&eacute;rbola, dado un punto cualquiera <i>P</i>, lo 
+        &uacute;nico que tenemos que hacer es trazar a dicha hip&eacute;rbola 
+        la tangente desde <i>Q</i>.</p>
+      <p>Para ello recurrimos a la recta que podemos encontrar en <i>Trazado Geom&eacute;trico</i>, 
+        de M. Gonz&aacute;lez Monsalve y J. Palencia Cort&eacute;s, p&aacute;g. 
+        253:</p>
+      <ul>
+        <li>Trazamos una circunferencia con centro <i>F</i>_2 y radio <i>V</i>_1<i>V</i>_2 
+          y otra circunferencia con centro <i>Q</i> y radio <i>F</i>_1 y radio 
+          <i>QF</i>_1. </li>
+        <li>Hallamos los puntos de intersecci&oacute;n <i>S</i>_1 y <i>S</i>_2 
+          de estas dos circunferencias. </li>
+        <li>Las mediatrices de los segmentos <i>F</i>_1<i>S</i>_1 y <i>F</i>_1<i>S</i>_2 
+          las tangentes a la hip&eacute;rbola desde <i>Q</i>.</li>
+      </ul>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<h2>Discusi&oacute;n de la soluci&oacute;n obtenida</h2>
+<table width="100%" border="0">
+  <tr> 
+    <td height="382"> 
+      <p><img src="cabri5.jpg" width="490" height="360" align="right">La discusi&oacute;n 
+        es parecida a la vista para el problema 137. </p>
+      <p>Como vemos en la figura, las rectas tangentes desde <i>B</i> y <i>C</i> 
+        a la hip&eacute;rbola dividen al plano en cuatro regiones.</p>
+      <p>Cuando el punto <i>Q</i> pertenezca a las regiones sombreadas en amarillo, 
+        exactamente una de las rectas tangentes desde <i>Q</i> dar&aacute; lugar 
+        a una soluci&oacute;n del problema. </p>
+      <p>Si el punto <i>Q</i> pertenece a la regi&oacute;n coloreada en morado, 
+        cada una de las dos rectas tangentes dar&aacute; lugar a una soluci&oacute;n. 
+      </p>
+      <p>Finalmente si el punto <i>Q </i>pertenece a alguna de las regiones que 
+        han quedado en blanco ninguna de las rectas tangentes dar&aacute; lugar 
+        a una soluci&oacute;n. </p>
+      </td>
+  </tr>
+</table>
+<table width="100%" border="0">
+  <tr> 
+    <td height="198"> 
+      <p><img src="cabri6.jpg" width="448" height="369" align="right">Para finalizar 
+        digamos que si el punto <i>Q</i> queda fuera de las regiones con soluci&oacute;n, 
+        puede intentarse la construcci&oacute;n usando la hip&eacute;rbola correspondiente 
+        a otro de los v&eacute;rtices. </p>
+      <p>Sin embargo, como muestra la figura, puede haber regiones, como las coloreadas 
+        en gris en la figura, en las que no se obtengan soluciones con ninguna 
+        de las tres hip&eacute;rbolas, careciendo el problema de soluci&oacute;n.</p>
+      <p>Observamos que tambi&eacute;n hay regiones (las tres marcadas en rosa) 
+        formadas por puntos con dos soluciones para dos de las hip&eacute;rbolas, 
+        por lo que en ese caso el problema tendr&iacute;a cuatro soluciones. </p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</BODY></HTML>
