@@ -1,0 +1,273 @@
+FIGURE CabriII vers. MS-Windows 1.0
+
+Used macro
+
+cercle circonscrit, no name
+Icon:
+0000000000000000
+0000000000000000
+0000000000000000
+000FFFFFFFFF0000
+000FF000000F0000
+000F000000000000
+000F000000000000
+000F000000000000
+000F000000000000
+000F000000000000
+000F000000000000
+000F000000000000
+000FF000000F0000
+000FFFFFFFFF0000
+0000000000000000
+0000000000000000
+Mth: 0
+CN:3, ON:4, FN:2, PO:3
+CT:
+point, CS 0, R, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, R, W, t, DS:1 1, GT:1, V, nSt
+point, CS 0, R, W, t, DS:1 1, GT:1, V, nSt
+Const:
+PBiss, Mth:0, 0, 0, CN:2, VN:2, Const: 1 2
+PBiss, Mth:0, 0, 0, CN:2, VN:2, Const: 2 3
+Int, Mth:0, 1, 0, CN:2, VN:1, Const: 4 5, R, W, t, DS:1 1, GT:1, I, nSt
+Cir, Mth:1, 1, 0, CN:2, VN:2, Const: 6 1, Bl, W, t, DS:1 1, GT:0, V, nSt
+
+intersection de cercles, no name
+Icon:
+0000000000000000
+0000000000000000
+0000000000000000
+000000FFF0000000
+00FF0F000F000000
+0F00F00000F00000
+F00F0F00000F0000
+F00F0F00000F0000
+F00F0F00000F0000
+0F00F00000F00000
+00FF0F000F000000
+000000FFF0000000
+0000000000000000
+0000000000000000
+0000000000000000
+0000000000000000
+Help:
+"Se donner 2 cercles et un point d'intersection. on obtient l'autre."
+Mth: 0
+CN:3, ON:2, FN:1, PO:1
+CT:
+circle, CS 1, Bl, W, t, DS:1 1, GT:0, V, nSt
+circle, CS 1, Bl, W, t, DS:1 1, GT:0, V, nSt
+point, CS 0, R, W, t, DS:1 1, GT:1, V, nSt
+Const:
+Line, Mth:1, 0, 0, CN:2, VN:2, Const: 1 3
+Refl, Mth:0, 1, 0, CN:2, VN:1, Const: 5 6, R, W, t, DS:1 1, GT:1, V, nSt
+
+Figure description:
+
+Window center x: 30.7710416666667 y: -3.04270833333333 Window size x: 26.6435416666667 y: 16.5364583333333
+
+1: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, I, nSt
+Val: 0 0
+
+2: Axes, 0, CN:1, VN:3
+B, W, t, DS:1 1, GT:0, I, nSt
+Const: 1, Val: 1.31909372390604 0, 0 1.31909372390604
+
+3: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, I, nSt
+Val: -9.17752441951646 -5.69736225431756
+
+"A", NP: 1111, -116, NS: 9, 17
+4: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Val: 29.3568518128875 2.41366085650892
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"B", NP: 892, 229, NS: 10, 17
+5: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Val: 23.378831319441 -5.9780204934465
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"C", NP: 1353, 247, NS: 11, 17
+6: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Val: 35.8400571367661 -6.39900785213992
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+7: Line, 0, CN:2, VN:4
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 4 5
+
+8: Line, 0, CN:2, VN:4
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 5 6
+
+9: Line, 0, CN:2, VN:4
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 6 4
+
+10: Pt, 0, CN:0, VN:1
+B, W, t, DS:1 1, GT:1, I, nSt
+Val: 26.2134795346434 -3.70468875650206
+
+"d", NP: 1074, 118, NS: 9, 17
+11: Line, 0, CN:1, VN:4
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 10, Val: -1.26707429259767 -0.366784663646693
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"A'", NP: 1172, 94, NS: 11, 17
+12: Pt/, 0, CN:1, VN:3
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 11, Val: 30.8936170212766 -2.34991211563456
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+13: Seg, 0, CN:2, VN:0
+B, W, t, DS:1 1, GT:0, V, nSt
+Const: 4 12
+
+14: Par, 0, CN:2, VN:4
+B, W, t, DS:1 1, GT:0, I, nSt
+Const: 5 13
+
+"B'", NP: 847, 165, NS: 12, 17
+15: Int, 0, CN:2, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 11 14
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+16: Seg, 0, CN:2, VN:0
+B, W, t, DS:1 1, GT:0, V, nSt
+Const: 15 5
+
+17: Par, 0, CN:2, VN:4
+B, W, t, DS:1 1, GT:0, I, nSt
+Const: 6 13
+
+"C'", NP: 1311, 53, NS: 13, 17
+18: Int, 0, CN:2, VN:1
+R, W, t, DS:1 1, GT:1, V, nSt
+Const: 11 17
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+19: Seg, 0, CN:2, VN:0
+B, W, t, DS:1 1, GT:0, V, nSt
+Const: 18 6
+
+20: Par, 0, CN:2, VN:4
+R, W, t, DS:1 1, GT:0, I, nSt
+Const: 12 8
+
+21: Par, 0, CN:2, VN:4
+R, W, t, DS:1 1, GT:0, I, nSt
+Const: 15 9
+
+22: Par, 0, CN:2, VN:4
+R, W, t, DS:1 1, GT:0, I, nSt
+Const: 18 7
+
+"c", NP: 784, 70, NS: 8, 17
+23: Int, 0, CN:2, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 20 21
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"a", NP: 1045, 415, NS: 9, 17
+24: Int, 0, CN:2, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 21 22
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"b", NP: 1273, 95, NS: 9, 17
+25: Int, 0, CN:2, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+Const: 22 20
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+Ma: cercle circonscrit, Const: 15 i: 0 12 i: 0 23 i: 0
+28: Ma R, F No1, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+29: Ma R, F No2, VN:2
+B, W, t, DS:1 1, GT:0, V, nSt
+
+Ma: cercle circonscrit, Const: 15 i: 0 18 i: 0 24 i: 0
+32: Ma R, F No1, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+33: Ma R, F No2, VN:2
+B, W, t, DS:1 1, GT:0, V, nSt
+
+Ma: cercle circonscrit, Const: 18 i: 0 12 i: 0 25 i: 0
+36: Ma R, F No1, VN:1
+R, W, t, DS:1 1, GT:1, I, nSt
+
+37: Ma R, F No2, VN:2
+B, W, t, DS:1 1, GT:0, V, nSt
+
+Ma: intersection de cercles, Const: 33 i: 0 29 i: 0 15 i: 0
+"P", NP: 1179, -65, NS: 10, 17
+39: Ma R, F No1, VN:1
+B, W, t, DS:1 1, GT:1, V, nSt
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+40: Line, 0, CN:2, VN:4
+Bl, W, t, DS:1 1, GT:1, I, nSt
+Const: 39 12
+
+41: Line, 0, CN:2, VN:4
+Bl, W, t, DS:1 1, GT:1, I, nSt
+Const: 39 15
+
+42: Line, 0, CN:2, VN:4
+Bl, W, t, DS:1 1, GT:1, I, nSt
+Const: 39 18
+
+43: Locus, 49159, CN:2, VN:50
+R, W, tT, DS:1 1, GT:0, V, nSt
+Const: 12 39
+
+44: Seg, 0, CN:2, VN:0
+R, W, t, DS:5 8, GT:0, V, nSt
+Const: 23 12
+
+45: Seg, 0, CN:2, VN:0
+R, W, t, DS:5 8, GT:0, V, nSt
+Const: 12 25
+
+46: Seg, 0, CN:2, VN:0
+R, W, t, DS:5 8, GT:0, V, nSt
+Const: 18 25
+
+47: Seg, 0, CN:2, VN:0
+R, W, t, DS:5 8, GT:0, V, nSt
+Const: 25 24
+
+48: Seg, 0, CN:2, VN:0
+R, W, t, DS:5 8, GT:0, V, nSt
+Const: 24 15
+
+49: Seg, 0, CN:2, VN:0
+R, W, t, DS:5 8, GT:0, V, nSt
+Const: 15 23
+
+"n", NP: 1241, 14, NS: 9, 17
+50: Seg, 0, CN:2, VN:0
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 39 18
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"l", NP: 1167, 20, NS: 5, 17
+51: Seg, 0, CN:2, VN:0
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 39 12
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
+"m", NP: 1031, 63, NS: 13, 17
+52: Seg, 0, CN:2, VN:0
+Bl, W, t, DS:1 1, GT:0, V, nSt
+Const: 39 15
+p: 0, Arial, S: 12 C: 15 Fa: 0
+
